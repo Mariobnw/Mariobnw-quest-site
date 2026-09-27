@@ -22,12 +22,11 @@
     >
 </head>
 
-
 <body>
 
-    <!-- ==================================================
-         AVISO VISUAL
-    =================================================== -->
+    <!-- =========================
+         AVISO DE ERRO
+    ========================== -->
 
     <div
         id="aviso-erro"
@@ -39,11 +38,10 @@
             !
         </div>
 
-
         <div class="aviso-texto">
 
             <strong id="aviso-titulo">
-                Não foi possível concluir a ação
+                Recurso indisponível
             </strong>
 
             <span id="aviso-descricao">
@@ -55,21 +53,18 @@
     </div>
 
 
-
-    <!-- ==================================================
-         ÁUDIOS
-    =================================================== -->
+    <!-- =========================
+         ÁUDIO
+    ========================== -->
 
     <audio
         id="som-erro"
         preload="auto"
     >
-
         <source
             src="Downloads/erro.mp3"
             type="audio/mpeg"
         >
-
     </audio>
 
 
@@ -77,23 +72,18 @@
         id="som-click"
         preload="auto"
     >
-
         <source
             src="Downloads/minecraft-click-menu.mp3"
             type="audio/mpeg"
         >
-
     </audio>
 
 
-
-    <!-- ==================================================
-         CABEÇALHO
-    =================================================== -->
+    <!-- =========================
+         TOPO
+    ========================== -->
 
     <header class="topo">
-
-        <!-- A logo funciona como botão de início -->
 
         <a
             class="logo-topo"
@@ -110,7 +100,6 @@
         </a>
 
 
-
         <nav>
 
             <a
@@ -120,7 +109,6 @@
                 Notícias
             </a>
 
-
             <a
                 href="#personagens"
                 data-i18n="menuPersonagens"
@@ -128,14 +116,12 @@
                 Personagens
             </a>
 
-
             <a
                 href="#sobre"
                 data-i18n="menuSobre"
             >
                 Sobre
             </a>
-
 
             <a
                 href="#canais"
@@ -145,18 +131,17 @@
             </a>
 
 
-            <a
-                href="#comunidade"
+            <button
+                id="abrir-comunidade"
+                class="link-menu"
+                type="button"
                 data-i18n="menuComunidade"
             >
                 Comunidade
-            </a>
+            </button>
 
 
-
-            <!-- ==========================================
-                 IDIOMA
-            =========================================== -->
+            <!-- IDIOMA -->
 
             <div class="idioma-container">
 
@@ -221,7 +206,6 @@
             </div>
 
 
-
             <a
                 href="#baixar"
                 class="menu-download"
@@ -235,17 +219,13 @@
     </header>
 
 
-
-    <!-- ==================================================
-         CONTEÚDO PRINCIPAL
-    =================================================== -->
+    <!-- =========================
+         CONTEÚDO
+    ========================== -->
 
     <main id="conteudo-site">
 
-
-        <!-- ==============================================
-             HERO
-        =============================================== -->
+        <!-- HERO -->
 
         <section
             class="hero"
@@ -267,10 +247,7 @@
         </section>
 
 
-
-        <!-- ==============================================
-             INTRODUÇÃO
-        =============================================== -->
+        <!-- INTRO -->
 
         <section class="conteudo">
 
@@ -317,10 +294,7 @@
         </section>
 
 
-
-        <!-- ==============================================
-             NOTÍCIAS
-        =============================================== -->
+        <!-- NOTÍCIAS -->
 
         <section
             class="conteudo"
@@ -336,7 +310,7 @@
                 class="secao-descricao"
                 data-i18n="noticiasDescricao"
             >
-                Atualizações sobre o desenvolvimento do jogo e do projeto.
+                Atualizações sobre o desenvolvimento do jogo.
             </p>
 
 
@@ -349,13 +323,12 @@
                     </span>
 
                     <h3 data-i18n="noticia1Titulo">
-                        Site oficial em desenvolvimento
+                        Site em construção
                     </h3>
 
                     <p data-i18n="noticia1Texto">
-                        Esta é uma versão inicial do site oficial.
-                        Novas páginas, artes e informações serão adicionadas
-                        conforme o desenvolvimento avançar.
+                        Alguém pensou que seria uma boa ideia criar
+                        um site antes de terminar o jogo.
                     </p>
 
                 </article>
@@ -363,8 +336,11 @@
 
                 <article class="card">
 
-                    <span class="card-data">
-                        CHAPTER 1
+                    <span
+                        class="card-data"
+                        data-i18n="noticia2Etiqueta"
+                    >
+                        EM DESENVOLVIMENTO
                     </span>
 
                     <h3 data-i18n="noticia2Titulo">
@@ -372,8 +348,8 @@
                     </h3>
 
                     <p data-i18n="noticia2Texto">
-                        Novas informações sobre o primeiro capítulo,
-                        personagens e sistemas de jogo serão publicadas futuramente.
+                        Novas informações sobre o primeiro capítulo
+                        serão divulgadas futuramente.
                     </p>
 
                 </article>
@@ -383,10 +359,7 @@
         </section>
 
 
-
-        <!-- ==============================================
-             PERSONAGENS
-        =============================================== -->
+        <!-- PERSONAGENS -->
 
         <section
             class="conteudo"
@@ -398,17 +371,14 @@
             </h2>
 
             <p data-i18n="personagensTexto">
-                Perfis oficiais dos personagens serão adicionados
-                conforme suas apresentações forem divulgadas.
+                Perfis oficiais serão adicionados conforme
+                os personagens forem apresentados.
             </p>
 
         </section>
 
 
-
-        <!-- ==============================================
-             SOBRE
-        =============================================== -->
+        <!-- SOBRE -->
 
         <section
             class="conteudo"
@@ -419,21 +389,16 @@
                 Sobre o jogo
             </h2>
 
-
             <p data-i18n="sobreTexto">
-                mariobnw quest é um RPG independente atualmente
-                em desenvolvimento. O projeto contará com exploração,
-                narrativa, personagens originais e diferentes sistemas
-                de batalha ao longo de sua aventura.
+                mariobnw quest é um RPG independente atualmente em
+                desenvolvimento, com exploração, narrativa,
+                personagens originais e diferentes sistemas de batalha.
             </p>
 
         </section>
 
 
-
-        <!-- ==============================================
-             CANAIS
-        =============================================== -->
+        <!-- CANAIS -->
 
         <section
             class="conteudo"
@@ -449,14 +414,11 @@
                 class="secao-descricao"
                 data-i18n="canaisTexto"
             >
-                Acompanhe conteúdos do criador e atualizações oficiais
-                de mariobnw quest.
+                Acompanhe conteúdos e atualizações oficiais.
             </p>
 
 
             <div class="cards canais-grid">
-
-                <!-- CANAL PT-BR -->
 
                 <article class="card canal-card">
 
@@ -486,9 +448,6 @@
                 </article>
 
 
-
-                <!-- CANAL ENGLISH -->
-
                 <article class="card canal-card">
 
                     <span class="canal-idioma">
@@ -500,8 +459,8 @@
                     </h3>
 
                     <p data-i18n="canalEnglishTexto">
-                        Canal oficial em inglês dedicado a notícias,
-                        vídeos e atualizações de mariobnw quest.
+                        Canal oficial em inglês dedicado às
+                        atualizações de mariobnw quest.
                     </p>
 
                     <a
@@ -521,182 +480,7 @@
         </section>
 
 
-
-        <!-- ==============================================
-             COMUNIDADE
-        =============================================== -->
-
-        <section
-            class="conteudo"
-            id="comunidade"
-        >
-
-            <div class="comunidade-caixa">
-
-                <span
-                    class="comunidade-etiqueta"
-                    data-i18n="comunidadeEtiqueta"
-                >
-                    COMUNIDADE
-                </span>
-
-
-                <h2 data-i18n="comunidadeTitulo">
-                    Comunidade
-                </h2>
-
-
-                <p data-i18n="comunidadeTexto">
-                    Os espaços oficiais da comunidade estão sendo
-                    preparados gradualmente. Por enquanto, as publicações
-                    do YouTube são o canal comunitário disponível.
-                </p>
-
-
-
-                <div class="comunidade-grid">
-
-
-                    <!-- YOUTUBE - DISPONÍVEL -->
-
-                    <a
-                        id="comunidade-youtube"
-                        class="comunidade-item disponivel"
-                        href="https://www.youtube.com/@Mariobnw/community"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <div>
-
-                            <strong data-i18n="youtubeComunidadeTitulo">
-                                Comunidade do YouTube
-                            </strong>
-
-                            <span data-i18n="youtubeComunidadeTexto">
-                                Publicações, novidades e interação
-                                com a comunidade.
-                            </span>
-
-                        </div>
-
-
-                        <span
-                            class="status status-online"
-                            data-i18n="statusDisponivel"
-                        >
-                            DISPONÍVEL
-                        </span>
-
-                    </a>
-
-
-
-                    <!-- TEORIAS -->
-
-                    <button
-                        class="comunidade-item indisponivel recurso-bloqueado"
-                        type="button"
-                    >
-
-                        <div>
-
-                            <strong data-i18n="teoriasTitulo">
-                                Teorias
-                            </strong>
-
-                            <span data-i18n="teoriasTexto">
-                                Espaço dedicado a discussões e teorias
-                                sobre o universo do jogo.
-                            </span>
-
-                        </div>
-
-
-                        <span
-                            class="status status-erro"
-                            data-i18n="statusIndisponivel"
-                        >
-                            INDISPONÍVEL
-                        </span>
-
-                    </button>
-
-
-
-                    <!-- FANART -->
-
-                    <button
-                        class="comunidade-item indisponivel recurso-bloqueado"
-                        type="button"
-                    >
-
-                        <div>
-
-                            <strong data-i18n="fanartsTitulo">
-                                Fanarts
-                            </strong>
-
-                            <span data-i18n="fanartsTexto">
-                                Área planejada para artes criadas
-                                pela comunidade.
-                            </span>
-
-                        </div>
-
-
-                        <span
-                            class="status status-erro"
-                            data-i18n="statusIndisponivel"
-                        >
-                            INDISPONÍVEL
-                        </span>
-
-                    </button>
-
-
-
-                    <!-- SUGESTÕES -->
-
-                    <button
-                        class="comunidade-item indisponivel recurso-bloqueado"
-                        type="button"
-                    >
-
-                        <div>
-
-                            <strong data-i18n="sugestoesTitulo">
-                                Sugestões
-                            </strong>
-
-                            <span data-i18n="sugestoesTexto">
-                                Espaço planejado para ideias e sugestões
-                                relacionadas ao projeto.
-                            </span>
-
-                        </div>
-
-
-                        <span
-                            class="status status-erro"
-                            data-i18n="statusIndisponivel"
-                        >
-                            INDISPONÍVEL
-                        </span>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ==============================================
-             DOWNLOAD
-        =============================================== -->
+        <!-- DOWNLOAD -->
 
         <section
             class="conteudo download-secao"
@@ -719,14 +503,15 @@
 
 
                 <p data-i18n="downloadTexto1">
-                    mariobnw quest ainda não possui uma versão pública
-                    disponível para download.
+                    mariobnw quest ainda não possui uma versão
+                    pública disponível.
                 </p>
 
 
                 <p data-i18n="downloadTexto2">
-                    Informações sobre versões de teste, demonstrações
-                    e lançamento serão publicadas oficialmente quando disponíveis.
+                    Informações sobre versões de teste,
+                    demonstrações e lançamento serão publicadas
+                    oficialmente quando disponíveis.
                 </p>
 
 
@@ -761,10 +546,164 @@
     </main>
 
 
+    <!-- =========================
+         MODAL COMUNIDADE
+    ========================== -->
 
-    <!-- ==================================================
-         MÁSCARA BNW
-    =================================================== -->
+    <div
+        id="overlay-comunidade"
+        class="overlay-comunidade"
+        aria-hidden="true"
+    >
+
+        <div
+            id="modal-comunidade"
+            class="modal-comunidade"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                id="fechar-comunidade"
+                class="fechar-comunidade"
+                type="button"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+
+            <span
+                class="modal-etiqueta"
+                data-i18n="comunidadeEtiqueta"
+            >
+                COMUNIDADE
+            </span>
+
+
+            <h2 data-i18n="comunidadeTitulo">
+                Comunidade
+            </h2>
+
+
+            <p
+                class="modal-descricao"
+                data-i18n="comunidadeTexto"
+            >
+                Acesse os espaços oficiais da comunidade
+                de mariobnw quest.
+            </p>
+
+
+            <div class="opcoes-comunidade">
+
+                <!-- YOUTUBE -->
+
+                <button
+                    id="comunidade-youtube"
+                    class="opcao-comunidade disponivel"
+                    type="button"
+                >
+
+                    <div class="icone-comunidade">
+
+                        <img
+                            src="images/youtube.png"
+                            alt="YouTube"
+                            draggable="false"
+                        >
+
+                    </div>
+
+                    <strong>
+                        YouTube
+                    </strong>
+
+                    <span data-i18n="youtubeTexto">
+                        Publicações e novidades oficiais.
+                    </span>
+
+                    <small
+                        class="status status-disponivel"
+                        data-i18n="statusDisponivel"
+                    >
+                        DISPONÍVEL
+                    </small>
+
+                </button>
+
+
+                <!-- DISCORD -->
+
+                <button
+                    class="opcao-comunidade bloqueado recurso-bloqueado"
+                    type="button"
+                >
+
+                    <div class="icone-comunidade">
+
+                        <img
+                            src="images/discord.png"
+                            alt="Discord"
+                            draggable="false"
+                        >
+
+                    </div>
+
+                    <strong>
+                        Discord
+                    </strong>
+
+                    <span data-i18n="discordTexto">
+                        Teorias, fanarts e comunidade.
+                    </span>
+
+                    <small
+                        class="status status-bloqueado"
+                        data-i18n="comingSoon"
+                    >
+                        EM BREVE
+                    </small>
+
+                </button>
+
+
+                <!-- SUGESTÕES -->
+
+                <button
+                    class="opcao-comunidade bloqueado recurso-bloqueado"
+                    type="button"
+                >
+
+                    <div class="icone-comunidade caderno">
+                        📓
+                    </div>
+
+                    <strong data-i18n="sugestoesTitulo">
+                        Sugestões
+                    </strong>
+
+                    <span data-i18n="sugestoesTexto">
+                        Envie ideias para o projeto.
+                    </span>
+
+                    <small
+                        class="status status-bloqueado"
+                        data-i18n="comingSoon"
+                    >
+                        EM BREVE
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BNW -->
 
     <div id="bnw-container">
 
@@ -778,10 +717,7 @@
     </div>
 
 
-
-    <!-- ==================================================
-         CURSOR VISUAL
-    =================================================== -->
+    <!-- CURSOR -->
 
     <div id="cursor-mao">
 
@@ -793,7 +729,6 @@
         >
 
     </div>
-
 
 
     <script src="script.js"></script>

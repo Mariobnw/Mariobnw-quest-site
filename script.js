@@ -3,103 +3,67 @@ console.log(
 );
 
 
-/* ==================================================
-   ELEMENTOS
-================================================== */
+/* ELEMENTOS */
 
 const bnwContainer =
-    document.getElementById(
-        "bnw-container"
-    );
-
+    document.getElementById("bnw-container");
 
 const mascara =
-    document.getElementById(
-        "mascara-bnw"
-    );
-
+    document.getElementById("mascara-bnw");
 
 const cursorMao =
-    document.getElementById(
-        "cursor-mao"
-    );
-
+    document.getElementById("cursor-mao");
 
 const cursorImagem =
-    document.getElementById(
-        "cursor-imagem"
-    );
-
+    document.getElementById("cursor-imagem");
 
 const botaoDownloadFalso =
-    document.getElementById(
-        "botao-download-falso"
-    );
-
+    document.getElementById("botao-download-falso");
 
 const avisoErro =
-    document.getElementById(
-        "aviso-erro"
-    );
-
+    document.getElementById("aviso-erro");
 
 const avisoTitulo =
-    document.getElementById(
-        "aviso-titulo"
-    );
-
+    document.getElementById("aviso-titulo");
 
 const avisoDescricao =
-    document.getElementById(
-        "aviso-descricao"
-    );
-
+    document.getElementById("aviso-descricao");
 
 const somErro =
-    document.getElementById(
-        "som-erro"
-    );
-
+    document.getElementById("som-erro");
 
 const somClick =
-    document.getElementById(
-        "som-click"
-    );
-
+    document.getElementById("som-click");
 
 const conteudoSite =
-    document.getElementById(
-        "conteudo-site"
-    );
-
+    document.getElementById("conteudo-site");
 
 const topo =
-    document.querySelector(
-        ".topo"
-    );
-
+    document.querySelector(".topo");
 
 const botaoIdioma =
-    document.getElementById(
-        "botao-idioma"
-    );
-
+    document.getElementById("botao-idioma");
 
 const menuIdioma =
-    document.getElementById(
-        "menu-idioma"
-    );
+    document.getElementById("menu-idioma");
 
+const abrirComunidade =
+    document.getElementById("abrir-comunidade");
+
+const fecharComunidade =
+    document.getElementById("fechar-comunidade");
+
+const overlayComunidade =
+    document.getElementById("overlay-comunidade");
+
+const modalComunidade =
+    document.getElementById("modal-comunidade");
 
 const comunidadeYoutube =
-    document.getElementById(
-        "comunidade-youtube"
-    );
+    document.getElementById("comunidade-youtube");
 
 
-/* ==================================================
-   IMAGENS BNW
-================================================== */
+/* IMAGENS */
 
 const imagens = {
 
@@ -133,9 +97,7 @@ const imagens = {
 };
 
 
-/* ==================================================
-   TRADUÇÕES
-================================================== */
+/* TRADUÇÕES */
 
 const traducoes = {
 
@@ -159,13 +121,11 @@ const traducoes = {
         menuBaixar:
             "Baixar",
 
-
         heroTitulo:
             "ARTE PROMOCIONAL DO CAPÍTULO 1",
 
         heroTexto:
             "A apresentação oficial será publicada em breve.",
-
 
         projetoEtiqueta:
             "EM DESENVOLVIMENTO",
@@ -182,45 +142,44 @@ const traducoes = {
         botaoPersonagens:
             "Conhecer personagens",
 
-
         noticiasTitulo:
             "Últimas notícias",
 
         noticiasDescricao:
-            "Atualizações sobre o desenvolvimento do jogo e do projeto.",
+            "Atualizações sobre o desenvolvimento do jogo.",
 
         noticia1Titulo:
-            "Site oficial em desenvolvimento",
+            "Site em construção",
 
         noticia1Texto:
-            "Esta é uma versão inicial do site oficial. Novas páginas, artes e informações serão adicionadas conforme o desenvolvimento avançar.",
+            "Alguém pensou que seria uma boa ideia criar um site antes de terminar o jogo.",
+
+        noticia2Etiqueta:
+            "EM DESENVOLVIMENTO",
 
         noticia2Titulo:
             "Capítulo 1",
 
         noticia2Texto:
-            "Novas informações sobre o primeiro capítulo, personagens e sistemas de jogo serão publicadas futuramente.",
-
+            "Novas informações sobre o primeiro capítulo serão divulgadas futuramente.",
 
         personagensTitulo:
             "Personagens",
 
         personagensTexto:
-            "Perfis oficiais dos personagens serão adicionados conforme suas apresentações forem divulgadas.",
-
+            "Perfis oficiais serão adicionados conforme os personagens forem apresentados.",
 
         sobreTitulo:
             "Sobre o jogo",
 
         sobreTexto:
-            "mariobnw quest é um RPG independente atualmente em desenvolvimento. O projeto contará com exploração, narrativa, personagens originais e diferentes sistemas de batalha ao longo de sua aventura.",
-
+            "mariobnw quest é um RPG independente atualmente em desenvolvimento, com exploração, narrativa, personagens originais e diferentes sistemas de batalha.",
 
         canaisTitulo:
             "Canais oficiais",
 
         canaisTexto:
-            "Acompanhe conteúdos do criador e atualizações oficiais de mariobnw quest.",
+            "Acompanhe conteúdos e atualizações oficiais.",
 
         canalPrincipalTexto:
             "Canal principal em português com vídeos, transmissões e outros projetos.",
@@ -229,51 +188,10 @@ const traducoes = {
             "Acessar canal",
 
         canalEnglishTexto:
-            "Canal oficial em inglês dedicado a notícias, vídeos e atualizações de mariobnw quest.",
+            "Canal oficial em inglês dedicado às atualizações de mariobnw quest.",
 
         visitarCanalEnglish:
             "Acessar canal",
-
-
-        comunidadeEtiqueta:
-            "COMUNIDADE",
-
-        comunidadeTitulo:
-            "Comunidade",
-
-        comunidadeTexto:
-            "Os espaços oficiais da comunidade estão sendo preparados gradualmente. Por enquanto, as publicações do YouTube são o canal comunitário disponível.",
-
-        youtubeComunidadeTitulo:
-            "Comunidade do mariobnw",
-
-        youtubeComunidadeTexto:
-            "Publicações, novidades e interação com a comunidade em português.",
-
-        teoriasTitulo:
-            "Teorias",
-
-        teoriasTexto:
-            "Espaço dedicado a discussões e teorias sobre o universo do jogo.",
-
-        fanartsTitulo:
-            "Fanarts",
-
-        fanartsTexto:
-            "Área planejada para artes criadas pela comunidade.",
-
-        sugestoesTitulo:
-            "Sugestões",
-
-        sugestoesTexto:
-            "Espaço planejado para ideias e sugestões relacionadas ao projeto.",
-
-        statusDisponivel:
-            "DISPONÍVEL",
-
-        statusIndisponivel:
-            "INDISPONÍVEL",
-
 
         downloadEtiqueta:
             "EM DESENVOLVIMENTO",
@@ -282,7 +200,7 @@ const traducoes = {
             "Download",
 
         downloadTexto1:
-            "mariobnw quest ainda não possui uma versão pública disponível para download.",
+            "mariobnw quest ainda não possui uma versão pública disponível.",
 
         downloadTexto2:
             "Informações sobre versões de teste, demonstrações e lançamento serão publicadas oficialmente quando disponíveis.",
@@ -293,6 +211,32 @@ const traducoes = {
         itchBotao:
             "Ver itch.io",
 
+        comunidadeEtiqueta:
+            "COMUNIDADE",
+
+        comunidadeTitulo:
+            "Comunidade",
+
+        comunidadeTexto:
+            "Acesse os espaços oficiais da comunidade de mariobnw quest.",
+
+        youtubeTexto:
+            "Publicações e novidades oficiais.",
+
+        discordTexto:
+            "Teorias, fanarts e comunidade.",
+
+        sugestoesTitulo:
+            "Sugestões",
+
+        sugestoesTexto:
+            "Envie ideias para o projeto.",
+
+        statusDisponivel:
+            "DISPONÍVEL",
+
+        comingSoon:
+            "EM BREVE",
 
         erroDownloadTitulo:
             "Download indisponível",
@@ -300,11 +244,11 @@ const traducoes = {
         erroDownloadTexto:
             "Ainda não existe uma versão pública de mariobnw quest.",
 
-        erroRecursoTitulo:
-            "Recurso indisponível",
+        erroComingSoonTitulo:
+            "Ainda não disponível",
 
-        erroRecursoTexto:
-            "Esta área da comunidade ainda está em preparação."
+        erroComingSoonTexto:
+            "Este recurso ainda está em desenvolvimento."
 
     },
 
@@ -329,13 +273,11 @@ const traducoes = {
         menuBaixar:
             "Download",
 
-
         heroTitulo:
             "CHAPTER 1 PROMOTIONAL ART",
 
         heroTexto:
             "The official presentation will be published soon.",
-
 
         projetoEtiqueta:
             "IN DEVELOPMENT",
@@ -352,45 +294,44 @@ const traducoes = {
         botaoPersonagens:
             "Meet the characters",
 
-
         noticiasTitulo:
             "Latest news",
 
         noticiasDescricao:
-            "Updates about the development of the game and the project.",
+            "Updates about the development of the game.",
 
         noticia1Titulo:
-            "Official website in development",
+            "Website under construction",
 
         noticia1Texto:
-            "This is an early version of the official website. New pages, artwork and information will be added as development progresses.",
+            "Someone thought it would be a good idea to create a website before finishing the game.",
+
+        noticia2Etiqueta:
+            "IN DEVELOPMENT",
 
         noticia2Titulo:
             "Chapter 1",
 
         noticia2Texto:
-            "More information about the first chapter, its characters and gameplay systems will be published in the future.",
-
+            "More information about the first chapter will be published in the future.",
 
         personagensTitulo:
             "Characters",
 
         personagensTexto:
-            "Official character profiles will be added as their introductions are revealed.",
-
+            "Official profiles will be added as the characters are introduced.",
 
         sobreTitulo:
             "About the game",
 
         sobreTexto:
-            "mariobnw quest is an independent RPG currently in development. The project will feature exploration, storytelling, original characters and different battle systems throughout the adventure.",
-
+            "mariobnw quest is an independent RPG currently in development, featuring exploration, storytelling, original characters and different battle systems.",
 
         canaisTitulo:
             "Official channels",
 
         canaisTexto:
-            "Follow the creator and official mariobnw quest updates.",
+            "Follow official content and updates.",
 
         canalPrincipalTexto:
             "The main Portuguese channel featuring videos, livestreams and other projects.",
@@ -399,51 +340,10 @@ const traducoes = {
             "Visit channel",
 
         canalEnglishTexto:
-            "The official English channel dedicated to mariobnw quest news, videos and updates.",
+            "The official English channel dedicated to mariobnw quest updates.",
 
         visitarCanalEnglish:
             "Visit channel",
-
-
-        comunidadeEtiqueta:
-            "COMMUNITY",
-
-        comunidadeTitulo:
-            "Community",
-
-        comunidadeTexto:
-            "Official community spaces are being prepared gradually. For now, YouTube posts are the available community channel.",
-
-        youtubeComunidadeTitulo:
-            "mariobnw quest English Community",
-
-        youtubeComunidadeTexto:
-            "Posts, updates and community interaction in English.",
-
-        teoriasTitulo:
-            "Theories",
-
-        teoriasTexto:
-            "A future space for discussions and theories about the game's universe.",
-
-        fanartsTitulo:
-            "Fan Art",
-
-        fanartsTexto:
-            "A future space dedicated to artwork created by the community.",
-
-        sugestoesTitulo:
-            "Suggestions",
-
-        sugestoesTexto:
-            "A future space for ideas and suggestions related to the project.",
-
-        statusDisponivel:
-            "AVAILABLE",
-
-        statusIndisponivel:
-            "UNAVAILABLE",
-
 
         downloadEtiqueta:
             "IN DEVELOPMENT",
@@ -452,7 +352,7 @@ const traducoes = {
             "Download",
 
         downloadTexto1:
-            "mariobnw quest does not currently have a public version available for download.",
+            "mariobnw quest does not currently have a public version available.",
 
         downloadTexto2:
             "Information about test builds, demos and release plans will be officially announced when available.",
@@ -463,6 +363,32 @@ const traducoes = {
         itchBotao:
             "View itch.io",
 
+        comunidadeEtiqueta:
+            "COMMUNITY",
+
+        comunidadeTitulo:
+            "Community",
+
+        comunidadeTexto:
+            "Access the official mariobnw quest community spaces.",
+
+        youtubeTexto:
+            "Official posts and updates.",
+
+        discordTexto:
+            "Theories, fan art and community discussions.",
+
+        sugestoesTitulo:
+            "Suggestions",
+
+        sugestoesTexto:
+            "Share ideas for the project.",
+
+        statusDisponivel:
+            "AVAILABLE",
+
+        comingSoon:
+            "COMING SOON",
 
         erroDownloadTitulo:
             "Download unavailable",
@@ -470,32 +396,24 @@ const traducoes = {
         erroDownloadTexto:
             "There is no public version of mariobnw quest available yet.",
 
-        erroRecursoTitulo:
-            "Feature unavailable",
+        erroComingSoonTitulo:
+            "Not available yet",
 
-        erroRecursoTexto:
-            "This community area is still being prepared."
+        erroComingSoonTexto:
+            "This feature is still in development."
 
     }
 
 };
 
 
-/* ==================================================
-   IDIOMA ATUAL
-================================================== */
+/* IDIOMA */
 
 let idiomaAtual =
-    localStorage.getItem(
-        "bnwIdioma"
-    )
+    localStorage.getItem("bnwIdioma")
     ||
     "pt";
 
-
-/* ==================================================
-   TROCAR IDIOMA
-================================================== */
 
 function trocarIdioma(idioma) {
 
@@ -508,9 +426,7 @@ function trocarIdioma(idioma) {
 
 
     document
-        .querySelectorAll(
-            "[data-i18n]"
-        )
+        .querySelectorAll("[data-i18n]")
         .forEach(
 
             function(elemento) {
@@ -519,9 +435,7 @@ function trocarIdioma(idioma) {
                     elemento.dataset.i18n;
 
 
-                if (
-                    pacote[chave]
-                ) {
+                if (pacote[chave]) {
 
                     elemento.textContent =
                         pacote[chave];
@@ -533,30 +447,12 @@ function trocarIdioma(idioma) {
         );
 
 
-    if (
-        idioma ===
+    document.documentElement.lang =
+        idioma === "en"
+        ?
         "en"
-    ) {
-
-        document.documentElement.lang =
-            "en";
-
-
-        comunidadeYoutube.href =
-            "https://www.youtube.com/channel/UCV2DF75VHXaPeXvlLd8HFgA/community";
-
-    }
-
-    else {
-
-        document.documentElement.lang =
-            "pt-BR";
-
-
-        comunidadeYoutube.href =
-            "https://www.youtube.com/@Mariobnw/community";
-
-    }
+        :
+        "pt-BR";
 
 
     localStorage.setItem(
@@ -572,14 +468,10 @@ function trocarIdioma(idioma) {
 }
 
 
-trocarIdioma(
-    idiomaAtual
-);
+trocarIdioma(idiomaAtual);
 
 
-/* ==================================================
-   MENU IDIOMA
-================================================== */
+/* MENU IDIOMA */
 
 botaoIdioma.addEventListener(
 
@@ -588,7 +480,6 @@ botaoIdioma.addEventListener(
     function(evento) {
 
         evento.stopPropagation();
-
 
         menuIdioma.classList.toggle(
             "aberto"
@@ -600,9 +491,7 @@ botaoIdioma.addEventListener(
 
 
 document
-    .querySelectorAll(
-        ".opcao-idioma"
-    )
+    .querySelectorAll(".opcao-idioma")
     .forEach(
 
         function(botao) {
@@ -649,60 +538,45 @@ document.addEventListener(
 );
 
 
-/* ==================================================
-   ESTADOS BNW
-================================================== */
+/* ESTADOS */
 
 let estadoAtual =
     "normal";
 
-
 let interagindo =
     false;
-
 
 let erroForcado =
     false;
 
+let comunidadeAberta =
+    false;
 
 let mouseX =
     window.innerWidth / 2;
 
-
 let mouseY =
     window.innerHeight / 2;
-
 
 let bnwX =
     mouseX;
 
-
 let bnwY =
     mouseY;
 
-
 let tempoUltimaAcao =
     Date.now();
-
 
 let timerAviso =
     null;
 
 
-/* ==================================================
-   TROCAR MÁSCARA
-================================================== */
+/* MÁSCARA */
 
-function mudarMascara(
-    estado
-) {
+function mudarMascara(estado) {
 
-    if (
-        !imagens[estado]
-    ) {
-
+    if (!imagens[estado]) {
         return;
-
     }
 
 
@@ -716,9 +590,7 @@ function mudarMascara(
 }
 
 
-/* ==================================================
-   MOUSE
-================================================== */
+/* MOUSE */
 
 document.addEventListener(
 
@@ -728,7 +600,6 @@ document.addEventListener(
 
         mouseX =
             evento.clientX;
-
 
         mouseY =
             evento.clientY;
@@ -741,18 +612,16 @@ document.addEventListener(
         cursorMao.style.left =
             mouseX + "px";
 
-
         cursorMao.style.top =
             mouseY + "px";
 
 
         if (
-            !interagindo
-            &&
-            !erroForcado
-            &&
+            !interagindo &&
+            !erroForcado &&
+            !comunidadeAberta &&
             estadoAtual ===
-            "semReacao"
+                "semReacao"
         ) {
 
             mudarMascara(
@@ -766,9 +635,7 @@ document.addEventListener(
 );
 
 
-/* ==================================================
-   BNW SEGUE O MOUSE
-================================================== */
+/* BNW */
 
 function atualizarBNW() {
 
@@ -776,40 +643,49 @@ function atualizarBNW() {
         0.09;
 
 
+    let alvoX;
+    let alvoY;
+
+
+    if (comunidadeAberta) {
+
+        alvoX =
+            window.innerWidth / 2;
+
+        alvoY =
+            window.innerHeight - 85;
+
+    }
+
+    else {
+
+        alvoX =
+            mouseX + 120;
+
+        alvoY =
+            mouseY + 90;
+
+    }
+
+
     bnwX +=
-        (
-            mouseX -
-            bnwX
-        )
+        (alvoX - bnwX)
         *
         velocidade;
 
 
     bnwY +=
-        (
-            mouseY -
-            bnwY
-        )
+        (alvoY - bnwY)
         *
         velocidade;
 
 
     bnwContainer.style.left =
-        (
-            bnwX +
-            120
-        )
-        +
-        "px";
+        bnwX + "px";
 
 
     bnwContainer.style.top =
-        (
-            bnwY +
-            90
-        )
-        +
-        "px";
+        bnwY + "px";
 
 
     requestAnimationFrame(
@@ -822,30 +698,20 @@ function atualizarBNW() {
 atualizarBNW();
 
 
-/* ==================================================
-   PISCAR
-================================================== */
+/* PISCAR */
 
 function piscar() {
 
-    if (
-        erroForcado
-    ) {
-
+    if (erroForcado) {
         return;
-
     }
 
 
     let piscando;
-
     let voltar;
 
 
-    if (
-        estadoAtual ===
-        "normal"
-    ) {
+    if (estadoAtual === "normal") {
 
         piscando =
             imagens.normalPiscando;
@@ -855,11 +721,7 @@ function piscar() {
 
     }
 
-
-    else if (
-        estadoAtual ===
-        "feliz"
-    ) {
+    else if (estadoAtual === "feliz") {
 
         piscando =
             imagens.felizPiscando;
@@ -869,11 +731,7 @@ function piscar() {
 
     }
 
-
-    else if (
-        estadoAtual ===
-        "surpresa"
-    ) {
+    else if (estadoAtual === "surpresa") {
 
         piscando =
             imagens.surpresaPiscando;
@@ -883,11 +741,7 @@ function piscar() {
 
     }
 
-
-    else if (
-        estadoAtual ===
-        "semReacao"
-    ) {
+    else if (estadoAtual === "semReacao") {
 
         piscando =
             imagens.semReacaoPiscando;
@@ -896,7 +750,6 @@ function piscar() {
             imagens.semReacao;
 
     }
-
 
     else {
 
@@ -919,8 +772,7 @@ function piscar() {
 
             if (
                 estadoAtual ===
-                estadoAntes
-                &&
+                estadoAntes &&
                 !erroForcado
             ) {
 
@@ -940,14 +792,6 @@ function piscar() {
 
 function agendarPiscada() {
 
-    const tempo =
-        2500
-        +
-        Math.random()
-        *
-        4000;
-
-
     setTimeout(
 
         function() {
@@ -958,7 +802,8 @@ function agendarPiscada() {
 
         },
 
-        tempo
+        2500 +
+        Math.random() * 4000
 
     );
 
@@ -968,27 +813,16 @@ function agendarPiscada() {
 agendarPiscada();
 
 
-/* ==================================================
-   ÁUDIO
-================================================== */
+/* SOM */
 
 function tocarSomErro() {
 
     somErro.pause();
 
-
-    somErro.currentTime =
-        0;
-
+    somErro.currentTime = 0;
 
     somErro.play().catch(
-
-        function() {
-
-            /* Navegador pode bloquear áudio */
-
-        }
-
+        function(){}
     );
 
 }
@@ -998,37 +832,21 @@ function tocarSomClick() {
 
     somClick.pause();
 
-
-    somClick.currentTime =
-        0;
-
+    somClick.currentTime = 0;
 
     somClick.play().catch(
-
-        function() {
-
-            /* Navegador pode bloquear áudio */
-
-        }
-
+        function(){}
     );
 
 }
 
 
-/* ==================================================
-   EFEITO DO CLIQUE
-================================================== */
+/* EFEITO CLIQUE */
 
-function criarEfeitoClique(
-    x,
-    y
-) {
+function criarEfeitoClique(x, y) {
 
     const efeito =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     efeito.className =
@@ -1037,7 +855,6 @@ function criarEfeitoClique(
 
     efeito.style.left =
         x + "px";
-
 
     efeito.style.top =
         y + "px";
@@ -1063,9 +880,175 @@ function criarEfeitoClique(
 }
 
 
-/* ==================================================
-   HOVER DOS ELEMENTOS
-================================================== */
+/* MODAL */
+
+function abrirModalComunidade() {
+
+    comunidadeAberta =
+        true;
+
+
+    overlayComunidade.classList.add(
+        "aberto"
+    );
+
+
+    overlayComunidade.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "modal-aberto"
+    );
+
+
+    mudarMascara(
+        "normal"
+    );
+
+}
+
+
+function fecharModalComunidade() {
+
+    comunidadeAberta =
+        false;
+
+
+    overlayComunidade.classList.remove(
+        "aberto"
+    );
+
+
+    overlayComunidade.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "modal-aberto"
+    );
+
+
+    mudarMascara(
+        "normal"
+    );
+
+}
+
+
+abrirComunidade.addEventListener(
+
+    "click",
+
+    function() {
+
+        tocarSomClick();
+
+        abrirModalComunidade();
+
+    }
+
+);
+
+
+fecharComunidade.addEventListener(
+
+    "click",
+
+    function() {
+
+        tocarSomClick();
+
+        fecharModalComunidade();
+
+    }
+
+);
+
+
+overlayComunidade.addEventListener(
+
+    "click",
+
+    function(evento) {
+
+        if (
+            evento.target ===
+            overlayComunidade
+        ) {
+
+            fecharModalComunidade();
+
+        }
+
+    }
+
+);
+
+
+document.addEventListener(
+
+    "keydown",
+
+    function(evento) {
+
+        if (
+            evento.key === "Escape" &&
+            comunidadeAberta
+        ) {
+
+            fecharModalComunidade();
+
+        }
+
+    }
+
+);
+
+
+/* YOUTUBE DA COMUNIDADE */
+
+comunidadeYoutube.addEventListener(
+
+    "click",
+
+    function() {
+
+        tocarSomClick();
+
+
+        if (
+            idiomaAtual === "en"
+        ) {
+
+            window.open(
+                "https://www.youtube.com/channel/UCV2DF75VHXaPeXvlLd8HFgA/community",
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
+
+        else {
+
+            window.open(
+                "https://www.youtube.com/@Mariobnw/community",
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
+
+    }
+
+);
+
+
+/* HOVER */
 
 const elementosInterativos =
     document.querySelectorAll(
@@ -1095,14 +1078,11 @@ elementosInterativos.forEach(
                     "images/mouse-hover.png";
 
 
-                if (
-                    !erroForcado
-                ) {
+                if (!erroForcado) {
 
                     mascara.classList.add(
                         "hover"
                     );
-
 
                     mudarMascara(
                         "feliz"
@@ -1134,37 +1114,11 @@ elementosInterativos.forEach(
                 );
 
 
-                if (
-                    !erroForcado
-                ) {
+                if (!erroForcado) {
 
                     mudarMascara(
                         "normal"
                     );
-
-                }
-
-            }
-
-        );
-
-
-        elemento.addEventListener(
-
-            "click",
-
-            function() {
-
-                if (
-                    elemento !==
-                    botaoDownloadFalso
-                    &&
-                    !elemento.classList.contains(
-                        "recurso-bloqueado"
-                    )
-                ) {
-
-                    tocarSomClick();
 
                 }
 
@@ -1177,9 +1131,7 @@ elementosInterativos.forEach(
 );
 
 
-/* ==================================================
-   CLIQUE GLOBAL
-================================================== */
+/* CLIQUE GLOBAL */
 
 document.addEventListener(
 
@@ -1200,11 +1152,11 @@ document.addEventListener(
 
         if (
             evento.target.closest(
-                "#botao-download-falso"
+                ".recurso-bloqueado"
             )
             ||
             evento.target.closest(
-                ".recurso-bloqueado"
+                "#botao-download-falso"
             )
         ) {
 
@@ -1213,12 +1165,8 @@ document.addEventListener(
         }
 
 
-        if (
-            erroForcado
-        ) {
-
+        if (erroForcado) {
             return;
-
         }
 
 
@@ -1249,11 +1197,11 @@ document.addEventListener(
 
         if (
             evento.target.closest(
-                "#botao-download-falso"
+                ".recurso-bloqueado"
             )
             ||
             evento.target.closest(
-                ".recurso-bloqueado"
+                "#botao-download-falso"
             )
         ) {
 
@@ -1267,12 +1215,8 @@ document.addEventListener(
         );
 
 
-        if (
-            erroForcado
-        ) {
-
+        if (erroForcado) {
             return;
-
         }
 
 
@@ -1301,9 +1245,55 @@ document.addEventListener(
 );
 
 
-/* ==================================================
-   AVISO
-================================================== */
+/* SOM CLIQUE NORMAL */
+
+document
+    .querySelectorAll("a, button")
+    .forEach(
+
+        function(elemento) {
+
+            elemento.addEventListener(
+
+                "click",
+
+                function() {
+
+                    if (
+                        elemento ===
+                            botaoDownloadFalso
+                        ||
+                        elemento.classList.contains(
+                            "recurso-bloqueado"
+                        )
+                        ||
+                        elemento ===
+                            comunidadeYoutube
+                        ||
+                        elemento ===
+                            abrirComunidade
+                        ||
+                        elemento ===
+                            fecharComunidade
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    tocarSomClick();
+
+                }
+
+            );
+
+        }
+
+    );
+
+
+/* AVISO */
 
 function mostrarAviso(
     titulo,
@@ -1346,43 +1336,56 @@ function mostrarAviso(
 }
 
 
-/* ==================================================
-   TREMOR
-================================================== */
+/* TREMOR */
 
 function tremerTela() {
 
-    conteudoSite.classList.remove(
+    const alvo =
+        comunidadeAberta
+        ?
+        modalComunidade
+        :
+        conteudoSite;
+
+
+    alvo.classList.remove(
         "tremendo"
     );
 
 
-    topo.classList.remove(
+    if (!comunidadeAberta) {
+
+        topo.classList.remove(
+            "tremendo"
+        );
+
+    }
+
+
+    void alvo.offsetWidth;
+
+
+    alvo.classList.add(
         "tremendo"
     );
 
 
-    void conteudoSite.offsetWidth;
+    if (!comunidadeAberta) {
 
+        topo.classList.add(
+            "tremendo"
+        );
 
-    conteudoSite.classList.add(
-        "tremendo"
-    );
-
-
-    topo.classList.add(
-        "tremendo"
-    );
+    }
 
 
     setTimeout(
 
         function() {
 
-            conteudoSite.classList.remove(
+            alvo.classList.remove(
                 "tremendo"
             );
-
 
             topo.classList.remove(
                 "tremendo"
@@ -1397,9 +1400,7 @@ function tremerTela() {
 }
 
 
-/* ==================================================
-   REAÇÃO DE ERRO
-================================================== */
+/* ERRO */
 
 function executarErro(
     titulo,
@@ -1431,9 +1432,7 @@ function executarErro(
 
     tocarSomErro();
 
-
     tremerTela();
-
 
     mostrarAviso(
         titulo,
@@ -1462,8 +1461,7 @@ function executarErro(
 
 
             if (
-                elemento
-                &&
+                elemento &&
                 elemento.closest(
                     "a, button"
                 )
@@ -1502,9 +1500,7 @@ function executarErro(
 }
 
 
-/* ==================================================
-   DOWNLOAD NÃO DISPONÍVEL
-================================================== */
+/* DOWNLOAD */
 
 botaoDownloadFalso.addEventListener(
 
@@ -1517,11 +1513,8 @@ botaoDownloadFalso.addEventListener(
 
 
         executarErro(
-
             t.erroDownloadTitulo,
-
             t.erroDownloadTexto
-
         );
 
     }
@@ -1529,9 +1522,7 @@ botaoDownloadFalso.addEventListener(
 );
 
 
-/* ==================================================
-   RECURSOS DA COMUNIDADE BLOQUEADOS
-================================================== */
+/* COMING SOON */
 
 document
     .querySelectorAll(
@@ -1554,11 +1545,8 @@ document
 
 
                     executarErro(
-
-                        t.erroRecursoTitulo,
-
-                        t.erroRecursoTexto
-
+                        t.erroComingSoonTitulo,
+                        t.erroComingSoonTexto
                     );
 
                 }
@@ -1570,9 +1558,7 @@ document
     );
 
 
-/* ==================================================
-   SEM REAÇÃO
-================================================== */
+/* SEM REAÇÃO */
 
 setInterval(
 
@@ -1585,15 +1571,12 @@ setInterval(
 
 
         if (
-            parado >
-            7000
-            &&
-            !interagindo
-            &&
-            !erroForcado
-            &&
+            parado > 7000 &&
+            !interagindo &&
+            !erroForcado &&
+            !comunidadeAberta &&
             estadoAtual !==
-            "semReacao"
+                "semReacao"
         ) {
 
             mudarMascara(

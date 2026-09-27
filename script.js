@@ -1,5 +1,5 @@
 console.log(
-    "mariobnw quest - site carregado"
+    "oque voce ta fazendo aqui >:(?"
 );
 
 

@@ -6,7 +6,7 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
     <meta
@@ -14,13 +14,23 @@
         content="Site oficial de mariobnw quest, um RPG independente atualmente em desenvolvimento."
     >
 
+    <meta
+        name="theme-color"
+        content="#168de2"
+        id="theme-color"
+    >
+
     <title>mariobnw quest</title>
 
-    <!-- FAVICON -->
     <link
         id="favicon"
         rel="icon"
         type="image/png"
+        href="images/favicon-aberto.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
         href="images/favicon-aberto.png"
     >
 
@@ -32,9 +42,19 @@
 
 <body>
 
-    <!-- =========================
-         AVISO DE ERRO
-    ========================== -->
+    <!-- =========================================
+         TRANSIÇÃO DO MODO SECRETO
+    ========================================== -->
+
+    <div
+        id="transicao-secreta"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================
+         AVISO VISUAL
+    ========================================== -->
 
     <div
         id="aviso-erro"
@@ -61,9 +81,9 @@
     </div>
 
 
-    <!-- =========================
-         ÁUDIOS
-    ========================== -->
+    <!-- =========================================
+         ÁUDIO
+    ========================================== -->
 
     <audio
         id="som-erro"
@@ -87,9 +107,9 @@
     </audio>
 
 
-    <!-- =========================
+    <!-- =========================================
          TOPO
-    ========================== -->
+    ========================================== -->
 
     <header class="topo">
 
@@ -146,6 +166,8 @@
             </a>
 
 
+            <!-- COMUNIDADE -->
+
             <button
                 id="abrir-comunidade"
                 class="link-menu"
@@ -153,6 +175,19 @@
                 data-i18n="menuComunidade"
             >
                 Comunidade
+            </button>
+
+
+            <!-- CONFIGURAÇÕES -->
+
+            <button
+                id="abrir-configuracoes"
+                class="botao-hud"
+                type="button"
+                aria-label="Configurações"
+                title="Configurações"
+            >
+                ⚙️
             </button>
 
 
@@ -234,9 +269,9 @@
     </header>
 
 
-    <!-- =========================
+    <!-- =========================================
          CONTEÚDO
-    ========================== -->
+    ========================================== -->
 
     <main id="conteudo-site">
 
@@ -452,7 +487,7 @@
 
                     <a
                         class="botao"
-                        href="https://youtube.com/@mariobnw?si=OZf2qQmtTd3W79zJ"
+                        href="https://youtube.com/@mariobnw"
                         target="_blank"
                         rel="noopener noreferrer"
                         data-i18n="verCanal"
@@ -474,13 +509,13 @@
                     </h3>
 
                     <p data-i18n="canalEnglishTexto">
-                        Canal oficial em inglês dedicado
-                        às atualizações de mariobnw quest.
+                        Canal oficial em inglês dedicado às
+                        atualizações de mariobnw quest.
                     </p>
 
                     <a
                         class="botao botao-principal"
-                        href="https://youtube.com/@bnw_quest_english?si=N56J_5b8dmAFmHuX"
+                        href="https://youtube.com/@bnw_quest_english"
                         target="_blank"
                         rel="noopener noreferrer"
                         data-i18n="visitarCanalEnglish"
@@ -495,9 +530,9 @@
         </section>
 
 
-        <!-- =========================
-             BUILDS DE TESTE
-        ========================== -->
+        <!-- =========================================
+             BUILDS
+        ========================================== -->
 
         <section
             class="conteudo"
@@ -508,12 +543,30 @@
                 Builds de teste
             </h2>
 
+
             <p
                 class="secao-descricao"
                 data-i18n="buildsDescricao"
             >
                 Acompanhe as versões experimentais da demo de mariobnw quest.
             </p>
+
+
+            <!-- AVISO ANDROID -->
+
+            <div class="build-aviso-plataforma">
+
+                <strong data-i18n="buildAndroidTitulo">
+                    Sobre versões para Android
+                </strong>
+
+                <p data-i18n="buildAndroidTexto">
+                    As versões beta de teste não serão disponibilizadas
+                    para Android. No Android, estarão disponíveis apenas
+                    a demo pública e builds específicas anunciadas separadamente.
+                </p>
+
+            </div>
 
 
             <div class="build-card">
@@ -546,6 +599,43 @@
                 <p data-i18n="buildDescricao">
                     Primeira build de teste planejada para mariobnw quest.
                 </p>
+
+
+                <!-- PROGRESSO -->
+
+                <div class="progresso-demo">
+
+                    <div class="progresso-cabecalho">
+
+                        <strong data-i18n="progressoTitulo">
+                            Progresso da Demo Beta 0.1
+                        </strong>
+
+                        <span id="progresso-porcentagem">
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progresso-barra">
+
+                        <div
+                            id="progresso-preenchimento"
+                            class="progresso-preenchimento"
+                        ></div>
+
+                    </div>
+
+
+                    <span
+                        class="progresso-status"
+                        data-i18n="progressoStatus"
+                    >
+                        O desenvolvimento desta build ainda não começou.
+                    </span>
+
+                </div>
 
 
                 <div class="build-info">
@@ -650,15 +740,13 @@
 
 
                 <p data-i18n="downloadTexto1">
-                    mariobnw quest ainda não possui uma
-                    versão pública disponível.
+                    mariobnw quest ainda não possui uma versão pública disponível.
                 </p>
 
 
                 <p data-i18n="downloadTexto2">
-                    Informações sobre versões de teste,
-                    demonstrações e lançamento serão publicadas
-                    oficialmente quando disponíveis.
+                    Informações sobre versões de teste, demonstrações e
+                    lançamento serão publicadas oficialmente quando disponíveis.
                 </p>
 
 
@@ -693,26 +781,43 @@
     </main>
 
 
-    <!-- =========================
-         MODAL COMUNIDADE
-    ========================== -->
+    <!-- =========================================
+         RODAPÉ
+    ========================================== -->
+
+    <footer class="rodape-site">
+
+        <span>
+            mariobnw quest
+        </span>
+
+        <span id="versao-site">
+            Site v0.1.0
+        </span>
+
+    </footer>
+
+
+    <!-- =========================================
+         COMUNIDADE
+    ========================================== -->
 
     <div
         id="overlay-comunidade"
-        class="overlay-comunidade"
+        class="overlay-modal"
         aria-hidden="true"
     >
 
         <div
             id="modal-comunidade"
-            class="modal-comunidade"
+            class="modal-base modal-comunidade"
             role="dialog"
             aria-modal="true"
         >
 
             <button
                 id="fechar-comunidade"
-                class="fechar-comunidade"
+                class="fechar-modal"
                 type="button"
                 aria-label="Fechar"
             >
@@ -737,8 +842,7 @@
                 class="modal-descricao"
                 data-i18n="comunidadeTexto"
             >
-                Acesse os espaços oficiais da comunidade
-                de mariobnw quest.
+                Acesse os espaços oficiais da comunidade de mariobnw quest.
             </p>
 
 
@@ -767,7 +871,7 @@
                     </strong>
 
                     <span data-i18n="youtubeTexto">
-                        Publicações e novidades oficiais.
+                        Publicações, novidades e sugestões da comunidade.
                     </span>
 
                     <small
@@ -802,36 +906,7 @@
                     </strong>
 
                     <span data-i18n="discordTexto">
-                        Teorias, fanarts e comunidade.
-                    </span>
-
-                    <small
-                        class="status status-bloqueado"
-                        data-i18n="comingSoon"
-                    >
-                        EM BREVE
-                    </small>
-
-                </button>
-
-
-                <!-- SUGESTÕES -->
-
-                <button
-                    class="opcao-comunidade bloqueado recurso-bloqueado"
-                    type="button"
-                >
-
-                    <div class="icone-comunidade caderno">
-                        📓
-                    </div>
-
-                    <strong data-i18n="sugestoesTitulo">
-                        Sugestões
-                    </strong>
-
-                    <span data-i18n="sugestoesTexto">
-                        Envie ideias para o projeto.
+                        Teorias, fanarts, sugestões e comunidade.
                     </span>
 
                     <small
@@ -850,7 +925,124 @@
     </div>
 
 
-    <!-- BNW -->
+    <!-- =========================================
+         CONFIGURAÇÕES
+    ========================================== -->
+
+    <div
+        id="overlay-configuracoes"
+        class="overlay-modal"
+        aria-hidden="true"
+    >
+
+        <div
+            id="modal-configuracoes"
+            class="modal-base modal-configuracoes"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                id="fechar-configuracoes"
+                class="fechar-modal"
+                type="button"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+
+            <span
+                class="modal-etiqueta"
+                data-i18n="configEtiqueta"
+            >
+                CONFIGURAÇÕES
+            </span>
+
+
+            <h2 data-i18n="configTitulo">
+                Configurações
+            </h2>
+
+
+            <div class="lista-configuracoes">
+
+                <div class="config-item">
+
+                    <div>
+
+                        <strong data-i18n="configSomTitulo">
+                            Sons
+                        </strong>
+
+                        <span data-i18n="configSomTexto">
+                            Sons de clique e efeitos do site.
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        id="toggle-som"
+                        class="toggle-config ativo"
+                        type="button"
+                    >
+                        ON
+                    </button>
+
+                </div>
+
+
+                <div class="config-item">
+
+                    <div>
+
+                        <strong data-i18n="configEfeitosTitulo">
+                            Efeitos
+                        </strong>
+
+                        <span data-i18n="configEfeitosTexto">
+                            Animações, tremores e efeitos visuais.
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        id="toggle-efeitos"
+                        class="toggle-config ativo"
+                        type="button"
+                    >
+                        ON
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!--
+                EASTER EGG:
+                10 cliques aqui.
+            -->
+
+            <div
+                id="rodape-configuracoes"
+                class="rodape-configuracoes"
+            >
+                <span id="versao-configuracoes">
+                    mariobnw quest • Site v0.1.0
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         BNW
+    ========================================== -->
 
     <div id="bnw-container">
 
@@ -864,7 +1056,9 @@
     </div>
 
 
-    <!-- CURSOR -->
+    <!-- =========================================
+         CURSOR
+    ========================================== -->
 
     <div id="cursor-mao">
 

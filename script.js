@@ -3,77 +3,303 @@ console.log(
 );
 
 
-/* =========================
-   ELEMENTOS
-========================= */
+/* =========================================
+   CONFIGURAÇÕES FÁCEIS DE ALTERAR
+========================================= */
 
-const favicon =
-    document.getElementById("favicon");
+/*
+   MUDE SOMENTE ESTE NÚMERO
+   quando a Demo Beta 0.1 avançar.
+
+   0 = 0%
+   25 = 25%
+   67 = 67%
+   100 = 100%
+*/
+
+const progressoDemo = 0; // <-- PROGRESSO DA DEMO
+
+
+/*
+   VERSÃO DO SITE
+*/
+
+const versaoSite = "0.1.0"; // <-- VERSÃO DO SITE
+
+
+/* =========================================
+   ELEMENTOS
+========================================= */
+
+let favicon =
+    document.getElementById(
+        "favicon"
+    );
+
+
+const themeColor =
+    document.getElementById(
+        "theme-color"
+    );
+
+
+const transicaoSecreta =
+    document.getElementById(
+        "transicao-secreta"
+    );
+
 
 const bnwContainer =
-    document.getElementById("bnw-container");
+    document.getElementById(
+        "bnw-container"
+    );
+
 
 const mascara =
-    document.getElementById("mascara-bnw");
+    document.getElementById(
+        "mascara-bnw"
+    );
+
 
 const cursorMao =
-    document.getElementById("cursor-mao");
+    document.getElementById(
+        "cursor-mao"
+    );
+
 
 const cursorImagem =
-    document.getElementById("cursor-imagem");
+    document.getElementById(
+        "cursor-imagem"
+    );
+
 
 const botaoDownloadFalso =
-    document.getElementById("botao-download-falso");
+    document.getElementById(
+        "botao-download-falso"
+    );
+
 
 const botaoBuildIndisponivel =
-    document.getElementById("botao-build-indisponivel");
+    document.getElementById(
+        "botao-build-indisponivel"
+    );
+
 
 const avisoErro =
-    document.getElementById("aviso-erro");
+    document.getElementById(
+        "aviso-erro"
+    );
+
 
 const avisoTitulo =
-    document.getElementById("aviso-titulo");
+    document.getElementById(
+        "aviso-titulo"
+    );
+
 
 const avisoDescricao =
-    document.getElementById("aviso-descricao");
+    document.getElementById(
+        "aviso-descricao"
+    );
+
 
 const somErro =
-    document.getElementById("som-erro");
+    document.getElementById(
+        "som-erro"
+    );
+
 
 const somClick =
-    document.getElementById("som-click");
+    document.getElementById(
+        "som-click"
+    );
+
 
 const conteudoSite =
-    document.getElementById("conteudo-site");
+    document.getElementById(
+        "conteudo-site"
+    );
+
 
 const topo =
-    document.querySelector(".topo");
+    document.querySelector(
+        ".topo"
+    );
+
+
+/* IDIOMA */
 
 const botaoIdioma =
-    document.getElementById("botao-idioma");
+    document.getElementById(
+        "botao-idioma"
+    );
+
 
 const menuIdioma =
-    document.getElementById("menu-idioma");
+    document.getElementById(
+        "menu-idioma"
+    );
+
+
+/* COMUNIDADE */
 
 const abrirComunidade =
-    document.getElementById("abrir-comunidade");
+    document.getElementById(
+        "abrir-comunidade"
+    );
+
 
 const fecharComunidade =
-    document.getElementById("fechar-comunidade");
+    document.getElementById(
+        "fechar-comunidade"
+    );
+
 
 const overlayComunidade =
-    document.getElementById("overlay-comunidade");
+    document.getElementById(
+        "overlay-comunidade"
+    );
+
 
 const modalComunidade =
-    document.getElementById("modal-comunidade");
+    document.getElementById(
+        "modal-comunidade"
+    );
+
 
 const comunidadeYoutube =
-    document.getElementById("comunidade-youtube");
+    document.getElementById(
+        "comunidade-youtube"
+    );
 
 
-/* =========================
-   IMAGENS
-========================= */
+/* CONFIGURAÇÕES */
+
+const abrirConfiguracoes =
+    document.getElementById(
+        "abrir-configuracoes"
+    );
+
+
+const fecharConfiguracoes =
+    document.getElementById(
+        "fechar-configuracoes"
+    );
+
+
+const overlayConfiguracoes =
+    document.getElementById(
+        "overlay-configuracoes"
+    );
+
+
+const modalConfiguracoes =
+    document.getElementById(
+        "modal-configuracoes"
+    );
+
+
+const toggleSom =
+    document.getElementById(
+        "toggle-som"
+    );
+
+
+const toggleEfeitos =
+    document.getElementById(
+        "toggle-efeitos"
+    );
+
+
+const rodapeConfiguracoes =
+    document.getElementById(
+        "rodape-configuracoes"
+    );
+
+
+/* PROGRESSO */
+
+const progressoPorcentagem =
+    document.getElementById(
+        "progresso-porcentagem"
+    );
+
+
+const progressoPreenchimento =
+    document.getElementById(
+        "progresso-preenchimento"
+    );
+
+
+/* VERSÃO */
+
+const versaoSiteElemento =
+    document.getElementById(
+        "versao-site"
+    );
+
+
+const versaoConfiguracoes =
+    document.getElementById(
+        "versao-configuracoes"
+    );
+
+
+/* =========================================
+   VERSÃO DO SITE
+========================================= */
+
+function atualizarVersaoSite() {
+
+    versaoSiteElemento.textContent =
+        "Site v" +
+        versaoSite;
+
+
+    versaoConfiguracoes.textContent =
+        "mariobnw quest • Site v" +
+        versaoSite;
+
+}
+
+
+atualizarVersaoSite();
+
+
+/* =========================================
+   PROGRESSO DA DEMO
+========================================= */
+
+function atualizarProgressoDemo() {
+
+    const progressoSeguro =
+        Math.max(
+            0,
+            Math.min(
+                progressoDemo,
+                100
+            )
+        );
+
+
+    progressoPorcentagem.textContent =
+        progressoSeguro +
+        "%";
+
+
+    progressoPreenchimento.style.width =
+        progressoSeguro +
+        "%";
+
+}
+
+
+atualizarProgressoDemo();
+
+
+/* =========================================
+   IMAGENS BNW
+========================================= */
 
 const imagens = {
 
@@ -107,9 +333,9 @@ const imagens = {
 };
 
 
-/* =========================
+/* =========================================
    FAVICON
-========================= */
+========================================= */
 
 const faviconFrames = {
 
@@ -133,16 +359,51 @@ function definirFavicon(
     imagem
 ) {
 
-    favicon.href =
-        imagem;
+    const novoFavicon =
+        document.createElement(
+            "link"
+        );
+
+
+    novoFavicon.id =
+        "favicon";
+
+
+    novoFavicon.rel =
+        "icon";
+
+
+    novoFavicon.type =
+        "image/png";
+
+
+    novoFavicon.href =
+        imagem +
+        "?frame=" +
+        Date.now();
+
+
+    favicon.replaceWith(
+        novoFavicon
+    );
+
+
+    favicon =
+        novoFavicon;
 
 }
 
 
 function piscarFavicon() {
 
-    if (faviconBloqueado) {
+    if (
+        faviconBloqueado
+        ||
+        !efeitosLigados
+    ) {
+
         return;
+
     }
 
 
@@ -155,29 +416,14 @@ function piscarFavicon() {
 
         function() {
 
-            if (!faviconBloqueado) {
+            if (
+                !faviconBloqueado
+                &&
+                efeitosLigados
+            ) {
 
                 definirFavicon(
                     faviconFrames.fechado
-                );
-
-            }
-
-        },
-
-        90
-
-    );
-
-
-    setTimeout(
-
-        function() {
-
-            if (!faviconBloqueado) {
-
-                definirFavicon(
-                    faviconFrames.semi
                 );
 
             }
@@ -193,7 +439,32 @@ function piscarFavicon() {
 
         function() {
 
-            if (!faviconBloqueado) {
+            if (
+                !faviconBloqueado
+                &&
+                efeitosLigados
+            ) {
+
+                definirFavicon(
+                    faviconFrames.semi
+                );
+
+            }
+
+        },
+
+        430
+
+    );
+
+
+    setTimeout(
+
+        function() {
+
+            if (
+                !faviconBloqueado
+            ) {
 
                 definirFavicon(
                     faviconFrames.aberto
@@ -203,7 +474,7 @@ function piscarFavicon() {
 
         },
 
-        270
+        610
 
     );
 
@@ -211,6 +482,14 @@ function piscarFavicon() {
 
 
 function agendarPiscadaFavicon() {
+
+    const tempo =
+        3000
+        +
+        Math.random()
+        *
+        4500;
+
 
     setTimeout(
 
@@ -222,8 +501,7 @@ function agendarPiscadaFavicon() {
 
         },
 
-        2500 +
-        Math.random() * 4000
+        tempo
 
     );
 
@@ -232,8 +510,6 @@ function agendarPiscadaFavicon() {
 
 agendarPiscadaFavicon();
 
-
-/* Favicon reage ao erro */
 
 function faviconErro() {
 
@@ -260,46 +536,16 @@ function faviconErro() {
 
         },
 
-        1200
+        1300
 
     );
 
 }
 
 
-/* Favicon reage à comunidade */
-
-function faviconComunidade() {
-
-    if (faviconBloqueado) {
-        return;
-    }
-
-
-    definirFavicon(
-        faviconFrames.semi
-    );
-
-}
-
-
-function faviconNormal() {
-
-    if (faviconBloqueado) {
-        return;
-    }
-
-
-    definirFavicon(
-        faviconFrames.aberto
-    );
-
-}
-
-
-/* =========================
+/* =========================================
    TRADUÇÕES
-========================= */
+========================================= */
 
 const traducoes = {
 
@@ -326,11 +572,13 @@ const traducoes = {
         menuBaixar:
             "Baixar",
 
+
         heroTitulo:
             "ARTE PROMOCIONAL DO CAPÍTULO 1",
 
         heroTexto:
             "A apresentação oficial será publicada em breve.",
+
 
         projetoEtiqueta:
             "EM DESENVOLVIMENTO",
@@ -346,6 +594,7 @@ const traducoes = {
 
         botaoPersonagens:
             "Conhecer personagens",
+
 
         noticiasTitulo:
             "Últimas notícias",
@@ -368,17 +617,20 @@ const traducoes = {
         noticia2Texto:
             "Novas informações sobre o primeiro capítulo serão divulgadas futuramente.",
 
+
         personagensTitulo:
             "Personagens",
 
         personagensTexto:
             "Perfis oficiais serão adicionados conforme os personagens forem apresentados.",
 
+
         sobreTitulo:
             "Sobre o jogo",
 
         sobreTexto:
             "mariobnw quest é um RPG independente atualmente em desenvolvimento, com exploração, narrativa, personagens originais e diferentes sistemas de batalha.",
+
 
         canaisTitulo:
             "Canais oficiais",
@@ -398,11 +650,20 @@ const traducoes = {
         visitarCanalEnglish:
             "Acessar canal",
 
+
         buildsTitulo:
             "Builds de teste",
 
         buildsDescricao:
             "Acompanhe as versões experimentais da demo de mariobnw quest.",
+
+
+        buildAndroidTitulo:
+            "Sobre versões para Android",
+
+        buildAndroidTexto:
+            "As versões beta de teste não serão disponibilizadas para Android. No Android, estarão disponíveis apenas a demo pública e builds específicas anunciadas separadamente.",
+
 
         buildStatus:
             "INDISPONÍVEL",
@@ -410,11 +671,20 @@ const traducoes = {
         buildDescricao:
             "Primeira build de teste planejada para mariobnw quest.",
 
+
+        progressoTitulo:
+            "Progresso da Demo Beta 0.1",
+
+        progressoStatus:
+            "O desenvolvimento desta build ainda não começou.",
+
+
         buildObjetivoTitulo:
             "Objetivo",
 
         buildObjetivoTexto:
             "Testar a base da demo, incluindo movimentação, interface inicial e sistemas fundamentais.",
+
 
         buildChangelogTitulo:
             "Changelog",
@@ -428,6 +698,7 @@ const traducoes = {
         buildChangelog3:
             "Conteúdo visual provisório.",
 
+
         buildBugsTitulo:
             "Bugs conhecidos",
 
@@ -440,11 +711,13 @@ const traducoes = {
         buildBotao:
             "INDISPONÍVEL",
 
+
         erroBuildTitulo:
             "Build indisponível",
 
         erroBuildTexto:
             "A Demo Beta 0.1 ainda não foi publicada.",
+
 
         downloadEtiqueta:
             "EM DESENVOLVIMENTO",
@@ -464,6 +737,7 @@ const traducoes = {
         itchBotao:
             "Ver itch.io",
 
+
         comunidadeEtiqueta:
             "COMUNIDADE",
 
@@ -474,22 +748,36 @@ const traducoes = {
             "Acesse os espaços oficiais da comunidade de mariobnw quest.",
 
         youtubeTexto:
-            "Publicações e novidades oficiais.",
+            "Publicações, novidades e sugestões da comunidade.",
 
         discordTexto:
-            "Teorias, fanarts e comunidade.",
-
-        sugestoesTitulo:
-            "Sugestões",
-
-        sugestoesTexto:
-            "Envie ideias para o projeto.",
+            "Teorias, fanarts, sugestões e comunidade.",
 
         statusDisponivel:
             "DISPONÍVEL",
 
         comingSoon:
             "EM BREVE",
+
+
+        configEtiqueta:
+            "CONFIGURAÇÕES",
+
+        configTitulo:
+            "Configurações",
+
+        configSomTitulo:
+            "Sons",
+
+        configSomTexto:
+            "Sons de clique e efeitos do site.",
+
+        configEfeitosTitulo:
+            "Efeitos",
+
+        configEfeitosTexto:
+            "Animações, tremores e efeitos visuais.",
+
 
         erroDownloadTitulo:
             "Download indisponível",
@@ -529,11 +817,13 @@ const traducoes = {
         menuBaixar:
             "Download",
 
+
         heroTitulo:
             "CHAPTER 1 PROMOTIONAL ART",
 
         heroTexto:
             "The official presentation will be published soon.",
+
 
         projetoEtiqueta:
             "IN DEVELOPMENT",
@@ -549,6 +839,7 @@ const traducoes = {
 
         botaoPersonagens:
             "Meet the characters",
+
 
         noticiasTitulo:
             "Latest news",
@@ -571,17 +862,20 @@ const traducoes = {
         noticia2Texto:
             "More information about the first chapter will be published in the future.",
 
+
         personagensTitulo:
             "Characters",
 
         personagensTexto:
             "Official profiles will be added as the characters are introduced.",
 
+
         sobreTitulo:
             "About the game",
 
         sobreTexto:
             "mariobnw quest is an independent RPG currently in development, featuring exploration, storytelling, original characters and different battle systems.",
+
 
         canaisTitulo:
             "Official channels",
@@ -601,11 +895,20 @@ const traducoes = {
         visitarCanalEnglish:
             "Visit channel",
 
+
         buildsTitulo:
             "Test builds",
 
         buildsDescricao:
             "Follow the experimental demo builds of mariobnw quest.",
+
+
+        buildAndroidTitulo:
+            "About Android versions",
+
+        buildAndroidTexto:
+            "Beta test builds will not be released for Android. Android will only receive the public demo and specific builds announced separately.",
+
 
         buildStatus:
             "UNAVAILABLE",
@@ -613,11 +916,20 @@ const traducoes = {
         buildDescricao:
             "The first planned test build for mariobnw quest.",
 
+
+        progressoTitulo:
+            "Demo Beta 0.1 Progress",
+
+        progressoStatus:
+            "Development of this build has not started yet.",
+
+
         buildObjetivoTitulo:
             "Purpose",
 
         buildObjetivoTexto:
             "Test the foundation of the demo, including movement, the initial interface and core systems.",
+
 
         buildChangelogTitulo:
             "Changelog",
@@ -631,6 +943,7 @@ const traducoes = {
         buildChangelog3:
             "Temporary visual content.",
 
+
         buildBugsTitulo:
             "Known issues",
 
@@ -643,11 +956,13 @@ const traducoes = {
         buildBotao:
             "UNAVAILABLE",
 
+
         erroBuildTitulo:
             "Build unavailable",
 
         erroBuildTexto:
             "Demo Beta 0.1 has not been released yet.",
+
 
         downloadEtiqueta:
             "IN DEVELOPMENT",
@@ -667,6 +982,7 @@ const traducoes = {
         itchBotao:
             "View itch.io",
 
+
         comunidadeEtiqueta:
             "COMMUNITY",
 
@@ -677,22 +993,36 @@ const traducoes = {
             "Access the official mariobnw quest community spaces.",
 
         youtubeTexto:
-            "Official posts and updates.",
+            "Official posts, updates and community suggestions.",
 
         discordTexto:
-            "Theories, fan art and community discussions.",
-
-        sugestoesTitulo:
-            "Suggestions",
-
-        sugestoesTexto:
-            "Share ideas for the project.",
+            "Theories, fan art, suggestions and community discussions.",
 
         statusDisponivel:
             "AVAILABLE",
 
         comingSoon:
             "COMING SOON",
+
+
+        configEtiqueta:
+            "SETTINGS",
+
+        configTitulo:
+            "Settings",
+
+        configSomTitulo:
+            "Sound",
+
+        configSomTexto:
+            "Click sounds and website sound effects.",
+
+        configEfeitosTitulo:
+            "Effects",
+
+        configEfeitosTexto:
+            "Animations, screen shake and visual effects.",
+
 
         erroDownloadTitulo:
             "Download unavailable",
@@ -711,9 +1041,9 @@ const traducoes = {
 };
 
 
-/* =========================
+/* =========================================
    IDIOMA
-========================= */
+========================================= */
 
 let idiomaAtual =
     localStorage.getItem(
@@ -747,7 +1077,9 @@ function trocarIdioma(
                     elemento.dataset.i18n;
 
 
-                if (pacote[chave]) {
+                if (
+                    pacote[chave]
+                ) {
 
                     elemento.textContent =
                         pacote[chave];
@@ -785,7 +1117,9 @@ trocarIdioma(
 );
 
 
-/* MENU IDIOMA */
+/* =========================================
+   MENU IDIOMA
+========================================= */
 
 botaoIdioma.addEventListener(
 
@@ -794,6 +1128,7 @@ botaoIdioma.addEventListener(
     function(evento) {
 
         evento.stopPropagation();
+
 
         menuIdioma.classList.toggle(
             "aberto"
@@ -854,49 +1189,198 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =========================================
+   CONFIGURAÇÕES
+========================================= */
+
+let somLigado =
+    localStorage.getItem(
+        "bnwSom"
+    )
+    !==
+    "false";
+
+
+let efeitosLigados =
+    localStorage.getItem(
+        "bnwEfeitos"
+    )
+    !==
+    "false";
+
+
+function atualizarConfiguracoes() {
+
+    toggleSom.textContent =
+        somLigado
+        ?
+        "ON"
+        :
+        "OFF";
+
+
+    toggleSom.classList.toggle(
+        "ativo",
+        somLigado
+    );
+
+
+    toggleEfeitos.textContent =
+        efeitosLigados
+        ?
+        "ON"
+        :
+        "OFF";
+
+
+    toggleEfeitos.classList.toggle(
+        "ativo",
+        efeitosLigados
+    );
+
+
+    document.body.classList.toggle(
+        "sem-efeitos",
+        !efeitosLigados
+    );
+
+}
+
+
+atualizarConfiguracoes();
+
+
+toggleSom.addEventListener(
+
+    "click",
+
+    function() {
+
+        somLigado =
+            !somLigado;
+
+
+        localStorage.setItem(
+            "bnwSom",
+            somLigado
+        );
+
+
+        atualizarConfiguracoes();
+
+    }
+
+);
+
+
+toggleEfeitos.addEventListener(
+
+    "click",
+
+    function() {
+
+        efeitosLigados =
+            !efeitosLigados;
+
+
+        localStorage.setItem(
+            "bnwEfeitos",
+            efeitosLigados
+        );
+
+
+        atualizarConfiguracoes();
+
+
+        if (
+            !efeitosLigados
+        ) {
+
+            definirFavicon(
+                faviconFrames.aberto
+            );
+
+        }
+
+    }
+
+);
+
+
+/* =========================================
    ESTADOS
-========================= */
+========================================= */
 
 let estadoAtual =
     "normal";
 
+
 let interagindo =
     false;
+
 
 let erroForcado =
     false;
 
+
 let comunidadeAberta =
     false;
+
+
+let configuracoesAbertas =
+    false;
+
 
 let mouseX =
     window.innerWidth / 2;
 
+
 let mouseY =
     window.innerHeight / 2;
+
 
 let bnwX =
     mouseX;
 
+
 let bnwY =
     mouseY;
 
+
+/*
+   Posição travada quando abre modal.
+*/
+
+let bnwTravadoX =
+    bnwX;
+
+
+let bnwTravadoY =
+    bnwY;
+
+
 let tempoUltimaAcao =
     Date.now();
+
 
 let timerAviso =
     null;
 
 
-/* MÁSCARA */
+/* =========================================
+   BNW
+========================================= */
 
 function mudarMascara(
     estado
 ) {
 
-    if (!imagens[estado]) {
+    if (
+        !imagens[estado]
+    ) {
+
         return;
+
     }
 
 
@@ -910,7 +1394,9 @@ function mudarMascara(
 }
 
 
-/* MOUSE */
+/* =========================================
+   MOUSE
+========================================= */
 
 document.addEventListener(
 
@@ -921,6 +1407,7 @@ document.addEventListener(
         mouseX =
             evento.clientX;
 
+
         mouseY =
             evento.clientY;
 
@@ -930,18 +1417,26 @@ document.addEventListener(
 
 
         cursorMao.style.left =
-            mouseX + "px";
+            mouseX +
+            "px";
+
 
         cursorMao.style.top =
-            mouseY + "px";
+            mouseY +
+            "px";
 
 
         if (
-            !interagindo &&
-            !erroForcado &&
-            !comunidadeAberta &&
+            !interagindo
+            &&
+            !erroForcado
+            &&
+            !comunidadeAberta
+            &&
+            !configuracoesAbertas
+            &&
             estadoAtual ===
-                "semReacao"
+            "semReacao"
         ) {
 
             mudarMascara(
@@ -955,7 +1450,9 @@ document.addEventListener(
 );
 
 
-/* BNW SEGUE */
+/* =========================================
+   BNW SEGUE O MOUSE
+========================================= */
 
 function atualizarBNW() {
 
@@ -963,49 +1460,75 @@ function atualizarBNW() {
         0.09;
 
 
-    let alvoX;
-    let alvoY;
+    const modalAberto =
+        comunidadeAberta
+        ||
+        configuracoesAbertas;
 
 
-    if (comunidadeAberta) {
+    /*
+       Se não houver modal aberto,
+       segue normalmente.
+    */
 
-        alvoX =
-            window.innerWidth / 2;
+    if (
+        !modalAberto
+    ) {
 
-        alvoY =
-            window.innerHeight - 85;
+        const alvoX =
+            mouseX +
+            120;
+
+
+        const alvoY =
+            mouseY +
+            90;
+
+
+        bnwX +=
+            (
+                alvoX -
+                bnwX
+            )
+            *
+            velocidade;
+
+
+        bnwY +=
+            (
+                alvoY -
+                bnwY
+            )
+            *
+            velocidade;
 
     }
 
     else {
 
-        alvoX =
-            mouseX + 120;
+        /*
+           Enquanto modal está aberto,
+           fica exatamente onde estava.
+        */
 
-        alvoY =
-            mouseY + 90;
+        bnwX =
+            bnwTravadoX;
+
+
+        bnwY =
+            bnwTravadoY;
 
     }
 
 
-    bnwX +=
-        (alvoX - bnwX)
-        *
-        velocidade;
-
-
-    bnwY +=
-        (alvoY - bnwY)
-        *
-        velocidade;
-
-
     bnwContainer.style.left =
-        bnwX + "px";
+        bnwX +
+        "px";
 
 
     bnwContainer.style.top =
-        bnwY + "px";
+        bnwY +
+        "px";
 
 
     requestAnimationFrame(
@@ -1018,20 +1541,32 @@ function atualizarBNW() {
 atualizarBNW();
 
 
-/* PISCADA */
+/* =========================================
+   PISCADA BNW
+========================================= */
 
 function piscar() {
 
-    if (erroForcado) {
+    if (
+        erroForcado
+        ||
+        !efeitosLigados
+    ) {
+
         return;
+
     }
 
 
     let piscando;
+
     let voltar;
 
 
-    if (estadoAtual === "normal") {
+    if (
+        estadoAtual ===
+        "normal"
+    ) {
 
         piscando =
             imagens.normalPiscando;
@@ -1041,7 +1576,10 @@ function piscar() {
 
     }
 
-    else if (estadoAtual === "feliz") {
+    else if (
+        estadoAtual ===
+        "feliz"
+    ) {
 
         piscando =
             imagens.felizPiscando;
@@ -1051,7 +1589,10 @@ function piscar() {
 
     }
 
-    else if (estadoAtual === "surpresa") {
+    else if (
+        estadoAtual ===
+        "surpresa"
+    ) {
 
         piscando =
             imagens.surpresaPiscando;
@@ -1061,7 +1602,10 @@ function piscar() {
 
     }
 
-    else if (estadoAtual === "semReacao") {
+    else if (
+        estadoAtual ===
+        "semReacao"
+    ) {
 
         piscando =
             imagens.semReacaoPiscando;
@@ -1092,7 +1636,8 @@ function piscar() {
 
             if (
                 estadoAtual ===
-                estadoAntes &&
+                estadoAntes
+                &&
                 !erroForcado
             ) {
 
@@ -1103,7 +1648,7 @@ function piscar() {
 
         },
 
-        140
+        150
 
     );
 
@@ -1111,6 +1656,14 @@ function piscar() {
 
 
 function agendarPiscada() {
+
+    const tempo =
+        2500
+        +
+        Math.random()
+        *
+        4000;
+
 
     setTimeout(
 
@@ -1122,8 +1675,7 @@ function agendarPiscada() {
 
         },
 
-        2500 +
-        Math.random() * 4000
+        tempo
 
     );
 
@@ -1133,13 +1685,26 @@ function agendarPiscada() {
 agendarPiscada();
 
 
-/* SOM */
+/* =========================================
+   SOM
+========================================= */
 
 function tocarSomErro() {
 
+    if (
+        !somLigado
+    ) {
+
+        return;
+
+    }
+
+
     somErro.pause();
 
-    somErro.currentTime = 0;
+    somErro.currentTime =
+        0;
+
 
     somErro.play().catch(
         function(){}
@@ -1150,9 +1715,20 @@ function tocarSomErro() {
 
 function tocarSomClick() {
 
+    if (
+        !somLigado
+    ) {
+
+        return;
+
+    }
+
+
     somClick.pause();
 
-    somClick.currentTime = 0;
+    somClick.currentTime =
+        0;
+
 
     somClick.play().catch(
         function(){}
@@ -1161,12 +1737,23 @@ function tocarSomClick() {
 }
 
 
-/* EFEITO CLIQUE */
+/* =========================================
+   CLIQUE VISUAL
+========================================= */
 
 function criarEfeitoClique(
     x,
     y
 ) {
+
+    if (
+        !efeitosLigados
+    ) {
+
+        return;
+
+    }
+
 
     const efeito =
         document.createElement(
@@ -1179,11 +1766,13 @@ function criarEfeitoClique(
 
 
     efeito.style.left =
-        x + "px";
+        x +
+        "px";
 
 
     efeito.style.top =
-        y + "px";
+        y +
+        "px";
 
 
     document.body.appendChild(
@@ -1206,9 +1795,28 @@ function criarEfeitoClique(
 }
 
 
-/* MODAL COMUNIDADE */
+/* =========================================
+   MODAIS
+========================================= */
+
+function travarBNW() {
+
+    bnwTravadoX =
+        bnwX;
+
+
+    bnwTravadoY =
+        bnwY;
+
+}
+
+
+/* COMUNIDADE */
 
 function abrirModalComunidade() {
+
+    travarBNW();
+
 
     comunidadeAberta =
         true;
@@ -1227,14 +1835,6 @@ function abrirModalComunidade() {
 
     document.body.classList.add(
         "modal-aberto"
-    );
-
-
-    faviconComunidade();
-
-
-    mudarMascara(
-        "normal"
     );
 
 }
@@ -1257,20 +1857,79 @@ function fecharModalComunidade() {
     );
 
 
-    document.body.classList.remove(
-        "modal-aberto"
+    if (
+        !configuracoesAbertas
+    ) {
+
+        document.body.classList.remove(
+            "modal-aberto"
+        );
+
+    }
+
+}
+
+
+/* CONFIGURAÇÕES */
+
+function abrirModalConfiguracoes() {
+
+    travarBNW();
+
+
+    configuracoesAbertas =
+        true;
+
+
+    overlayConfiguracoes.classList.add(
+        "aberto"
     );
 
 
-    faviconNormal();
+    overlayConfiguracoes.setAttribute(
+        "aria-hidden",
+        "false"
+    );
 
 
-    mudarMascara(
-        "normal"
+    document.body.classList.add(
+        "modal-aberto"
     );
 
 }
 
+
+function fecharModalConfiguracoes() {
+
+    configuracoesAbertas =
+        false;
+
+
+    overlayConfiguracoes.classList.remove(
+        "aberto"
+    );
+
+
+    overlayConfiguracoes.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    if (
+        !comunidadeAberta
+    ) {
+
+        document.body.classList.remove(
+            "modal-aberto"
+        );
+
+    }
+
+}
+
+
+/* EVENTOS */
 
 abrirComunidade.addEventListener(
 
@@ -1302,6 +1961,38 @@ fecharComunidade.addEventListener(
 );
 
 
+abrirConfiguracoes.addEventListener(
+
+    "click",
+
+    function() {
+
+        tocarSomClick();
+
+        abrirModalConfiguracoes();
+
+    }
+
+);
+
+
+fecharConfiguracoes.addEventListener(
+
+    "click",
+
+    function() {
+
+        tocarSomClick();
+
+        fecharModalConfiguracoes();
+
+    }
+
+);
+
+
+/* CLICAR FORA */
+
 overlayComunidade.addEventListener(
 
     "click",
@@ -1322,18 +2013,18 @@ overlayComunidade.addEventListener(
 );
 
 
-document.addEventListener(
+overlayConfiguracoes.addEventListener(
 
-    "keydown",
+    "click",
 
     function(evento) {
 
         if (
-            evento.key === "Escape" &&
-            comunidadeAberta
+            evento.target ===
+            overlayConfiguracoes
         ) {
 
-            fecharModalComunidade();
+            fecharModalConfiguracoes();
 
         }
 
@@ -1342,7 +2033,49 @@ document.addEventListener(
 );
 
 
-/* YOUTUBE */
+/* ESC */
+
+document.addEventListener(
+
+    "keydown",
+
+    function(evento) {
+
+        if (
+            evento.key !==
+            "Escape"
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            comunidadeAberta
+        ) {
+
+            fecharModalComunidade();
+
+        }
+
+
+        if (
+            configuracoesAbertas
+        ) {
+
+            fecharModalConfiguracoes();
+
+        }
+
+    }
+
+);
+
+
+/* =========================================
+   YOUTUBE COMUNIDADE
+========================================= */
 
 comunidadeYoutube.addEventListener(
 
@@ -1353,34 +2086,29 @@ comunidadeYoutube.addEventListener(
         tocarSomClick();
 
 
-        if (
-            idiomaAtual === "en"
-        ) {
+        const endereco =
+            idiomaAtual ===
+            "en"
+            ?
+            "https://www.youtube.com/channel/UCV2DF75VHXaPeXvlLd8HFgA/community"
+            :
+            "https://www.youtube.com/@Mariobnw/community";
 
-            window.open(
-                "https://www.youtube.com/channel/UCV2DF75VHXaPeXvlLd8HFgA/community",
-                "_blank",
-                "noopener,noreferrer"
-            );
 
-        }
-
-        else {
-
-            window.open(
-                "https://www.youtube.com/@Mariobnw/community",
-                "_blank",
-                "noopener,noreferrer"
-            );
-
-        }
+        window.open(
+            endereco,
+            "_blank",
+            "noopener,noreferrer"
+        );
 
     }
 
 );
 
 
-/* HOVER */
+/* =========================================
+   HOVER
+========================================= */
 
 const elementosInterativos =
     document.querySelectorAll(
@@ -1410,7 +2138,9 @@ elementosInterativos.forEach(
                     "images/mouse-hover.png";
 
 
-                if (!erroForcado) {
+                if (
+                    !erroForcado
+                ) {
 
                     mascara.classList.add(
                         "hover"
@@ -1447,7 +2177,9 @@ elementosInterativos.forEach(
                 );
 
 
-                if (!erroForcado) {
+                if (
+                    !erroForcado
+                ) {
 
                     mudarMascara(
                         "normal"
@@ -1464,7 +2196,9 @@ elementosInterativos.forEach(
 );
 
 
-/* CLIQUE GLOBAL */
+/* =========================================
+   CLIQUE GLOBAL
+========================================= */
 
 document.addEventListener(
 
@@ -1502,19 +2236,29 @@ document.addEventListener(
         }
 
 
-        if (erroForcado) {
+        if (
+            erroForcado
+        ) {
+
             return;
+
         }
 
 
-        mascara.classList.add(
-            "reagindo"
-        );
+        if (
+            efeitosLigados
+        ) {
+
+            mascara.classList.add(
+                "reagindo"
+            );
 
 
-        mudarMascara(
-            "surpresa"
-        );
+            mudarMascara(
+                "surpresa"
+            );
+
+        }
 
     }
 
@@ -1556,8 +2300,12 @@ document.addEventListener(
         );
 
 
-        if (erroForcado) {
+        if (
+            erroForcado
+        ) {
+
             return;
+
         }
 
 
@@ -1586,7 +2334,9 @@ document.addEventListener(
 );
 
 
-/* CLIQUE NORMAL */
+/* =========================================
+   CLIQUE NORMAL
+========================================= */
 
 document
     .querySelectorAll(
@@ -1604,23 +2354,29 @@ document
 
                     if (
                         elemento ===
-                            botaoDownloadFalso
+                        botaoDownloadFalso
                         ||
                         elemento ===
-                            botaoBuildIndisponivel
+                        botaoBuildIndisponivel
                         ||
                         elemento.classList.contains(
                             "recurso-bloqueado"
                         )
                         ||
                         elemento ===
-                            comunidadeYoutube
+                        comunidadeYoutube
                         ||
                         elemento ===
-                            abrirComunidade
+                        abrirComunidade
                         ||
                         elemento ===
-                            fecharComunidade
+                        fecharComunidade
+                        ||
+                        elemento ===
+                        abrirConfiguracoes
+                        ||
+                        elemento ===
+                        fecharConfiguracoes
                     ) {
 
                         return;
@@ -1639,7 +2395,9 @@ document
     );
 
 
-/* AVISO */
+/* =========================================
+   AVISO
+========================================= */
 
 function mostrarAviso(
     titulo,
@@ -1682,30 +2440,53 @@ function mostrarAviso(
 }
 
 
-/* TREMOR */
+/* =========================================
+   TREMOR
+========================================= */
 
 function tremerTela() {
 
-    const alvo =
+    if (
+        !efeitosLigados
+    ) {
+
+        return;
+
+    }
+
+
+    let alvo;
+
+
+    if (
         comunidadeAberta
-        ?
-        modalComunidade
-        :
-        conteudoSite;
+    ) {
+
+        alvo =
+            modalComunidade;
+
+    }
+
+    else if (
+        configuracoesAbertas
+    ) {
+
+        alvo =
+            modalConfiguracoes;
+
+    }
+
+    else {
+
+        alvo =
+            conteudoSite;
+
+    }
 
 
     alvo.classList.remove(
         "tremendo"
     );
-
-
-    if (!comunidadeAberta) {
-
-        topo.classList.remove(
-            "tremendo"
-        );
-
-    }
 
 
     void alvo.offsetWidth;
@@ -1716,7 +2497,11 @@ function tremerTela() {
     );
 
 
-    if (!comunidadeAberta) {
+    if (
+        !comunidadeAberta
+        &&
+        !configuracoesAbertas
+    ) {
 
         topo.classList.add(
             "tremendo"
@@ -1747,7 +2532,9 @@ function tremerTela() {
 }
 
 
-/* ERRO */
+/* =========================================
+   ERRO
+========================================= */
 
 function executarErro(
     titulo,
@@ -1782,7 +2569,9 @@ function executarErro(
 
     tocarSomErro();
 
+
     tremerTela();
+
 
     mostrarAviso(
         titulo,
@@ -1803,54 +2592,22 @@ function executarErro(
                 false;
 
 
-            const elemento =
-                document.elementFromPoint(
-                    mouseX,
-                    mouseY
-                );
-
-
-            if (
-                elemento &&
-                elemento.closest(
-                    "a, button"
-                )
-            ) {
-
-                mudarMascara(
-                    "feliz"
-                );
-
-
-                mascara.classList.add(
-                    "hover"
-                );
-
-            }
-
-            else {
-
-                mudarMascara(
-                    "normal"
-                );
-
-
-                mascara.classList.remove(
-                    "hover"
-                );
-
-            }
+            mudarMascara(
+                "normal"
+            );
 
         },
 
-        1200
+        1300
 
     );
 
 }
 
 
-/* DOWNLOAD */
+/* =========================================
+   DOWNLOAD
+========================================= */
 
 botaoDownloadFalso.addEventListener(
 
@@ -1859,7 +2616,9 @@ botaoDownloadFalso.addEventListener(
     function() {
 
         const t =
-            traducoes[idiomaAtual];
+            traducoes[
+                idiomaAtual
+            ];
 
 
         executarErro(
@@ -1875,7 +2634,9 @@ botaoDownloadFalso.addEventListener(
 );
 
 
-/* BUILD */
+/* =========================================
+   BUILD
+========================================= */
 
 botaoBuildIndisponivel.addEventListener(
 
@@ -1884,7 +2645,9 @@ botaoBuildIndisponivel.addEventListener(
     function() {
 
         const t =
-            traducoes[idiomaAtual];
+            traducoes[
+                idiomaAtual
+            ];
 
 
         executarErro(
@@ -1900,7 +2663,9 @@ botaoBuildIndisponivel.addEventListener(
 );
 
 
-/* COMING SOON */
+/* =========================================
+   COMING SOON
+========================================= */
 
 document
     .querySelectorAll(
@@ -1939,7 +2704,9 @@ document
     );
 
 
-/* SEM REAÇÃO */
+/* =========================================
+   SEM REAÇÃO
+========================================= */
 
 setInterval(
 
@@ -1952,12 +2719,18 @@ setInterval(
 
 
         if (
-            parado > 7000 &&
-            !interagindo &&
-            !erroForcado &&
-            !comunidadeAberta &&
+            parado > 7000
+            &&
+            !interagindo
+            &&
+            !erroForcado
+            &&
+            !comunidadeAberta
+            &&
+            !configuracoesAbertas
+            &&
             estadoAtual !==
-                "semReacao"
+            "semReacao"
         ) {
 
             mudarMascara(
@@ -1969,5 +2742,186 @@ setInterval(
     },
 
     500
+
+);
+
+
+/* =========================================
+   MODO SECRETO VERDE
+========================================= */
+
+let cliquesSegredo =
+    0;
+
+
+let timerSegredo =
+    null;
+
+
+let modoSecretoAtivo =
+    localStorage.getItem(
+        "bnwModoSecreto"
+    )
+    ===
+    "true";
+
+
+function aplicarModoSecretoSemTransicao() {
+
+    if (
+        !modoSecretoAtivo
+    ) {
+
+        return;
+
+    }
+
+
+    document.body.classList.add(
+        "modo-secreto"
+    );
+
+
+    themeColor.setAttribute(
+        "content",
+        "#2fbd59"
+    );
+
+}
+
+
+aplicarModoSecretoSemTransicao();
+
+
+function ativarModoSecreto() {
+
+    if (
+        modoSecretoAtivo
+    ) {
+
+        return;
+
+    }
+
+
+    transicaoSecreta.classList.add(
+        "ativa"
+    );
+
+
+    setTimeout(
+
+        function() {
+
+            modoSecretoAtivo =
+                true;
+
+
+            document.body.classList.add(
+                "modo-secreto"
+            );
+
+
+            themeColor.setAttribute(
+                "content",
+                "#2fbd59"
+            );
+
+
+            localStorage.setItem(
+                "bnwModoSecreto",
+                "true"
+            );
+
+        },
+
+        450
+
+    );
+
+
+    setTimeout(
+
+        function() {
+
+            transicaoSecreta.classList.remove(
+                "ativa"
+            );
+
+        },
+
+        900
+
+    );
+
+}
+
+
+/*
+   10 cliques no rodapé das configurações.
+*/
+
+rodapeConfiguracoes.addEventListener(
+
+    "click",
+
+    function() {
+
+        if (
+            modoSecretoAtivo
+        ) {
+
+            return;
+
+        }
+
+
+        cliquesSegredo++;
+
+
+        clearTimeout(
+            timerSegredo
+        );
+
+
+        /*
+           Se ficar mais de 5 segundos
+           sem clicar, volta para zero.
+        */
+
+        timerSegredo =
+            setTimeout(
+
+                function() {
+
+                    cliquesSegredo =
+                        0;
+
+                },
+
+                5000
+
+            );
+
+
+        if (
+            cliquesSegredo >=
+            10
+        ) {
+
+            cliquesSegredo =
+                0;
+
+
+            clearTimeout(
+                timerSegredo
+            );
+
+
+            ativarModoSecreto();
+
+        }
+
+    }
 
 );

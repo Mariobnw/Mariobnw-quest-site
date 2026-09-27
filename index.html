@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,16 +12,19 @@
 
     <meta
         name="description"
-        content="Site oficial de mariobnw quest, um RPG independente atualmente em desenvolvimento."
+        content="Site oficial de mariobnw quest."
     >
 
     <meta
+        id="theme-color"
         name="theme-color"
         content="#168de2"
-        id="theme-color"
     >
 
     <title>mariobnw quest</title>
+
+
+    <!-- FAVICON -->
 
     <link
         id="favicon"
@@ -34,17 +38,21 @@
         href="images/favicon-aberto.png"
     >
 
+
     <link
         rel="stylesheet"
         href="style.css"
     >
+
 </head>
+
 
 <body>
 
-    <!-- =========================================
-         TRANSIÇÃO DO MODO SECRETO
-    ========================================== -->
+
+    <!-- ==========================================
+         TRANSIÇÃO SECRETA
+    =========================================== -->
 
     <div
         id="transicao-secreta"
@@ -52,9 +60,10 @@
     ></div>
 
 
-    <!-- =========================================
-         AVISO VISUAL
-    ========================================== -->
+
+    <!-- ==========================================
+         AVISO DE ERRO
+    =========================================== -->
 
     <div
         id="aviso-erro"
@@ -81,9 +90,10 @@
     </div>
 
 
-    <!-- =========================================
+
+    <!-- ==========================================
          ÁUDIO
-    ========================================== -->
+    =========================================== -->
 
     <audio
         id="som-erro"
@@ -107,19 +117,25 @@
     </audio>
 
 
-    <!-- =========================================
+
+    <!-- ==========================================
          TOPO
-    ========================================== -->
+    =========================================== -->
 
     <header class="topo">
 
+
+        <!-- LOGO -->
+
         <a
+            id="logo-link"
             class="logo-topo"
             href="#inicio"
             aria-label="Voltar ao início"
         >
 
             <img
+                id="logo-site"
                 src="images/logo-topo.png"
                 alt="mariobnw quest"
                 draggable="false"
@@ -127,6 +143,9 @@
 
         </a>
 
+
+
+        <!-- MENU -->
 
         <nav>
 
@@ -137,12 +156,14 @@
                 Notícias
             </a>
 
+
             <a
                 href="#personagens"
                 data-i18n="menuPersonagens"
             >
                 Personagens
             </a>
+
 
             <a
                 href="#sobre"
@@ -151,18 +172,12 @@
                 Sobre
             </a>
 
+
             <a
                 href="#canais"
                 data-i18n="menuCanais"
             >
                 Canais
-            </a>
-
-            <a
-                href="#builds"
-                data-i18n="menuBuilds"
-            >
-                Builds
             </a>
 
 
@@ -175,6 +190,19 @@
                 data-i18n="menuComunidade"
             >
                 Comunidade
+            </button>
+
+
+            <!-- DEVLOG -->
+
+            <button
+                id="abrir-devlog"
+                class="botao-hud"
+                type="button"
+                aria-label="Devlog"
+                title="Devlog"
+            >
+                📰
             </button>
 
 
@@ -256,24 +284,29 @@
             </div>
 
 
-            <a
-                href="#baixar"
+            <!-- DOWNLOAD -->
+
+            <button
+                id="abrir-downloads"
                 class="menu-download"
+                type="button"
                 data-i18n="menuBaixar"
             >
                 Baixar
-            </a>
+            </button>
 
         </nav>
 
     </header>
 
 
-    <!-- =========================================
-         CONTEÚDO
-    ========================================== -->
+
+    <!-- ==========================================
+         SITE
+    =========================================== -->
 
     <main id="conteudo-site">
+
 
         <!-- HERO -->
 
@@ -295,6 +328,7 @@
             </div>
 
         </section>
+
 
 
         <!-- INTRO -->
@@ -322,13 +356,14 @@
 
             <div class="botoes">
 
-                <a
+                <button
+                    id="botao-ver-downloads"
                     class="botao botao-principal"
-                    href="#baixar"
+                    type="button"
                     data-i18n="botaoBaixar"
                 >
-                    Ver disponibilidade
-                </a>
+                    Ver downloads
+                </button>
 
 
                 <a
@@ -344,7 +379,10 @@
         </section>
 
 
-        <!-- NOTÍCIAS -->
+
+        <!-- ==========================================
+             NOTÍCIAS
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -372,13 +410,15 @@
                         2026
                     </span>
 
+
                     <h3 data-i18n="noticia1Titulo">
                         Site em construção
                     </h3>
 
+
                     <p data-i18n="noticia1Texto">
-                        Alguém pensou que seria uma boa ideia criar
-                        um site antes de terminar o jogo.
+                        Alguém pensou que seria uma boa ideia
+                        criar um site antes de terminar o jogo.
                     </p>
 
                 </article>
@@ -393,9 +433,11 @@
                         EM DESENVOLVIMENTO
                     </span>
 
+
                     <h3 data-i18n="noticia2Titulo">
                         Capítulo 1
                     </h3>
+
 
                     <p data-i18n="noticia2Texto">
                         Novas informações sobre o primeiro capítulo
@@ -409,7 +451,10 @@
         </section>
 
 
-        <!-- PERSONAGENS -->
+
+        <!-- ==========================================
+             PERSONAGENS
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -420,6 +465,7 @@
                 Personagens
             </h2>
 
+
             <p data-i18n="personagensTexto">
                 Perfis oficiais serão adicionados conforme
                 os personagens forem apresentados.
@@ -428,7 +474,10 @@
         </section>
 
 
-        <!-- SOBRE -->
+
+        <!-- ==========================================
+             SOBRE
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -439,6 +488,7 @@
                 Sobre o jogo
             </h2>
 
+
             <p data-i18n="sobreTexto">
                 mariobnw quest é um RPG independente atualmente
                 em desenvolvimento, com exploração, narrativa,
@@ -448,7 +498,10 @@
         </section>
 
 
-        <!-- CANAIS -->
+
+        <!-- ==========================================
+             CANAIS
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -470,6 +523,9 @@
 
             <div class="cards canais-grid">
 
+
+                <!-- PT -->
+
                 <article class="card canal-card">
 
                     <span class="canal-idioma">
@@ -480,10 +536,12 @@
                         mariobnw
                     </h3>
 
+
                     <p data-i18n="canalPrincipalTexto">
                         Canal principal em português com vídeos,
                         transmissões e outros projetos.
                     </p>
+
 
                     <a
                         class="botao"
@@ -498,6 +556,8 @@
                 </article>
 
 
+                <!-- EN -->
+
                 <article class="card canal-card">
 
                     <span class="canal-idioma">
@@ -508,10 +568,12 @@
                         mariobnw quest English
                     </h3>
 
+
                     <p data-i18n="canalEnglishTexto">
                         Canal oficial em inglês dedicado às
                         atualizações de mariobnw quest.
                     </p>
+
 
                     <a
                         class="botao botao-principal"
@@ -529,49 +591,404 @@
 
         </section>
 
+    </main>
 
-        <!-- =========================================
-             BUILDS
-        ========================================== -->
 
-        <section
-            class="conteudo"
-            id="builds"
+
+    <!-- ==========================================
+         RODAPÉ
+    =========================================== -->
+
+    <footer class="rodape-site">
+
+        <span>
+            mariobnw quest
+        </span>
+
+        <span id="versao-site">
+            Site v0.2.0
+        </span>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         COMUNIDADE
+    =========================================== -->
+
+    <div
+        id="overlay-comunidade"
+        class="overlay-modal"
+        aria-hidden="true"
+    >
+
+        <div
+            id="modal-comunidade"
+            class="modal-base"
         >
 
-            <h2 data-i18n="buildsTitulo">
-                Builds de teste
+            <button
+                id="fechar-comunidade"
+                class="fechar-modal"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <span
+                class="modal-etiqueta"
+                data-i18n="comunidadeEtiqueta"
+            >
+                COMUNIDADE
+            </span>
+
+
+            <h2 data-i18n="comunidadeTitulo">
+                Comunidade
             </h2>
 
 
             <p
-                class="secao-descricao"
-                data-i18n="buildsDescricao"
+                class="modal-descricao"
+                data-i18n="comunidadeTexto"
             >
-                Acompanhe as versões experimentais da demo de mariobnw quest.
+                Acesse os espaços oficiais da comunidade.
             </p>
 
 
-            <!-- AVISO ANDROID -->
+            <div class="opcoes-comunidade">
 
-            <div class="build-aviso-plataforma">
 
-                <strong data-i18n="buildAndroidTitulo">
-                    Sobre versões para Android
+                <!-- YOUTUBE -->
+
+                <button
+                    id="comunidade-youtube"
+                    class="opcao-comunidade disponivel"
+                    type="button"
+                >
+
+                    <div class="icone-comunidade">
+
+                        <img
+                            src="images/youtube.png"
+                            alt="YouTube"
+                        >
+
+                    </div>
+
+
+                    <strong>
+                        YouTube
+                    </strong>
+
+
+                    <span data-i18n="youtubeTexto">
+                        Publicações, novidades e sugestões.
+                    </span>
+
+
+                    <small
+                        class="status status-disponivel"
+                        data-i18n="statusDisponivel"
+                    >
+                        DISPONÍVEL
+                    </small>
+
+                </button>
+
+
+
+                <!-- DISCORD -->
+
+                <button
+                    class="opcao-comunidade bloqueado recurso-bloqueado"
+                    type="button"
+                >
+
+                    <div class="icone-comunidade">
+
+                        <img
+                            src="images/discord.png"
+                            alt="Discord"
+                        >
+
+                    </div>
+
+
+                    <strong>
+                        Discord
+                    </strong>
+
+
+                    <span data-i18n="discordTexto">
+                        Teorias, fanarts, sugestões e comunidade.
+                    </span>
+
+
+                    <small
+                        class="status status-bloqueado"
+                        data-i18n="comingSoon"
+                    >
+                        EM BREVE
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         DEVLOG
+    =========================================== -->
+
+    <div
+        id="overlay-devlog"
+        class="overlay-modal"
+        aria-hidden="true"
+    >
+
+        <div
+            id="modal-devlog"
+            class="modal-base modal-devlog"
+        >
+
+            <button
+                id="fechar-devlog"
+                class="fechar-modal"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <span class="modal-etiqueta">
+                DEVLOG
+            </span>
+
+
+            <h2 data-i18n="devlogTitulo">
+                Diário de desenvolvimento
+            </h2>
+
+
+            <p
+                class="modal-descricao"
+                data-i18n="devlogDescricao"
+            >
+                Atualizações sobre o desenvolvimento
+                de mariobnw quest e seu site.
+            </p>
+
+
+            <!-- PROGRESSO -->
+
+            <div class="devlog-progresso">
+
+                <span data-i18n="devlogDemo">
+                    Demo Beta 0.1
+                </span>
+
+                <strong id="devlog-progresso">
+                    0%
                 </strong>
-
-                <p data-i18n="buildAndroidTexto">
-                    As versões beta de teste não serão disponibilizadas
-                    para Android. No Android, estarão disponíveis apenas
-                    a demo pública e builds específicas anunciadas separadamente.
-                </p>
 
             </div>
 
 
-            <div class="build-card">
+            <!-- POSTS -->
 
-                <div class="build-topo">
+            <div class="devlog-lista">
+
+                <article class="devlog-post">
+
+                    <span class="devlog-data">
+                        27/09/2026
+                    </span>
+
+                    <h3 data-i18n="devlogPost1Titulo">
+                        Nova estrutura do site
+                    </h3>
+
+                    <p data-i18n="devlogPost1Texto">
+                        O site recebeu uma central de downloads,
+                        Devlog, configurações e melhorias de compatibilidade.
+                    </p>
+
+                </article>
+
+
+                <article class="devlog-post">
+
+                    <span class="devlog-data">
+                        27/09/2026
+                    </span>
+
+                    <h3 data-i18n="devlogPost2Titulo">
+                        Demo Beta 0.1
+                    </h3>
+
+                    <p data-i18n="devlogPost2Texto">
+                        A primeira build de teste está planejada,
+                        mas seu desenvolvimento ainda não começou.
+                    </p>
+
+                </article>
+
+
+                <article class="devlog-post">
+
+                    <span class="devlog-data">
+                        27/09/2026
+                    </span>
+
+                    <h3 data-i18n="devlogPost3Titulo">
+                        Comunidade
+                    </h3>
+
+                    <p data-i18n="devlogPost3Texto">
+                        A área de comunidade agora conecta
+                        o site aos canais oficiais.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         DOWNLOADS
+    =========================================== -->
+
+    <div
+        id="overlay-downloads"
+        class="overlay-modal"
+        aria-hidden="true"
+    >
+
+        <div
+            id="modal-downloads"
+            class="modal-base modal-downloads"
+        >
+
+            <button
+                id="fechar-downloads"
+                class="fechar-modal"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <span
+                class="modal-etiqueta"
+                data-i18n="downloadsEtiqueta"
+            >
+                DOWNLOADS
+            </span>
+
+
+            <h2 data-i18n="downloadsTitulo">
+                Downloads
+            </h2>
+
+
+            <p
+                class="modal-descricao"
+                data-i18n="downloadsDescricao"
+            >
+                Demos públicas e versões experimentais.
+            </p>
+
+
+
+            <!-- ======================================
+                 DEMO PÚBLICA
+            ======================================= -->
+
+            <section class="download-bloco">
+
+                <div class="download-bloco-topo">
+
+                    <div>
+
+                        <span class="build-tipo">
+                            PUBLIC DEMO
+                        </span>
+
+                        <h3 data-i18n="demoPublicaTitulo">
+                            Demo pública
+                        </h3>
+
+                    </div>
+
+
+                    <span
+                        class="build-status indisponivel"
+                        data-i18n="statusEmDesenvolvimento"
+                    >
+                        EM DESENVOLVIMENTO
+                    </span>
+
+                </div>
+
+
+                <p data-i18n="demoPublicaTexto">
+                    A demo pública ainda não está disponível.
+                </p>
+
+
+                <div class="plataformas">
+
+                    <span>
+                        PC
+                        <small data-i18n="plataformaPlanejada">
+                            PLANEJADO
+                        </small>
+                    </span>
+
+
+                    <span>
+                        Android
+                        <small data-i18n="plataformaPlanejada">
+                            PLANEJADO
+                        </small>
+                    </span>
+
+                </div>
+
+
+                <button
+                    id="botao-demo-indisponivel"
+                    class="botao botao-bloqueado"
+                    type="button"
+                    data-i18n="downloadIndisponivel"
+                >
+                    INDISPONÍVEL
+                </button>
+
+            </section>
+
+
+
+            <!-- ======================================
+                 BETA 0.1
+            ======================================= -->
+
+            <section class="download-bloco">
+
+                <div class="download-bloco-topo">
 
                     <div>
 
@@ -597,8 +1014,10 @@
 
 
                 <p data-i18n="buildDescricao">
-                    Primeira build de teste planejada para mariobnw quest.
+                    Primeira build de teste planejada
+                    para mariobnw quest.
                 </p>
+
 
 
                 <!-- PROGRESSO -->
@@ -629,14 +1048,37 @@
 
 
                     <span
+                        id="progresso-status"
                         class="progresso-status"
-                        data-i18n="progressoStatus"
                     >
-                        O desenvolvimento desta build ainda não começou.
+                        O desenvolvimento ainda não começou.
                     </span>
 
                 </div>
 
+
+
+                <!-- ANDROID -->
+
+                <div class="build-aviso-plataforma">
+
+                    <strong data-i18n="buildAndroidTitulo">
+                        Sobre versões para Android
+                    </strong>
+
+
+                    <p data-i18n="buildAndroidTexto">
+                        As versões beta de teste não serão
+                        disponibilizadas normalmente para Android.
+                        No Android serão lançadas apenas a demo pública
+                        e builds específicas anunciadas separadamente.
+                    </p>
+
+                </div>
+
+
+
+                <!-- INFO -->
 
                 <div class="build-info">
 
@@ -647,8 +1089,8 @@
                         </strong>
 
                         <p data-i18n="buildObjetivoTexto">
-                            Testar a base da demo, incluindo movimentação,
-                            interface inicial e sistemas fundamentais.
+                            Testar a base da demo, movimentação,
+                            interface e sistemas fundamentais.
                         </p>
 
                     </div>
@@ -667,7 +1109,7 @@
                             </li>
 
                             <li data-i18n="buildChangelog2">
-                                Sistemas básicos ainda em desenvolvimento.
+                                Sistemas básicos.
                             </li>
 
                             <li data-i18n="buildChangelog3">
@@ -694,240 +1136,55 @@
                 </div>
 
 
-                <div class="build-rodape">
 
-                    <span data-i18n="buildArquivo">
-                        Arquivo ainda não disponível.
+                <!-- PLATAFORMAS -->
+
+                <div class="plataformas">
+
+                    <span>
+
+                        PC
+
+                        <small data-i18n="statusIndisponivel">
+                            INDISPONÍVEL
+                        </small>
+
                     </span>
 
 
-                    <button
-                        id="botao-build-indisponivel"
-                        class="botao build-botao bloqueado"
-                        type="button"
-                        data-i18n="buildBotao"
-                    >
-                        INDISPONÍVEL
-                    </button>
+                    <span class="plataforma-nao">
+
+                        Android
+
+                        <small data-i18n="androidBetaNao">
+                            NÃO DISPONÍVEL
+                        </small>
+
+                    </span>
 
                 </div>
 
-            </div>
-
-        </section>
-
-
-        <!-- DOWNLOAD -->
-
-        <section
-            class="conteudo download-secao"
-            id="baixar"
-        >
-
-            <div class="download-caixa">
-
-                <span
-                    class="download-etiqueta"
-                    data-i18n="downloadEtiqueta"
-                >
-                    EM DESENVOLVIMENTO
-                </span>
-
-
-                <h2 data-i18n="downloadTitulo">
-                    Download
-                </h2>
-
-
-                <p data-i18n="downloadTexto1">
-                    mariobnw quest ainda não possui uma versão pública disponível.
-                </p>
-
-
-                <p data-i18n="downloadTexto2">
-                    Informações sobre versões de teste, demonstrações e
-                    lançamento serão publicadas oficialmente quando disponíveis.
-                </p>
-
-
-                <div class="botoes">
-
-                    <button
-                        class="botao botao-principal"
-                        id="botao-download-falso"
-                        type="button"
-                        data-i18n="downloadBotao"
-                    >
-                        Baixar mariobnw quest
-                    </button>
-
-
-                    <a
-                        class="botao"
-                        href="https://itch.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-i18n="itchBotao"
-                    >
-                        Ver itch.io
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================
-         RODAPÉ
-    ========================================== -->
-
-    <footer class="rodape-site">
-
-        <span>
-            mariobnw quest
-        </span>
-
-        <span id="versao-site">
-            Site v0.1.0
-        </span>
-
-    </footer>
-
-
-    <!-- =========================================
-         COMUNIDADE
-    ========================================== -->
-
-    <div
-        id="overlay-comunidade"
-        class="overlay-modal"
-        aria-hidden="true"
-    >
-
-        <div
-            id="modal-comunidade"
-            class="modal-base modal-comunidade"
-            role="dialog"
-            aria-modal="true"
-        >
-
-            <button
-                id="fechar-comunidade"
-                class="fechar-modal"
-                type="button"
-                aria-label="Fechar"
-            >
-                ×
-            </button>
-
-
-            <span
-                class="modal-etiqueta"
-                data-i18n="comunidadeEtiqueta"
-            >
-                COMUNIDADE
-            </span>
-
-
-            <h2 data-i18n="comunidadeTitulo">
-                Comunidade
-            </h2>
-
-
-            <p
-                class="modal-descricao"
-                data-i18n="comunidadeTexto"
-            >
-                Acesse os espaços oficiais da comunidade de mariobnw quest.
-            </p>
-
-
-            <div class="opcoes-comunidade">
-
-                <!-- YOUTUBE -->
 
                 <button
-                    id="comunidade-youtube"
-                    class="opcao-comunidade disponivel"
+                    id="botao-build-indisponivel"
+                    class="botao botao-bloqueado"
                     type="button"
+                    data-i18n="buildBotao"
                 >
-
-                    <div class="icone-comunidade">
-
-                        <img
-                            src="images/youtube.png"
-                            alt="YouTube"
-                            draggable="false"
-                        >
-
-                    </div>
-
-                    <strong>
-                        YouTube
-                    </strong>
-
-                    <span data-i18n="youtubeTexto">
-                        Publicações, novidades e sugestões da comunidade.
-                    </span>
-
-                    <small
-                        class="status status-disponivel"
-                        data-i18n="statusDisponivel"
-                    >
-                        DISPONÍVEL
-                    </small>
-
+                    INDISPONÍVEL
                 </button>
 
-
-                <!-- DISCORD -->
-
-                <button
-                    class="opcao-comunidade bloqueado recurso-bloqueado"
-                    type="button"
-                >
-
-                    <div class="icone-comunidade">
-
-                        <img
-                            src="images/discord.png"
-                            alt="Discord"
-                            draggable="false"
-                        >
-
-                    </div>
-
-                    <strong>
-                        Discord
-                    </strong>
-
-                    <span data-i18n="discordTexto">
-                        Teorias, fanarts, sugestões e comunidade.
-                    </span>
-
-                    <small
-                        class="status status-bloqueado"
-                        data-i18n="comingSoon"
-                    >
-                        EM BREVE
-                    </small>
-
-                </button>
-
-            </div>
+            </section>
 
         </div>
 
     </div>
 
 
-    <!-- =========================================
+
+    <!-- ==========================================
          CONFIGURAÇÕES
-    ========================================== -->
+    =========================================== -->
 
     <div
         id="overlay-configuracoes"
@@ -938,15 +1195,12 @@
         <div
             id="modal-configuracoes"
             class="modal-base modal-configuracoes"
-            role="dialog"
-            aria-modal="true"
         >
 
             <button
                 id="fechar-configuracoes"
                 class="fechar-modal"
                 type="button"
-                aria-label="Fechar"
             >
                 ×
             </button>
@@ -967,6 +1221,9 @@
 
             <div class="lista-configuracoes">
 
+
+                <!-- SOM -->
+
                 <div class="config-item">
 
                     <div>
@@ -976,7 +1233,7 @@
                         </strong>
 
                         <span data-i18n="configSomTexto">
-                            Sons de clique e efeitos do site.
+                            Sons do site.
                         </span>
 
                     </div>
@@ -993,6 +1250,9 @@
                 </div>
 
 
+
+                <!-- EFEITOS -->
+
                 <div class="config-item">
 
                     <div>
@@ -1002,7 +1262,7 @@
                         </strong>
 
                         <span data-i18n="configEfeitosTexto">
-                            Animações, tremores e efeitos visuais.
+                            Animações e efeitos visuais.
                         </span>
 
                     </div>
@@ -1018,21 +1278,68 @@
 
                 </div>
 
+
+
+                <!-- TEMA SECRETO -->
+
+                <div
+                    id="config-tema"
+                    class="config-item config-tema oculto"
+                >
+
+                    <div>
+
+                        <strong data-i18n="configTemaTitulo">
+                            Tema
+                        </strong>
+
+                        <span data-i18n="configTemaTexto">
+                            Escolha a aparência do site.
+                        </span>
+
+                    </div>
+
+
+                    <div class="botoes-tema">
+
+                        <button
+                            id="tema-azul"
+                            class="tema-botao"
+                            type="button"
+                            data-i18n="temaAzul"
+                        >
+                            Azul
+                        </button>
+
+
+                        <button
+                            id="tema-verde"
+                            class="tema-botao"
+                            type="button"
+                            data-i18n="temaVerde"
+                        >
+                            Verde
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
 
-            <!--
-                EASTER EGG:
-                10 cliques aqui.
-            -->
+
+            <!-- EASTER EGG -->
 
             <div
                 id="rodape-configuracoes"
                 class="rodape-configuracoes"
             >
+
                 <span id="versao-configuracoes">
-                    mariobnw quest • Site v0.1.0
+                    mariobnw quest • Site v0.2.0
                 </span>
+
             </div>
 
         </div>
@@ -1040,9 +1347,10 @@
     </div>
 
 
-    <!-- =========================================
+
+    <!-- ==========================================
          BNW
-    ========================================== -->
+    =========================================== -->
 
     <div id="bnw-container">
 
@@ -1056,9 +1364,10 @@
     </div>
 
 
-    <!-- =========================================
-         CURSOR
-    ========================================== -->
+
+    <!-- ==========================================
+         MÃO
+    =========================================== -->
 
     <div id="cursor-mao">
 
@@ -1070,6 +1379,7 @@
         >
 
     </div>
+
 
 
     <script src="script.js"></script>

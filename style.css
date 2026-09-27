@@ -1,0 +1,1214 @@
+/* =========================
+   CORES
+========================= */
+
+:root {
+    --fundo: #ffffff;
+    --texto: #111111;
+
+    --topo:
+        rgba(255, 255, 255, 0.90);
+
+    --card:
+        #eeeeee;
+
+    --card-download:
+        #e5e5e5;
+
+    --fade-final:
+        #ffffff;
+
+    --azul:
+        #168de2;
+
+    --azul-hover:
+        #31a8fa;
+
+    --erro:
+        #d93535;
+
+    --erro-fundo:
+        rgba(255, 255, 255, 0.96);
+}
+
+
+/* =========================
+   TEMA ESCURO
+========================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --fundo: #050505;
+        --texto: #ffffff;
+
+        --topo:
+            rgba(10, 10, 14, 0.92);
+
+        --card:
+            #181818;
+
+        --card-download:
+            #11141b;
+
+        --fade-final:
+            #050505;
+
+        --erro-fundo:
+            rgba(20, 20, 23, 0.97);
+    }
+
+}
+
+
+/* =========================
+   GERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+
+    cursor:
+        none !important;
+}
+
+
+html {
+    scroll-behavior:
+        smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background:
+        var(--fundo);
+
+    color:
+        var(--texto);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x:
+        hidden;
+}
+
+
+/* =========================
+   AVISO ERRO
+========================= */
+
+.aviso-erro {
+    position:
+        fixed;
+
+    top:
+        92px;
+
+    left:
+        50%;
+
+    transform:
+        translate(-50%, -30px)
+        scale(0.96);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    min-width:
+        330px;
+
+    max-width:
+        calc(100vw - 40px);
+
+    padding:
+        14px 18px;
+
+    background:
+        var(--erro-fundo);
+
+    color:
+        var(--texto);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    border-left:
+        5px solid
+        var(--erro);
+
+    border-radius:
+        14px;
+
+    box-shadow:
+        0 14px 40px
+        rgba(0,0,0,0.30);
+
+    backdrop-filter:
+        blur(16px);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        20000;
+
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease;
+}
+
+
+.aviso-erro.visivel {
+    opacity:
+        1;
+
+    transform:
+        translate(-50%, 0)
+        scale(1);
+}
+
+
+.aviso-icone {
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--erro);
+
+    color:
+        white;
+
+    font-size:
+        21px;
+
+    font-weight:
+        bold;
+}
+
+
+.aviso-texto {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+}
+
+
+.aviso-texto strong {
+    font-size:
+        15px;
+}
+
+
+.aviso-texto span {
+    font-size:
+        13px;
+
+    opacity:
+        0.70;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topo {
+    position:
+        fixed;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        72px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        0 30px;
+
+    background:
+        var(--topo);
+
+    backdrop-filter:
+        blur(15px);
+
+    z-index:
+        1000;
+}
+
+
+/* LOGO */
+
+.logo-topo {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    text-decoration:
+        none;
+}
+
+
+.logo-topo img {
+    display:
+        block;
+
+    height:
+        40px;
+
+    width:
+        auto;
+
+    object-fit:
+        contain;
+
+    transition:
+        transform 0.15s ease;
+}
+
+
+.logo-topo:hover img {
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+}
+
+
+nav > a {
+    color:
+        var(--texto);
+
+    text-decoration:
+        none;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+
+nav > a:hover {
+    transform:
+        translateY(-2px);
+
+    opacity:
+        0.78;
+}
+
+
+.menu-download {
+    padding:
+        10px 18px;
+
+    background:
+        var(--azul);
+
+    color:
+        white !important;
+
+    border-radius:
+        10px;
+}
+
+
+.menu-download:hover {
+    opacity:
+        1;
+
+    background:
+        var(--azul-hover);
+}
+
+
+/* =========================
+   IDIOMA
+========================= */
+
+.idioma-container {
+    position:
+        relative;
+}
+
+
+.botao-idioma {
+    width:
+        42px;
+
+    height:
+        42px;
+
+    padding:
+        7px;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    border-radius:
+        10px;
+}
+
+
+.botao-idioma:hover {
+    background:
+        rgba(128,128,128,0.14);
+}
+
+
+.botao-idioma img {
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    image-rendering:
+        auto;
+}
+
+
+.menu-idioma {
+    position:
+        absolute;
+
+    top:
+        52px;
+
+    right:
+        0;
+
+    width:
+        190px;
+
+    padding:
+        8px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+    background:
+        var(--topo);
+
+    border:
+        1px solid
+        rgba(128,128,128,0.18);
+
+    border-radius:
+        14px;
+
+    box-shadow:
+        0 14px 30px
+        rgba(0,0,0,0.25);
+
+    backdrop-filter:
+        blur(18px);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-8px);
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.menu-idioma.aberto {
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    pointer-events:
+        auto;
+}
+
+
+.opcao-idioma {
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    padding:
+        10px;
+
+    border:
+        none;
+
+    border-radius:
+        9px;
+
+    background:
+        transparent;
+
+    color:
+        var(--texto);
+
+    text-align:
+        left;
+
+    font-size:
+        15px;
+}
+
+
+.opcao-idioma:hover {
+    background:
+        rgba(128,128,128,0.15);
+}
+
+
+.opcao-idioma img {
+    width:
+        30px;
+
+    height:
+        20px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        3px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position:
+        relative;
+
+    min-height:
+        850px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #203660,
+            #5874b4
+        );
+}
+
+
+.hero-conteudo {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    text-align:
+        center;
+
+    color:
+        white;
+
+    padding:
+        30px;
+}
+
+
+.hero-conteudo p {
+    margin:
+        0 0 10px;
+
+    font-size:
+        25px;
+
+    font-weight:
+        bold;
+}
+
+
+.hero-conteudo span {
+    font-size:
+        20px;
+}
+
+
+/* FADE */
+
+.hero::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        100%;
+
+    height:
+        700px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 17%,
+            rgba(0,0,0,0.06) 32%,
+            rgba(0,0,0,0.22) 55%,
+            var(--fade-final) 100%
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        3;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+    max-width:
+        1100px;
+
+    margin:
+        auto;
+
+    padding:
+        100px 30px;
+}
+
+
+.conteudo h2 {
+    margin-top:
+        0;
+
+    font-size:
+        clamp(
+            32px,
+            5vw,
+            45px
+        );
+}
+
+
+.conteudo p {
+    font-size:
+        17px;
+
+    line-height:
+        1.6;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        15px;
+
+    margin-top:
+        25px;
+}
+
+
+.botao {
+    display:
+        inline-block;
+
+    padding:
+        15px 28px;
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    background:
+        #eeeeee;
+
+    color:
+        #111111;
+
+    text-decoration:
+        none;
+
+    font-size:
+        17px;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease,
+        background 0.15s ease;
+}
+
+
+.botao:hover {
+    transform:
+        scale(1.06);
+
+    filter:
+        brightness(0.94);
+}
+
+
+.botao:active {
+    transform:
+        scale(0.95);
+}
+
+
+.botao-principal {
+    background:
+        var(--azul);
+
+    color:
+        white;
+}
+
+
+.botao-principal:hover {
+    background:
+        var(--azul-hover);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap:
+        20px;
+}
+
+
+.card {
+    padding:
+        25px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        22px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.card:hover {
+    transform:
+        translateY(-5px);
+}
+
+
+/* CANAIS */
+
+.canais-grid {
+    margin-top:
+        30px;
+}
+
+
+.canal-card {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+}
+
+
+.canal-card .botao {
+    margin-top:
+        auto;
+}
+
+
+/* =========================
+   DOWNLOAD
+========================= */
+
+.download-secao {
+    padding-top:
+        140px;
+
+    padding-bottom:
+        160px;
+}
+
+
+.download-caixa {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        55px;
+
+    background:
+        var(--card-download);
+
+    border-radius:
+        30px;
+}
+
+
+.download-etiqueta {
+    display:
+        inline-block;
+
+    margin-bottom:
+        16px;
+
+    padding:
+        7px 12px;
+
+    background:
+        var(--azul);
+
+    color:
+        white;
+
+    border-radius:
+        8px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+}
+
+
+/* =========================
+   BNW
+========================= */
+
+#bnw-container {
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        170px;
+
+    height:
+        170px;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events:
+        none;
+
+    z-index:
+        9998;
+}
+
+
+#mascara-bnw {
+    position:
+        absolute;
+
+    width:
+        72%;
+
+    height:
+        72%;
+
+    left:
+        14%;
+
+    top:
+        14%;
+
+    object-fit:
+        contain;
+
+    image-rendering:
+        pixelated;
+
+    user-select:
+        none;
+
+    transition:
+        transform 0.12s ease;
+}
+
+
+#mascara-bnw.reagindo {
+    transform:
+        scale(1.12)
+        rotate(4deg);
+}
+
+
+#mascara-bnw.hover {
+    transform:
+        scale(1.07);
+}
+
+
+/* =========================
+   MÃO
+========================= */
+
+#cursor-mao {
+    position:
+        fixed;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    width:
+        72px;
+
+    height:
+        72px;
+
+    pointer-events:
+        none;
+
+    z-index:
+        10000;
+
+    transform:
+        translate(-10px, -8px);
+}
+
+
+#cursor-imagem {
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    image-rendering:
+        pixelated;
+
+    transition:
+        transform 0.05s ease;
+}
+
+
+#cursor-imagem.clicando {
+    transform:
+        scale(0.82);
+}
+
+
+/* =========================
+   CLIQUE
+========================= */
+
+.efeito-clique {
+    position:
+        fixed;
+
+    width:
+        18px;
+
+    height:
+        18px;
+
+    border:
+        3px solid
+        rgba(255,255,255,0.85);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        9999;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.4);
+
+    animation:
+        ondaClique
+        0.35s ease-out
+        forwards;
+}
+
+
+@keyframes ondaClique {
+
+    from {
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.4);
+    }
+
+    to {
+        opacity:
+            0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(2.5);
+    }
+
+}
+
+
+/* =========================
+   TREMOR
+========================= */
+
+#conteudo-site.tremendo,
+.topo.tremendo {
+    animation:
+        tremorTela
+        0.35s linear;
+}
+
+
+@keyframes tremorTela {
+
+    0% {
+        transform:
+            translate(0,0);
+    }
+
+    15% {
+        transform:
+            translate(-7px,2px);
+    }
+
+    30% {
+        transform:
+            translate(7px,-3px);
+    }
+
+    45% {
+        transform:
+            translate(-6px,-2px);
+    }
+
+    60% {
+        transform:
+            translate(6px,3px);
+    }
+
+    75% {
+        transform:
+            translate(-3px,1px);
+    }
+
+    90% {
+        transform:
+            translate(3px,-1px);
+    }
+
+    100% {
+        transform:
+            translate(0,0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    nav > a:not(.menu-download) {
+        display:
+            none;
+    }
+
+    nav {
+        gap:
+            8px;
+    }
+
+    .topo {
+        padding:
+            0 16px;
+    }
+
+    .logo-topo img {
+        height:
+            32px;
+    }
+
+    #bnw-container {
+        width:
+            120px;
+
+        height:
+            120px;
+    }
+
+    #cursor-mao {
+        width:
+            58px;
+
+        height:
+            58px;
+    }
+
+    .download-caixa {
+        padding:
+            30px;
+    }
+
+}

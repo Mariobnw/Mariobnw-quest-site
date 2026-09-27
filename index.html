@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>mariobnw quest</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         AVISO DE ERRO
+    ========================== -->
+
+    <div
+        id="aviso-erro"
+        class="aviso-erro"
+        aria-live="polite"
+    >
+
+        <div class="aviso-icone">
+            !
+        </div>
+
+        <div class="aviso-texto">
+
+            <strong data-i18n="erroTitulo">
+                Não foi possível baixar
+            </strong>
+
+            <span data-i18n="erroTexto">
+                O jogo ainda não está disponível.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ÁUDIO
+    ========================== -->
+
+    <audio
+        id="som-erro"
+        preload="auto"
+    >
+        <source
+            src="Downloads/erro.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <audio
+        id="som-click"
+        preload="auto"
+    >
+        <source
+            src="Downloads/minecraft-click-menu.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =========================
+         TOPO
+    ========================== -->
+
+    <header class="topo">
+
+        <!-- LOGO = INÍCIO -->
+
+        <a
+            class="logo-topo"
+            href="#inicio"
+            aria-label="Voltar ao início"
+        >
+
+            <img
+                src="images/logo-topo.png"
+                alt="mariobnw quest"
+                draggable="false"
+            >
+
+        </a>
+
+
+        <nav>
+
+            <a
+                href="#noticias"
+                data-i18n="menuNoticias"
+            >
+                Notícias
+            </a>
+
+
+            <a
+                href="#personagens"
+                data-i18n="menuPersonagens"
+            >
+                Personagens
+            </a>
+
+
+            <a
+                href="#sobre"
+                data-i18n="menuSobre"
+            >
+                Sobre
+            </a>
+
+
+            <a
+                href="#canais"
+                data-i18n="menuCanais"
+            >
+                Canais
+            </a>
+
+
+            <!-- =========================
+                 IDIOMA
+            ========================== -->
+
+            <div class="idioma-container">
+
+                <button
+                    id="botao-idioma"
+                    class="botao-idioma"
+                    type="button"
+                    aria-label="Selecionar idioma"
+                >
+
+                    <img
+                        src="images/globo.png"
+                        alt=""
+                        draggable="false"
+                    >
+
+                </button>
+
+
+                <div
+                    id="menu-idioma"
+                    class="menu-idioma"
+                >
+
+                    <button
+                        class="opcao-idioma"
+                        data-lang="pt"
+                        type="button"
+                    >
+
+                        <img
+                            src="images/bandeira-brasil.webp"
+                            alt="Brasil"
+                        >
+
+                        <span>
+                            Português
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="opcao-idioma"
+                        data-lang="en"
+                        type="button"
+                    >
+
+                        <img
+                            src="images/bandeira-eua.png"
+                            alt="United States"
+                        >
+
+                        <span>
+                            English
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="#baixar"
+                class="menu-download"
+                data-i18n="menuBaixar"
+            >
+                Baixar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO QUE PODE TREMER
+    ========================== -->
+
+    <main id="conteudo-site">
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-conteudo">
+
+                <p data-i18n="heroTitulo">
+                    ARTE PROMOCIONAL DO CAPÍTULO 1
+                </p>
+
+                <span data-i18n="heroTexto">
+                    vai aparecer aqui algum dia 👍
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRO
+        ========================== -->
+
+        <section class="conteudo">
+
+            <h2 data-i18n="bemVindo">
+                Bem-vindo ao mariobnw quest
+            </h2>
+
+            <p data-i18n="descricaoInicial">
+                Um RPG onde provavelmente nada vai dar errado.
+            </p>
+
+
+            <div class="botoes">
+
+                <a
+                    class="botao botao-principal"
+                    href="#baixar"
+                    data-i18n="botaoBaixar"
+                >
+                    Baixar
+                </a>
+
+
+                <a
+                    class="botao"
+                    href="#personagens"
+                    data-i18n="botaoPersonagens"
+                >
+                    Personagens
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NOTÍCIAS
+        ========================== -->
+
+        <section
+            class="conteudo"
+            id="noticias"
+        >
+
+            <h2 data-i18n="noticiasTitulo">
+                Últimas notícias
+            </h2>
+
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h3 data-i18n="noticia1Titulo">
+                        Site em construção
+                    </h3>
+
+                    <p data-i18n="noticia1Texto">
+                        Aparentemente alguém decidiu fazer
+                        um site antes de terminar o jogo.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3 data-i18n="noticia2Titulo">
+                        Capítulo 1
+                    </h3>
+
+                    <p data-i18n="noticia2Texto">
+                        Mais informações em breve.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PERSONAGENS
+        ========================== -->
+
+        <section
+            class="conteudo"
+            id="personagens"
+        >
+
+            <h2 data-i18n="personagensTitulo">
+                Personagens
+            </h2>
+
+            <p data-i18n="personagensTexto">
+                Em breve.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
+
+        <section
+            class="conteudo"
+            id="sobre"
+        >
+
+            <h2 data-i18n="sobreTitulo">
+                Sobre
+            </h2>
+
+            <p data-i18n="sobreTexto">
+                mariobnw quest é um RPG em desenvolvimento.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CANAIS
+        ========================== -->
+
+        <section
+            class="conteudo"
+            id="canais"
+        >
+
+            <h2 data-i18n="canaisTitulo">
+                Canais
+            </h2>
+
+            <p data-i18n="canaisTexto">
+                Acompanhe o mariobnw e o desenvolvimento do BNW Quest.
+            </p>
+
+
+            <div class="cards canais-grid">
+
+                <article class="card canal-card">
+
+                    <h3>
+                        mariobnw
+                    </h3>
+
+                    <p data-i18n="canalPrincipalTexto">
+                        Canal principal em português com vídeos,
+                        lives e outros projetos.
+                    </p>
+
+                    <a
+                        class="botao"
+                        href="https://youtube.com/@mariobnw?si=OZf2qQmtTd3W79zJ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="verCanal"
+                    >
+                        Ver canal
+                    </a>
+
+                </article>
+
+
+                <article class="card canal-card">
+
+                    <h3>
+                        BNW Quest English
+                    </h3>
+
+                    <p data-i18n="canalEnglishTexto">
+                        Canal oficial em inglês do BNW Quest.
+                        Devlogs, trailers e novidades.
+                    </p>
+
+                    <a
+                        class="botao botao-principal"
+                        href="https://youtube.com/@bnw_quest_english?si=N56J_5b8dmAFmHuX"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="visitarCanalEnglish"
+                    >
+                        Visit channel
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOWNLOAD
+        ========================== -->
+
+        <section
+            class="conteudo download-secao"
+            id="baixar"
+        >
+
+            <div class="download-caixa">
+
+                <span
+                    class="download-etiqueta"
+                    data-i18n="downloadEtiqueta"
+                >
+                    EM DESENVOLVIMENTO
+                </span>
+
+
+                <h2 data-i18n="downloadTitulo">
+                    Baixar
+                </h2>
+
+
+                <p data-i18n="downloadTexto1">
+                    O jogo ainda não está disponível.
+                </p>
+
+
+                <p data-i18n="downloadTexto2">
+                    Mas você pode tentar clicar.
+                    Só não espere muita cooperação do mariobnw.
+                </p>
+
+
+                <div class="botoes">
+
+                    <button
+                        class="botao botao-principal"
+                        id="botao-download-falso"
+                        type="button"
+                        data-i18n="downloadBotao"
+                    >
+                        Baixar mariobnw quest
+                    </button>
+
+
+                    <a
+                        class="botao"
+                        href="https://itch.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="itchBotao"
+                    >
+                        Abrir itch.io
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MÁSCARA
+    ========================== -->
+
+    <div id="bnw-container">
+
+        <img
+            id="mascara-bnw"
+            src="images/mascara-normal.png"
+            alt="Máscara do mariobnw"
+            draggable="false"
+        >
+
+    </div>
+
+
+    <!-- =========================
+         CURSOR VISUAL
+    ========================== -->
+
+    <div id="cursor-mao">
+
+        <img
+            id="cursor-imagem"
+            src="images/mouse-normal.png"
+            alt=""
+            draggable="false"
+        >
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

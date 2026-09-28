@@ -5,9 +5,7 @@
 :root {
 
     --fundo: #ffffff;
-
     --texto: #111111;
-
     --texto-secundario: #666666;
 
     --topo:
@@ -19,10 +17,10 @@
     --fade-final:
         #ffffff;
 
-    --azul:
+    --cor-tema:
         #168de2;
 
-    --azul-hover:
+    --cor-tema-hover:
         #32a8f8;
 
     --erro:
@@ -30,20 +28,19 @@
 
     --erro-fundo:
         rgba(255,255,255,0.97);
-
 }
 
 
-/* DARK */
+/* ==========================================
+   DARK MODE
+========================================== */
 
 @media (prefers-color-scheme: dark) {
 
     :root {
 
         --fundo: #050505;
-
         --texto: #ffffff;
-
         --texto-secundario: #aaaaaa;
 
         --topo:
@@ -57,28 +54,26 @@
 
         --erro-fundo:
             rgba(20,20,23,0.98);
-
     }
 
 }
 
 
 /* ==========================================
-   TEMA VERDE
+   TEMA MARIO.UNO
 ========================================== */
 
-body.modo-secreto {
+html[data-tema="mario.uno"] {
 
-    --azul:
+    --cor-tema:
         #2fbd59;
 
-    --azul-hover:
+    --cor-tema-hover:
         #57df7c;
-
 }
 
 
-body.modo-secreto .hero {
+html[data-tema="mario.uno"] .hero {
 
     background:
         linear-gradient(
@@ -86,23 +81,49 @@ body.modo-secreto .hero {
             #102d19,
             #3a9d5c
         );
-
 }
 
 
-body.modo-secreto .botao-idioma {
+html[data-tema="mario.uno"] .botao-idioma {
 
     background:
         #1d4228;
-
 }
 
 
-body.modo-secreto .card:hover {
+html[data-tema="mario.uno"] .canal-idioma {
+
+    background:
+        rgba(47,189,89,0.13);
+}
+
+
+html[data-tema="mario.uno"] .card:hover {
 
     border-color:
         rgba(47,189,89,0.40);
+}
 
+
+/* ==========================================
+   TRANSIÇÃO DE CORES ENTRE TEMAS
+========================================== */
+
+body,
+.topo,
+.card,
+.botao,
+.botao-hud,
+.botao-idioma,
+.modal-base,
+.download-bloco,
+.config-item,
+.build-aviso-plataforma {
+
+    transition:
+        background-color 0.55s ease,
+        color 0.55s ease,
+        border-color 0.55s ease;
 }
 
 
@@ -117,7 +138,6 @@ body.modo-secreto .card:hover {
 
     cursor:
         none !important;
-
 }
 
 
@@ -125,7 +145,6 @@ html {
 
     scroll-behavior:
         smooth;
-
 }
 
 
@@ -147,7 +166,6 @@ body {
 
     overflow-x:
         hidden;
-
 }
 
 
@@ -155,7 +173,6 @@ body.modal-aberto {
 
     overflow:
         hidden;
-
 }
 
 
@@ -164,7 +181,6 @@ a {
 
     font-family:
         inherit;
-
 }
 
 
@@ -194,7 +210,6 @@ a {
 
     transition:
         opacity 0.45s ease;
-
 }
 
 
@@ -202,12 +217,11 @@ a {
 
     opacity:
         1;
-
 }
 
 
 /* ==========================================
-   AVISO
+   AVISO DE ERRO
 ========================================== */
 
 .aviso-erro {
@@ -276,7 +290,6 @@ a {
     transition:
         opacity 0.2s ease,
         transform 0.2s ease;
-
 }
 
 
@@ -288,7 +301,6 @@ a {
     transform:
         translate(-50%,0)
         scale(1);
-
 }
 
 
@@ -309,6 +321,9 @@ a {
     justify-content:
         center;
 
+    flex-shrink:
+        0;
+
     border-radius:
         50%;
 
@@ -323,7 +338,6 @@ a {
 
     font-weight:
         bold;
-
 }
 
 
@@ -337,7 +351,6 @@ a {
 
     gap:
         3px;
-
 }
 
 
@@ -348,7 +361,6 @@ a {
 
     font-size:
         13px;
-
 }
 
 
@@ -397,7 +409,6 @@ a {
 
     z-index:
         1000;
-
 }
 
 
@@ -414,34 +425,45 @@ a {
     align-items:
         center;
 
+    height:
+        52px;
+
     text-decoration:
         none;
-
 }
 
 
 .logo-topo img {
 
-    height:
-        40px;
+    display:
+        block;
 
     width:
         auto;
 
-    display:
-        block;
+    height:
+        40px;
 
+    max-width:
+        230px;
+
+    object-fit:
+        contain;
+
+    transform-origin:
+        left center;
 }
 
 
-/* glitch da logo */
+/* ==========================================
+   GLITCH DA LOGO
+========================================== */
 
 .logo-topo.logo-glitch img {
 
     animation:
         glitchLogo
         0.65s steps(2,end);
-
 }
 
 
@@ -454,7 +476,6 @@ a {
 
         filter:
             none;
-
     }
 
     15% {
@@ -463,20 +484,14 @@ a {
             translate(-5px,2px);
 
         filter:
-            drop-shadow(
-                4px 0 #ff00ff
-            )
-            drop-shadow(
-                -4px 0 #00ffff
-            );
-
+            drop-shadow(4px 0 #ff00ff)
+            drop-shadow(-4px 0 #00ffff);
     }
 
     35% {
 
         transform:
             translate(5px,-2px);
-
     }
 
     55% {
@@ -485,20 +500,14 @@ a {
             translate(-3px,0);
 
         filter:
-            drop-shadow(
-                3px 0 #00ff66
-            )
-            drop-shadow(
-                -3px 0 #ff0055
-            );
-
+            drop-shadow(3px 0 #00ff66)
+            drop-shadow(-3px 0 #ff0055);
     }
 
     75% {
 
         transform:
             translate(3px,1px);
-
     }
 
     100% {
@@ -508,13 +517,11 @@ a {
 
         filter:
             none;
-
     }
-
 }
 
 
-/* partículas */
+/* partículas de glitch */
 
 .logo-particula {
 
@@ -537,7 +544,6 @@ a {
         particulaGlitch
         0.6s ease-out
         forwards;
-
 }
 
 
@@ -551,7 +557,6 @@ a {
         transform:
             translate(0,0)
             scale(1);
-
     }
 
     to {
@@ -565,13 +570,13 @@ a {
                 var(--y)
             )
             scale(0);
-
     }
-
 }
 
 
-/* NAV */
+/* ==========================================
+   MENU
+========================================== */
 
 nav {
 
@@ -583,7 +588,6 @@ nav {
 
     gap:
         15px;
-
 }
 
 
@@ -607,7 +611,6 @@ nav > a,
 
     font-size:
         15px;
-
 }
 
 
@@ -620,7 +623,7 @@ nav > a,
         none;
 
     background:
-        var(--azul);
+        var(--cor-tema);
 
     color:
         white;
@@ -630,11 +633,12 @@ nav > a,
 
     font-size:
         15px;
-
 }
 
 
-/* HUD */
+/* ==========================================
+   HUD
+========================================== */
 
 .botao-hud {
 
@@ -667,7 +671,6 @@ nav > a,
 
     font-size:
         20px;
-
 }
 
 
@@ -679,7 +682,6 @@ nav > a,
 
     position:
         relative;
-
 }
 
 
@@ -702,7 +704,6 @@ nav > a,
 
     background:
         #26384f;
-
 }
 
 
@@ -716,7 +717,6 @@ nav > a,
 
     object-fit:
         contain;
-
 }
 
 
@@ -760,6 +760,9 @@ nav > a,
         0 14px 35px
         rgba(0,0,0,0.25);
 
+    backdrop-filter:
+        blur(18px);
+
     opacity:
         0;
 
@@ -770,8 +773,8 @@ nav > a,
         none;
 
     transition:
-        0.18s ease;
-
+        opacity 0.18s ease,
+        transform 0.18s ease;
 }
 
 
@@ -785,7 +788,6 @@ nav > a,
 
     pointer-events:
         auto;
-
 }
 
 
@@ -799,6 +801,9 @@ nav > a,
 
     gap:
         11px;
+
+    width:
+        100%;
 
     padding:
         10px;
@@ -815,6 +820,15 @@ nav > a,
     color:
         var(--texto);
 
+    text-align:
+        left;
+}
+
+
+.opcao-idioma:hover {
+
+    background:
+        rgba(128,128,128,0.15);
 }
 
 
@@ -829,6 +843,8 @@ nav > a,
     object-fit:
         cover;
 
+    border-radius:
+        3px;
 }
 
 
@@ -865,7 +881,6 @@ nav > a,
 
     transition:
         background 0.6s ease;
-
 }
 
 
@@ -885,7 +900,6 @@ nav > a,
 
     text-align:
         center;
-
 }
 
 
@@ -899,7 +913,6 @@ nav > a,
 
     font-weight:
         bold;
-
 }
 
 
@@ -908,6 +921,8 @@ nav > a,
     font-size:
         18px;
 
+    opacity:
+        0.88;
 }
 
 
@@ -944,6 +959,8 @@ nav > a,
     pointer-events:
         none;
 
+    z-index:
+        3;
 }
 
 
@@ -961,7 +978,6 @@ nav > a,
 
     padding:
         100px 30px;
-
 }
 
 
@@ -970,13 +986,15 @@ nav > a,
     margin-top:
         0;
 
+    margin-bottom:
+        18px;
+
     font-size:
         clamp(
             32px,
             5vw,
             45px
         );
-
 }
 
 
@@ -987,7 +1005,6 @@ nav > a,
 
     line-height:
         1.65;
-
 }
 
 
@@ -999,13 +1016,21 @@ nav > a,
     max-width:
         720px;
 
+    margin-bottom:
+        35px;
 }
 
 
 .mini-etiqueta {
 
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
     color:
-        var(--azul);
+        var(--cor-tema);
 
     font-size:
         12px;
@@ -1013,6 +1038,8 @@ nav > a,
     font-weight:
         bold;
 
+    letter-spacing:
+        1.2px;
 }
 
 
@@ -1033,7 +1060,6 @@ nav > a,
 
     margin-top:
         28px;
-
 }
 
 
@@ -1062,18 +1088,16 @@ nav > a,
 
     font-size:
         16px;
-
 }
 
 
 .botao-principal {
 
     background:
-        var(--azul);
+        var(--cor-tema);
 
     color:
         white;
-
 }
 
 
@@ -1084,7 +1108,6 @@ nav > a,
 
     color:
         #888888;
-
 }
 
 
@@ -1105,7 +1128,6 @@ nav > a,
 
     gap:
         20px;
-
 }
 
 
@@ -1123,11 +1145,23 @@ nav > a,
 
     border-radius:
         22px;
+}
 
+
+.card:hover {
+
+    border-color:
+        rgba(22,141,226,0.30);
 }
 
 
 .card-data {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        12px;
 
     color:
         var(--texto-secundario);
@@ -1138,6 +1172,8 @@ nav > a,
     font-weight:
         bold;
 
+    letter-spacing:
+        1px;
 }
 
 
@@ -1145,7 +1181,6 @@ nav > a,
 
     margin-top:
         30px;
-
 }
 
 
@@ -1159,7 +1194,6 @@ nav > a,
 
     align-items:
         flex-start;
-
 }
 
 
@@ -1167,7 +1201,6 @@ nav > a,
 
     margin-top:
         auto;
-
 }
 
 
@@ -1183,7 +1216,7 @@ nav > a,
         rgba(22,141,226,0.13);
 
     color:
-        var(--azul);
+        var(--cor-tema);
 
     border-radius:
         6px;
@@ -1193,7 +1226,6 @@ nav > a,
 
     font-weight:
         bold;
-
 }
 
 
@@ -1218,6 +1250,9 @@ nav > a,
     justify-content:
         space-between;
 
+    gap:
+        20px;
+
     border-top:
         1px solid
         rgba(128,128,128,0.12);
@@ -1227,7 +1262,6 @@ nav > a,
 
     font-size:
         13px;
-
 }
 
 
@@ -1261,6 +1295,9 @@ nav > a,
     -webkit-overflow-scrolling:
         touch;
 
+    overscroll-behavior:
+        contain;
+
     background:
         rgba(0,0,0,0.72);
 
@@ -1278,7 +1315,6 @@ nav > a,
 
     transition:
         opacity 0.25s ease;
-
 }
 
 
@@ -1289,7 +1325,6 @@ nav > a,
 
     pointer-events:
         auto;
-
 }
 
 
@@ -1312,7 +1347,7 @@ nav > a,
 
     border:
         1px solid
-        rgba(255,255,255,0.1);
+        rgba(255,255,255,0.10);
 
     border-radius:
         30px;
@@ -1320,7 +1355,6 @@ nav > a,
     box-shadow:
         0 30px 90px
         rgba(0,0,0,0.55);
-
 }
 
 
@@ -1341,6 +1375,15 @@ nav > a,
     height:
         42px;
 
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
     border:
         none;
 
@@ -1358,7 +1401,6 @@ nav > a,
 
     z-index:
         50;
-
 }
 
 
@@ -1367,11 +1409,11 @@ nav > a,
     display:
         inline-block;
 
-    padding:
-        7px 11px;
-
     margin-bottom:
         13px;
+
+    padding:
+        7px 11px;
 
     background:
         #20242d;
@@ -1387,14 +1429,13 @@ nav > a,
 
     font-weight:
         bold;
-
 }
 
 
 .modal-base h2 {
 
-    margin-top:
-        0;
+    margin:
+        0 0 12px;
 
     font-size:
         clamp(
@@ -1402,18 +1443,19 @@ nav > a,
             5vw,
             46px
         );
-
 }
 
 
 .modal-descricao {
+
+    max-width:
+        650px;
 
     color:
         #aaaeb7;
 
     line-height:
         1.6;
-
 }
 
 
@@ -1434,7 +1476,6 @@ nav > a,
 
     margin-top:
         30px;
-
 }
 
 
@@ -1473,7 +1514,6 @@ nav > a,
 
     text-align:
         left;
-
 }
 
 
@@ -1484,7 +1524,6 @@ nav > a,
 
     background:
         #111216;
-
 }
 
 
@@ -1496,6 +1535,14 @@ nav > a,
     height:
         72px;
 
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 }
 
 
@@ -1507,6 +1554,8 @@ nav > a,
     max-height:
         100%;
 
+    object-fit:
+        contain;
 }
 
 
@@ -1526,7 +1575,6 @@ nav > a,
 
     font-weight:
         bold;
-
 }
 
 
@@ -1537,7 +1585,6 @@ nav > a,
 
     color:
         #52dd8c;
-
 }
 
 
@@ -1548,7 +1595,6 @@ nav > a,
 
     color:
         #d06060;
-
 }
 
 
@@ -1560,7 +1606,6 @@ nav > a,
 
     width:
         min(720px,100%);
-
 }
 
 
@@ -1586,15 +1631,13 @@ nav > a,
 
     background:
         #151821;
-
 }
 
 
 .devlog-progresso strong {
 
     color:
-        var(--azul);
-
+        var(--cor-tema);
 }
 
 
@@ -1608,7 +1651,6 @@ nav > a,
 
     gap:
         15px;
-
 }
 
 
@@ -1626,7 +1668,6 @@ nav > a,
 
     border-radius:
         16px;
-
 }
 
 
@@ -1634,7 +1675,6 @@ nav > a,
 
     margin:
         7px 0;
-
 }
 
 
@@ -1648,33 +1688,30 @@ nav > a,
 
     line-height:
         1.55;
-
 }
 
 
 .devlog-data {
 
     color:
-        var(--azul);
+        var(--cor-tema);
 
     font-size:
         11px;
 
     font-weight:
         bold;
-
 }
 
 
 /* ==========================================
-   DOWNLOAD CENTER
+   DOWNLOADS
 ========================================== */
 
 .modal-downloads {
 
     width:
         min(900px,100%);
-
 }
 
 
@@ -1695,7 +1732,6 @@ nav > a,
 
     border-radius:
         22px;
-
 }
 
 
@@ -1712,7 +1748,6 @@ nav > a,
 
     gap:
         20px;
-
 }
 
 
@@ -1723,21 +1758,19 @@ nav > a,
 
     font-size:
         25px;
-
 }
 
 
 .build-tipo {
 
     color:
-        var(--azul);
+        var(--cor-tema);
 
     font-size:
         11px;
 
     font-weight:
         bold;
-
 }
 
 
@@ -1754,7 +1787,6 @@ nav > a,
 
     font-weight:
         bold;
-
 }
 
 
@@ -1765,17 +1797,17 @@ nav > a,
 
     background:
         rgba(217,53,53,0.13);
-
 }
 
 
-/* PROGRESSO */
+/* ==========================================
+   PROGRESSO
+========================================== */
 
 .progresso-demo {
 
     margin:
         28px 0;
-
 }
 
 
@@ -1784,23 +1816,27 @@ nav > a,
     display:
         flex;
 
+    align-items:
+        center;
+
     justify-content:
         space-between;
 
+    gap:
+        20px;
+
     margin-bottom:
         10px;
-
 }
 
 
 #progresso-porcentagem {
 
     color:
-        var(--azul);
+        var(--cor-tema);
 
     font-weight:
         bold;
-
 }
 
 
@@ -1817,7 +1853,6 @@ nav > a,
 
     border-radius:
         999px;
-
 }
 
 
@@ -1832,16 +1867,16 @@ nav > a,
     background:
         linear-gradient(
             90deg,
-            var(--azul),
-            var(--azul-hover)
+            var(--cor-tema),
+            var(--cor-tema-hover)
         );
 
     border-radius:
         inherit;
 
     transition:
-        width 0.7s ease;
-
+        width 0.7s ease,
+        background 0.55s ease;
 }
 
 
@@ -1858,11 +1893,12 @@ nav > a,
 
     font-size:
         13px;
-
 }
 
 
-/* ANDROID */
+/* ==========================================
+   AVISO DAS BUILDS
+========================================== */
 
 .build-aviso-plataforma {
 
@@ -1873,23 +1909,29 @@ nav > a,
         17px;
 
     background:
-        rgba(22,141,226,0.08);
+        color-mix(
+            in srgb,
+            var(--cor-tema) 8%,
+            transparent
+        );
 
     border:
         1px solid
-        rgba(22,141,226,0.20);
+        color-mix(
+            in srgb,
+            var(--cor-tema) 23%,
+            transparent
+        );
 
     border-radius:
         14px;
-
 }
 
 
 .build-aviso-plataforma strong {
 
     color:
-        var(--azul);
-
+        var(--cor-tema);
 }
 
 
@@ -1903,11 +1945,12 @@ nav > a,
 
     font-size:
         14px;
-
 }
 
 
-/* INFO */
+/* ==========================================
+   BUILD INFO
+========================================== */
 
 .build-info {
 
@@ -1922,7 +1965,6 @@ nav > a,
 
     gap:
         14px;
-
 }
 
 
@@ -1936,7 +1978,6 @@ nav > a,
 
     border-radius:
         14px;
-
 }
 
 
@@ -1951,11 +1992,12 @@ nav > a,
 
     line-height:
         1.5;
-
 }
 
 
-/* PLATAFORMAS */
+/* ==========================================
+   PLATAFORMAS
+========================================== */
 
 .plataformas {
 
@@ -1970,7 +2012,6 @@ nav > a,
 
     margin:
         22px 0;
-
 }
 
 
@@ -1987,7 +2028,6 @@ nav > a,
 
     font-weight:
         bold;
-
 }
 
 
@@ -2001,7 +2041,6 @@ nav > a,
 
     font-size:
         9px;
-
 }
 
 
@@ -2009,7 +2048,6 @@ nav > a,
 
     color:
         #d06060;
-
 }
 
 
@@ -2021,7 +2059,6 @@ nav > a,
 
     width:
         min(570px,100%);
-
 }
 
 
@@ -2038,7 +2075,6 @@ nav > a,
 
     margin-top:
         28px;
-
 }
 
 
@@ -2064,7 +2100,6 @@ nav > a,
 
     border-radius:
         16px;
-
 }
 
 
@@ -2078,7 +2113,6 @@ nav > a,
 
     gap:
         4px;
-
 }
 
 
@@ -2089,7 +2123,6 @@ nav > a,
 
     font-size:
         13px;
-
 }
 
 
@@ -2115,28 +2148,27 @@ nav > a,
 
     font-weight:
         bold;
-
 }
 
 
 .toggle-config.ativo {
 
     background:
-        var(--azul);
+        var(--cor-tema);
 
     color:
         white;
-
 }
 
 
-/* TEMA */
+/* ==========================================
+   SELETOR DE TEMA
+========================================== */
 
 .config-tema.oculto {
 
     display:
         none;
-
 }
 
 
@@ -2145,9 +2177,11 @@ nav > a,
     display:
         flex;
 
+    flex-wrap:
+        wrap;
+
     gap:
         8px;
-
 }
 
 
@@ -2158,7 +2192,7 @@ nav > a,
 
     border:
         1px solid
-        rgba(255,255,255,0.1);
+        rgba(255,255,255,0.10);
 
     border-radius:
         10px;
@@ -2168,19 +2202,19 @@ nav > a,
 
     color:
         white;
-
 }
 
 
 .tema-botao.ativo {
 
     background:
-        var(--azul);
-
+        var(--cor-tema);
 }
 
 
-/* rodapé secreto */
+/* ==========================================
+   RODAPÉ DAS CONFIGURAÇÕES
+========================================== */
 
 .rodape-configuracoes {
 
@@ -2205,7 +2239,6 @@ nav > a,
 
     user-select:
         none;
-
 }
 
 
@@ -2237,13 +2270,12 @@ nav > a,
         none;
 
     /*
-       Modal fica acima,
-       então o BNW escurece junto do fundo.
+        Modal fica acima dele.
+        Assim o BNW escurece junto do fundo.
     */
 
     z-index:
         8000;
-
 }
 
 
@@ -2270,6 +2302,11 @@ nav > a,
     image-rendering:
         pixelated;
 
+    pointer-events:
+        none;
+
+    transition:
+        transform 0.12s ease;
 }
 
 
@@ -2278,12 +2315,18 @@ nav > a,
     transform:
         scale(1.12)
         rotate(4deg);
+}
 
+
+#mascara-bnw.hover {
+
+    transform:
+        scale(1.07);
 }
 
 
 /* ==========================================
-   MÃO
+   MÃO PERSONALIZADA
 ========================================== */
 
 #cursor-mao {
@@ -2311,7 +2354,6 @@ nav > a,
 
     transform:
         translate(-10px,-8px);
-
 }
 
 
@@ -2329,6 +2371,11 @@ nav > a,
     image-rendering:
         pixelated;
 
+    pointer-events:
+        none;
+
+    transition:
+        transform 0.06s ease;
 }
 
 
@@ -2336,11 +2383,12 @@ nav > a,
 
     transform:
         scale(0.82);
-
 }
 
 
-/* ONDA SÓ EM CLIQUE CLICÁVEL */
+/* ==========================================
+   ONDA NO CLIQUE CLICÁVEL
+========================================== */
 
 #cursor-mao::after {
 
@@ -2374,7 +2422,6 @@ nav > a,
 
     pointer-events:
         none;
-
 }
 
 
@@ -2384,7 +2431,6 @@ nav > a,
         ondaCursor
         0.38s ease-out
         forwards;
-
 }
 
 
@@ -2398,7 +2444,6 @@ nav > a,
         transform:
             translate(-50%,-50%)
             scale(0.25);
-
     }
 
     100% {
@@ -2409,9 +2454,7 @@ nav > a,
         transform:
             translate(-50%,-50%)
             scale(1.9);
-
     }
-
 }
 
 
@@ -2424,7 +2467,6 @@ nav > a,
     animation:
         tremorTela
         0.35s linear;
-
 }
 
 
@@ -2459,7 +2501,6 @@ nav > a,
         transform:
             translate(0);
     }
-
 }
 
 
@@ -2468,15 +2509,15 @@ nav > a,
 ========================================== */
 
 /*
-   BNW some,
-   mas a mão permanece.
+   Sem efeitos:
+   - BNW desaparece.
+   - mão personalizada continua.
 */
 
 body.sem-efeitos #bnw-container {
 
     display:
         none !important;
-
 }
 
 
@@ -2484,7 +2525,6 @@ body.sem-efeitos #cursor-mao {
 
     display:
         block;
-
 }
 
 
@@ -2492,7 +2532,13 @@ body.sem-efeitos #cursor-mao::after {
 
     display:
         none;
+}
 
+
+body.sem-efeitos * {
+
+    animation:
+        none !important;
 }
 
 
@@ -2506,7 +2552,6 @@ body.sem-efeitos #cursor-mao::after {
 
         cursor:
             auto !important;
-
     }
 
 
@@ -2515,7 +2560,6 @@ body.sem-efeitos #cursor-mao::after {
 
         display:
             none !important;
-
     }
 
 }
@@ -2528,15 +2572,15 @@ body.sem-efeitos #cursor-mao::after {
 @media (max-width: 900px) {
 
     /*
-       Esconde links normais.
-       Comunidade continua.
+        Links normais somem,
+        mas Comunidade continua visível
+        tanto retrato quanto paisagem.
     */
 
     nav > a {
 
         display:
             none;
-
     }
 
 
@@ -2544,7 +2588,6 @@ body.sem-efeitos #cursor-mao::after {
 
         display:
             inline-block;
-
     }
 
 
@@ -2552,7 +2595,6 @@ body.sem-efeitos #cursor-mao::after {
 
         padding:
             0 10px;
-
     }
 
 
@@ -2560,7 +2602,6 @@ body.sem-efeitos #cursor-mao::after {
 
         gap:
             6px;
-
     }
 
 
@@ -2569,6 +2610,8 @@ body.sem-efeitos #cursor-mao::after {
         height:
             29px;
 
+        max-width:
+            120px;
     }
 
 
@@ -2580,7 +2623,6 @@ body.sem-efeitos #cursor-mao::after {
 
         height:
             36px;
-
     }
 
 
@@ -2588,7 +2630,6 @@ body.sem-efeitos #cursor-mao::after {
 
         padding:
             8px 10px;
-
     }
 
 
@@ -2596,11 +2637,10 @@ body.sem-efeitos #cursor-mao::after {
 
         font-size:
             13px;
-
     }
 
 
-    /* MODAL IOS */
+    /* iPhone / telas pequenas */
 
     .overlay-modal {
 
@@ -2624,7 +2664,6 @@ body.sem-efeitos #cursor-mao::after {
 
         padding-left:
             12px;
-
     }
 
 
@@ -2632,6 +2671,9 @@ body.sem-efeitos #cursor-mao::after {
 
         width:
             100%;
+
+        max-height:
+            calc(100vh - 24px);
 
         max-height:
             calc(100dvh - 24px);
@@ -2644,7 +2686,6 @@ body.sem-efeitos #cursor-mao::after {
 
         padding:
             16px 20px 26px;
-
     }
 
 
@@ -2658,7 +2699,6 @@ body.sem-efeitos #cursor-mao::after {
 
         margin-left:
             auto;
-
     }
 
 
@@ -2666,7 +2706,6 @@ body.sem-efeitos #cursor-mao::after {
 
         grid-template-columns:
             1fr;
-
     }
 
 
@@ -2674,7 +2713,13 @@ body.sem-efeitos #cursor-mao::after {
 
         flex-direction:
             column;
+    }
 
+
+    .config-item {
+
+        align-items:
+            flex-start;
     }
 
 
@@ -2685,7 +2730,6 @@ body.sem-efeitos #cursor-mao::after {
 
         gap:
             4px;
-
     }
 
 }

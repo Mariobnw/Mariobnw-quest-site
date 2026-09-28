@@ -5,7 +5,9 @@
 :root {
 
     --fundo: #ffffff;
+
     --texto: #111111;
+
     --texto-secundario: #666666;
 
     --topo:
@@ -39,9 +41,14 @@
 
     :root {
 
-        --fundo: #050505;
-        --texto: #ffffff;
-        --texto-secundario: #aaaaaa;
+        --fundo:
+            #050505;
+
+        --texto:
+            #ffffff;
+
+        --texto-secundario:
+            #aaaaaa;
 
         --topo:
             rgba(10,10,14,0.93);
@@ -91,39 +98,10 @@ html[data-tema="mario.uno"] .botao-idioma {
 }
 
 
-html[data-tema="mario.uno"] .canal-idioma {
-
-    background:
-        rgba(47,189,89,0.13);
-}
-
-
 html[data-tema="mario.uno"] .card:hover {
 
     border-color:
         rgba(47,189,89,0.40);
-}
-
-
-/* ==========================================
-   TRANSIÇÃO DE CORES ENTRE TEMAS
-========================================== */
-
-body,
-.topo,
-.card,
-.botao,
-.botao-hud,
-.botao-idioma,
-.modal-base,
-.download-bloco,
-.config-item,
-.build-aviso-plataforma {
-
-    transition:
-        background-color 0.55s ease,
-        color 0.55s ease,
-        border-color 0.55s ease;
 }
 
 
@@ -135,9 +113,6 @@ body,
 
     box-sizing:
         border-box;
-
-    cursor:
-        none !important;
 }
 
 
@@ -145,6 +120,20 @@ html {
 
     scroll-behavior:
         smooth;
+}
+
+
+/*
+   O cursor normal só desaparece
+   depois que o JS confirma que a
+   mão personalizada existe.
+*/
+
+html.cursor-personalizado,
+html.cursor-personalizado * {
+
+    cursor:
+        none !important;
 }
 
 
@@ -185,6 +174,29 @@ a {
 
 
 /* ==========================================
+   TRANSIÇÕES DE TEMA
+========================================== */
+
+body,
+.topo,
+.card,
+.botao,
+.botao-hud,
+.botao-idioma,
+.modal-base,
+.download-bloco,
+.config-item,
+.codigos-caixa,
+.site-card {
+
+    transition:
+        background-color 0.55s ease,
+        color 0.55s ease,
+        border-color 0.55s ease;
+}
+
+
+/* ==========================================
    TRANSIÇÃO PRETA
 ========================================== */
 
@@ -221,7 +233,7 @@ a {
 
 
 /* ==========================================
-   AVISO DE ERRO
+   AVISO
 ========================================== */
 
 .aviso-erro {
@@ -412,7 +424,9 @@ a {
 }
 
 
-/* LOGO */
+/* ==========================================
+   LOGO
+========================================== */
 
 .logo-topo {
 
@@ -433,7 +447,7 @@ a {
 }
 
 
-.logo-topo img {
+#logo-site {
 
     display:
         block;
@@ -445,7 +459,7 @@ a {
         40px;
 
     max-width:
-        230px;
+        none;
 
     object-fit:
         contain;
@@ -463,7 +477,7 @@ a {
 
     animation:
         glitchLogo
-        0.65s steps(2,end);
+        0.75s steps(2,end);
 }
 
 
@@ -478,36 +492,55 @@ a {
             none;
     }
 
-    15% {
+    12% {
 
         transform:
-            translate(-5px,2px);
+            translate(-6px,2px);
 
         filter:
-            drop-shadow(4px 0 #ff00ff)
-            drop-shadow(-4px 0 #00ffff);
+            drop-shadow(
+                5px 0 #ff00ff
+            )
+            drop-shadow(
+                -5px 0 #00ffff
+            );
     }
 
-    35% {
+    28% {
 
         transform:
             translate(5px,-2px);
     }
 
-    55% {
+    45% {
 
         transform:
-            translate(-3px,0);
+            translate(-4px,1px);
 
         filter:
-            drop-shadow(3px 0 #00ff66)
-            drop-shadow(-3px 0 #ff0055);
+            drop-shadow(
+                4px 0 #00ff66
+            )
+            drop-shadow(
+                -4px 0 #ff3355
+            );
     }
 
-    75% {
+    65% {
 
         transform:
-            translate(3px,1px);
+            translate(4px,-1px);
+    }
+
+    82% {
+
+        transform:
+            translate(-2px,0);
+
+        filter:
+            drop-shadow(
+                2px 0 #ffff00
+            );
     }
 
     100% {
@@ -520,8 +553,6 @@ a {
     }
 }
 
-
-/* partículas de glitch */
 
 .logo-particula {
 
@@ -542,7 +573,7 @@ a {
 
     animation:
         particulaGlitch
-        0.6s ease-out
+        0.65s ease-out
         forwards;
 }
 
@@ -642,6 +673,9 @@ nav > a,
 
 .botao-hud {
 
+    position:
+        relative;
+
     width:
         42px;
 
@@ -671,6 +705,51 @@ nav > a,
 
     font-size:
         20px;
+}
+
+
+/* ==========================================
+   DEVLOG NOVO
+========================================== */
+
+.devlog-novo {
+
+    position:
+        absolute;
+
+    top:
+        -8px;
+
+    right:
+        -14px;
+
+    padding:
+        3px 5px;
+
+    background:
+        #d93535;
+
+    color:
+        white;
+
+    border-radius:
+        999px;
+
+    font-size:
+        7px;
+
+    font-weight:
+        bold;
+
+    pointer-events:
+        none;
+}
+
+
+.devlog-novo.oculto {
+
+    display:
+        none;
 }
 
 
@@ -1010,14 +1089,14 @@ nav > a,
 
 .secao-descricao {
 
-    color:
-        var(--texto-secundario);
-
     max-width:
         720px;
 
     margin-bottom:
         35px;
+
+    color:
+        var(--texto-secundario);
 }
 
 
@@ -1230,6 +1309,203 @@ nav > a,
 
 
 /* ==========================================
+   CÓDIGOS
+========================================== */
+
+.codigos-caixa {
+
+    padding:
+        42px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid
+        rgba(128,128,128,0.10);
+
+    border-radius:
+        26px;
+}
+
+
+.placa-em-breve {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        7px 11px;
+
+    background:
+        rgba(217,53,53,0.13);
+
+    color:
+        #d06060;
+
+    border-radius:
+        8px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+}
+
+
+.codigos-caixa p {
+
+    max-width:
+        650px;
+
+    color:
+        var(--texto-secundario);
+}
+
+
+.codigos-form {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+    margin-top:
+        25px;
+}
+
+
+.codigos-form input {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+    padding:
+        14px 16px;
+
+    border:
+        1px solid
+        rgba(128,128,128,0.18);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(128,128,128,0.08);
+
+    color:
+        var(--texto);
+
+    font-size:
+        15px;
+}
+
+
+.codigos-form input:disabled {
+
+    opacity:
+        0.55;
+}
+
+
+/* ==========================================
+   OUTROS SITES
+========================================== */
+
+.outros-sites-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:
+        20px;
+}
+
+
+.site-card {
+
+    padding:
+        28px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid
+        rgba(128,128,128,0.10);
+
+    border-radius:
+        22px;
+}
+
+
+.site-card-logo {
+
+    margin-bottom:
+        16px;
+
+    font-size:
+        30px;
+
+    font-weight:
+        bold;
+}
+
+
+.caos-total-logo {
+
+    letter-spacing:
+        1px;
+}
+
+
+.site-card-status {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        12px;
+
+    padding:
+        5px 8px;
+
+    background:
+        rgba(217,53,53,0.13);
+
+    color:
+        #d06060;
+
+    border-radius:
+        7px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        bold;
+}
+
+
+.site-card p {
+
+    color:
+        var(--texto-secundario);
+}
+
+
+/* ==========================================
    RODAPÉ
 ========================================== */
 
@@ -1247,6 +1523,9 @@ nav > a,
     display:
         flex;
 
+    align-items:
+        center;
+
     justify-content:
         space-between;
 
@@ -1262,6 +1541,107 @@ nav > a,
 
     font-size:
         13px;
+}
+
+
+.rodape-identidade {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    color:
+        var(--texto);
+
+    font-weight:
+        bold;
+}
+
+
+/* ==========================================
+   FITA MARIO.UNO
+========================================== */
+
+.nome-tematico {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+}
+
+
+.fita-uno {
+
+    display:
+        none;
+}
+
+
+html[data-tema="mario.uno"]
+.fita-uno {
+
+    display:
+        block;
+
+    position:
+        absolute;
+
+    left:
+        -8px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%)
+        rotate(-4deg);
+
+    padding:
+        3px 10px;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    color:
+        #111111;
+
+    border:
+        1px solid
+        rgba(0,0,0,0.08);
+
+    border-radius:
+        4px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.20);
+
+    font-size:
+        0.95em;
+
+    font-weight:
+        bold;
+
+    white-space:
+        nowrap;
+
+    z-index:
+        5;
+}
+
+
+html[data-tema="mario.uno"]
+.nome-bnw-original {
+
+    opacity:
+        0.30;
 }
 
 
@@ -1355,6 +1735,22 @@ nav > a,
     box-shadow:
         0 30px 90px
         rgba(0,0,0,0.55);
+
+    transform:
+        translateY(20px)
+        scale(0.98);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.overlay-modal.aberto
+.modal-base {
+
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 
@@ -1875,8 +2271,7 @@ nav > a,
         inherit;
 
     transition:
-        width 0.7s ease,
-        background 0.55s ease;
+        width 0.7s ease;
 }
 
 
@@ -1897,7 +2292,7 @@ nav > a,
 
 
 /* ==========================================
-   AVISO DAS BUILDS
+   BUILD
 ========================================== */
 
 .build-aviso-plataforma {
@@ -1909,22 +2304,25 @@ nav > a,
         17px;
 
     background:
-        color-mix(
-            in srgb,
-            var(--cor-tema) 8%,
-            transparent
-        );
+        rgba(22,141,226,0.08);
 
     border:
         1px solid
-        color-mix(
-            in srgb,
-            var(--cor-tema) 23%,
-            transparent
-        );
+        rgba(22,141,226,0.20);
 
     border-radius:
         14px;
+}
+
+
+html[data-tema="mario.uno"]
+.build-aviso-plataforma {
+
+    background:
+        rgba(47,189,89,0.08);
+
+    border-color:
+        rgba(47,189,89,0.22);
 }
 
 
@@ -1947,10 +2345,6 @@ nav > a,
         14px;
 }
 
-
-/* ==========================================
-   BUILD INFO
-========================================== */
 
 .build-info {
 
@@ -2161,10 +2555,6 @@ nav > a,
 }
 
 
-/* ==========================================
-   SELETOR DE TEMA
-========================================== */
-
 .config-tema.oculto {
 
     display:
@@ -2211,10 +2601,6 @@ nav > a,
         var(--cor-tema);
 }
 
-
-/* ==========================================
-   RODAPÉ DAS CONFIGURAÇÕES
-========================================== */
 
 .rodape-configuracoes {
 
@@ -2268,11 +2654,6 @@ nav > a,
 
     pointer-events:
         none;
-
-    /*
-        Modal fica acima dele.
-        Assim o BNW escurece junto do fundo.
-    */
 
     z-index:
         8000;
@@ -2387,7 +2768,7 @@ nav > a,
 
 
 /* ==========================================
-   ONDA NO CLIQUE CLICÁVEL
+   ONDA DO CLIQUE
 ========================================== */
 
 #cursor-mao::after {
@@ -2505,14 +2886,8 @@ nav > a,
 
 
 /* ==========================================
-   EFEITOS OFF
+   SEM EFEITOS
 ========================================== */
-
-/*
-   Sem efeitos:
-   - BNW desaparece.
-   - mão personalizada continua.
-*/
 
 body.sem-efeitos #bnw-container {
 
@@ -2543,12 +2918,124 @@ body.sem-efeitos * {
 
 
 /* ==========================================
+   404
+========================================== */
+
+.pagina-404-body {
+
+    min-height:
+        100vh;
+
+    margin:
+        0;
+
+    background:
+        var(--fundo);
+}
+
+
+.pagina-404 {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        35px;
+
+    text-align:
+        center;
+}
+
+
+.logo-404 img {
+
+    width:
+        auto;
+
+    height:
+        52px;
+
+    margin-bottom:
+        35px;
+
+    object-fit:
+        contain;
+}
+
+
+.erro-404-codigo {
+
+    color:
+        var(--cor-tema);
+
+    font-size:
+        clamp(
+            110px,
+            25vw,
+            220px
+        );
+
+    font-weight:
+        900;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        -8px;
+}
+
+
+.pagina-404 h1 {
+
+    margin:
+        30px 0 10px;
+
+    font-size:
+        clamp(
+            25px,
+            5vw,
+            38px
+        );
+}
+
+
+.pagina-404 p {
+
+    max-width:
+        550px;
+
+    margin:
+        0 0 30px;
+
+    color:
+        var(--texto-secundario);
+
+    line-height:
+        1.65;
+}
+
+
+/* ==========================================
    TOUCH
 ========================================== */
 
 @media (hover: none) and (pointer: coarse) {
 
-    * {
+    html.cursor-personalizado,
+    html.cursor-personalizado * {
 
         cursor:
             auto !important;
@@ -2570,12 +3057,6 @@ body.sem-efeitos * {
 ========================================== */
 
 @media (max-width: 900px) {
-
-    /*
-        Links normais somem,
-        mas Comunidade continua visível
-        tanto retrato quanto paisagem.
-    */
 
     nav > a {
 
@@ -2605,13 +3086,10 @@ body.sem-efeitos * {
     }
 
 
-    .logo-topo img {
+    #logo-site {
 
         height:
-            29px;
-
-        max-width:
-            120px;
+            30px;
     }
 
 
@@ -2639,8 +3117,6 @@ body.sem-efeitos * {
             13px;
     }
 
-
-    /* iPhone / telas pequenas */
 
     .overlay-modal {
 
@@ -2728,8 +3204,40 @@ body.sem-efeitos * {
         flex-direction:
             column;
 
+        align-items:
+            flex-start;
+
         gap:
-            4px;
+            8px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .outros-sites-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .codigos-caixa {
+
+        padding:
+            28px 22px;
+    }
+
+
+    .codigos-form {
+
+        flex-direction:
+            column;
     }
 
 }

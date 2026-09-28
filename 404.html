@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        id="theme-color"
+        name="theme-color"
+        content="#168de2"
+    >
+
+    <title>404 — mariobnw quest</title>
+
+    <link
+        id="favicon-404"
+        rel="icon"
+        type="image/png"
+        href=""
+    >
+
+</head>
+
+
+<body class="pagina-404-body">
+
+    <main class="pagina-404">
+
+        <a
+            id="link-inicio-404"
+            class="logo-404"
+            href="#"
+        >
+
+            <img
+                id="logo-404"
+                src=""
+                alt="mariobnw quest"
+            >
+
+        </a>
+
+
+        <span class="erro-404-codigo">
+            404
+        </span>
+
+
+        <h1 id="titulo-404">
+            Parece que essa área não existe.
+        </h1>
+
+
+        <p id="texto-404">
+            Talvez você tenha encontrado uma parte do Quest
+            que ainda não foi criada.
+        </p>
+
+
+        <a
+            id="voltar-404"
+            class="botao-404"
+            href="#"
+        >
+            Voltar ao início
+        </a>
+
+    </main>
+
+
+    <script>
+
+        /*
+           Descobre automaticamente a raiz
+           do projeto no GitHub Pages.
+
+           Exemplo:
+           mariobnw.github.io/mariobnw-quest-site/
+        */
+
+        const usandoGithubPages =
+            location.hostname.endsWith(
+                "github.io"
+            );
+
+
+        let baseSite;
+
+
+        if (usandoGithubPages) {
+
+            const partes =
+                location.pathname
+                    .split("/")
+                    .filter(Boolean);
+
+
+            baseSite =
+                partes.length > 0
+                    ?
+                    "/" + partes[0] + "/"
+                    :
+                    "/";
+
+        }
+
+        else {
+
+            baseSite =
+                "/";
+
+        }
+
+
+        const idioma =
+            localStorage.getItem(
+                "bnwIdioma"
+            )
+            ||
+            "pt";
+
+
+        const unoDesbloqueado =
+            localStorage.getItem(
+                "bnwTemaUnoDesbloqueado"
+            )
+            ===
+            "true";
+
+
+        let tema =
+            localStorage.getItem(
+                "bnwTema"
+            )
+            ||
+            "mariobnw";
+
+
+        if (
+            tema === "verde"
+        ) {
+
+            tema =
+                "mario.uno";
+
+        }
+
+
+        if (
+            tema === "mario.uno"
+            &&
+            !unoDesbloqueado
+        ) {
+
+            tema =
+                "mariobnw";
+
+        }
+
+
+        const verde =
+            tema ===
+            "mario.uno";
+
+
+        const corTema =
+            verde
+                ?
+                "#2fbd59"
+                :
+                "#168de2";
+
+
+        document.documentElement.style.setProperty(
+            "--cor-tema",
+            corTema
+        );
+
+
+        document.documentElement.style.setProperty(
+            "--fundo",
+            "#050505"
+        );
+
+
+        document.documentElement.style.setProperty(
+            "--texto",
+            "#ffffff"
+        );
+
+
+        document.documentElement.style.setProperty(
+            "--texto-secundario",
+            "#aaaaaa"
+        );
+
+
+        document.body.style.margin =
+            "0";
+
+
+        document.body.style.background =
+            "#050505";
+
+
+        document.body.style.color =
+            "#ffffff";
+
+
+        document.body.style.fontFamily =
+            "Arial, Helvetica, sans-serif";
+
+
+        const logo =
+            document.getElementById(
+                "logo-404"
+            );
+
+
+        const favicon =
+            document.getElementById(
+                "favicon-404"
+            );
+
+
+        logo.src =
+            baseSite
+            +
+            (
+                verde
+                    ?
+                    "images/logo-topo-verde.png"
+                    :
+                    "images/logo-topo.png"
+            );
+
+
+        favicon.href =
+            baseSite
+            +
+            (
+                verde
+                    ?
+                    "images/mariobnw-verde-aberto.png"
+                    :
+                    "images/favicon-aberto.png"
+            );
+
+
+        document
+            .getElementById(
+                "theme-color"
+            )
+            .setAttribute(
+                "content",
+                corTema
+            );
+
+
+        document.title =
+            verde
+                ?
+                "404 — mario.uno quest"
+                :
+                "404 — mariobnw quest";
+
+
+        const linkInicio =
+            document.getElementById(
+                "link-inicio-404"
+            );
+
+
+        const voltar =
+            document.getElementById(
+                "voltar-404"
+            );
+
+
+        linkInicio.href =
+            baseSite;
+
+
+        voltar.href =
+            baseSite;
+
+
+        if (
+            idioma === "en"
+        ) {
+
+            document.documentElement.lang =
+                "en";
+
+
+            document.getElementById(
+                "titulo-404"
+            ).textContent =
+                "It looks like this area doesn't exist.";
+
+
+            document.getElementById(
+                "texto-404"
+            ).textContent =
+                "Maybe you found a part of the Quest that hasn't been created yet.";
+
+
+            voltar.textContent =
+                "Return home";
+
+        }
+
+
+        /*
+           CSS da página 404 inserido aqui
+           para funcionar mesmo se a URL
+           quebrada tiver vários níveis.
+        */
+
+        const estilo =
+            document.createElement(
+                "style"
+            );
+
+
+        estilo.textContent =
+        `
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .pagina-404-body {
+            min-height: 100vh;
+        }
+
+        .pagina-404 {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 35px;
+
+            text-align: center;
+        }
+
+        .logo-404 img {
+            width: auto;
+            height: 52px;
+
+            margin-bottom: 35px;
+
+            object-fit: contain;
+        }
+
+        .erro-404-codigo {
+            color: ${corTema};
+
+            font-size:
+                clamp(
+                    110px,
+                    25vw,
+                    220px
+                );
+
+            font-weight: 900;
+
+            line-height: 0.9;
+
+            letter-spacing: -8px;
+        }
+
+        .pagina-404 h1 {
+            margin:
+                30px 0 10px;
+
+            font-size:
+                clamp(
+                    25px,
+                    5vw,
+                    38px
+                );
+        }
+
+        .pagina-404 p {
+            max-width: 550px;
+
+            margin:
+                0 0 30px;
+
+            color:
+                #aaaaaa;
+
+            line-height:
+                1.65;
+        }
+
+        .botao-404 {
+            display: inline-block;
+
+            padding:
+                15px 28px;
+
+            background:
+                ${corTema};
+
+            color:
+                white;
+
+            text-decoration:
+                none;
+
+            border-radius:
+                12px;
+
+            font-size:
+                16px;
+
+            font-weight:
+                bold;
+        }
+
+        `;
+
+
+        document.head.appendChild(
+            estilo
+        );
+
+    </script>
+
+</body>
+
+</html>

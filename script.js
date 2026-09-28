@@ -1,5 +1,5 @@
 console.log(
-    "mariobnw quest carregado"
+    "mariobnw quest - Site v0.3.0 carregado"
 );
 
 
@@ -7,26 +7,29 @@ console.log(
    CONFIGURAÇÕES FÁCEIS
 ========================================== */
 
-
 /*
-   MUDE ESTE NÚMERO QUANDO
-   A DEMO AVANÇAR.
+    ALTERE SÓ ESTE NÚMERO
+    QUANDO A DEMO AVANÇAR.
+
+    0   = 0%
+    15  = 15%
+    67  = 67%
+    100 = 100%
 */
 
 const progressoDemo = 0;
 
 
 /*
-   MUDE AQUI QUANDO ATUALIZAR
-   O SITE.
+    VERSÃO DO SITE
 */
 
 const versaoSite =
-    "0.2.0";
+    "0.3.0";
 
 
 /* ==========================================
-   ELEMENTOS
+   ELEMENTOS PRINCIPAIS
 ========================================== */
 
 let favicon =
@@ -113,7 +116,9 @@ const avisoDescricao =
     );
 
 
-/* IDIOMA */
+/* ==========================================
+   IDIOMA
+========================================== */
 
 const botaoIdioma =
     document.getElementById(
@@ -127,7 +132,9 @@ const menuIdioma =
     );
 
 
-/* COMUNIDADE */
+/* ==========================================
+   COMUNIDADE
+========================================== */
 
 const abrirComunidade =
     document.getElementById(
@@ -153,7 +160,9 @@ const comunidadeYoutube =
     );
 
 
-/* DEVLOG */
+/* ==========================================
+   DEVLOG
+========================================== */
 
 const abrirDevlog =
     document.getElementById(
@@ -173,7 +182,9 @@ const overlayDevlog =
     );
 
 
-/* DOWNLOADS */
+/* ==========================================
+   DOWNLOADS
+========================================== */
 
 const abrirDownloads =
     document.getElementById(
@@ -211,7 +222,9 @@ const botaoBuildIndisponivel =
     );
 
 
-/* CONFIGURAÇÕES */
+/* ==========================================
+   CONFIGURAÇÕES
+========================================== */
 
 const abrirConfiguracoes =
     document.getElementById(
@@ -249,15 +262,15 @@ const configTema =
     );
 
 
-const temaAzul =
+const temaMariobnw =
     document.getElementById(
-        "tema-azul"
+        "tema-mariobnw"
     );
 
 
-const temaVerde =
+const temaUno =
     document.getElementById(
-        "tema-verde"
+        "tema-uno"
     );
 
 
@@ -267,7 +280,9 @@ const rodapeConfiguracoes =
     );
 
 
-/* PROGRESSO */
+/* ==========================================
+   PROGRESSO
+========================================== */
 
 const progressoPorcentagem =
     document.getElementById(
@@ -293,7 +308,9 @@ const devlogProgresso =
     );
 
 
-/* VERSÃO */
+/* ==========================================
+   VERSÃO
+========================================== */
 
 const versaoSiteElemento =
     document.getElementById(
@@ -308,7 +325,7 @@ const versaoConfiguracoes =
 
 
 /* ==========================================
-   MÁSCARAS
+   MÁSCARAS DO BNW
 ========================================== */
 
 const imagens = {
@@ -339,17 +356,16 @@ const imagens = {
 
     erro:
         "images/mascara-erro.png"
-
 };
 
 
 /* ==========================================
-   FAVICON
+   FAVICONS
 ========================================== */
 
 const faviconFrames = {
 
-    azul: {
+    mariobnw: {
 
         aberto:
             "images/favicon-aberto.png",
@@ -363,7 +379,7 @@ const faviconFrames = {
     },
 
 
-    verde: {
+    "mario.uno": {
 
         aberto:
             "images/mariobnw-verde-aberto.png",
@@ -417,7 +433,7 @@ const traducoes = {
             "Conheça mariobnw quest",
 
         descricaoInicial:
-            "Um RPG independente com exploração, personagens, narrativa e sistemas de batalha próprios.",
+            "Um RPG baseado em turnos inspirado na série Mario & Luigi, com personagens, história e sistemas próprios.",
 
         botaoBaixar:
             "Ver downloads",
@@ -459,7 +475,7 @@ const traducoes = {
             "Sobre o jogo",
 
         sobreTexto:
-            "mariobnw quest é um RPG independente atualmente em desenvolvimento, com exploração, narrativa, personagens originais e diferentes sistemas de batalha.",
+            "mariobnw quest é um RPG baseado em turnos inspirado na série Mario & Luigi, com personagens, história e sistemas próprios.",
 
 
         canaisTitulo:
@@ -513,10 +529,10 @@ const traducoes = {
             "Demo Beta 0.1",
 
         devlogPost1Titulo:
-            "Nova estrutura do site",
+            "Site v0.3.0",
 
         devlogPost1Texto:
-            "O site recebeu uma central de downloads, Devlog, configurações e melhorias de compatibilidade.",
+            "Configurações, Devlog, central de downloads, melhorias mobile e novos detalhes interativos.",
 
         devlogPost2Titulo:
             "Demo Beta 0.1",
@@ -528,7 +544,7 @@ const traducoes = {
             "Comunidade",
 
         devlogPost3Texto:
-            "A área de comunidade agora conecta o site aos canais oficiais.",
+            "A área de comunidade conecta o site aos canais oficiais.",
 
 
         downloadsEtiqueta:
@@ -553,6 +569,9 @@ const traducoes = {
         plataformaPlanejada:
             "PLANEJADO",
 
+        plataformaNaoPlanejada:
+            "NÃO PLANEJADO AINDA",
+
         downloadIndisponivel:
             "INDISPONÍVEL",
 
@@ -562,6 +581,7 @@ const traducoes = {
 
         buildDescricao:
             "Primeira build de teste planejada para mariobnw quest.",
+
 
         progressoTitulo:
             "Progresso da Demo Beta 0.1",
@@ -576,11 +596,11 @@ const traducoes = {
             "O desenvolvimento desta build foi concluído.",
 
 
-        buildAndroidTitulo:
-            "Sobre versões para Android",
+        buildPlataformasTitulo:
+            "Sobre plataformas das builds de teste",
 
-        buildAndroidTexto:
-            "As versões beta de teste não serão disponibilizadas normalmente para Android. No Android serão lançadas apenas a demo pública e builds específicas anunciadas separadamente.",
+        buildPlataformasTexto:
+            "As builds beta normais serão disponibilizadas apenas para PC. Android, Linux e macOS não receberão essas versões, exceto em builds específicas anunciadas separadamente.",
 
 
         buildObjetivoTitulo:
@@ -612,7 +632,7 @@ const traducoes = {
         statusIndisponivel:
             "INDISPONÍVEL",
 
-        androidBetaNao:
+        betaNaoDisponivel:
             "NÃO DISPONÍVEL",
 
         buildBotao:
@@ -641,13 +661,7 @@ const traducoes = {
             "Tema",
 
         configTemaTexto:
-            "Escolha a aparência do site.",
-
-        temaAzul:
-            "Azul",
-
-        temaVerde:
-            "Verde",
+            "Escolha a identidade visual do site.",
 
 
         erroDownloadTitulo:
@@ -706,7 +720,7 @@ const traducoes = {
             "Discover mariobnw quest",
 
         descricaoInicial:
-            "An independent RPG featuring exploration, characters, storytelling and original battle systems.",
+            "A turn-based RPG inspired by the Mario & Luigi series, featuring original characters, story and systems.",
 
         botaoBaixar:
             "View downloads",
@@ -748,7 +762,7 @@ const traducoes = {
             "About the game",
 
         sobreTexto:
-            "mariobnw quest is an independent RPG currently in development, featuring exploration, storytelling, original characters and different battle systems.",
+            "mariobnw quest is a turn-based RPG inspired by the Mario & Luigi series, featuring original characters, story and systems.",
 
 
         canaisTitulo:
@@ -802,10 +816,10 @@ const traducoes = {
             "Demo Beta 0.1",
 
         devlogPost1Titulo:
-            "New website structure",
+            "Site v0.3.0",
 
         devlogPost1Texto:
-            "The website now includes a download center, Devlog, settings and compatibility improvements.",
+            "Settings, Devlog, download center, mobile improvements and new interactive details.",
 
         devlogPost2Titulo:
             "Demo Beta 0.1",
@@ -817,7 +831,7 @@ const traducoes = {
             "Community",
 
         devlogPost3Texto:
-            "The community area now connects the website to the official channels.",
+            "The community area connects the website to the official channels.",
 
 
         downloadsEtiqueta:
@@ -842,6 +856,9 @@ const traducoes = {
         plataformaPlanejada:
             "PLANNED",
 
+        plataformaNaoPlanejada:
+            "NOT PLANNED YET",
+
         downloadIndisponivel:
             "UNAVAILABLE",
 
@@ -851,6 +868,7 @@ const traducoes = {
 
         buildDescricao:
             "The first planned test build for mariobnw quest.",
+
 
         progressoTitulo:
             "Demo Beta 0.1 Progress",
@@ -865,11 +883,11 @@ const traducoes = {
             "Development of this build has been completed.",
 
 
-        buildAndroidTitulo:
-            "About Android versions",
+        buildPlataformasTitulo:
+            "About test build platforms",
 
-        buildAndroidTexto:
-            "Beta test builds will not normally be released for Android. Android will only receive the public demo and specific builds announced separately.",
+        buildPlataformasTexto:
+            "Regular beta builds will only be released for PC. Android, Linux and macOS will not receive these versions unless a specific build is announced separately.",
 
 
         buildObjetivoTitulo:
@@ -901,7 +919,7 @@ const traducoes = {
         statusIndisponivel:
             "UNAVAILABLE",
 
-        androidBetaNao:
+        betaNaoDisponivel:
             "NOT AVAILABLE",
 
         buildBotao:
@@ -930,13 +948,7 @@ const traducoes = {
             "Theme",
 
         configTemaTexto:
-            "Choose the website appearance.",
-
-        temaAzul:
-            "Blue",
-
-        temaVerde:
-            "Green",
+            "Choose the visual identity of the website.",
 
 
         erroDownloadTitulo:
@@ -963,7 +975,7 @@ const traducoes = {
 
 
 /* ==========================================
-   ESTADO
+   ESTADO SALVO
 ========================================== */
 
 let idiomaAtual =
@@ -990,29 +1002,57 @@ let efeitosLigados =
     "false";
 
 
-let temaVerdeDesbloqueado =
+let temaUnoDesbloqueado =
     localStorage.getItem(
-        "bnwTemaVerdeDesbloqueado"
+        "bnwTemaUnoDesbloqueado"
     )
     ===
     "true";
 
 
-let temaAtual =
+/*
+    Compatibilidade com versões antigas
+    do site que salvavam "verde" ou "azul".
+*/
+
+let temaSalvo =
     localStorage.getItem(
         "bnwTema"
-    )
-    ||
-    "azul";
+    );
 
 
 if (
-    !temaVerdeDesbloqueado
+    temaSalvo === "verde"
+) {
+
+    temaSalvo =
+        "mario.uno";
+}
+
+
+if (
+    temaSalvo === "azul"
+) {
+
+    temaSalvo =
+        "mariobnw";
+}
+
+
+let temaAtual =
+    temaSalvo
+    ||
+    "mariobnw";
+
+
+if (
+    temaAtual === "mario.uno"
+    &&
+    !temaUnoDesbloqueado
 ) {
 
     temaAtual =
-        "azul";
-
+        "mariobnw";
 }
 
 
@@ -1030,7 +1070,6 @@ function atualizarVersao() {
     versaoConfiguracoes.textContent =
         "mariobnw quest • Site v" +
         versaoSite;
-
 }
 
 
@@ -1038,64 +1077,214 @@ atualizarVersao();
 
 
 /* ==========================================
-   PROGRESSO
+   TEXTO TEMÁTICO
 ========================================== */
 
-function atualizarProgresso() {
+function aplicarNomeDoTema(
+    texto
+) {
 
-    const numero =
-        Math.max(
-            0,
-            Math.min(
-                progressoDemo,
-                100
+    if (
+        temaAtual ===
+        "mario.uno"
+    ) {
+
+        return texto
+            .replaceAll(
+                "mariobnw",
+                "mario.uno"
+            )
+            .replaceAll(
+                "Mariobnw",
+                "Mario.uno"
+            );
+    }
+
+
+    return texto;
+}
+
+
+/* ==========================================
+   GLITCH DE TEXTO
+========================================== */
+
+const simbolosGlitch =
+    "&*$%@#!?";
+
+
+const timersGlitch =
+    new Map();
+
+
+function simboloAleatorio() {
+
+    return simbolosGlitch[
+        Math.floor(
+            Math.random()
+            *
+            simbolosGlitch.length
+        )
+    ];
+}
+
+
+function reconstruirTextoGlitch(
+    elemento,
+    textoFinal,
+    mostrarErroVerde = false
+) {
+
+    if (
+        timersGlitch.has(
+            elemento
+        )
+    ) {
+
+        clearInterval(
+            timersGlitch.get(
+                elemento
             )
         );
 
-
-    progressoPorcentagem.textContent =
-        numero +
-        "%";
-
-
-    devlogProgresso.textContent =
-        numero +
-        "%";
-
-
-    progressoPreenchimento.style.width =
-        numero +
-        "%";
-
-
-    const t =
-        traducoes[
-            idiomaAtual
-        ];
-
-
-    if (
-        numero === 0
-    ) {
-
-        progressoStatus.textContent =
-            t.progressoNaoIniciado;
-
+        timersGlitch.delete(
+            elemento
+        );
     }
 
-    else if (
-        numero >= 100
+
+    const iniciar =
+        function() {
+
+            const tamanho =
+                textoFinal.length;
+
+
+            let revelados =
+                0;
+
+
+            const passo =
+                Math.max(
+                    1,
+                    Math.ceil(
+                        tamanho / 18
+                    )
+                );
+
+
+            const timer =
+                setInterval(
+
+                    function() {
+
+                        let resultado =
+                            "";
+
+
+                        for (
+                            let i = 0;
+                            i < tamanho;
+                            i++
+                        ) {
+
+                            if (
+                                i < revelados
+                            ) {
+
+                                resultado +=
+                                    textoFinal[i];
+
+                            }
+
+                            else if (
+                                textoFinal[i] ===
+                                " "
+                            ) {
+
+                                resultado +=
+                                    " ";
+
+                            }
+
+                            else {
+
+                                resultado +=
+                                    simboloAleatorio();
+
+                            }
+
+                        }
+
+
+                        elemento.textContent =
+                            resultado;
+
+
+                        revelados +=
+                            passo;
+
+
+                        if (
+                            revelados >
+                            tamanho
+                        ) {
+
+                            clearInterval(
+                                timer
+                            );
+
+
+                            timersGlitch.delete(
+                                elemento
+                            );
+
+
+                            elemento.textContent =
+                                textoFinal;
+
+                        }
+
+                    },
+
+                    55
+
+                );
+
+
+            timersGlitch.set(
+                elemento,
+                timer
+            );
+
+        };
+
+
+    /*
+       Às vezes aparece rapidamente
+       "mariobnw verde".
+    */
+
+    if (
+        mostrarErroVerde
+        &&
+        Math.random() < 0.30
     ) {
 
-        progressoStatus.textContent =
-            t.progressoConcluido;
+        elemento.textContent =
+            "mariobnw verde";
+
+
+        setTimeout(
+            iniciar,
+            130
+        );
 
     }
 
     else {
 
-        progressoStatus.textContent =
-            t.progressoEmAndamento;
+        iniciar();
 
     }
 
@@ -1103,20 +1292,16 @@ function atualizarProgresso() {
 
 
 /* ==========================================
-   IDIOMA
+   TRADUÇÕES + TEMA
 ========================================== */
 
-function trocarIdioma(
-    idioma
+function renderizarTextos(
+    usarGlitch = false
 ) {
-
-    idiomaAtual =
-        idioma;
-
 
     const pacote =
         traducoes[
-            idioma
+            idiomaAtual
         ];
 
 
@@ -1133,11 +1318,49 @@ function trocarIdioma(
 
 
                 if (
-                    pacote[chave]
+                    !pacote[chave]
                 ) {
 
+                    return;
+                }
+
+
+                const textoFinal =
+                    aplicarNomeDoTema(
+                        pacote[chave]
+                    );
+
+
+                if (
+                    usarGlitch
+                    &&
+                    elemento.children.length === 0
+                    &&
+                    efeitosLigados
+                ) {
+
+                    const podeBugVerde =
+                        temaAtual === "mario.uno"
+                        &&
+                        pacote[chave]
+                            .toLowerCase()
+                            .includes(
+                                "mariobnw"
+                            );
+
+
+                    reconstruirTextoGlitch(
+                        elemento,
+                        textoFinal,
+                        podeBugVerde
+                    );
+
+                }
+
+                else {
+
                     elemento.textContent =
-                        pacote[chave];
+                        textoFinal;
 
                 }
 
@@ -1146,10 +1369,28 @@ function trocarIdioma(
         );
 
 
+    atualizarProgresso();
+}
+
+
+/* ==========================================
+   IDIOMA
+========================================== */
+
+function trocarIdioma(
+    idioma
+) {
+
+    idiomaAtual =
+        idioma;
+
+
     document.documentElement.lang =
         idioma === "en"
-            ? "en"
-            : "pt-BR";
+        ?
+        "en"
+        :
+        "pt-BR";
 
 
     localStorage.setItem(
@@ -1158,23 +1399,19 @@ function trocarIdioma(
     );
 
 
-    atualizarProgresso();
+    renderizarTextos(
+        false
+    );
 
 
     menuIdioma.classList.remove(
         "aberto"
     );
-
 }
 
 
-trocarIdioma(
-    idiomaAtual
-);
-
-
 /* ==========================================
-   MENU IDIOMA
+   MENU DE IDIOMA
 ========================================== */
 
 botaoIdioma.addEventListener(
@@ -1246,6 +1483,230 @@ document.addEventListener(
 
 
 /* ==========================================
+   PROGRESSO DA DEMO
+========================================== */
+
+function atualizarProgresso() {
+
+    const numero =
+        Math.max(
+            0,
+            Math.min(
+                progressoDemo,
+                100
+            )
+        );
+
+
+    progressoPorcentagem.textContent =
+        numero +
+        "%";
+
+
+    devlogProgresso.textContent =
+        numero +
+        "%";
+
+
+    progressoPreenchimento.style.width =
+        numero +
+        "%";
+
+
+    const t =
+        traducoes[
+            idiomaAtual
+        ];
+
+
+    if (
+        numero === 0
+    ) {
+
+        progressoStatus.textContent =
+            t.progressoNaoIniciado;
+
+    }
+
+    else if (
+        numero >= 100
+    ) {
+
+        progressoStatus.textContent =
+            t.progressoConcluido;
+
+    }
+
+    else {
+
+        progressoStatus.textContent =
+            t.progressoEmAndamento;
+
+    }
+
+}
+
+
+/* ==========================================
+   SOM
+========================================== */
+
+function tocarSomClick(
+    volume = 1
+) {
+
+    if (
+        !somLigado
+    ) {
+
+        return;
+    }
+
+
+    somClick.pause();
+
+
+    somClick.volume =
+        volume;
+
+
+    somClick.currentTime =
+        0;
+
+
+    somClick.play().catch(
+        function(){}
+    );
+
+}
+
+
+function tocarSomErro() {
+
+    if (
+        !somLigado
+    ) {
+
+        return;
+    }
+
+
+    somErro.pause();
+
+
+    somErro.volume =
+        1;
+
+
+    somErro.currentTime =
+        0;
+
+
+    somErro.play().catch(
+        function(){}
+    );
+
+}
+
+
+/* ==========================================
+   CONFIGURAÇÕES
+========================================== */
+
+function atualizarConfiguracoes() {
+
+    toggleSom.textContent =
+        somLigado
+        ?
+        "ON"
+        :
+        "OFF";
+
+
+    toggleSom.classList.toggle(
+        "ativo",
+        somLigado
+    );
+
+
+    toggleEfeitos.textContent =
+        efeitosLigados
+        ?
+        "ON"
+        :
+        "OFF";
+
+
+    toggleEfeitos.classList.toggle(
+        "ativo",
+        efeitosLigados
+    );
+
+
+    document.body.classList.toggle(
+        "sem-efeitos",
+        !efeitosLigados
+    );
+
+
+    if (
+        !efeitosLigados
+    ) {
+
+        faviconNormal();
+
+    }
+
+}
+
+
+toggleSom.addEventListener(
+
+    "click",
+
+    function() {
+
+        somLigado =
+            !somLigado;
+
+
+        localStorage.setItem(
+            "bnwSom",
+            somLigado
+        );
+
+
+        atualizarConfiguracoes();
+
+    }
+
+);
+
+
+toggleEfeitos.addEventListener(
+
+    "click",
+
+    function() {
+
+        efeitosLigados =
+            !efeitosLigados;
+
+
+        localStorage.setItem(
+            "bnwEfeitos",
+            efeitosLigados
+        );
+
+
+        atualizarConfiguracoes();
+
+    }
+
+);
+
+
+/* ==========================================
    FAVICON
 ========================================== */
 
@@ -1255,10 +1716,9 @@ let faviconBloqueado =
 
 function obterFramesFavicon() {
 
-    return temaAtual === "verde"
-        ? faviconFrames.verde
-        : faviconFrames.azul;
-
+    return faviconFrames[
+        temaAtual
+    ];
 }
 
 
@@ -1323,7 +1783,6 @@ function piscarFavicon() {
     ) {
 
         return;
-
     }
 
 
@@ -1331,11 +1790,14 @@ function piscarFavicon() {
         obterFramesFavicon();
 
 
-    /* VERDE */
+    /*
+       MARIO.UNO
+       aberto > fechado > aberto
+    */
 
     if (
         temaAtual ===
-        "verde"
+        "mario.uno"
     ) {
 
         definirFavicon(
@@ -1365,11 +1827,13 @@ function piscarFavicon() {
 
 
         return;
-
     }
 
 
-    /* AZUL */
+    /*
+       MARIOBNW
+       aberto > semi > fechado > semi > aberto
+    */
 
     definirFavicon(
         frames.semi
@@ -1380,7 +1844,9 @@ function piscarFavicon() {
 
         function() {
 
-            if (!faviconBloqueado) {
+            if (
+                !faviconBloqueado
+            ) {
 
                 definirFavicon(
                     frames.fechado
@@ -1390,7 +1856,7 @@ function piscarFavicon() {
 
         },
 
-        170
+        180
 
     );
 
@@ -1399,7 +1865,9 @@ function piscarFavicon() {
 
         function() {
 
-            if (!faviconBloqueado) {
+            if (
+                !faviconBloqueado
+            ) {
 
                 definirFavicon(
                     frames.semi
@@ -1409,7 +1877,7 @@ function piscarFavicon() {
 
         },
 
-        420
+        430
 
     );
 
@@ -1418,7 +1886,9 @@ function piscarFavicon() {
 
         function() {
 
-            if (!faviconBloqueado) {
+            if (
+                !faviconBloqueado
+            ) {
 
                 definirFavicon(
                     frames.aberto
@@ -1428,7 +1898,7 @@ function piscarFavicon() {
 
         },
 
-        600
+        610
 
     );
 
@@ -1436,6 +1906,14 @@ function piscarFavicon() {
 
 
 function agendarFavicon() {
+
+    const tempo =
+        3000
+        +
+        Math.random()
+        *
+        4500;
+
 
     setTimeout(
 
@@ -1447,10 +1925,7 @@ function agendarFavicon() {
 
         },
 
-        3000 +
-        Math.random()
-        *
-        4500
+        tempo
 
     );
 
@@ -1495,274 +1970,372 @@ function faviconErro() {
 
 
 /* ==========================================
-   TEMA
+   GLITCH DA LOGO
 ========================================== */
 
-function atualizarBotoesTema() {
+function glitchLogo() {
 
-    temaAzul.classList.toggle(
-        "ativo",
-        temaAtual === "azul"
+    if (
+        !efeitosLigados
+    ) {
+
+        return;
+    }
+
+
+    logoLink.classList.remove(
+        "logo-glitch"
     );
 
 
-    temaVerde.classList.toggle(
-        "ativo",
-        temaAtual === "verde"
+    void logoLink.offsetWidth;
+
+
+    logoLink.classList.add(
+        "logo-glitch"
+    );
+
+
+    const cores = [
+
+        "#00ffff",
+        "#ff00ff",
+        "#00ff66",
+        "#ff3355",
+        "#ffff00"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 18;
+        i++
+    ) {
+
+        const particula =
+            document.createElement(
+                "span"
+            );
+
+
+        particula.className =
+            "logo-particula";
+
+
+        particula.style.background =
+            cores[
+                Math.floor(
+                    Math.random()
+                    *
+                    cores.length
+                )
+            ];
+
+
+        particula.style.left =
+            (
+                Math.random()
+                *
+                Math.max(
+                    logoLink.offsetWidth,
+                    60
+                )
+            )
+            +
+            "px";
+
+
+        particula.style.top =
+            (
+                Math.random()
+                *
+                Math.max(
+                    logoLink.offsetHeight,
+                    40
+                )
+            )
+            +
+            "px";
+
+
+        particula.style.setProperty(
+
+            "--x",
+
+            (
+                Math.random()
+                *
+                80
+                -
+                40
+            )
+            +
+            "px"
+
+        );
+
+
+        particula.style.setProperty(
+
+            "--y",
+
+            (
+                Math.random()
+                *
+                60
+                -
+                30
+            )
+            +
+            "px"
+
+        );
+
+
+        logoLink.appendChild(
+            particula
+        );
+
+
+        setTimeout(
+
+            function() {
+
+                particula.remove();
+
+            },
+
+            700
+
+        );
+
+    }
+
+
+    setTimeout(
+
+        function() {
+
+            logoLink.classList.remove(
+                "logo-glitch"
+            );
+
+        },
+
+        700
+
     );
 
 }
 
+
+/* ==========================================
+   SELETOR DE TEMA
+========================================== */
 
 function atualizarOpcaoTema() {
 
     configTema.classList.toggle(
         "oculto",
-        !temaVerdeDesbloqueado
+        !temaUnoDesbloqueado
     );
 
 }
 
 
+function atualizarBotoesTema() {
+
+    temaMariobnw.classList.toggle(
+
+        "ativo",
+
+        temaAtual ===
+        "mariobnw"
+
+    );
+
+
+    temaUno.classList.toggle(
+
+        "ativo",
+
+        temaAtual ===
+        "mario.uno"
+
+    );
+
+}
+
+
+/* ==========================================
+   APLICAR TEMA
+========================================== */
+
 function aplicarTema(
-    tema
+    tema,
+    usarGlitch = false
 ) {
 
     if (
-        tema === "verde"
+        tema === "mario.uno"
         &&
-        !temaVerdeDesbloqueado
+        !temaUnoDesbloqueado
     ) {
 
         return;
-
     }
+
+
+    const mudouTema =
+        temaAtual !==
+        tema;
 
 
     temaAtual =
         tema;
 
 
-    const verde =
-        tema ===
-        "verde";
-
-
-    document.body.classList.toggle(
-        "modo-secreto",
-        verde
+    document.documentElement.setAttribute(
+        "data-tema",
+        temaAtual
     );
 
 
-    logoSite.src =
-        verde
-            ? "images/.uno.logo.png"
-            : "images/logo-topo.png";
+    if (
+        temaAtual ===
+        "mario.uno"
+    ) {
+
+        /*
+           LOGO VERDE
+        */
+
+        logoSite.src =
+            "images/logo-topo-verde.png?v="
+            +
+            Date.now();
 
 
-    themeColor.content =
-        verde
-            ? "#2fbd59"
-            : "#168de2";
+        logoSite.alt =
+            "mario.uno quest";
+
+
+        document.title =
+            "mario.uno quest";
+
+
+        themeColor.setAttribute(
+            "content",
+            "#2fbd59"
+        );
+
+    }
+
+    else {
+
+        /*
+           LOGO NORMAL
+        */
+
+        logoSite.src =
+            "images/logo-topo.png?v="
+            +
+            Date.now();
+
+
+        logoSite.alt =
+            "mariobnw quest";
+
+
+        document.title =
+            "mariobnw quest";
+
+
+        themeColor.setAttribute(
+            "content",
+            "#168de2"
+        );
+
+    }
 
 
     localStorage.setItem(
         "bnwTema",
-        tema
+        temaAtual
     );
 
 
     atualizarBotoesTema();
 
+
     faviconNormal();
 
-}
 
-
-aplicarTema(
-    temaAtual
-);
-
-
-atualizarOpcaoTema();
-
-
-temaAzul.addEventListener(
-
-    "click",
-
-    function() {
-
-        aplicarTema(
-            "azul"
-        );
-
-    }
-
-);
-
-
-temaVerde.addEventListener(
-
-    "click",
-
-    function() {
-
-        aplicarTema(
-            "verde"
-        );
-
-    }
-
-);
-
-
-/* ==========================================
-   CONFIGURAÇÕES
-========================================== */
-
-function atualizarConfiguracoes() {
-
-    toggleSom.textContent =
-        somLigado
-            ? "ON"
-            : "OFF";
-
-
-    toggleSom.classList.toggle(
-        "ativo",
-        somLigado
-    );
-
-
-    toggleEfeitos.textContent =
-        efeitosLigados
-            ? "ON"
-            : "OFF";
-
-
-    toggleEfeitos.classList.toggle(
-        "ativo",
-        efeitosLigados
-    );
-
-
-    document.body.classList.toggle(
-        "sem-efeitos",
-        !efeitosLigados
+    renderizarTextos(
+        usarGlitch
     );
 
 
     if (
-        !efeitosLigados
+        mudouTema
+        &&
+        usarGlitch
     ) {
 
-        faviconNormal();
+        glitchLogo();
 
     }
 
 }
 
 
-atualizarConfiguracoes();
-
-
-toggleSom.addEventListener(
-
-    "click",
-
-    function() {
-
-        somLigado =
-            !somLigado;
-
-
-        localStorage.setItem(
-            "bnwSom",
-            somLigado
-        );
-
-
-        atualizarConfiguracoes();
-
-    }
-
-);
-
-
-toggleEfeitos.addEventListener(
-
-    "click",
-
-    function() {
-
-        efeitosLigados =
-            !efeitosLigados;
-
-
-        localStorage.setItem(
-            "bnwEfeitos",
-            efeitosLigados
-        );
-
-
-        atualizarConfiguracoes();
-
-    }
-
-);
-
-
 /* ==========================================
-   SOM
+   BOTÕES DE TEMA
 ========================================== */
 
-function tocarSomClick() {
+temaMariobnw.addEventListener(
 
-    if (!somLigado) {
-        return;
+    "click",
+
+    function() {
+
+        aplicarTema(
+            "mariobnw",
+            true
+        );
+
     }
 
-
-    somClick.pause();
-
-    somClick.currentTime =
-        0;
+);
 
 
-    somClick.play().catch(
-        function(){}
-    );
+temaUno.addEventListener(
 
-}
+    "click",
 
+    function() {
 
-function tocarSomErro() {
+        aplicarTema(
+            "mario.uno",
+            true
+        );
 
-    if (!somLigado) {
-        return;
     }
 
-
-    somErro.pause();
-
-    somErro.currentTime =
-        0;
-
-
-    somErro.play().catch(
-        function(){}
-    );
-
-}
+);
 
 
 /* ==========================================
-   BNW
+   ESTADO DO BNW
 ========================================== */
 
 let estadoAtual =
     "normal";
+
+
+let interagindo =
+    false;
 
 
 let erroForcado =
@@ -1805,7 +2378,10 @@ function mudarMascara(
     estado
 ) {
 
-    if (!imagens[estado]) {
+    if (
+        !imagens[estado]
+    ) {
+
         return;
     }
 
@@ -1820,7 +2396,9 @@ function mudarMascara(
 }
 
 
-/* MOUSE */
+/* ==========================================
+   MOVIMENTO DO MOUSE
+========================================== */
 
 document.addEventListener(
 
@@ -1849,12 +2427,38 @@ document.addEventListener(
             mouseY +
             "px";
 
+
+        /*
+            CORREÇÃO DA v0.3.0:
+
+            Se estava entediado,
+            apenas mexer o mouse já
+            acorda o BNW.
+        */
+
+        if (
+            estadoAtual ===
+            "semReacao"
+            &&
+            !erroForcado
+            &&
+            modaisAbertos === 0
+        ) {
+
+            mudarMascara(
+                "normal"
+            );
+
+        }
+
     }
 
 );
 
 
-/* BNW SEGUE */
+/* ==========================================
+   BNW SEGUE O MOUSE
+========================================== */
 
 function atualizarBNW() {
 
@@ -1878,7 +2482,8 @@ function atualizarBNW() {
 
         bnwX +=
             (
-                alvoX -
+                alvoX
+                -
                 bnwX
             )
             *
@@ -1887,7 +2492,8 @@ function atualizarBNW() {
 
         bnwY +=
             (
-                alvoY -
+                alvoY
+                -
                 bnwY
             )
             *
@@ -1896,6 +2502,12 @@ function atualizarBNW() {
     }
 
     else {
+
+        /*
+           Modal aberto:
+           BNW fica exatamente onde
+           estava antes do clique.
+        */
 
         bnwX =
             bnwTravadoX;
@@ -1927,7 +2539,89 @@ function atualizarBNW() {
 atualizarBNW();
 
 
-/* PISCADA */
+/* ==========================================
+   HOVER DOS ELEMENTOS
+========================================== */
+
+document
+    .querySelectorAll(
+        "a, button"
+    )
+    .forEach(
+
+        function(elemento) {
+
+            elemento.addEventListener(
+
+                "mouseenter",
+
+                function() {
+
+                    interagindo =
+                        true;
+
+
+                    tempoUltimaAcao =
+                        Date.now();
+
+
+                    if (
+                        !erroForcado
+                    ) {
+
+                        mascara.classList.add(
+                            "hover"
+                        );
+
+
+                        mudarMascara(
+                            "feliz"
+                        );
+
+                    }
+
+                }
+
+            );
+
+
+            elemento.addEventListener(
+
+                "mouseleave",
+
+                function() {
+
+                    interagindo =
+                        false;
+
+
+                    mascara.classList.remove(
+                        "hover"
+                    );
+
+
+                    if (
+                        !erroForcado
+                    ) {
+
+                        mudarMascara(
+                            "normal"
+                        );
+
+                    }
+
+                }
+
+            );
+
+        }
+
+    );
+
+
+/* ==========================================
+   PISCADA BNW
+========================================== */
 
 function piscarBNW() {
 
@@ -1938,7 +2632,6 @@ function piscarBNW() {
     ) {
 
         return;
-
     }
 
 
@@ -1947,11 +2640,13 @@ function piscarBNW() {
 
 
     if (
-        estadoAtual === "normal"
+        estadoAtual ===
+        "normal"
     ) {
 
         fechar =
             imagens.normalPiscando;
+
 
         voltar =
             imagens.normal;
@@ -1959,22 +2654,55 @@ function piscarBNW() {
     }
 
     else if (
-        estadoAtual === "feliz"
+        estadoAtual ===
+        "feliz"
     ) {
 
         fechar =
             imagens.felizPiscando;
+
 
         voltar =
             imagens.feliz;
 
     }
 
+    else if (
+        estadoAtual ===
+        "surpresa"
+    ) {
+
+        fechar =
+            imagens.surpresaPiscando;
+
+
+        voltar =
+            imagens.surpresa;
+
+    }
+
+    else if (
+        estadoAtual ===
+        "semReacao"
+    ) {
+
+        fechar =
+            imagens.semReacaoPiscando;
+
+
+        voltar =
+            imagens.semReacao;
+
+    }
+
     else {
 
         return;
-
     }
+
+
+    const estadoAntes =
+        estadoAtual;
 
 
     mascara.src =
@@ -1985,8 +2713,17 @@ function piscarBNW() {
 
         function() {
 
-            mascara.src =
-                voltar;
+            if (
+                estadoAtual ===
+                estadoAntes
+                &&
+                !erroForcado
+            ) {
+
+                mascara.src =
+                    voltar;
+
+            }
 
         },
 
@@ -1999,6 +2736,14 @@ function piscarBNW() {
 
 function agendarPiscarBNW() {
 
+    const tempo =
+        2800
+        +
+        Math.random()
+        *
+        4200;
+
+
     setTimeout(
 
         function() {
@@ -2009,10 +2754,7 @@ function agendarPiscarBNW() {
 
         },
 
-        2800 +
-        Math.random()
-        *
-        4200
+        tempo
 
     );
 
@@ -2023,12 +2765,27 @@ agendarPiscarBNW();
 
 
 /* ==========================================
-   MODAIS
+   SISTEMA DE MODAIS
 ========================================== */
 
 function abrirModal(
     overlay
 ) {
+
+    if (
+        overlay.classList.contains(
+            "aberto"
+        )
+    ) {
+
+        return;
+    }
+
+
+    /*
+       Primeiro modal aberto:
+       salva posição atual do BNW.
+    */
 
     if (
         modaisAbertos === 0
@@ -2076,7 +2833,6 @@ function fecharModal(
     ) {
 
         return;
-
     }
 
 
@@ -2111,7 +2867,9 @@ function fecharModal(
 }
 
 
-/* comunidade */
+/* ==========================================
+   COMUNIDADE
+========================================== */
 
 abrirComunidade.addEventListener(
 
@@ -2143,7 +2901,9 @@ fecharComunidade.addEventListener(
 );
 
 
-/* devlog */
+/* ==========================================
+   DEVLOG
+========================================== */
 
 abrirDevlog.addEventListener(
 
@@ -2175,7 +2935,9 @@ fecharDevlog.addEventListener(
 );
 
 
-/* downloads */
+/* ==========================================
+   DOWNLOADS
+========================================== */
 
 function abrirCentralDownloads() {
 
@@ -2213,7 +2975,9 @@ fecharDownloads.addEventListener(
 );
 
 
-/* configs */
+/* ==========================================
+   CONFIGURAÇÕES
+========================================== */
 
 abrirConfiguracoes.addEventListener(
 
@@ -2245,7 +3009,9 @@ fecharConfiguracoes.addEventListener(
 );
 
 
-/* clicar fora */
+/* ==========================================
+   CLICAR FORA DO MODAL
+========================================== */
 
 document
     .querySelectorAll(
@@ -2281,7 +3047,9 @@ document
     );
 
 
-/* ESC */
+/* ==========================================
+   ESC
+========================================== */
 
 document.addEventListener(
 
@@ -2295,20 +3063,23 @@ document.addEventListener(
         ) {
 
             return;
-
         }
 
 
-        const aberto =
-            document.querySelector(
+        const abertos =
+            document.querySelectorAll(
                 ".overlay-modal.aberto"
             );
 
 
-        if (aberto) {
+        if (
+            abertos.length > 0
+        ) {
 
             fecharModal(
-                aberto
+                abertos[
+                    abertos.length - 1
+                ]
             );
 
         }
@@ -2319,7 +3090,7 @@ document.addEventListener(
 
 
 /* ==========================================
-   YOUTUBE
+   COMUNIDADE YOUTUBE
 ========================================== */
 
 comunidadeYoutube.addEventListener(
@@ -2330,10 +3101,14 @@ comunidadeYoutube.addEventListener(
 
         const url =
             idiomaAtual === "en"
-                ?
-                "https://www.youtube.com/channel/UCV2DF75VHXaPeXvlLd8HFgA/community"
-                :
-                "https://www.youtube.com/@Mariobnw/community";
+
+            ?
+
+            "https://www.youtube.com/channel/UCV2DF75VHXaPeXvlLd8HFgA/community"
+
+            :
+
+            "https://www.youtube.com/@Mariobnw/community";
 
 
         window.open(
@@ -2348,8 +3123,19 @@ comunidadeYoutube.addEventListener(
 
 
 /* ==========================================
-   ONDA DA MÃO
+   MOUSE PERSONALIZADO
 ========================================== */
+
+/*
+   Mantido no comportamento anterior:
+
+   - mão normal;
+   - clique faz a mão pressionar;
+   - se for algo clicável, aparece
+     a onda;
+   - clique no vazio ainda faz
+     a mão pressionar normalmente.
+*/
 
 document.addEventListener(
 
@@ -2367,11 +3153,6 @@ document.addEventListener(
             "clicando"
         );
 
-
-        /*
-           ONDA APENAS QUANDO CLICA
-           EM ALGO CLICÁVEL.
-        */
 
         if (
             interativo
@@ -2401,8 +3182,12 @@ document.addEventListener(
         ) {
 
             return;
-
         }
+
+
+        mascara.classList.add(
+            "reagindo"
+        );
 
 
         mudarMascara(
@@ -2440,12 +3225,16 @@ document.addEventListener(
         );
 
 
+        mascara.classList.remove(
+            "reagindo"
+        );
+
+
         if (
             erroForcado
         ) {
 
             return;
-
         }
 
 
@@ -2475,7 +3264,7 @@ document.addEventListener(
 
 
 /* ==========================================
-   SOM NORMAL DOS BOTÕES
+   SOM DOS BOTÕES
 ========================================== */
 
 document.addEventListener(
@@ -2490,10 +3279,17 @@ document.addEventListener(
             );
 
 
-        if (!interativo) {
+        if (
+            !interativo
+        ) {
+
             return;
         }
 
+
+        /*
+           Erros têm som próprio.
+        */
 
         if (
             interativo ===
@@ -2508,11 +3304,12 @@ document.addEventListener(
         ) {
 
             return;
-
         }
 
 
-        tocarSomClick();
+        tocarSomClick(
+            1
+        );
 
     }
 
@@ -2520,7 +3317,7 @@ document.addEventListener(
 
 
 /* ==========================================
-   ERRO
+   AVISO DE ERRO
 ========================================== */
 
 let timerAviso =
@@ -2568,11 +3365,18 @@ function mostrarAviso(
 }
 
 
+/* ==========================================
+   TREMOR
+========================================== */
+
 function tremer(
     elemento
 ) {
 
-    if (!efeitosLigados) {
+    if (
+        !efeitosLigados
+    ) {
+
         return;
     }
 
@@ -2607,6 +3411,58 @@ function tremer(
 }
 
 
+/* ==========================================
+   RESTAURAR MÁSCARA APÓS ERRO
+========================================== */
+
+function restaurarMascaraAposErro() {
+
+    const elemento =
+        document.elementFromPoint(
+            mouseX,
+            mouseY
+        );
+
+
+    if (
+        elemento
+        &&
+        elemento.closest(
+            "a, button"
+        )
+    ) {
+
+        mudarMascara(
+            "feliz"
+        );
+
+
+        mascara.classList.add(
+            "hover"
+        );
+
+    }
+
+    else {
+
+        mudarMascara(
+            "normal"
+        );
+
+
+        mascara.classList.remove(
+            "hover"
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   ERRO
+========================================== */
+
 function executarErro(
     titulo,
     texto
@@ -2614,6 +3470,20 @@ function executarErro(
 
     erroForcado =
         true;
+
+
+    tempoUltimaAcao =
+        Date.now();
+
+
+    mascara.classList.remove(
+        "hover"
+    );
+
+
+    mascara.classList.add(
+        "reagindo"
+    );
 
 
     mudarMascara(
@@ -2633,7 +3503,9 @@ function executarErro(
         );
 
 
-    if (modal) {
+    if (
+        modal
+    ) {
 
         tremer(
             modal
@@ -2656,9 +3528,12 @@ function executarErro(
                 false;
 
 
-            mudarMascara(
-                "normal"
+            mascara.classList.remove(
+                "reagindo"
             );
+
+
+            restaurarMascaraAposErro();
 
         },
 
@@ -2669,7 +3544,9 @@ function executarErro(
 }
 
 
-/* demo */
+/* ==========================================
+   DEMO INDISPONÍVEL
+========================================== */
 
 botaoDemoIndisponivel.addEventListener(
 
@@ -2696,7 +3573,9 @@ botaoDemoIndisponivel.addEventListener(
 );
 
 
-/* beta */
+/* ==========================================
+   BETA INDISPONÍVEL
+========================================== */
 
 botaoBuildIndisponivel.addEventListener(
 
@@ -2723,7 +3602,9 @@ botaoBuildIndisponivel.addEventListener(
 );
 
 
-/* coming soon */
+/* ==========================================
+   COMING SOON
+========================================== */
 
 document
     .querySelectorAll(
@@ -2763,306 +3644,7 @@ document
 
 
 /* ==========================================
-   GLITCH DE TEXTO
-========================================== */
-
-const simbolosGlitch =
-    "&*$%@#!?";
-
-
-function caractereGlitch() {
-
-    return simbolosGlitch[
-        Math.floor(
-            Math.random()
-            *
-            simbolosGlitch.length
-        )
-    ];
-
-}
-
-
-function reconstruirTextoGlitch(
-    elemento
-) {
-
-    const texto =
-        elemento.textContent;
-
-
-    if (
-        !texto.trim()
-    ) {
-
-        return;
-
-    }
-
-
-    let revelados =
-        0;
-
-
-    /*
-       Textos grandes revelam várias
-       letras por etapa para não demorar.
-    */
-
-    const passo =
-        Math.max(
-            1,
-            Math.ceil(
-                texto.length / 20
-            )
-        );
-
-
-    const timer =
-        setInterval(
-
-            function() {
-
-                let resultado =
-                    "";
-
-
-                for (
-                    let i = 0;
-                    i < texto.length;
-                    i++
-                ) {
-
-                    if (
-                        i < revelados
-                    ) {
-
-                        resultado +=
-                            texto[i];
-
-                    }
-
-                    else if (
-                        texto[i] === " "
-                    ) {
-
-                        resultado +=
-                            " ";
-
-                    }
-
-                    else {
-
-                        resultado +=
-                            caractereGlitch();
-
-                    }
-
-                }
-
-
-                elemento.textContent =
-                    resultado;
-
-
-                revelados +=
-                    passo;
-
-
-                if (
-                    revelados >
-                    texto.length
-                ) {
-
-                    clearInterval(
-                        timer
-                    );
-
-
-                    elemento.textContent =
-                        texto;
-
-                }
-
-            },
-
-            55
-
-        );
-
-}
-
-
-function glitchTextosSite() {
-
-    document
-        .querySelectorAll(
-            "[data-i18n]"
-        )
-        .forEach(
-
-            function(elemento) {
-
-                /*
-                   Evita alterar blocos com
-                   elementos internos.
-                */
-
-                if (
-                    elemento.children.length === 0
-                ) {
-
-                    reconstruirTextoGlitch(
-                        elemento
-                    );
-
-                }
-
-            }
-
-        );
-
-}
-
-
-/* ==========================================
-   GLITCH LOGO
-========================================== */
-
-function glitchLogo() {
-
-    if (!efeitosLigados) {
-        return;
-    }
-
-
-    logoLink.classList.remove(
-        "logo-glitch"
-    );
-
-
-    void logoLink.offsetWidth;
-
-
-    logoLink.classList.add(
-        "logo-glitch"
-    );
-
-
-    const cores = [
-        "#00ffff",
-        "#ff00ff",
-        "#00ff66",
-        "#ff3355",
-        "#ffff00"
-    ];
-
-
-    for (
-        let i = 0;
-        i < 18;
-        i++
-    ) {
-
-        const particula =
-            document.createElement(
-                "span"
-            );
-
-
-        particula.className =
-            "logo-particula";
-
-
-        particula.style.background =
-            cores[
-                Math.floor(
-                    Math.random()
-                    *
-                    cores.length
-                )
-            ];
-
-
-        particula.style.left =
-            (
-                Math.random()
-                *
-                logoLink.offsetWidth
-            )
-            +
-            "px";
-
-
-        particula.style.top =
-            (
-                Math.random()
-                *
-                logoLink.offsetHeight
-            )
-            +
-            "px";
-
-
-        particula.style.setProperty(
-            "--x",
-            (
-                Math.random() * 80 - 40
-            )
-            +
-            "px"
-        );
-
-
-        particula.style.setProperty(
-            "--y",
-            (
-                Math.random() * 60 - 30
-            )
-            +
-            "px"
-        );
-
-
-        logoLink.appendChild(
-            particula
-        );
-
-
-        setTimeout(
-
-            function() {
-
-                particula.remove();
-
-            },
-
-            700
-
-        );
-
-    }
-
-
-    setTimeout(
-
-        function() {
-
-            logoLink.classList.remove(
-                "logo-glitch"
-            );
-
-        },
-
-        700
-
-    );
-
-}
-
-
-/* ==========================================
-   EASTER EGG VERDE
+   EASTER EGG MARIO.UNO
 ========================================== */
 
 let cliquesSegredo =
@@ -3073,19 +3655,19 @@ let timerSegredo =
     null;
 
 
-function desbloquearTemaVerde() {
+function desbloquearTemaUno() {
 
     if (
-        temaVerdeDesbloqueado
+        temaUnoDesbloqueado
     ) {
 
         return;
-
     }
 
 
     /*
-       1 — preto
+       PRIMEIRA DESCOBERTA:
+       tela preta.
     */
 
     transicaoSecreta.classList.add(
@@ -3093,21 +3675,16 @@ function desbloquearTemaVerde() {
     );
 
 
-    /*
-       2 — troca tudo enquanto
-       a tela está preta.
-    */
-
     setTimeout(
 
         function() {
 
-            temaVerdeDesbloqueado =
+            temaUnoDesbloqueado =
                 true;
 
 
             localStorage.setItem(
-                "bnwTemaVerdeDesbloqueado",
+                "bnwTemaUnoDesbloqueado",
                 "true"
             );
 
@@ -3115,8 +3692,14 @@ function desbloquearTemaVerde() {
             atualizarOpcaoTema();
 
 
+            /*
+               Troca visual enquanto
+               a tela está preta.
+            */
+
             aplicarTema(
-                "verde"
+                "mario.uno",
+                false
             );
 
         },
@@ -3125,10 +3708,6 @@ function desbloquearTemaVerde() {
 
     );
 
-
-    /*
-       3 — volta
-    */
 
     setTimeout(
 
@@ -3139,20 +3718,18 @@ function desbloquearTemaVerde() {
             );
 
 
+            /*
+               Quando volta:
+               logo dá glitch
+               e os textos se reconstruem.
+            */
+
             glitchLogo();
 
 
-            /*
-               TEXTO:
-               &*$%@ >
-               T%#$* >
-               TE$#& >
-               TEX%# >
-               TEXT% >
-               TEXTO
-            */
-
-            glitchTextosSite();
+            renderizarTextos(
+                true
+            );
 
         },
 
@@ -3163,7 +3740,9 @@ function desbloquearTemaVerde() {
 }
 
 
-/* 10 cliques */
+/* ==========================================
+   10 CLIQUES NO RODAPÉ
+========================================== */
 
 rodapeConfiguracoes.addEventListener(
 
@@ -3171,12 +3750,21 @@ rodapeConfiguracoes.addEventListener(
 
     function() {
 
+        /*
+           Feedback sonoro baixinho
+           em cada clique.
+        */
+
+        tocarSomClick(
+            0.35
+        );
+
+
         if (
-            temaVerdeDesbloqueado
+            temaUnoDesbloqueado
         ) {
 
             return;
-
         }
 
 
@@ -3189,8 +3777,8 @@ rodapeConfiguracoes.addEventListener(
 
 
         /*
-           Se parar por 5 segundos,
-           zera.
+           Se parar de clicar por
+           5 segundos, zera.
         */
 
         timerSegredo =
@@ -3209,7 +3797,8 @@ rodapeConfiguracoes.addEventListener(
 
 
         if (
-            cliquesSegredo >= 10
+            cliquesSegredo >=
+            10
         ) {
 
             cliquesSegredo =
@@ -3221,7 +3810,7 @@ rodapeConfiguracoes.addEventListener(
             );
 
 
-            desbloquearTemaVerde();
+            desbloquearTemaUno();
 
         }
 
@@ -3231,7 +3820,7 @@ rodapeConfiguracoes.addEventListener(
 
 
 /* ==========================================
-   SEM REAÇÃO
+   TÉDIO / SEM REAÇÃO
 ========================================== */
 
 setInterval(
@@ -3247,11 +3836,16 @@ setInterval(
         if (
             parado > 7000
             &&
+            !interagindo
+            &&
             !erroForcado
             &&
             modaisAbertos === 0
             &&
             efeitosLigados
+            &&
+            estadoAtual !==
+            "semReacao"
         ) {
 
             mudarMascara(
@@ -3265,3 +3859,27 @@ setInterval(
     500
 
 );
+
+
+/* ==========================================
+   INICIALIZAÇÃO
+========================================== */
+
+atualizarOpcaoTema();
+
+
+atualizarConfiguracoes();
+
+
+aplicarTema(
+    temaAtual,
+    false
+);
+
+
+trocarIdioma(
+    idiomaAtual
+);
+
+
+atualizarProgresso();

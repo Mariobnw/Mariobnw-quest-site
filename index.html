@@ -36,16 +36,17 @@
 
     <link
         rel="stylesheet"
-        href="style.css"
+        href="style.css?v=0.3.1"
     >
 </head>
 
 
 <body>
 
-    <!-- =========================================
+
+    <!-- ==========================================
          TRANSIÇÃO SECRETA
-    ========================================== -->
+    =========================================== -->
 
     <div
         id="transicao-secreta"
@@ -53,9 +54,9 @@
     ></div>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          AVISO
-    ========================================== -->
+    =========================================== -->
 
     <div
         id="aviso-erro"
@@ -82,9 +83,9 @@
     </div>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          ÁUDIO
-    ========================================== -->
+    =========================================== -->
 
     <audio
         id="som-erro"
@@ -108,9 +109,9 @@
     </audio>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          TOPO
-    ========================================== -->
+    =========================================== -->
 
     <header class="topo">
 
@@ -179,12 +180,21 @@
 
             <button
                 id="abrir-devlog"
-                class="botao-hud"
+                class="botao-hud botao-devlog"
                 type="button"
                 aria-label="Devlog"
                 title="Devlog"
             >
                 📰
+
+                <span
+                    id="devlog-novo"
+                    class="devlog-novo"
+                    data-i18n="devlogNovo"
+                >
+                    NOVO
+                </span>
+
             </button>
 
 
@@ -210,6 +220,7 @@
                     class="botao-idioma"
                     type="button"
                     aria-label="Selecionar idioma"
+                    title="Idioma"
                 >
 
                     <img
@@ -282,9 +293,9 @@
     </header>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          SITE
-    ========================================== -->
+    =========================================== -->
 
     <main id="conteudo-site">
 
@@ -359,9 +370,9 @@
         </section>
 
 
-        <!-- =========================================
+        <!-- ==========================================
              NOTÍCIAS
-        ========================================== -->
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -389,9 +400,11 @@
                         2026
                     </span>
 
+
                     <h3 data-i18n="noticia1Titulo">
                         Site em construção
                     </h3>
+
 
                     <p data-i18n="noticia1Texto">
                         Alguém pensou que seria uma boa ideia criar
@@ -410,9 +423,11 @@
                         EM DESENVOLVIMENTO
                     </span>
 
+
                     <h3 data-i18n="noticia2Titulo">
                         Capítulo 1
                     </h3>
+
 
                     <p data-i18n="noticia2Texto">
                         Novas informações sobre o primeiro capítulo
@@ -426,9 +441,9 @@
         </section>
 
 
-        <!-- =========================================
+        <!-- ==========================================
              PERSONAGENS
-        ========================================== -->
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -439,6 +454,7 @@
                 Personagens
             </h2>
 
+
             <p data-i18n="personagensTexto">
                 Perfis oficiais serão adicionados conforme
                 os personagens forem apresentados.
@@ -447,9 +463,9 @@
         </section>
 
 
-        <!-- =========================================
+        <!-- ==========================================
              SOBRE
-        ========================================== -->
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -460,6 +476,7 @@
                 Sobre o jogo
             </h2>
 
+
             <p data-i18n="sobreTexto">
                 mariobnw quest é um RPG baseado em turnos inspirado
                 na série Mario & Luigi, com personagens, história
@@ -469,9 +486,9 @@
         </section>
 
 
-        <!-- =========================================
+        <!-- ==========================================
              CANAIS
-        ========================================== -->
+        =========================================== -->
 
         <section
             class="conteudo"
@@ -552,29 +569,203 @@
 
         </section>
 
+
+        <!-- ==========================================
+             CÓDIGOS
+        =========================================== -->
+
+        <section
+            class="conteudo"
+            id="codigos"
+        >
+
+            <div class="codigos-caixa">
+
+                <span
+                    class="placa-em-breve"
+                    data-i18n="codigosStatus"
+                >
+                    EM BREVE
+                </span>
+
+
+                <h2 data-i18n="codigosTitulo">
+                    Códigos
+                </h2>
+
+
+                <p data-i18n="codigosTexto">
+                    Futuramente, códigos encontrados em mariobnw quest
+                    poderão ser resgatados aqui.
+                </p>
+
+
+                <div class="codigos-form">
+
+                    <input
+                        type="text"
+                        placeholder="BNW-XXXX-XXXX"
+                        disabled
+                    >
+
+
+                    <button
+                        id="botao-codigo-bloqueado"
+                        class="botao botao-bloqueado"
+                        type="button"
+                        data-i18n="codigosBotao"
+                    >
+                        RESGATAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             OUTROS SITES
+        =========================================== -->
+
+        <section
+            class="conteudo"
+            id="outros-sites"
+        >
+
+            <span
+                class="placa-em-breve"
+                data-i18n="outrosSitesStatus"
+            >
+                EM BREVE
+            </span>
+
+
+            <h2 data-i18n="outrosSitesTitulo">
+                Outros sites
+            </h2>
+
+
+            <p
+                class="secao-descricao"
+                data-i18n="outrosSitesTexto"
+            >
+                Em breve, outros projetos terão seus próprios sites oficiais.
+            </p>
+
+
+            <div class="outros-sites-grid">
+
+                <!-- MARIOBNW -->
+
+                <article class="site-card">
+
+                    <div class="site-card-logo">
+                        mariobnw
+                    </div>
+
+
+                    <span
+                        class="site-card-status"
+                        data-i18n="siteEmBreve"
+                    >
+                        EM BREVE
+                    </span>
+
+
+                    <p data-i18n="siteMariobnwTexto">
+                        Site oficial do canal mariobnw.
+                    </p>
+
+
+                    <button
+                        class="botao botao-bloqueado site-futuro"
+                        type="button"
+                        data-i18n="siteAcessar"
+                    >
+                        ACESSAR
+                    </button>
+
+                </article>
+
+
+                <!-- CAOS TOTAL -->
+
+                <article class="site-card">
+
+                    <div class="site-card-logo caos-total-logo">
+                        CAOS TOTAL
+                    </div>
+
+
+                    <span
+                        class="site-card-status"
+                        data-i18n="siteEmBreve"
+                    >
+                        EM BREVE
+                    </span>
+
+
+                    <p data-i18n="siteCaosTexto">
+                        Site oficial de CAOS TOTAL.
+                    </p>
+
+
+                    <button
+                        class="botao botao-bloqueado site-futuro"
+                        type="button"
+                        data-i18n="siteAcessar"
+                    >
+                        ACESSAR
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
     </main>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          RODAPÉ
-    ========================================== -->
+    =========================================== -->
 
     <footer class="rodape-site">
 
-        <span>
-            mariobnw quest
-        </span>
+        <div class="rodape-identidade">
 
-        <span id="versao-site">
-            Site v0.3.0
+            <span class="nome-tematico">
+
+                <span class="nome-bnw-original">
+                    mariobnw
+                </span>
+
+                <span class="fita-uno">
+                    mario.uno
+                </span>
+
+            </span>
+
+            <span>
+                quest
+            </span>
+
+        </div>
+
+
+        <span id="info-versao-site">
+            Site v0.3.1 • Atualizado em 28/09/2026
         </span>
 
     </footer>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          COMUNIDADE
-    ========================================== -->
+    =========================================== -->
 
     <div
         id="overlay-comunidade"
@@ -591,6 +782,7 @@
                 id="fechar-comunidade"
                 class="fechar-modal"
                 type="button"
+                aria-label="Fechar"
             >
                 ×
             </button>
@@ -690,9 +882,9 @@
     </div>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          DEVLOG
-    ========================================== -->
+    =========================================== -->
 
     <div
         id="overlay-devlog"
@@ -709,6 +901,7 @@
                 id="fechar-devlog"
                 class="fechar-modal"
                 type="button"
+                aria-label="Fechar"
             >
                 ×
             </button>
@@ -755,12 +948,12 @@
                     </span>
 
                     <h3 data-i18n="devlogPost1Titulo">
-                        Site v0.3.0
+                        Site v0.3.1
                     </h3>
 
                     <p data-i18n="devlogPost1Texto">
-                        Configurações, Devlog, central de downloads,
-                        melhorias mobile e novos detalhes interativos.
+                        Nova página 404, sistema de códigos em preparação,
+                        novos cards de projetos e melhorias visuais.
                     </p>
 
                 </article>
@@ -808,9 +1001,9 @@
     </div>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          DOWNLOADS
-    ========================================== -->
+    =========================================== -->
 
     <div
         id="overlay-downloads"
@@ -827,6 +1020,7 @@
                 id="fechar-downloads"
                 class="fechar-modal"
                 type="button"
+                aria-label="Fechar"
             >
                 ×
             </button>
@@ -853,9 +1047,7 @@
             </p>
 
 
-            <!-- =====================================
-                 DEMO PÚBLICA
-            ====================================== -->
+            <!-- DEMO PÚBLICA -->
 
             <section class="download-bloco">
 
@@ -893,6 +1085,7 @@
 
                     <span>
                         PC
+
                         <small data-i18n="plataformaPlanejada">
                             PLANEJADO
                         </small>
@@ -901,6 +1094,7 @@
 
                     <span>
                         Android
+
                         <small data-i18n="plataformaPlanejada">
                             PLANEJADO
                         </small>
@@ -908,18 +1102,24 @@
 
 
                     <span class="plataforma-nao">
+
                         Linux
+
                         <small data-i18n="plataformaNaoPlanejada">
                             NÃO PLANEJADO AINDA
                         </small>
+
                     </span>
 
 
                     <span class="plataforma-nao">
+
                         macOS
+
                         <small data-i18n="plataformaNaoPlanejada">
                             NÃO PLANEJADO AINDA
                         </small>
+
                     </span>
 
                 </div>
@@ -937,9 +1137,7 @@
             </section>
 
 
-            <!-- =====================================
-                 BETA 0.1
-            ====================================== -->
+            <!-- BETA 0.1 -->
 
             <section class="download-bloco">
 
@@ -973,8 +1171,6 @@
                     para mariobnw quest.
                 </p>
 
-
-                <!-- PROGRESSO -->
 
                 <div class="progresso-demo">
 
@@ -1011,25 +1207,22 @@
                 </div>
 
 
-                <!-- AVISO DAS PLATAFORMAS -->
-
                 <div class="build-aviso-plataforma">
 
                     <strong data-i18n="buildPlataformasTitulo">
                         Sobre plataformas das builds de teste
                     </strong>
 
+
                     <p data-i18n="buildPlataformasTexto">
                         As builds beta normais serão disponibilizadas
-                        apenas para PC. Android, Linux e macOS não receberão
-                        essas versões, exceto em builds específicas
-                        anunciadas separadamente.
+                        apenas para PC. Android, Linux e macOS não
+                        receberão essas versões, exceto em builds
+                        específicas anunciadas separadamente.
                     </p>
 
                 </div>
 
-
-                <!-- INFORMAÇÕES -->
 
                 <div class="build-info">
 
@@ -1086,8 +1279,6 @@
 
                 </div>
 
-
-                <!-- PLATAFORMAS DA BETA -->
 
                 <div class="plataformas">
 
@@ -1153,9 +1344,9 @@
     </div>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          CONFIGURAÇÕES
-    ========================================== -->
+    =========================================== -->
 
     <div
         id="overlay-configuracoes"
@@ -1172,6 +1363,7 @@
                 id="fechar-configuracoes"
                 class="fechar-modal"
                 type="button"
+                aria-label="Fechar"
             >
                 ×
             </button>
@@ -1191,8 +1383,6 @@
 
 
             <div class="lista-configuracoes">
-
-                <!-- SOM -->
 
                 <div class="config-item">
 
@@ -1220,8 +1410,6 @@
                 </div>
 
 
-                <!-- EFEITOS -->
-
                 <div class="config-item">
 
                     <div>
@@ -1247,8 +1435,6 @@
 
                 </div>
 
-
-                <!-- TEMA SECRETO -->
 
                 <div
                     id="config-tema"
@@ -1294,15 +1480,13 @@
             </div>
 
 
-            <!-- 10 CLIQUES AQUI -->
-
             <div
                 id="rodape-configuracoes"
                 class="rodape-configuracoes"
             >
 
                 <span id="versao-configuracoes">
-                    mariobnw quest • Site v0.3.0
+                    mariobnw quest • Site v0.3.1
                 </span>
 
             </div>
@@ -1312,9 +1496,9 @@
     </div>
 
 
-    <!-- =========================================
+    <!-- ==========================================
          BNW
-    ========================================== -->
+    =========================================== -->
 
     <div id="bnw-container">
 
@@ -1328,9 +1512,9 @@
     </div>
 
 
-    <!-- =========================================
-         MÃO
-    ========================================== -->
+    <!-- ==========================================
+         CURSOR
+    =========================================== -->
 
     <div id="cursor-mao">
 
@@ -1344,7 +1528,7 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="script.js?v=0.3.1"></script>
 
 </body>
 

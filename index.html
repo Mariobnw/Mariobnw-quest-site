@@ -30,11 +30,6 @@
     >
 
     <link
-        rel="apple-touch-icon"
-        href="images/favicon-aberto.png"
-    >
-
-    <link
         rel="stylesheet"
         href="style.css?v=0.4.0"
     >
@@ -44,7 +39,7 @@
 <body>
 
     <!-- ==========================================
-         TRANSIÇÃO SECRETA
+         TRANSIÇÃO
     =========================================== -->
 
     <div
@@ -54,7 +49,7 @@
 
 
     <!-- ==========================================
-         AVISO DE ERRO
+         POPUP DE ERRO
     =========================================== -->
 
     <div
@@ -98,6 +93,12 @@
         src="Downloads/minecraft-click-menu.mp3"
     ></audio>
 
+    <audio
+        id="som-dialogo"
+        preload="auto"
+        src="Downloads/dialogo.mp3"
+    ></audio>
+
 
     <!-- ==========================================
          TOPO
@@ -118,6 +119,13 @@
                 alt="mariobnw quest"
                 draggable="false"
             >
+
+            <span
+                id="logo-easter-text"
+                class="logo-easter-text"
+            >
+                Não tem nada demais aí :/
+            </span>
 
         </a>
 
@@ -167,15 +175,15 @@
                 id="abrir-devlog"
                 class="botao-hud botao-devlog"
                 type="button"
-                aria-label="Devlog"
                 title="Devlog"
+                aria-label="Devlog"
             >
                 📰
 
                 <span
                     id="devlog-novo"
                     class="devlog-novo"
-                    data-i18n="devlogNovo"
+                    data-i18n="novo"
                 >
                     NOVO
                 </span>
@@ -187,8 +195,8 @@
                 id="abrir-configuracoes"
                 class="botao-hud"
                 type="button"
-                aria-label="Configurações"
                 title="Configurações"
+                aria-label="Configurações"
             >
                 ⚙️
             </button>
@@ -200,14 +208,12 @@
                     id="botao-idioma"
                     class="botao-idioma"
                     type="button"
-                    aria-label="Selecionar idioma"
                     title="Idioma"
                 >
 
                     <img
                         src="images/globo.png"
                         alt=""
-                        draggable="false"
                     >
 
                 </button>
@@ -223,14 +229,14 @@
                         data-lang="pt"
                         type="button"
                     >
+
                         <img
                             src="images/bandeira-brasil.webp"
-                            alt="Brasil"
+                            alt=""
                         >
 
-                        <span>
-                            Português
-                        </span>
+                        Português
+
                     </button>
 
 
@@ -239,14 +245,14 @@
                         data-lang="en"
                         type="button"
                     >
+
                         <img
                             src="images/bandeira-eua.png"
-                            alt="United States"
+                            alt=""
                         >
 
-                        <span>
-                            English
-                        </span>
+                        English
+
                     </button>
 
                 </div>
@@ -269,10 +275,11 @@
 
 
     <!-- ==========================================
-         SITE PRINCIPAL
+         SITE
     =========================================== -->
 
     <main id="conteudo-site">
+
 
         <!-- HERO -->
 
@@ -284,11 +291,11 @@
             <div class="hero-conteudo">
 
                 <p data-i18n="heroTitulo">
-                    ARTE PROMOCIONAL DO CAPÍTULO 1
+                    ARTE PROMOCIONAL
                 </p>
 
                 <span data-i18n="heroTexto">
-                    A apresentação oficial será publicada em breve.
+                    A apresentação oficial será publicada futuramente.
                 </span>
 
             </div>
@@ -302,16 +309,14 @@
 
             <span
                 class="mini-etiqueta"
-                data-i18n="projetoEtiqueta"
+                data-i18n="desenvolvimento"
             >
                 EM DESENVOLVIMENTO
             </span>
 
-
             <h2 data-i18n="bemVindo">
                 Conheça mariobnw quest
             </h2>
-
 
             <p data-i18n="descricaoInicial">
                 Um RPG baseado em turnos inspirado na série Mario & Luigi,
@@ -325,7 +330,7 @@
                     id="botao-ver-downloads"
                     class="botao botao-principal"
                     type="button"
-                    data-i18n="botaoBaixar"
+                    data-i18n="verDownloads"
                 >
                     Ver downloads
                 </button>
@@ -333,7 +338,7 @@
                 <a
                     class="botao"
                     href="#personagens"
-                    data-i18n="botaoPersonagens"
+                    data-i18n="conhecerPersonagens"
                 >
                     Conhecer personagens
                 </a>
@@ -356,9 +361,9 @@
 
             <p
                 class="secao-descricao"
-                data-i18n="noticiasDescricao"
+                data-i18n="noticiasTexto"
             >
-                Atualizações sobre o desenvolvimento do jogo.
+                Atualizações sobre o desenvolvimento do projeto.
             </p>
 
 
@@ -370,13 +375,13 @@
                         2026
                     </span>
 
-                    <h3 data-i18n="noticia1Titulo">
-                        Site em construção
+                    <h3 data-i18n="noticiaSiteTitulo">
+                        Site em desenvolvimento
                     </h3>
 
-                    <p data-i18n="noticia1Texto">
-                        Alguém pensou que seria uma boa ideia criar
-                        um site antes de terminar o jogo.
+                    <p data-i18n="noticiaSiteTexto">
+                        O site continuará recebendo melhorias,
+                        segredos e novas funções durante o desenvolvimento.
                     </p>
 
                 </article>
@@ -386,18 +391,18 @@
 
                     <span
                         class="card-data"
-                        data-i18n="noticia2Etiqueta"
+                        data-i18n="desenvolvimento"
                     >
                         EM DESENVOLVIMENTO
                     </span>
 
-                    <h3 data-i18n="noticia2Titulo">
-                        Capítulo 1
+                    <h3 data-i18n="noticiaJogoTitulo">
+                        O projeto continua crescendo
                     </h3>
 
-                    <p data-i18n="noticia2Texto">
-                        Novas informações sobre o primeiro capítulo
-                        serão divulgadas futuramente.
+                    <p data-i18n="noticiaJogoTexto">
+                        Mais informações serão reveladas conforme
+                        o desenvolvimento avançar.
                     </p>
 
                 </article>
@@ -465,7 +470,7 @@
             </p>
 
 
-            <div class="cards canais-grid">
+            <div class="cards">
 
                 <article class="card canal-card">
 
@@ -477,9 +482,8 @@
                         mariobnw
                     </h3>
 
-                    <p data-i18n="canalPrincipalTexto">
-                        Canal principal em português com vídeos,
-                        transmissões e outros projetos.
+                    <p data-i18n="canalPT">
+                        Canal principal em português.
                     </p>
 
                     <a
@@ -487,7 +491,7 @@
                         href="https://youtube.com/@mariobnw"
                         target="_blank"
                         rel="noopener noreferrer"
-                        data-i18n="verCanal"
+                        data-i18n="acessarCanal"
                     >
                         Acessar canal
                     </a>
@@ -505,9 +509,8 @@
                         mariobnw quest English
                     </h3>
 
-                    <p data-i18n="canalEnglishTexto">
-                        Canal oficial em inglês dedicado às
-                        atualizações de mariobnw quest.
+                    <p data-i18n="canalEN">
+                        Canal oficial em inglês dedicado ao projeto.
                     </p>
 
                     <a
@@ -515,7 +518,7 @@
                         href="https://youtube.com/@bnw_quest_english"
                         target="_blank"
                         rel="noopener noreferrer"
-                        data-i18n="visitarCanalEnglish"
+                        data-i18n="acessarCanal"
                     >
                         Acessar canal
                     </a>
@@ -543,7 +546,7 @@
                 </h2>
 
                 <p data-i18n="codigosTexto">
-                    Códigos encontrados em mariobnw quest poderão
+                    Códigos encontrados no jogo poderão
                     ser resgatados aqui futuramente.
                 </p>
 
@@ -560,7 +563,7 @@
                         id="botao-codigo-bloqueado"
                         class="botao botao-bloqueado"
                         type="button"
-                        data-i18n="codigosBotao"
+                        data-i18n="resgatar"
                     >
                         RESGATAR
                     </button>
@@ -568,13 +571,12 @@
                 </div>
 
 
-                <!-- fita atravessando o card -->
+                <div class="fita-realista fita-codigos">
 
-                <div
-                    class="fita-bloqueio fita-codigos"
-                    data-i18n="emBreve"
-                >
-                    EM BREVE
+                    <span data-i18n="emBreve">
+                        EM BREVE
+                    </span>
+
                 </div>
 
             </div>
@@ -599,50 +601,23 @@
                     ????
                 </span>
 
-
                 <h2 data-i18n="arquivoTitulo">
                     Arquivo Final
                 </h2>
 
-
                 <p data-i18n="arquivoTexto">
-                    Esta área permanecerá bloqueada até que todos
-                    os requisitos sejam concluídos.
+                    Algumas portas não precisam estar escondidas.
+                    Só precisam de uma chave difícil o bastante.
                 </p>
-
-
-                <div class="arquivo-requisitos">
-
-                    <span>
-                        CAPÍTULO 1
-                    </span>
-
-                    <span>
-                        CAPÍTULO 2
-                    </span>
-
-                    <span>
-                        CAPÍTULO 3
-                    </span>
-
-                    <span>
-                        CAPÍTULO 4
-                    </span>
-
-                    <span data-i18n="arquivoSegredos">
-                        SEGREDOS
-                    </span>
-
-                </div>
 
 
                 <button
                     id="abrir-arquivo-final"
                     class="botao arquivo-final-botao"
                     type="button"
-                    data-i18n="arquivoBotao"
+                    data-i18n="digitarCodigo"
                 >
-                    BLOQUEADO
+                    DIGITAR CÓDIGO
                 </button>
 
             </div>
@@ -667,13 +642,12 @@
                 class="secao-descricao"
                 data-i18n="outrosSitesTexto"
             >
-                Outros projetos também terão seus próprios sites.
+                Outros projetos terão seus próprios espaços futuramente.
             </p>
 
 
             <div class="outros-sites-grid">
 
-                <!-- MARIOBNW -->
 
                 <article class="site-projeto">
 
@@ -682,33 +656,21 @@
                         <img
                             class="site-logo"
                             src="images/logo-mariobnw.png"
-                            alt="mariobnw"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                            alt=""
                         >
 
-                        <span class="site-logo-fallback">
-                            mariobnw
-                        </span>
+                        <div class="fita-realista fita-site">
 
+                            <span data-i18n="emBreve">
+                                EM BREVE
+                            </span>
 
-                        <div
-                            class="fita-bloqueio fita-site"
-                            data-i18n="emBreve"
-                        >
-                            EM BREVE
                         </div>
 
                     </div>
 
-
-                    <p data-i18n="siteMariobnwTexto">
-                        Site oficial do canal mariobnw.
-                    </p>
-
                 </article>
 
-
-                <!-- CAOS TOTAL -->
 
                 <article class="site-projeto">
 
@@ -717,34 +679,26 @@
                         <img
                             class="site-logo"
                             src="images/logo-caos-total.png"
-                            alt="CAOS TOTAL"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                            alt=""
                         >
 
-                        <span class="site-logo-fallback">
-                            CAOS TOTAL
-                        </span>
+                        <div class="fita-realista fita-site">
 
+                            <span data-i18n="emBreve">
+                                EM BREVE
+                            </span>
 
-                        <div
-                            class="fita-bloqueio fita-site"
-                            data-i18n="emBreve"
-                        >
-                            EM BREVE
                         </div>
 
                     </div>
 
-
-                    <p data-i18n="siteCaosTexto">
-                        Site oficial de CAOS TOTAL.
-                    </p>
-
                 </article>
+
 
             </div>
 
         </section>
+
 
     </main>
 
@@ -769,15 +723,13 @@
 
             </span>
 
-            <span>
-                quest
-            </span>
+            quest
 
         </div>
 
 
         <span id="info-versao-site">
-            Site v0.4.0 • Atualizado em 28/09/2026
+            Site v0.4.0 • Atualizado em 29/09/2026
         </span>
 
     </footer>
@@ -790,7 +742,6 @@
     <div
         id="overlay-comunidade"
         class="overlay-modal"
-        aria-hidden="true"
     >
 
         <div class="modal-base">
@@ -805,7 +756,7 @@
 
             <span
                 class="modal-etiqueta"
-                data-i18n="comunidadeEtiqueta"
+                data-i18n="comunidadeTitulo"
             >
                 COMUNIDADE
             </span>
@@ -814,11 +765,8 @@
                 Comunidade
             </h2>
 
-            <p
-                class="modal-descricao"
-                data-i18n="comunidadeTexto"
-            >
-                Acesse os espaços oficiais da comunidade.
+            <p data-i18n="comunidadeTexto">
+                Acesse os espaços oficiais.
             </p>
 
 
@@ -832,16 +780,12 @@
 
                     <img
                         src="images/youtube.png"
-                        alt="YouTube"
+                        alt=""
                     >
 
                     <strong>
                         YouTube
                     </strong>
-
-                    <span data-i18n="youtubeTexto">
-                        Publicações, novidades e sugestões.
-                    </span>
 
                 </button>
 
@@ -853,15 +797,15 @@
 
                     <img
                         src="images/discord.png"
-                        alt="Discord"
+                        alt=""
                     >
 
                     <strong>
                         Discord
                     </strong>
 
-                    <span data-i18n="discordTexto">
-                        Teorias, fanarts e comunidade.
+                    <span data-i18n="emBreve">
+                        EM BREVE
                     </span>
 
                 </button>
@@ -880,7 +824,6 @@
     <div
         id="overlay-devlog"
         class="overlay-modal"
-        aria-hidden="true"
     >
 
         <div class="modal-base modal-devlog">
@@ -901,33 +844,13 @@
                 Diário de desenvolvimento
             </h2>
 
-            <p
-                class="modal-descricao"
-                data-i18n="devlogDescricao"
-            >
-                Atualizações sobre o desenvolvimento do projeto.
-            </p>
-
-
-            <div class="devlog-progresso">
-
-                <span>
-                    Demo Beta 0.1
-                </span>
-
-                <strong id="devlog-progresso">
-                    0%
-                </strong>
-
-            </div>
-
 
             <div class="devlog-lista">
 
                 <article class="devlog-post">
 
                     <span class="devlog-data">
-                        28/09/2026
+                        29/09/2026
                     </span>
 
                     <h3>
@@ -935,25 +858,8 @@
                     </h3>
 
                     <p data-i18n="devlog040">
-                        Arquivo Final, novo sistema visual de fitas,
-                        área de códigos refeita e melhorias nos temas.
-                    </p>
-
-                </article>
-
-
-                <article class="devlog-post">
-
-                    <span class="devlog-data">
-                        28/09/2026
-                    </span>
-
-                    <h3>
-                        Site v0.3.1
-                    </h3>
-
-                    <p data-i18n="devlog031">
-                        Página 404, novos projetos, Devlog e melhorias gerais.
+                        Novos segredos, Arquivo Final, melhorias nos temas,
+                        fitas refeitas, introdução do site e várias correções.
                     </p>
 
                 </article>
@@ -972,7 +878,6 @@
     <div
         id="overlay-downloads"
         class="overlay-modal"
-        aria-hidden="true"
     >
 
         <div class="modal-base modal-downloads">
@@ -987,7 +892,7 @@
 
             <span
                 class="modal-etiqueta"
-                data-i18n="downloadsEtiqueta"
+                data-i18n="downloadsTitulo"
             >
                 DOWNLOADS
             </span>
@@ -999,11 +904,11 @@
 
             <section class="download-bloco">
 
-                <h3 data-i18n="demoPublicaTitulo">
+                <h3 data-i18n="demoPublica">
                     Demo pública
                 </h3>
 
-                <p data-i18n="demoPublicaTexto">
+                <p data-i18n="demoIndisponivel">
                     A demo pública ainda não está disponível.
                 </p>
 
@@ -1012,30 +917,18 @@
 
                     <span>
                         PC
-                        <small data-i18n="planejado">
-                            PLANEJADO
-                        </small>
                     </span>
 
                     <span>
                         Android
-                        <small data-i18n="planejado">
-                            PLANEJADO
-                        </small>
                     </span>
 
                     <span>
                         Linux
-                        <small data-i18n="naoPlanejado">
-                            NÃO PLANEJADO AINDA
-                        </small>
                     </span>
 
                     <span>
                         macOS
-                        <small data-i18n="naoPlanejado">
-                            NÃO PLANEJADO AINDA
-                        </small>
                     </span>
 
                 </div>
@@ -1064,7 +957,7 @@
 
                     <div class="progresso-cabecalho">
 
-                        <strong data-i18n="progressoTitulo">
+                        <strong data-i18n="progresso">
                             Progresso
                         </strong>
 
@@ -1083,46 +976,6 @@
                         ></div>
 
                     </div>
-
-                    <span
-                        id="progresso-status"
-                        class="progresso-status"
-                    >
-                        O desenvolvimento ainda não começou.
-                    </span>
-
-                </div>
-
-
-                <div class="plataformas">
-
-                    <span>
-                        PC
-                        <small data-i18n="indisponivel">
-                            INDISPONÍVEL
-                        </small>
-                    </span>
-
-                    <span>
-                        Android
-                        <small data-i18n="naoDisponivel">
-                            NÃO DISPONÍVEL
-                        </small>
-                    </span>
-
-                    <span>
-                        Linux
-                        <small data-i18n="naoDisponivel">
-                            NÃO DISPONÍVEL
-                        </small>
-                    </span>
-
-                    <span>
-                        macOS
-                        <small data-i18n="naoDisponivel">
-                            NÃO DISPONÍVEL
-                        </small>
-                    </span>
 
                 </div>
 
@@ -1150,7 +1003,6 @@
     <div
         id="overlay-configuracoes"
         class="overlay-modal"
-        aria-hidden="true"
     >
 
         <div class="modal-base modal-configuracoes">
@@ -1163,14 +1015,12 @@
                 ×
             </button>
 
-
             <span
                 class="modal-etiqueta"
-                data-i18n="configEtiqueta"
+                data-i18n="configTitulo"
             >
                 CONFIGURAÇÕES
             </span>
-
 
             <h2 data-i18n="configTitulo">
                 Configurações
@@ -1182,13 +1032,15 @@
                 <div class="config-item">
 
                     <div>
-                        <strong data-i18n="configSom">
+
+                        <strong data-i18n="sons">
                             Sons
                         </strong>
 
-                        <span data-i18n="configSomTexto">
-                            Sons de clique e efeitos.
+                        <span data-i18n="sonsTexto">
+                            Sons e efeitos sonoros.
                         </span>
+
                     </div>
 
                     <button
@@ -1205,13 +1057,15 @@
                 <div class="config-item">
 
                     <div>
-                        <strong data-i18n="configEfeitos">
+
+                        <strong data-i18n="efeitos">
                             Efeitos
                         </strong>
 
-                        <span data-i18n="configEfeitosTexto">
+                        <span data-i18n="efeitosTexto">
                             Animações e efeitos visuais.
                         </span>
+
                     </div>
 
                     <button
@@ -1225,39 +1079,120 @@
                 </div>
 
 
-                <div
-                    id="config-tema"
-                    class="config-item config-tema oculto"
-                >
+                <!-- TEMAS -->
 
-                    <div>
-                        <strong data-i18n="configTema">
-                            Tema
+                <div class="config-item config-temas">
+
+                    <div class="config-temas-cabecalho">
+
+                        <strong data-i18n="temas">
+                            Temas
                         </strong>
 
-                        <span data-i18n="configTemaTexto">
-                            Escolha a identidade visual.
+                        <span data-i18n="temasTexto">
+                            Escolha a identidade do site.
                         </span>
+
                     </div>
 
 
-                    <div class="botoes-tema">
+                    <div class="lista-temas">
 
                         <button
                             id="tema-mariobnw"
-                            class="tema-botao"
+                            class="tema-card"
+                            data-preview-tema="mariobnw"
                             type="button"
                         >
-                            mariobnw
+
+                            <img
+                                src="images/favicon-aberto.png"
+                                alt=""
+                            >
+
+                            <span>
+                                mariobnw
+                            </span>
+
+                            <small class="tema-ativo-texto">
+                                ✓
+                            </small>
+
                         </button>
+
 
                         <button
                             id="tema-uno"
-                            class="tema-botao"
+                            class="tema-card tema-oculto"
+                            data-preview-tema="mario.uno"
                             type="button"
                         >
-                            mario.uno
+
+                            <img
+                                src="images/mariobnw-verde-aberto.png"
+                                alt=""
+                            >
+
+                            <span>
+                                mario.uno
+                            </span>
+
+                            <small class="tema-ativo-texto">
+                                ✓
+                            </small>
+
                         </button>
+
+
+                        <button
+                            id="tema-bne"
+                            class="tema-card tema-oculto"
+                            data-preview-tema="mariobne"
+                            type="button"
+                        >
+
+                            <img
+                                src="images/favicon-bne-aberto.png"
+                                alt=""
+                                onerror="this.src='images/favicon-aberto.png'"
+                            >
+
+                            <span>
+                                mariobne
+                            </span>
+
+                            <small class="tema-ativo-texto">
+                                ✓
+                            </small>
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="descobrir-tema-area"
+                        class="descobrir-tema-area"
+                    >
+
+                        <span data-i18n="querTema">
+                            Quer um tema novo?
+                        </span>
+
+                        <button
+                            id="descobrir-tema"
+                            class="botao botao-pequeno"
+                            type="button"
+                            data-i18n="descobrir"
+                        >
+                            DESCOBRIR
+                        </button>
+
+
+                        <p
+                            id="dica-tema"
+                            class="dica-tema"
+                        ></p>
 
                     </div>
 
@@ -1279,13 +1214,12 @@
 
 
     <!-- ==========================================
-         ARQUIVO FINAL — ENTRADA DE CÓDIGO
+         ARQUIVO FINAL — CÓDIGO
     =========================================== -->
 
     <div
         id="overlay-arquivo-codigo"
         class="overlay-modal"
-        aria-hidden="true"
     >
 
         <div class="modal-base arquivo-codigo-modal">
@@ -1298,21 +1232,15 @@
                 ×
             </button>
 
-
             <span class="arquivo-etiqueta">
                 ????
             </span>
 
-
-            <h2 data-i18n="arquivoCodigoTitulo">
+            <h2 data-i18n="codigoNecessario">
                 Código necessário
             </h2>
 
-
-            <p
-                class="modal-descricao"
-                data-i18n="arquivoCodigoTexto"
-            >
+            <p data-i18n="digiteSequencia">
                 Digite a sequência correta.
             </p>
 
@@ -1327,15 +1255,13 @@
                     type="password"
                     inputmode="numeric"
                     autocomplete="off"
-                    maxlength="24"
                     placeholder="••••••••••••"
                 >
-
 
                 <button
                     class="botao botao-principal"
                     type="submit"
-                    data-i18n="arquivoCodigoBotao"
+                    data-i18n="verificar"
                 >
                     VERIFICAR
                 </button>
@@ -1357,11 +1283,14 @@
          PÁGINA CORROMPIDA
     =========================================== -->
 
-    <div
+    <section
         id="pagina-corrompida"
         class="pagina-corrompida"
         aria-hidden="true"
     >
+
+        <div class="corrompida-neblina"></div>
+
 
         <div class="corrompida-conteudo">
 
@@ -1384,96 +1313,106 @@
             </h1>
 
 
-            <p data-i18n="corrompidaTexto">
-                Algumas coisas não deveriam estar visíveis ainda.
+            <p data-i18n="corrompidaInicial">
+                Tem alguma coisa escondida aqui.
             </p>
 
 
-            <!-- CONTEÚDO FUTURO / ENQUETE -->
-
             <div
-                id="conteudo-secreto-final"
-                class="conteudo-secreto-final"
+                id="arquivo-restaurado"
+                class="arquivo-restaurado"
             >
 
-                <h2 data-i18n="enqueteTitulo">
-                    Uma última pergunta.
+                <span class="arquivo-restaurado-status">
+                    ARQUIVO RESTAURADO
+                </span>
+
+
+                <h2 data-i18n="registroEncontrado">
+                    Registro encontrado
                 </h2>
 
-                <p data-i18n="enqueteTexto">
-                    O conteúdo completo será revelado quando chegar a hora.
+
+                <p>
+                    <span
+                        class="palavra-corrompida"
+                        data-original="mariobnw"
+                    >
+                        mariobnw
+                    </span>
+
+                    <span data-i18n="registroLinha1">
+                        deixou mais coisas para trás do que deveria.
+                    </span>
                 </p>
+
+
+                <p>
+
+                    <span data-i18n="registroLinha2A">
+                        Talvez
+                    </span>
+
+                    <span
+                        class="palavra-corrompida"
+                        data-original="mariobnw"
+                    >
+                        mariobnw
+                    </span>
+
+                    <span data-i18n="registroLinha2B">
+                        nunca tenha estado sozinho aqui.
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <span data-i18n="registroLinha3A">
+                        E talvez
+                    </span>
+
+                    <span
+                        class="palavra-corrompida"
+                        data-original="mariobnw"
+                    >
+                        mariobnw
+                    </span>
+
+                    <span data-i18n="registroLinha3B">
+                        não seja o único nome que esta página conhece.
+                    </span>
+
+                </p>
+
+
+                <div class="arquivo-recompensa">
+
+                    <strong>
+                        ????
+                    </strong>
+
+                    <span data-i18n="algoEspera">
+                        Algo ainda está esperando.
+                    </span>
+
+                </div>
 
             </div>
 
         </div>
 
 
-        <!-- =====================================
-             TINTA — fica SÓ nesta página
-        ====================================== -->
+        <!-- TINTA REAL RASPÁVEL -->
 
-        <div
-            id="camada-tinta"
-            class="camada-tinta"
-        >
-
-            <div class="tinta-mancha tinta-1"></div>
-            <div class="tinta-mancha tinta-2"></div>
-            <div class="tinta-mancha tinta-3"></div>
-            <div class="tinta-mancha tinta-4"></div>
-            <div class="tinta-mancha tinta-5"></div>
-            <div class="tinta-mancha tinta-6"></div>
+        <canvas
+            id="canvas-tinta"
+            class="canvas-tinta"
+        ></canvas>
 
 
-            <!-- Pontos secretos -->
-
-            <button
-                class="ponto-tinta ponto-1"
-                data-tinta="1"
-                type="button"
-                aria-label="?"
-            ></button>
-
-            <button
-                class="ponto-tinta ponto-2"
-                data-tinta="2"
-                type="button"
-                aria-label="?"
-            ></button>
-
-            <button
-                class="ponto-tinta ponto-3"
-                data-tinta="3"
-                type="button"
-                aria-label="?"
-            ></button>
-
-            <button
-                class="ponto-tinta ponto-4"
-                data-tinta="4"
-                type="button"
-                aria-label="?"
-            ></button>
-
-            <button
-                class="ponto-tinta ponto-5"
-                data-tinta="5"
-                type="button"
-                aria-label="?"
-            ></button>
-
-            <button
-                class="ponto-tinta ponto-6"
-                data-tinta="6"
-                type="button"
-                aria-label="?"
-            ></button>
-
-        </div>
-
-
-        <!-- MENSAGEM INICIAL -->
+        <!-- MARIO.UNO VOLTARÁ -->
 
         <div
             id="mensagem-uno-voltara"
@@ -1482,12 +1421,10 @@
 
             <button
                 id="fechar-mensagem-uno"
-                class="fechar-mensagem-uno"
                 type="button"
             >
                 ×
             </button>
-
 
             <span>
                 mario.uno voltará
@@ -1495,11 +1432,51 @@
 
         </div>
 
-    </div>
+
+        <!-- DIÁLOGO FINAL -->
+
+        <div
+            id="dialogo-bne"
+            class="dialogo-bne"
+        >
+
+            <div class="dialogo-bne-caixa">
+
+                <p id="dialogo-bne-texto">
+                    Você lembra de mim?
+                </p>
+
+
+                <div
+                    id="dialogo-bne-opcoes"
+                    class="dialogo-bne-opcoes"
+                >
+
+                    <button
+                        id="bne-sim"
+                        type="button"
+                    >
+                        Sim
+                    </button>
+
+                    <button
+                        id="bne-nao"
+                        type="button"
+                    >
+                        Não
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- ==========================================
-         BNW
+         BNW MASK
     =========================================== -->
 
     <div id="bnw-container">
@@ -1507,9 +1484,27 @@
         <img
             id="mascara-bnw"
             src="images/mascara-normal.png"
-            alt="Máscara do mariobnw"
+            alt=""
             draggable="false"
         >
+
+
+        <div
+            id="bnw-dialogo"
+            class="bnw-dialogo"
+        >
+
+            <span id="bnw-dialogo-texto"></span>
+
+            <button
+                id="pular-intro"
+                type="button"
+                data-i18n="pular"
+            >
+                PULAR
+            </button>
+
+        </div>
 
     </div>
 

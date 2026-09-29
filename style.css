@@ -1,26 +1,24 @@
 /* ==========================================
-   VARIÁVEIS
+   CORES
 ========================================== */
 
 :root {
     --fundo: #ffffff;
     --texto: #111111;
     --texto-secundario: #666666;
-
     --topo: rgba(255,255,255,0.92);
     --card: #eeeeee;
-    --fade-final: #ffffff;
 
-    --cor-tema: #168de2;
-    --cor-tema-hover: #32a8f8;
+    --tema: #168de2;
+    --tema-hover: #38a9f5;
+    --tema-rgb: 22,141,226;
+
+    --hero-1: #203660;
+    --hero-2: #5874b4;
 
     --erro: #d93535;
 }
 
-
-/* ==========================================
-   DARK MODE
-========================================== */
 
 @media (prefers-color-scheme: dark) {
 
@@ -28,32 +26,62 @@
         --fundo: #050505;
         --texto: #ffffff;
         --texto-secundario: #aaaaaa;
-
         --topo: rgba(10,10,14,0.93);
         --card: #181818;
-        --fade-final: #050505;
     }
 
 }
 
 
 /* ==========================================
-   MARIO.UNO
+   TEMAS
 ========================================== */
 
-html[data-tema="mario.uno"] {
-    --cor-tema: #2fbd59;
-    --cor-tema-hover: #57df7c;
+html[data-tema="mariobnw"] {
+    --tema: #168de2;
+    --tema-hover: #38a9f5;
+    --tema-rgb: 22,141,226;
+
+    --hero-1: #203660;
+    --hero-2: #5874b4;
 }
 
 
-html[data-tema="mario.uno"] .hero {
-    background:
-        linear-gradient(
-            135deg,
-            #102d19,
-            #3a9d5c
-        );
+html[data-tema="mario.uno"] {
+    --tema: #2fbd59;
+    --tema-hover: #57df7c;
+    --tema-rgb: 47,189,89;
+
+    --hero-1: #102d19;
+    --hero-2: #3a9d5c;
+}
+
+
+html[data-tema="mariobne"] {
+    --tema: #d6293c;
+    --tema-hover: #ff4358;
+    --tema-rgb: 214,41,60;
+
+    --hero-1: #27060b;
+    --hero-2: #8c1828;
+}
+
+
+/* PREVIEW */
+
+html[data-preview-tema="mariobnw"] {
+    --tema: #168de2;
+    --tema-rgb: 22,141,226;
+}
+
+html[data-preview-tema="mario.uno"] {
+    --tema: #2fbd59;
+    --tema-rgb: 47,189,89;
+}
+
+html[data-preview-tema="mariobne"] {
+    --tema: #d6293c;
+    --tema-rgb: 214,41,60;
 }
 
 
@@ -100,10 +128,164 @@ body.modal-aberto {
 }
 
 
-a,
 button,
+a,
 input {
     font-family: inherit;
+}
+
+
+body,
+.topo,
+.card,
+.botao,
+.botao-hud,
+.botao-idioma,
+.modal-base,
+.download-bloco,
+.config-item,
+.codigos-caixa,
+.arquivo-final-card,
+.tema-card {
+    transition:
+        background-color .45s ease,
+        color .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* ==========================================
+   TRANSIÇÃO
+========================================== */
+
+#transicao-secreta {
+    position: fixed;
+    inset: 0;
+
+    background:
+        #000;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 100000;
+
+    transition:
+        opacity .35s ease;
+}
+
+
+#transicao-secreta.ativa {
+    opacity: 1;
+}
+
+
+/* ==========================================
+   POPUP ERRO
+========================================== */
+
+.aviso-erro {
+    position: fixed;
+
+    top: 90px;
+    left: 50%;
+
+    transform:
+        translate(-50%,-25px)
+        scale(.95);
+
+    min-width: 330px;
+    max-width: calc(100vw - 30px);
+
+    display: flex;
+
+    gap: 13px;
+
+    align-items: center;
+
+    padding:
+        14px 18px;
+
+    background:
+        rgba(18,18,22,.97);
+
+    color:
+        white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-left:
+        5px solid
+        var(--erro);
+
+    border-radius:
+        14px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.35);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 30000;
+
+    transition:
+        opacity .18s ease,
+        transform .18s ease;
+}
+
+
+.aviso-erro.visivel {
+    opacity: 1;
+
+    transform:
+        translate(-50%,0)
+        scale(1);
+}
+
+
+.aviso-icone {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        var(--erro);
+
+    color:
+        white;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+    font-weight: bold;
+}
+
+
+.aviso-texto {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.aviso-texto span {
+    color:
+        #aaa;
+
+    font-size: 13px;
 }
 
 
@@ -121,6 +303,7 @@ input {
     height: 72px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -135,7 +318,7 @@ input {
 
     border-bottom:
         1px solid
-        rgba(128,128,128,0.10);
+        rgba(128,128,128,.1);
 
     z-index: 1000;
 }
@@ -147,7 +330,10 @@ input {
     height: 52px;
 
     display: flex;
+
     align-items: center;
+
+    text-decoration: none;
 }
 
 
@@ -156,6 +342,31 @@ input {
     height: 40px;
 
     object-fit: contain;
+
+    transform-origin:
+        left center;
+}
+
+
+.logo-easter-text {
+    display: none;
+
+    color:
+        var(--texto);
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+.logo-topo.easter #logo-site {
+    display: none;
+}
+
+
+.logo-topo.easter .logo-easter-text {
+    display: block;
 }
 
 
@@ -166,7 +377,8 @@ input {
 .logo-topo.logo-glitch img {
     animation:
         logoGlitch
-        0.8s steps(2,end);
+        .42s
+        steps(2,end);
 }
 
 
@@ -177,47 +389,55 @@ input {
         filter: none;
     }
 
-    18% {
-        transform: translate(-6px,2px);
+    10% {
+        transform:
+            translate(-3px,1px);
 
         filter:
-            drop-shadow(
-                5px 0 #ff00ff
-            )
-            drop-shadow(
-                -5px 0 #00ffff
-            );
+            drop-shadow(3px 0 #ff00ff)
+            drop-shadow(-3px 0 #00ffff);
     }
 
-    38% {
+    22% {
         transform:
-            translate(6px,-2px);
+            translate(4px,-1px)
+            skewX(-2deg);
     }
 
-    58% {
+    36% {
         transform:
-            translate(-4px,1px);
+            translate(-5px,0)
+            scaleX(1.03);
 
         filter:
-            drop-shadow(
-                4px 0 #00ff66
-            )
-            drop-shadow(
-                -4px 0 #ff3355
-            );
+            drop-shadow(4px 0 #00ff66)
+            drop-shadow(-4px 0 #ff3355);
     }
 
-    78% {
+    52% {
         transform:
-            translate(3px,-1px);
+            translate(2px,1px)
+            skewX(3deg);
+    }
+
+    68% {
+        transform:
+            translate(-2px,-1px)
+            scaleX(.98);
+
+        filter:
+            drop-shadow(2px 0 #ffff00)
+            drop-shadow(-2px 0 #00ffff);
+    }
+
+    82% {
+        transform:
+            translate(3px,0);
     }
 
     100% {
-        transform:
-            translate(0);
-
-        filter:
-            none;
+        transform: translate(0);
+        filter: none;
     }
 
 }
@@ -226,24 +446,22 @@ input {
 .logo-particula {
     position: absolute;
 
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
 
     pointer-events: none;
 
     animation:
-        particulaLogo
-        0.7s ease-out forwards;
+        particulaGlitch
+        .34s ease-out forwards;
 }
 
 
-@keyframes particulaLogo {
+@keyframes particulaGlitch {
 
     from {
         opacity: 1;
-
-        transform:
-            translate(0,0);
+        transform: translate(0,0);
     }
 
     to {
@@ -265,6 +483,7 @@ input {
 
 nav {
     display: flex;
+
     align-items: center;
 
     gap: 15px;
@@ -282,11 +501,30 @@ nav > a,
     border:
         none;
 
+    padding: 0;
+
     text-decoration:
         none;
 
-    font-size:
-        15px;
+    font-size: 15px;
+}
+
+
+.menu-download {
+    padding:
+        10px 18px;
+
+    border:
+        none;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--tema);
+
+    color:
+        white;
 }
 
 
@@ -296,12 +534,14 @@ nav > a,
     width: 42px;
     height: 42px;
 
-    border: none;
+    border:
+        none;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
-        rgba(128,128,128,0.12);
+        rgba(128,128,128,.12);
 
     color:
         var(--texto);
@@ -319,40 +559,23 @@ nav > a,
     padding:
         3px 5px;
 
-    border-radius:
-        999px;
-
     background:
         #d93535;
 
     color:
         white;
 
-    font-size:
-        7px;
+    border-radius:
+        999px;
 
-    font-weight:
-        bold;
+    font-size: 7px;
+
+    font-weight: bold;
 }
 
 
 .devlog-novo.oculto {
     display: none;
-}
-
-
-.menu-download {
-    padding:
-        10px 18px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background:
-        var(--cor-tema);
-
-    color: white;
 }
 
 
@@ -373,7 +596,8 @@ nav > a,
 
     border: none;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
         #26384f;
@@ -394,11 +618,12 @@ nav > a,
     top: 52px;
     right: 0;
 
-    width: 195px;
+    width: 190px;
 
     padding: 8px;
 
     display: flex;
+
     flex-direction: column;
 
     background:
@@ -406,9 +631,10 @@ nav > a,
 
     border:
         1px solid
-        rgba(128,128,128,0.18);
+        rgba(128,128,128,.15);
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 
     opacity: 0;
 
@@ -416,6 +642,9 @@ nav > a,
 
     transform:
         translateY(-8px);
+
+    transition:
+        .18s ease;
 }
 
 
@@ -431,6 +660,7 @@ nav > a,
 
 .opcao-idioma {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -460,20 +690,40 @@ nav > a,
 ========================================== */
 
 .hero {
+    position: relative;
+
     min-height: 850px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
 
     background:
         linear-gradient(
             135deg,
-            #203660,
-            #5874b4
+            var(--hero-1),
+            var(--hero-2)
+        );
+}
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(
+            var(--tema-rgb),
+            .10
         );
 
-    position: relative;
+    transition:
+        background-color .45s ease;
 }
 
 
@@ -482,16 +732,16 @@ nav > a,
 
     position: absolute;
 
-    inset:
-        auto 0 0;
+    left: 0;
+    bottom: 0;
 
-    height: 700px;
+    width: 100%;
+    height: 550px;
 
     background:
         linear-gradient(
-            to bottom,
             transparent,
-            var(--fade-final)
+            var(--fundo)
         );
 }
 
@@ -501,7 +751,8 @@ nav > a,
 
     z-index: 3;
 
-    color: white;
+    color:
+        white;
 
     text-align: center;
 }
@@ -555,7 +806,7 @@ nav > a,
 
 .mini-etiqueta {
     color:
-        var(--cor-tema);
+        var(--tema);
 
     font-size: 12px;
 
@@ -570,6 +821,8 @@ nav > a,
 .botoes {
     display: flex;
 
+    flex-wrap: wrap;
+
     gap: 15px;
 
     margin-top: 25px;
@@ -582,9 +835,11 @@ nav > a,
     padding:
         14px 25px;
 
-    border: none;
+    border:
+        none;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
     background:
         #eeeeee;
@@ -599,9 +854,10 @@ nav > a,
 
 .botao-principal {
     background:
-        var(--cor-tema);
+        var(--tema);
 
-    color: white;
+    color:
+        white;
 }
 
 
@@ -611,6 +867,14 @@ nav > a,
 
     color:
         #8b8b8b;
+}
+
+
+.botao-pequeno {
+    padding:
+        9px 13px;
+
+    font-size: 12px;
 }
 
 
@@ -637,7 +901,12 @@ nav > a,
     background:
         var(--card);
 
-    border-radius: 22px;
+    border:
+        1px solid
+        rgba(128,128,128,.08);
+
+    border-radius:
+        22px;
 }
 
 
@@ -648,11 +917,6 @@ nav > a,
     font-size: 11px;
 
     font-weight: bold;
-}
-
-
-.canais-grid {
-    margin-top: 30px;
 }
 
 
@@ -675,101 +939,78 @@ nav > a,
     padding:
         5px 8px;
 
+    margin-bottom:
+        10px;
+
     background:
-        rgba(22,141,226,0.13);
+        rgba(
+            var(--tema-rgb),
+            .13
+        );
 
     color:
-        var(--cor-tema);
+        var(--tema);
 
-    border-radius: 6px;
+    border-radius:
+        6px;
 
     font-size: 11px;
 }
 
 
 /* ==========================================
-   FITAS
+   FITA REALISTA
 ========================================== */
 
-.fita-bloqueio {
+.fita-realista {
     position: absolute;
 
     left: 50%;
-    top: 50%;
 
-    min-width: 125%;
+    width: 130%;
+    height: 95px;
 
-    padding:
-        10px 25px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        url("images/fita.png");
+
+    background-position:
+        center;
+
+    background-repeat:
+        no-repeat;
+
+    background-size:
+        100% 100%;
 
     transform:
-        translate(-50%,-50%)
-        rotate(-5deg);
+        translateX(-50%)
+        rotate(-4deg);
 
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff,
-            #ececec
-        );
+    z-index: 10;
 
+    pointer-events: none;
+}
+
+
+.fita-realista span {
     color:
-        #111111;
+        #151515;
 
-    border:
-        1px solid
-        rgba(0,0,0,0.10);
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,0.22);
-
-    text-align: center;
-
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 900;
 
     letter-spacing:
-        1.5px;
+        2px;
 
-    z-index: 5;
-}
-
-
-.fita-bloqueio::before,
-.fita-bloqueio::after {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-
-    width: 16px;
-    height: 28px;
-
-    background:
-        rgba(255,255,255,0.55);
-
-    transform:
-        translateY(-50%)
-        rotate(11deg);
-
-    z-index: -1;
-}
-
-
-.fita-bloqueio::before {
-    left: -8px;
-}
-
-
-.fita-bloqueio::after {
-    right: -8px;
-
-    transform:
-        translateY(-50%)
-        rotate(-11deg);
+    text-shadow:
+        0 1px 0
+        rgba(255,255,255,.5);
 }
 
 
@@ -782,12 +1023,14 @@ nav > a,
 
     overflow: hidden;
 
-    padding: 42px;
+    padding:
+        42px;
 
     background:
         var(--card);
 
-    border-radius: 26px;
+    border-radius:
+        26px;
 }
 
 
@@ -805,14 +1048,15 @@ nav > a,
 
     padding: 14px;
 
-    border-radius: 10px;
-
     border:
         1px solid
-        rgba(128,128,128,0.20);
+        rgba(128,128,128,.18);
+
+    border-radius:
+        10px;
 
     background:
-        rgba(128,128,128,0.10);
+        rgba(128,128,128,.08);
 
     color:
         var(--texto);
@@ -840,23 +1084,23 @@ nav > a,
     background:
         linear-gradient(
             145deg,
-            #111217,
-            #050506
+            #101115,
+            #030304
         );
 
     color:
-        #e7e7e7;
+        #e4e4e4;
 
     border:
         1px solid
-        rgba(255,255,255,0.05);
+        rgba(255,255,255,.05);
 
     border-radius:
         30px;
 
     box-shadow:
-        inset 0 0 80px
-        rgba(0,0,0,0.80);
+        inset 0 0 90px
+        rgba(0,0,0,.85);
 }
 
 
@@ -865,39 +1109,36 @@ nav > a,
 
     position: absolute;
 
-    left: -5%;
-    right: -5%;
-    bottom: -40px;
+    left: -10%;
+    right: -10%;
 
-    height: 100px;
+    bottom: -60px;
+
+    height: 130px;
 
     background:
-        radial-gradient(
-            ellipse at center,
-            #010101 0%,
-            #050506 60%,
-            transparent 75%
-        );
+        #010101;
 
-    opacity: 0.9;
+    border-radius:
+        50% 50% 10% 10%;
 }
 
 
 .arquivo-neblina {
     position: absolute;
-
     inset: 0;
 
     background:
         radial-gradient(
-            circle at 30% 50%,
-            rgba(255,255,255,0.035),
-            transparent 40%
+            circle at 25% 45%,
+            rgba(255,255,255,.035),
+            transparent 35%
         ),
+
         radial-gradient(
-            circle at 75% 30%,
-            rgba(255,255,255,0.025),
-            transparent 38%
+            circle at 75% 25%,
+            rgba(255,255,255,.025),
+            transparent 40%
         );
 
     pointer-events: none;
@@ -908,47 +1149,25 @@ nav > a,
     color:
         #656873;
 
-    font-size: 12px;
-
     letter-spacing:
-        3px;
-}
+        4px;
 
-
-.arquivo-requisitos {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin:
-        30px 0;
-}
-
-
-.arquivo-requisitos span {
-    padding:
-        7px 10px;
-
-    background:
-        rgba(255,255,255,0.04);
-
-    color:
-        #5c5f67;
-
-    border-radius: 8px;
-
-    font-size: 10px;
+    font-size: 11px;
 }
 
 
 .arquivo-final-botao {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 20px;
+
     background:
-        #16171b;
+        #1a1b20;
 
     color:
-        #656873;
+        white;
 }
 
 
@@ -962,19 +1181,25 @@ nav > a,
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 40px;
+    gap: 45px;
 }
 
 
 .site-projeto {
-    text-align: center;
+    min-height: 210px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
 
 .site-logo-area {
     position: relative;
 
-    min-height: 180px;
+    width: 100%;
+    min-height: 190px;
 
     display: flex;
 
@@ -987,18 +1212,9 @@ nav > a,
 
 .site-logo {
     max-width: 90%;
-    max-height: 130px;
+    max-height: 140px;
 
     object-fit: contain;
-}
-
-
-.site-logo-fallback {
-    display: none;
-
-    font-size: 34px;
-
-    font-weight: 900;
 }
 
 
@@ -1007,14 +1223,8 @@ nav > a,
 }
 
 
-.site-projeto p {
-    color:
-        var(--texto-secundario);
-}
-
-
 /* ==========================================
-   FITA MARIO.UNO
+   FITA UNO
 ========================================== */
 
 .nome-tematico {
@@ -1038,34 +1248,31 @@ html[data-tema="mario.uno"]
     left: -8px;
     top: 50%;
 
+    padding:
+        3px 10px;
+
     transform:
         translateY(-50%)
         rotate(-4deg);
 
-    padding:
-        3px 10px;
-
     background:
-        linear-gradient(
-            to bottom,
-            #ffffff,
-            #eeeeee
-        );
+        #f0eee9;
 
     color:
         #111;
 
-    border-radius: 4px;
-
     box-shadow:
         0 3px 10px
-        rgba(0,0,0,0.2);
+        rgba(0,0,0,.2);
+
+    white-space:
+        nowrap;
 }
 
 
 html[data-tema="mario.uno"]
 .nome-bnw-original {
-    opacity: 0.25;
+    opacity: .28;
 }
 
 
@@ -1082,23 +1289,23 @@ html[data-tema="mario.uno"]
 
     display: flex;
 
-    justify-content:
-        space-between;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
 
     border-top:
         1px solid
-        rgba(128,128,128,0.12);
+        rgba(128,128,128,.12);
 
     color:
         var(--texto-secundario);
+
+    font-size: 13px;
 }
 
 
 .rodape-identidade {
-    display: flex;
-
-    gap: 4px;
-
     color:
         var(--texto);
 
@@ -1125,7 +1332,7 @@ html[data-tema="mario.uno"]
     overflow-y: auto;
 
     background:
-        rgba(0,0,0,0.72);
+        rgba(0,0,0,.72);
 
     backdrop-filter:
         blur(8px);
@@ -1137,7 +1344,7 @@ html[data-tema="mario.uno"]
     z-index: 9000;
 
     transition:
-        opacity 0.25s ease;
+        opacity .25s ease;
 }
 
 
@@ -1162,18 +1369,19 @@ html[data-tema="mario.uno"]
     color:
         white;
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     box-shadow:
         0 30px 90px
-        rgba(0,0,0,0.55);
+        rgba(0,0,0,.55);
 
     transform:
         translateY(20px)
-        scale(0.98);
+        scale(.98);
 
     transition:
-        transform 0.25s ease;
+        transform .25s ease;
 }
 
 
@@ -1199,7 +1407,7 @@ html[data-tema="mario.uno"]
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,0.08);
+        rgba(255,255,255,.08);
 
     color:
         white;
@@ -1211,7 +1419,7 @@ html[data-tema="mario.uno"]
 .modal-etiqueta {
     display: inline-block;
 
-    margin-bottom: 12px;
+    margin-bottom: 13px;
 
     padding:
         7px 11px;
@@ -1219,15 +1427,11 @@ html[data-tema="mario.uno"]
     background:
         #20242d;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
-    font-size: 12px;
-}
-
-
-.modal-descricao {
-    color:
-        #a6aab3;
+    font-size:
+        12px;
 }
 
 
@@ -1261,7 +1465,8 @@ html[data-tema="mario.uno"]
 
     border: none;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     background:
         #151821;
@@ -1283,24 +1488,6 @@ html[data-tema="mario.uno"]
    DEVLOG
 ========================================== */
 
-.devlog-progresso {
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    margin:
-        25px 0;
-
-    padding: 16px;
-
-    background:
-        #151821;
-
-    border-radius: 14px;
-}
-
-
 .devlog-lista {
     display: flex;
 
@@ -1316,13 +1503,14 @@ html[data-tema="mario.uno"]
     background:
         #151821;
 
-    border-radius: 16px;
+    border-radius:
+        16px;
 }
 
 
 .devlog-data {
     color:
-        var(--cor-tema);
+        var(--tema);
 
     font-size: 11px;
 }
@@ -1346,7 +1534,8 @@ html[data-tema="mario.uno"]
     background:
         #151821;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 }
 
 
@@ -1372,23 +1561,13 @@ html[data-tema="mario.uno"]
 }
 
 
-.plataformas small {
-    margin-left: 6px;
-
-    color:
-        #8f939c;
-
-    font-size: 9px;
-}
-
-
 /* ==========================================
    PROGRESSO
 ========================================== */
 
 .progresso-demo {
     margin:
-        25px 0;
+        20px 0;
 }
 
 
@@ -1408,9 +1587,10 @@ html[data-tema="mario.uno"]
     overflow: hidden;
 
     background:
-        rgba(255,255,255,0.10);
+        rgba(255,255,255,.1);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 }
 
 
@@ -1419,19 +1599,13 @@ html[data-tema="mario.uno"]
     height: 100%;
 
     background:
-        var(--cor-tema);
-}
+        var(--tema);
 
+    border-radius:
+        inherit;
 
-.progresso-status {
-    display: block;
-
-    margin-top: 8px;
-
-    color:
-        #92969f;
-
-    font-size: 13px;
+    transition:
+        width .6s ease;
 }
 
 
@@ -1464,7 +1638,8 @@ html[data-tema="mario.uno"]
     background:
         #151821;
 
-    border-radius: 16px;
+    border-radius:
+        16px;
 }
 
 
@@ -1473,13 +1648,13 @@ html[data-tema="mario.uno"]
 
     flex-direction: column;
 
-    gap: 5px;
+    gap: 4px;
 }
 
 
 .config-item span {
     color:
-        #969aa3;
+        #999da6;
 
     font-size: 13px;
 }
@@ -1492,7 +1667,8 @@ html[data-tema="mario.uno"]
 
     border: none;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
         #333740;
@@ -1504,40 +1680,149 @@ html[data-tema="mario.uno"]
 
 .toggle-config.ativo {
     background:
-        var(--cor-tema);
+        var(--tema);
 }
 
 
-.config-tema.oculto {
-    display: none;
+.config-temas {
+    display: block;
 }
 
 
-.botoes-tema {
+.config-temas-cabecalho {
     display: flex;
 
-    gap: 8px;
+    flex-direction: column;
+
+    margin-bottom: 15px;
 }
 
 
-.tema-botao {
-    padding: 9px;
+.lista-temas {
+    display: flex;
 
-    border: none;
+    flex-wrap: wrap;
 
-    border-radius: 9px;
+    gap: 10px;
+}
+
+
+.tema-card {
+    position: relative;
+
+    min-width: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        12px;
 
     background:
-        #252932;
+        #22252d;
 
     color:
         white;
 }
 
 
-.tema-botao.ativo {
-    background:
-        var(--cor-tema);
+.tema-card img {
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+}
+
+
+.tema-card.ativo {
+    border-color:
+        var(--tema);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(
+            var(--tema-rgb),
+            .15
+        );
+}
+
+
+.tema-ativo-texto {
+    display: none;
+
+    margin-left: auto;
+
+    color:
+        var(--tema);
+}
+
+
+.tema-card.ativo
+.tema-ativo-texto {
+    display: block;
+}
+
+
+.tema-card.selecionando {
+    animation:
+        temaPop
+        .28s ease;
+}
+
+
+@keyframes temaPop {
+
+    50% {
+        transform:
+            scale(1.06);
+    }
+
+}
+
+
+.tema-oculto {
+    display: none;
+}
+
+
+.descobrir-tema-area {
+    margin-top: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.descobrir-tema-area.oculto {
+    display: none;
+}
+
+
+.dica-tema {
+    width: 100%;
+
+    margin:
+        5px 0 0;
+
+    color:
+        #9297a2;
+
+    font-size: 12px;
 }
 
 
@@ -1548,19 +1833,21 @@ html[data-tema="mario.uno"]
 
     border-top:
         1px solid
-        rgba(255,255,255,0.08);
+        rgba(255,255,255,.08);
 
     color:
-        #62666f;
+        #61656e;
 
     text-align: center;
 
     font-size: 12px;
+
+    user-select: none;
 }
 
 
 /* ==========================================
-   ARQUIVO — CÓDIGO
+   CÓDIGO
 ========================================== */
 
 .arquivo-codigo-form {
@@ -1579,9 +1866,10 @@ html[data-tema="mario.uno"]
 
     border:
         1px solid
-        rgba(255,255,255,0.12);
+        rgba(255,255,255,.12);
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
         #15171c;
@@ -1589,7 +1877,8 @@ html[data-tema="mario.uno"]
     color:
         white;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 }
 
 
@@ -1619,7 +1908,7 @@ html[data-tema="mario.uno"]
     overflow-y: auto;
 
     background:
-        #090a0d;
+        #08090c;
 
     color:
         white;
@@ -1633,10 +1922,34 @@ html[data-tema="mario.uno"]
 }
 
 
+.corrompida-neblina {
+    position: absolute;
+
+    inset: 0;
+
+    min-height: 100%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255,255,255,.025),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 70% 60%,
+            rgba(255,255,255,.02),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+
 .corrompida-conteudo {
     position: relative;
 
-    min-height: 100vh;
+    min-height: 150vh;
 
     padding:
         100px max(30px,10vw);
@@ -1647,17 +1960,18 @@ html[data-tema="mario.uno"]
 
 .corrompida-etiqueta {
     color:
-        #5d6068;
-
-    letter-spacing: 4px;
+        #666a74;
 
     font-size: 11px;
+
+    letter-spacing:
+        4px;
 }
 
 
 #nome-proximo-jogo {
     margin:
-        20px 0;
+        25px 0;
 
     font-size:
         clamp(
@@ -1667,25 +1981,7 @@ html[data-tema="mario.uno"]
         );
 
     letter-spacing:
-        -3px;
-}
-
-
-.conteudo-secreto-final {
-    margin-top: 100px;
-
-    max-width: 700px;
-
-    opacity: 0.25;
-
-    transition:
-        opacity 0.8s ease;
-}
-
-
-.pagina-corrompida.limpa
-.conteudo-secreto-final {
-    opacity: 1;
+        -4px;
 }
 
 
@@ -1703,7 +1999,8 @@ html[data-tema="mario.uno"]
     color:
         #777;
 
-    font-size: 32px;
+    font-size:
+        34px;
 }
 
 
@@ -1711,172 +2008,173 @@ html[data-tema="mario.uno"]
    TINTA
 ========================================== */
 
-.camada-tinta {
+.canvas-tinta {
     position: absolute;
 
     inset: 0;
 
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
 
-    pointer-events: none;
+    z-index: 15;
 
-    z-index: 10;
-}
-
-
-.tinta-mancha {
-    position: absolute;
-
-    background:
-        #010101;
-
-    border-radius:
-        48% 52% 42% 58%
-        /
-        53% 40% 60% 47%;
-
-    filter:
-        blur(2px);
-
-    box-shadow:
-        0 0 40px
-        #000;
-
-    transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
-
-    pointer-events: none;
-}
-
-
-.tinta-1 {
-    width: 48%;
-    height: 55%;
-
-    left: -10%;
-    top: -7%;
-}
-
-
-.tinta-2 {
-    width: 55%;
-    height: 47%;
-
-    right: -12%;
-    top: 5%;
-}
-
-
-.tinta-3 {
-    width: 65%;
-    height: 44%;
-
-    left: 10%;
-    top: 35%;
-}
-
-
-.tinta-4 {
-    width: 45%;
-    height: 50%;
-
-    right: -5%;
-    bottom: -5%;
-}
-
-
-.tinta-5 {
-    width: 40%;
-    height: 42%;
-
-    left: -6%;
-    bottom: 0;
-}
-
-
-.tinta-6 {
-    width: 38%;
-    height: 35%;
-
-    left: 35%;
-    bottom: -12%;
-}
-
-
-.tinta-mancha.removida {
-    opacity: 0;
-
-    transform:
-        scale(0.7);
-}
-
-
-/* pontos clicáveis */
-
-.ponto-tinta {
-    position: absolute;
-
-    width: 30px;
-    height: 30px;
-
-    border: none;
-
-    background:
-        rgba(255,255,255,0.025);
-
-    border-radius: 50%;
-
-    pointer-events: auto;
-
-    opacity: 0.18;
-}
-
-
-.ponto-tinta:hover {
-    background:
-        rgba(255,255,255,0.10);
-}
-
-
-.ponto-1 {
-    left: 13%;
-    top: 20%;
-}
-
-
-.ponto-2 {
-    right: 15%;
-    top: 22%;
-}
-
-
-.ponto-3 {
-    left: 45%;
-    top: 47%;
-}
-
-
-.ponto-4 {
-    right: 18%;
-    bottom: 21%;
-}
-
-
-.ponto-5 {
-    left: 16%;
-    bottom: 18%;
-}
-
-
-.ponto-6 {
-    left: 51%;
-    bottom: 8%;
+    touch-action: none;
 }
 
 
 /* ==========================================
-   MARIO.UNO VOLTARÁ
+   CONTEÚDO RESTAURADO
+========================================== */
+
+.arquivo-restaurado {
+    max-width: 750px;
+
+    margin-top: 100px;
+
+    opacity: .10;
+
+    filter:
+        blur(3px);
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease,
+        filter .8s ease;
+}
+
+
+.pagina-corrompida.limpa
+.arquivo-restaurado {
+    opacity: 1;
+
+    filter:
+        none;
+
+    pointer-events: auto;
+}
+
+
+.arquivo-restaurado-status {
+    color:
+        #777c86;
+
+    font-size: 11px;
+
+    letter-spacing:
+        3px;
+}
+
+
+.arquivo-restaurado p {
+    margin:
+        30px 0;
+
+    font-size:
+        19px;
+
+    line-height:
+        1.8;
+
+    color:
+        #bbbfc8;
+}
+
+
+.palavra-corrompida {
+    display: inline-block;
+
+    color:
+        #eeeeee;
+
+    font-weight: bold;
+
+    transition:
+        color .2s ease;
+}
+
+
+.palavra-corrompida.ativa {
+    animation:
+        palavraGlitch
+        .45s steps(2,end)
+        infinite;
+}
+
+
+.palavra-corrompida.concluida {
+    color:
+        #e43449;
+
+    animation:
+        none;
+}
+
+
+@keyframes palavraGlitch {
+
+    0% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform:
+            translate(-2px,1px);
+
+        text-shadow:
+            2px 0 #00ffff,
+            -2px 0 #ff0033;
+    }
+
+    50% {
+        transform:
+            translate(2px,-1px);
+    }
+
+    75% {
+        transform:
+            translate(-1px,0);
+
+        text-shadow:
+            -2px 0 #ff00ff;
+    }
+
+    100% {
+        transform: translate(0);
+    }
+
+}
+
+
+.arquivo-recompensa {
+    margin-top: 70px;
+
+    padding:
+        25px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,.05);
+
+    border-radius:
+        18px;
+}
+
+
+.arquivo-recompensa {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* ==========================================
+   UNO VOLTARÁ
 ========================================== */
 
 .mensagem-uno-voltara {
@@ -1890,28 +2188,43 @@ html[data-tema="mario.uno"]
     justify-content: center;
 
     background:
-        rgba(0,0,0,0.75);
+        rgba(0,0,0,.82);
 
     z-index: 60;
 }
 
 
-.mensagem-uno-voltara span {
-    font-size:
-        clamp(
-            35px,
-            7vw,
-            80px
-        );
-
-    font-weight: bold;
-
-    text-transform:
-        lowercase;
+.mensagem-uno-voltara.fechada {
+    display: none;
 }
 
 
-.fechar-mensagem-uno {
+.mensagem-uno-voltara span {
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    font-size:
+        clamp(
+            42px,
+            8vw,
+            92px
+        );
+
+    font-weight: 700;
+
+    transform:
+        rotate(-2deg);
+
+    text-shadow:
+        0 6px 20px
+        rgba(0,0,0,.7);
+}
+
+
+.mensagem-uno-voltara button {
     position: absolute;
 
     top: 30px;
@@ -1925,12 +2238,184 @@ html[data-tema="mario.uno"]
     color:
         white;
 
-    font-size: 35px;
+    font-size: 34px;
 }
 
 
-.mensagem-uno-voltara.fechada {
+/* ==========================================
+   DIÁLOGO BNE
+========================================== */
+
+.dialogo-bne {
+    position: fixed;
+
+    inset: 0;
+
     display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        #000;
+
+    z-index: 100;
+}
+
+
+.dialogo-bne.aberto {
+    display: flex;
+}
+
+
+.dialogo-bne-caixa {
+    width:
+        min(650px,100%);
+
+    text-align: center;
+}
+
+
+.dialogo-bne-caixa p {
+    min-height: 80px;
+
+    color:
+        white;
+
+    font-size:
+        clamp(
+            23px,
+            4vw,
+            38px
+        );
+}
+
+
+.dialogo-bne-opcoes {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.dialogo-bne-opcoes button {
+    padding:
+        12px 28px;
+
+    border:
+        1px solid
+        #333;
+
+    border-radius:
+        10px;
+
+    background:
+        #111;
+
+    color:
+        white;
+}
+
+
+/* ==========================================
+   BNE GLITCH FINAL
+========================================== */
+
+body.bne-caos {
+    animation:
+        caosFinal
+        .7s steps(2,end);
+}
+
+
+@keyframes caosFinal {
+
+    0% {
+        transform: translate(0);
+        filter: none;
+    }
+
+    20% {
+        transform:
+            translate(-8px,2px);
+
+        filter:
+            hue-rotate(80deg)
+            contrast(2);
+    }
+
+    40% {
+        transform:
+            translate(7px,-4px);
+    }
+
+    60% {
+        transform:
+            translate(-5px,4px);
+
+        filter:
+            hue-rotate(-60deg)
+            contrast(1.8);
+    }
+
+    80% {
+        transform:
+            translate(4px,-1px);
+    }
+
+    100% {
+        transform: translate(0);
+        filter: none;
+    }
+
+}
+
+
+/* ==========================================
+   TREMIDA ERRO
+========================================== */
+
+.tremendo {
+    animation:
+        tremorErro
+        .36s linear;
+}
+
+
+@keyframes tremorErro {
+
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform:
+            translate(-7px,2px);
+    }
+
+    40% {
+        transform:
+            translate(7px,-3px);
+    }
+
+    60% {
+        transform:
+            translate(-6px,-2px);
+    }
+
+    80% {
+        transform:
+            translate(6px,3px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+
 }
 
 
@@ -1940,6 +2425,9 @@ html[data-tema="mario.uno"]
 
 #bnw-container {
     position: fixed;
+
+    left: 50%;
+    top: 50%;
 
     width: 170px;
     height: 170px;
@@ -1963,6 +2451,85 @@ html[data-tema="mario.uno"]
 
     image-rendering:
         pixelated;
+
+    transition:
+        transform .12s ease;
+}
+
+
+#mascara-bnw.reagindo {
+    transform:
+        scale(1.1)
+        rotate(3deg);
+}
+
+
+/* ==========================================
+   DIÁLOGO BNW
+========================================== */
+
+.bnw-dialogo {
+    position: absolute;
+
+    left: 125px;
+    top: 5px;
+
+    width: 245px;
+
+    display: none;
+
+    padding:
+        13px 15px;
+
+    background:
+        rgba(10,11,15,.96);
+
+    color:
+        white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        13px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.3);
+
+    pointer-events: auto;
+}
+
+
+.bnw-dialogo.aberto {
+    display: block;
+}
+
+
+.bnw-dialogo span {
+    display: block;
+
+    min-height: 35px;
+
+    line-height: 1.5;
+}
+
+
+.bnw-dialogo button {
+    margin-top: 8px;
+
+    border: none;
+
+    background:
+        transparent;
+
+    color:
+        #737985;
+
+    font-size: 10px;
+
+    font-weight: bold;
 }
 
 
@@ -2001,7 +2568,7 @@ html[data-tema="mario.uno"]
 
 #cursor-imagem.clicando {
     transform:
-        scale(0.82);
+        scale(.82);
 }
 
 
@@ -2009,14 +2576,13 @@ html[data-tema="mario.uno"]
    SEM EFEITOS
 ========================================== */
 
-body.sem-efeitos
-#bnw-container {
+body.sem-efeitos #bnw-container {
     display: none;
 }
 
 
 /* ==========================================
-   MOBILE
+   MOBILE / TOUCH
 ========================================== */
 
 @media (hover: none) and (pointer: coarse) {
@@ -2026,9 +2592,16 @@ body.sem-efeitos
         cursor: auto !important;
     }
 
+
     #cursor-mao,
     #bnw-container {
         display: none !important;
+    }
+
+
+    body.intro-bnw-ativa
+    #bnw-container {
+        display: block !important;
     }
 
 }
@@ -2040,18 +2613,35 @@ body.sem-efeitos
         display: none;
     }
 
+
     .topo {
         padding:
             0 10px;
     }
 
+
     nav {
         gap: 6px;
     }
 
+
     #logo-site {
         height: 30px;
     }
+
+
+    .botao-hud,
+    .botao-idioma {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .menu-download {
+        padding:
+            8px 10px;
+    }
+
 
     .overlay-modal {
         align-items:
@@ -2060,13 +2650,12 @@ body.sem-efeitos
         padding: 12px;
     }
 
+
     .modal-base {
         width: 100%;
 
         max-height:
-            calc(
-                100dvh - 24px
-            );
+            calc(100dvh - 24px);
 
         overflow-y: auto;
 
@@ -2074,9 +2663,24 @@ body.sem-efeitos
             20px;
     }
 
-    .outros-sites-grid {
+
+    .outros-sites-grid,
+    .opcoes-comunidade {
         grid-template-columns:
             1fr;
+    }
+
+
+    .bnw-dialogo {
+        left: 50%;
+
+        top: 120px;
+
+        transform:
+            translateX(-50%);
+
+        width:
+            min(280px,80vw);
     }
 
 }
@@ -2090,17 +2694,20 @@ body.sem-efeitos
             30px 22px;
     }
 
+
     .codigos-form,
     .arquivo-codigo-form {
         flex-direction:
             column;
     }
 
+
     .rodape-site {
         flex-direction:
             column;
 
-        gap: 10px;
+        align-items:
+            flex-start;
     }
 
 }

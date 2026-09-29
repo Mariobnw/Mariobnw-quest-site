@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Site oficial de mariobnw quest, um RPG baseado em turnos inspirado na série Mario & Luigi.">
+  <meta id="theme-color" name="theme-color" content="#168de2">
+  <title>mariobnw quest</title>
+  <link id="favicon" rel="icon" type="image/png" href="images/favicon-aberto.png">
+  <link rel="stylesheet" href="style.css?v=0.5.0">
+</head>
+<body>
+  <div id="transicao-secreta" aria-hidden="true"></div>
+  <div id="flash-bne" aria-hidden="true"></div>
+
+  <div id="aviso-erro" class="aviso-erro" aria-live="polite">
+    <div class="aviso-icone">!</div>
+    <div class="aviso-texto">
+      <strong id="aviso-titulo">Recurso indisponível</strong>
+      <span id="aviso-descricao">Este recurso ainda não está disponível.</span>
+    </div>
+  </div>
+
+  <audio id="som-erro" preload="auto" src="Downloads/erro.mp3"></audio>
+  <audio id="som-click" preload="auto" src="Downloads/minecraft-click-menu.mp3"></audio>
+  <audio id="som-dialogo" preload="auto" src="Downloads/dialogo.mp3"></audio>
+  <audio id="som-luz-apagando" preload="auto" src="Downloads/tv-shutdown.mp3"></audio>
+
+  <header class="topo">
+    <a id="logo-link" class="logo-topo" href="#inicio" aria-label="Voltar ao início">
+      <img id="logo-site" src="images/logo-topo.png" alt="mariobnw quest" draggable="false">
+      <span id="logo-easter-text" class="logo-easter-text">Não tem nada demais aí :/</span>
+    </a>
+
+    <nav>
+      <a href="#noticias" data-i18n="menuNoticias">Notícias</a>
+      <a href="#personagens" data-i18n="menuPersonagens">Personagens</a>
+      <a href="#sobre" data-i18n="menuSobre">Sobre</a>
+      <a href="#canais" data-i18n="menuCanais">Canais</a>
+      <button id="abrir-comunidade" class="link-menu" type="button" data-i18n="menuComunidade">Comunidade</button>
+
+      <button id="abrir-devlog" class="botao-hud botao-devlog" type="button" title="Devlog" aria-label="Devlog">
+        📰
+        <span id="devlog-novo" class="devlog-novo" data-i18n="novo">NOVO</span>
+      </button>
+
+      <button id="abrir-configuracoes" class="botao-hud" type="button" title="Configurações" aria-label="Configurações">⚙️</button>
+
+      <div class="idioma-container">
+        <button id="botao-idioma" class="botao-idioma" type="button" title="Idioma" aria-label="Idioma">
+          <img src="images/globo.png" alt="">
+        </button>
+        <div id="menu-idioma" class="menu-idioma">
+          <button class="opcao-idioma" data-lang="pt" type="button"><img src="images/bandeira-brasil.webp" alt="">Português</button>
+          <button class="opcao-idioma" data-lang="en" type="button"><img src="images/bandeira-eua.png" alt="">English</button>
+        </div>
+      </div>
+
+      <button id="abrir-downloads" class="menu-download" type="button" data-i18n="menuBaixar">Baixar</button>
+    </nav>
+  </header>
+
+  <main id="conteudo-site">
+    <section class="hero" id="inicio">
+      <div class="hero-conteudo">
+        <p data-i18n="heroTitulo">ARTE PROMOCIONAL</p>
+        <span data-i18n="heroTexto">A apresentação oficial será publicada futuramente.</span>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <span class="mini-etiqueta" data-i18n="desenvolvimento">EM DESENVOLVIMENTO</span>
+      <h2 data-i18n="bemVindo">Conheça mariobnw quest</h2>
+      <p data-i18n="descricaoInicial">Um RPG baseado em turnos inspirado na série Mario & Luigi, com personagens, história e sistemas próprios.</p>
+      <div class="botoes">
+        <button id="botao-ver-downloads" class="botao botao-principal" type="button" data-i18n="verDownloads">Ver downloads</button>
+        <a class="botao" href="#personagens" data-i18n="conhecerPersonagens">Conhecer personagens</a>
+      </div>
+    </section>
+
+    <section class="conteudo" id="noticias">
+      <h2 data-i18n="noticiasTitulo">Últimas notícias</h2>
+      <p class="secao-descricao" data-i18n="noticiasTexto">Atualizações sobre o desenvolvimento do projeto.</p>
+      <div class="cards">
+        <article class="card reveal-on-scroll">
+          <span class="card-data">2026</span>
+          <h3 data-i18n="noticiaSiteTitulo">Site em desenvolvimento</h3>
+          <p data-i18n="noticiaSiteTexto">O site continuará recebendo melhorias, segredos e novas funções durante o desenvolvimento.</p>
+        </article>
+        <article class="card reveal-on-scroll">
+          <span class="card-data" data-i18n="desenvolvimento">EM DESENVOLVIMENTO</span>
+          <h3 data-i18n="noticiaJogoTitulo">O projeto continua crescendo</h3>
+          <p data-i18n="noticiaJogoTexto">Mais informações serão reveladas conforme o desenvolvimento avançar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="conteudo" id="personagens">
+      <h2 data-i18n="personagensTitulo">Personagens</h2>
+      <p data-i18n="personagensTexto">Perfis oficiais serão adicionados conforme os personagens forem apresentados.</p>
+    </section>
+
+    <section class="conteudo" id="sobre">
+      <h2 data-i18n="sobreTitulo">Sobre o jogo</h2>
+      <p data-i18n="sobreTexto">mariobnw quest é um RPG baseado em turnos inspirado na série Mario & Luigi, com personagens, história e sistemas próprios.</p>
+    </section>
+
+    <section class="conteudo" id="canais">
+      <h2 data-i18n="canaisTitulo">Canais oficiais</h2>
+      <p class="secao-descricao" data-i18n="canaisTexto">Acompanhe conteúdos e atualizações oficiais.</p>
+      <div class="cards">
+        <article class="card canal-card reveal-on-scroll">
+          <span class="canal-idioma">PT-BR</span>
+          <h3>mariobnw</h3>
+          <p data-i18n="canalPT">Canal principal em português.</p>
+          <a class="botao" href="https://youtube.com/@mariobnw" target="_blank" rel="noopener noreferrer" data-i18n="acessarCanal">Acessar canal</a>
+        </article>
+        <article class="card canal-card reveal-on-scroll">
+          <span class="canal-idioma">EN</span>
+          <h3>mariobnw quest English</h3>
+          <p data-i18n="canalEN">Canal oficial em inglês dedicado ao projeto.</p>
+          <a class="botao botao-principal" href="https://youtube.com/@bnw_quest_english" target="_blank" rel="noopener noreferrer" data-i18n="acessarCanal">Acessar canal</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="conteudo" id="codigos">
+      <div class="codigos-caixa reveal-on-scroll">
+        <h2 data-i18n="codigosTitulo">Códigos</h2>
+        <p data-i18n="codigosTexto">Códigos encontrados no jogo poderão ser resgatados aqui futuramente.</p>
+        <div class="codigos-form">
+          <input type="text" placeholder="BNW-XXXX-XXXX" disabled>
+          <button id="botao-codigo-bloqueado" class="botao botao-bloqueado" type="button" data-i18n="resgatar">RESGATAR</button>
+        </div>
+        <div class="fita-realista fita-codigos"><span data-i18n="emBreve">EM BREVE</span></div>
+      </div>
+    </section>
+
+    <section class="conteudo" id="arquivo-final">
+      <div class="arquivo-final-card reveal-on-scroll">
+        <div class="arquivo-neblina"></div>
+        <span class="arquivo-etiqueta">????</span>
+        <h2 data-i18n="arquivoTitulo">Arquivo Final</h2>
+        <p data-i18n="arquivoTexto">Algumas portas não precisam estar escondidas. Só precisam de uma chave difícil o bastante.</p>
+        <button id="abrir-arquivo-final" class="botao arquivo-final-botao" type="button" data-i18n="digitarCodigo">DIGITAR CÓDIGO</button>
+      </div>
+    </section>
+
+    <section class="conteudo" id="outros-sites">
+      <h2 data-i18n="outrosSitesTitulo">Outros sites</h2>
+      <p class="secao-descricao" data-i18n="outrosSitesTexto">Outros projetos terão seus próprios espaços futuramente.</p>
+      <div class="outros-sites-grid">
+        <article class="site-projeto reveal-on-scroll">
+          <div class="site-logo-area">
+            <img class="site-logo" src="images/logo-mariobnw.png" alt="">
+            <div class="fita-realista fita-site"><span data-i18n="emBreve">EM BREVE</span></div>
+          </div>
+        </article>
+        <article class="site-projeto reveal-on-scroll">
+          <div class="site-logo-area">
+            <img class="site-logo" src="images/logo-caos-total.png" alt="">
+            <div class="fita-realista fita-site"><span data-i18n="emBreve">EM BREVE</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape-site">
+    <div class="rodape-identidade glitch-bne-alvo">
+      <span class="nome-tematico"><span class="nome-bnw-original">mariobnw</span><span class="fita-uno">mario.uno</span></span> quest
+    </div>
+    <span id="info-versao-site">Site v0.5.0 • Atualizado em 29/09/2026</span>
+  </footer>
+
+  <!-- Comunidade -->
+  <div id="overlay-comunidade" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base">
+      <button id="fechar-comunidade" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <span class="modal-etiqueta" data-i18n="comunidadeTitulo">COMUNIDADE</span>
+      <h2 data-i18n="comunidadeTitulo">Comunidade</h2>
+      <p data-i18n="comunidadeTexto">Acesse os espaços oficiais.</p>
+      <div class="opcoes-comunidade">
+        <button id="comunidade-youtube" class="opcao-comunidade" type="button"><img src="images/youtube.png" alt=""><strong>YouTube</strong></button>
+        <button class="opcao-comunidade recurso-bloqueado" type="button"><img src="images/discord.png" alt=""><strong>Discord</strong><span data-i18n="emBreve">EM BREVE</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Devlog -->
+  <div id="overlay-devlog" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base modal-devlog">
+      <button id="fechar-devlog" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <span class="modal-etiqueta">DEVLOG</span>
+      <h2 data-i18n="devlogTitulo">Diário de desenvolvimento</h2>
+      <div class="devlog-lista">
+        <article class="devlog-post devlog-atual">
+          <div class="devlog-linha"><span class="devlog-data">29/09/2026</span><span class="devlog-chip" data-i18n="novo">NOVO</span></div>
+          <h3>Site v0.5.0</h3>
+          <p data-i18n="devlog050">Arquivo Final reformulado, introdução melhorada, favicons/temas refinados, histórico restaurado e várias correções.</p>
+        </article>
+        <button id="mostrar-devlogs-antigos" class="botao botao-devlogs-antigos" type="button" data-i18n="mostrarVersoes">Mostrar versões anteriores</button>
+        <div id="devlogs-antigos" class="devlogs-antigos">
+          <article class="devlog-post"><span class="devlog-data">29/09/2026</span><h3>Site v0.4.0</h3><p data-i18n="devlog040">Arquivo Final, novos temas, fitas refeitas, introdução do site e sistema de código via Worker.</p></article>
+          <article class="devlog-post"><span class="devlog-data">28/09/2026</span><h3>Site v0.3.1</h3><p data-i18n="devlog031">Página 404, Devlog, área de códigos e melhorias gerais.</p></article>
+          <article class="devlog-post"><span class="devlog-data">28/09/2026</span><h3>Site v0.3.0</h3><p data-i18n="devlog030">Mouse personalizado, tema mario.uno, melhorias visuais e correções de interação.</p></article>
+          <article class="devlog-post"><span class="devlog-data">2026</span><h3>Site v0.2.0</h3><p data-i18n="devlog020">Estrutura inicial do site, primeiras seções e identidade visual do projeto.</p></article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Downloads -->
+  <div id="overlay-downloads" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base modal-downloads">
+      <div class="modal-topo-fixo"><button id="fechar-downloads" class="fechar-modal fechar-downloads" type="button" aria-label="Fechar">×</button></div>
+      <span class="modal-etiqueta" data-i18n="downloadsTitulo">DOWNLOADS</span>
+      <h2 data-i18n="downloadsTitulo">Downloads</h2>
+
+      <section class="download-bloco">
+        <h3 data-i18n="demoPublica">Demo pública</h3>
+        <p data-i18n="demoIndisponivel">A demo pública ainda não está disponível.</p>
+        <div class="plataformas"><span>PC</span><span>Android</span><span>Linux</span><span>macOS</span></div>
+        <button id="botao-demo-indisponivel" class="botao botao-bloqueado" type="button" data-i18n="indisponivel">INDISPONÍVEL</button>
+      </section>
+
+      <section class="download-bloco">
+        <h3>Demo Beta 0.1</h3>
+        <div class="progresso-demo">
+          <div class="progresso-cabecalho"><strong data-i18n="progresso">Progresso</strong><span id="progresso-porcentagem">0%</span></div>
+          <div class="progresso-barra"><div id="progresso-preenchimento" class="progresso-preenchimento"></div></div>
+        </div>
+        <button id="botao-build-indisponivel" class="botao botao-bloqueado" type="button" data-i18n="indisponivel">INDISPONÍVEL</button>
+      </section>
+    </div>
+  </div>
+
+  <!-- Configurações -->
+  <div id="overlay-configuracoes" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base modal-configuracoes">
+      <button id="fechar-configuracoes" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <span class="modal-etiqueta" data-i18n="configTitulo">CONFIGURAÇÕES</span>
+      <h2 data-i18n="configTitulo">Configurações</h2>
+
+      <div class="lista-configuracoes">
+        <div class="config-item"><div><strong data-i18n="sons">Sons</strong><span data-i18n="sonsTexto">Sons e efeitos sonoros.</span></div><button id="toggle-som" class="toggle-config ativo" type="button">ON</button></div>
+        <div class="config-item"><div><strong data-i18n="efeitos">Efeitos</strong><span data-i18n="efeitosTexto">Animações e efeitos visuais.</span></div><button id="toggle-efeitos" class="toggle-config ativo" type="button">ON</button></div>
+
+        <div class="config-item config-temas">
+          <div class="config-temas-cabecalho"><strong data-i18n="temas">Temas</strong><span data-i18n="temasTexto">Escolha a identidade do site.</span></div>
+          <div class="lista-temas">
+            <button id="tema-mariobnw" class="tema-card" data-preview-tema="mariobnw" type="button"><img src="images/favicon-aberto.png" alt=""><span>mariobnw</span><small class="tema-ativo-texto">✓</small></button>
+            <button id="tema-uno" class="tema-card tema-oculto" data-preview-tema="mario.uno" type="button"><img src="images/mariobnw-verde-aberto.png" alt=""><span>mario.uno</span><small class="tema-ativo-texto">✓</small></button>
+            <button id="tema-bne" class="tema-card tema-oculto glitch-bne-alvo" data-preview-tema="mariobne" type="button"><img src="images/favicon-bne-aberto.png" alt=""><span class="tema-bne-nome">mariobne</span><small class="tema-ativo-texto">✓</small></button>
+          </div>
+
+          <div id="descobrir-tema-area" class="descobrir-tema-area">
+            <span data-i18n="querTema">Quer um tema novo?</span>
+            <button id="descobrir-tema" class="botao botao-pequeno" type="button" data-i18n="descobrir">DESCOBRIR</button>
+            <p id="dica-tema" class="dica-tema"></p>
+          </div>
+        </div>
+      </div>
+      <div id="rodape-configuracoes" class="rodape-configuracoes">mariobnw quest • Site v0.5.0</div>
+    </div>
+  </div>
+
+  <!-- Código do Arquivo Final -->
+  <div id="overlay-arquivo-codigo" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base arquivo-codigo-modal">
+      <button id="fechar-arquivo-codigo" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <span class="arquivo-etiqueta">????</span>
+      <h2 data-i18n="codigoNecessario">Código necessário</h2>
+      <p data-i18n="digiteSequencia">Digite a sequência correta.</p>
+      <form id="form-arquivo-codigo" class="arquivo-codigo-form">
+        <input id="input-arquivo-codigo" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="12" placeholder="••••••••••••" aria-label="Código do Arquivo Final">
+        <button class="botao botao-principal" type="submit" data-i18n="verificar">VERIFICAR</button>
+      </form>
+      <span id="arquivo-codigo-status" class="arquivo-codigo-status"></span>
+    </div>
+  </div>
+
+  <!-- Página corrompida -->
+  <section id="pagina-corrompida" class="pagina-corrompida" aria-hidden="true">
+    <div class="corrompida-neblina"></div>
+    <div class="corrompida-conteudo">
+      <button id="fechar-pagina-corrompida" class="fechar-corrompida" type="button" aria-label="Fechar">×</button>
+      <span class="corrompida-etiqueta">ARQUIVO FINAL</span>
+      <h1 id="nome-proximo-jogo">????</h1>
+      <p data-i18n="corrompidaInicial">Tem alguma coisa escondida aqui.</p>
+
+      <div id="arquivo-restaurado" class="arquivo-restaurado">
+        <span class="arquivo-restaurado-status">ARQUIVO RESTAURADO</span>
+        <h2>mario.uno quest</h2>
+        <p data-i18n="unoApresentacao1">Uma nova história está começando.</p>
+        <p data-i18n="unoApresentacao2">Depois de tudo que aconteceu, chegou a hora de olhar para alguém diferente.</p>
+        <p><span data-i18n="unoApresentacao3a">Desta vez,</span> <button class="palavra-corrompida" type="button">mariobnw</button> <span data-i18n="unoApresentacao3b">não estará no centro de tudo.</span></p>
+        <p data-i18n="unoApresentacao4">Algumas coisas mudaram desde a última aventura. Outras deveriam ter permanecido enterradas.</p>
+        <p><span data-i18n="unoApresentacao5a">Mesmo assim,</span> <button class="palavra-corrompida" type="button">mariobnw</button> <span data-i18n="unoApresentacao5b">deixou algo para trás.</span></p>
+        <p data-i18n="unoApresentacao6">Algo que talvez nunca devesse ter sido encontrado.</p>
+        <p><span data-i18n="unoApresentacao7a">Agora, mario.uno terá que seguir seu próprio caminho sem depender de</span> <button class="palavra-corrompida" type="button">mariobnw</button>.</p>
+        <p><span data-i18n="unoApresentacao8a">Sem saber exatamente o que</span> <button class="palavra-corrompida" type="button">mariobnw</button> <span data-i18n="unoApresentacao8b">despertou.</span></p>
+        <p><span data-i18n="unoApresentacao9a">E sem perceber que algumas partes de</span> <button class="palavra-corrompida" type="button">mariobnw</button> <span data-i18n="unoApresentacao9b">ainda continuam aqui.</span></p>
+        <p><span data-i18n="unoApresentacao10a">Talvez</span> <button class="palavra-corrompida" type="button">mariobnw</button> <span data-i18n="unoApresentacao10b">nunca tenha sido o único nome que esta página conheceu.</span></p>
+        <div class="arquivo-recompensa"><strong>mario.uno quest</strong><span data-i18n="emDesenvolvimentoCurto">Em desenvolvimento.</span></div>
+        <p class="ultima-palavra"><button class="palavra-corrompida palavra-final" type="button">mariobnw</button></p>
+      </div>
+    </div>
+
+    <canvas id="canvas-tinta" class="canvas-tinta"></canvas>
+
+    <div id="mensagem-uno-voltara" class="mensagem-uno-voltara">
+      <button id="fechar-mensagem-uno" type="button" aria-label="Fechar">×</button>
+      <span>mario.uno voltará</span>
+    </div>
+
+    <div id="dialogo-bne" class="dialogo-bne" aria-hidden="true">
+      <div class="dialogo-bne-caixa caixa-dialogo-rpg">
+        <span id="dialogo-bne-texto"></span>
+        <div id="dialogo-bne-opcoes" class="dialogo-bne-opcoes">
+          <button id="bne-sim" type="button">SIM</button>
+          <button id="bne-nao" type="button">NÃO</button>
+        </div>
+      </div>
+    </div>
+
+    <img id="logo-final-glitch" class="logo-final-glitch" src="images/logo-topo.png" alt="">
+  </section>
+
+  <!-- BNW Mask -->
+  <div id="bnw-container">
+    <img id="mascara-bnw" src="images/mascara-normal.png" alt="" draggable="false">
+    <div id="bnw-dialogo" class="bnw-dialogo caixa-dialogo-rpg">
+      <span id="bnw-dialogo-texto"></span>
+      <button id="pular-intro" type="button" data-i18n="pular">PULAR</button>
+    </div>
+  </div>
+
+  <div id="cursor-mao"><img id="cursor-imagem" src="images/mouse-normal.png" alt="" draggable="false"></div>
+
+  <script src="script.js?v=0.5.0"></script>
+</body>
+</html>

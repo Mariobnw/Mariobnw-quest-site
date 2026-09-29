@@ -36,13 +36,12 @@
 
     <link
         rel="stylesheet"
-        href="style.css?v=0.3.1"
+        href="style.css?v=0.4.0"
     >
 </head>
 
 
 <body>
-
 
     <!-- ==========================================
          TRANSIÇÃO SECRETA
@@ -55,7 +54,7 @@
 
 
     <!-- ==========================================
-         AVISO
+         AVISO DE ERRO
     =========================================== -->
 
     <div
@@ -90,23 +89,14 @@
     <audio
         id="som-erro"
         preload="auto"
-    >
-        <source
-            src="Downloads/erro.mp3"
-            type="audio/mpeg"
-        >
-    </audio>
-
+        src="Downloads/erro.mp3"
+    ></audio>
 
     <audio
         id="som-click"
         preload="auto"
-    >
-        <source
-            src="Downloads/minecraft-click-menu.mp3"
-            type="audio/mpeg"
-        >
-    </audio>
+        src="Downloads/minecraft-click-menu.mp3"
+    ></audio>
 
 
     <!-- ==========================================
@@ -141,7 +131,6 @@
                 Notícias
             </a>
 
-
             <a
                 href="#personagens"
                 data-i18n="menuPersonagens"
@@ -149,14 +138,12 @@
                 Personagens
             </a>
 
-
             <a
                 href="#sobre"
                 data-i18n="menuSobre"
             >
                 Sobre
             </a>
-
 
             <a
                 href="#canais"
@@ -175,8 +162,6 @@
                 Comunidade
             </button>
 
-
-            <!-- DEVLOG -->
 
             <button
                 id="abrir-devlog"
@@ -198,8 +183,6 @@
             </button>
 
 
-            <!-- CONFIGURAÇÕES -->
-
             <button
                 id="abrir-configuracoes"
                 class="botao-hud"
@@ -210,8 +193,6 @@
                 ⚙️
             </button>
 
-
-            <!-- IDIOMA -->
 
             <div class="idioma-container">
 
@@ -242,7 +223,6 @@
                         data-lang="pt"
                         type="button"
                     >
-
                         <img
                             src="images/bandeira-brasil.webp"
                             alt="Brasil"
@@ -251,7 +231,6 @@
                         <span>
                             Português
                         </span>
-
                     </button>
 
 
@@ -260,7 +239,6 @@
                         data-lang="en"
                         type="button"
                     >
-
                         <img
                             src="images/bandeira-eua.png"
                             alt="United States"
@@ -269,15 +247,12 @@
                         <span>
                             English
                         </span>
-
                     </button>
 
                 </div>
 
             </div>
 
-
-            <!-- DOWNLOAD -->
 
             <button
                 id="abrir-downloads"
@@ -294,11 +269,10 @@
 
 
     <!-- ==========================================
-         SITE
+         SITE PRINCIPAL
     =========================================== -->
 
     <main id="conteudo-site">
-
 
         <!-- HERO -->
 
@@ -356,7 +330,6 @@
                     Ver downloads
                 </button>
 
-
                 <a
                     class="botao"
                     href="#personagens"
@@ -370,9 +343,7 @@
         </section>
 
 
-        <!-- ==========================================
-             NOTÍCIAS
-        =========================================== -->
+        <!-- NOTÍCIAS -->
 
         <section
             class="conteudo"
@@ -382,7 +353,6 @@
             <h2 data-i18n="noticiasTitulo">
                 Últimas notícias
             </h2>
-
 
             <p
                 class="secao-descricao"
@@ -400,11 +370,9 @@
                         2026
                     </span>
 
-
                     <h3 data-i18n="noticia1Titulo">
                         Site em construção
                     </h3>
-
 
                     <p data-i18n="noticia1Texto">
                         Alguém pensou que seria uma boa ideia criar
@@ -423,11 +391,9 @@
                         EM DESENVOLVIMENTO
                     </span>
 
-
                     <h3 data-i18n="noticia2Titulo">
                         Capítulo 1
                     </h3>
-
 
                     <p data-i18n="noticia2Texto">
                         Novas informações sobre o primeiro capítulo
@@ -441,9 +407,7 @@
         </section>
 
 
-        <!-- ==========================================
-             PERSONAGENS
-        =========================================== -->
+        <!-- PERSONAGENS -->
 
         <section
             class="conteudo"
@@ -454,7 +418,6 @@
                 Personagens
             </h2>
 
-
             <p data-i18n="personagensTexto">
                 Perfis oficiais serão adicionados conforme
                 os personagens forem apresentados.
@@ -463,9 +426,7 @@
         </section>
 
 
-        <!-- ==========================================
-             SOBRE
-        =========================================== -->
+        <!-- SOBRE -->
 
         <section
             class="conteudo"
@@ -476,7 +437,6 @@
                 Sobre o jogo
             </h2>
 
-
             <p data-i18n="sobreTexto">
                 mariobnw quest é um RPG baseado em turnos inspirado
                 na série Mario & Luigi, com personagens, história
@@ -486,9 +446,7 @@
         </section>
 
 
-        <!-- ==========================================
-             CANAIS
-        =========================================== -->
+        <!-- CANAIS -->
 
         <section
             class="conteudo"
@@ -498,7 +456,6 @@
             <h2 data-i18n="canaisTitulo">
                 Canais oficiais
             </h2>
-
 
             <p
                 class="secao-descricao"
@@ -581,22 +538,13 @@
 
             <div class="codigos-caixa">
 
-                <span
-                    class="placa-em-breve"
-                    data-i18n="codigosStatus"
-                >
-                    EM BREVE
-                </span>
-
-
                 <h2 data-i18n="codigosTitulo">
                     Códigos
                 </h2>
 
-
                 <p data-i18n="codigosTexto">
-                    Futuramente, códigos encontrados em mariobnw quest
-                    poderão ser resgatados aqui.
+                    Códigos encontrados em mariobnw quest poderão
+                    ser resgatados aqui futuramente.
                 </p>
 
 
@@ -608,7 +556,6 @@
                         disabled
                     >
 
-
                     <button
                         id="botao-codigo-bloqueado"
                         class="botao botao-bloqueado"
@@ -619,6 +566,84 @@
                     </button>
 
                 </div>
+
+
+                <!-- fita atravessando o card -->
+
+                <div
+                    class="fita-bloqueio fita-codigos"
+                    data-i18n="emBreve"
+                >
+                    EM BREVE
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             ARQUIVO FINAL
+        =========================================== -->
+
+        <section
+            class="conteudo"
+            id="arquivo-final"
+        >
+
+            <div class="arquivo-final-card">
+
+                <div class="arquivo-neblina"></div>
+
+                <span class="arquivo-etiqueta">
+                    ????
+                </span>
+
+
+                <h2 data-i18n="arquivoTitulo">
+                    Arquivo Final
+                </h2>
+
+
+                <p data-i18n="arquivoTexto">
+                    Esta área permanecerá bloqueada até que todos
+                    os requisitos sejam concluídos.
+                </p>
+
+
+                <div class="arquivo-requisitos">
+
+                    <span>
+                        CAPÍTULO 1
+                    </span>
+
+                    <span>
+                        CAPÍTULO 2
+                    </span>
+
+                    <span>
+                        CAPÍTULO 3
+                    </span>
+
+                    <span>
+                        CAPÍTULO 4
+                    </span>
+
+                    <span data-i18n="arquivoSegredos">
+                        SEGREDOS
+                    </span>
+
+                </div>
+
+
+                <button
+                    id="abrir-arquivo-final"
+                    class="botao arquivo-final-botao"
+                    type="button"
+                    data-i18n="arquivoBotao"
+                >
+                    BLOQUEADO
+                </button>
 
             </div>
 
@@ -634,24 +659,15 @@
             id="outros-sites"
         >
 
-            <span
-                class="placa-em-breve"
-                data-i18n="outrosSitesStatus"
-            >
-                EM BREVE
-            </span>
-
-
             <h2 data-i18n="outrosSitesTitulo">
                 Outros sites
             </h2>
-
 
             <p
                 class="secao-descricao"
                 data-i18n="outrosSitesTexto"
             >
-                Em breve, outros projetos terão seus próprios sites oficiais.
+                Outros projetos também terão seus próprios sites.
             </p>
 
 
@@ -659,66 +675,70 @@
 
                 <!-- MARIOBNW -->
 
-                <article class="site-card">
+                <article class="site-projeto">
 
-                    <div class="site-card-logo">
-                        mariobnw
+                    <div class="site-logo-area">
+
+                        <img
+                            class="site-logo"
+                            src="images/logo-mariobnw.png"
+                            alt="mariobnw"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                        >
+
+                        <span class="site-logo-fallback">
+                            mariobnw
+                        </span>
+
+
+                        <div
+                            class="fita-bloqueio fita-site"
+                            data-i18n="emBreve"
+                        >
+                            EM BREVE
+                        </div>
+
                     </div>
-
-
-                    <span
-                        class="site-card-status"
-                        data-i18n="siteEmBreve"
-                    >
-                        EM BREVE
-                    </span>
 
 
                     <p data-i18n="siteMariobnwTexto">
                         Site oficial do canal mariobnw.
                     </p>
 
-
-                    <button
-                        class="botao botao-bloqueado site-futuro"
-                        type="button"
-                        data-i18n="siteAcessar"
-                    >
-                        ACESSAR
-                    </button>
-
                 </article>
 
 
                 <!-- CAOS TOTAL -->
 
-                <article class="site-card">
+                <article class="site-projeto">
 
-                    <div class="site-card-logo caos-total-logo">
-                        CAOS TOTAL
+                    <div class="site-logo-area">
+
+                        <img
+                            class="site-logo"
+                            src="images/logo-caos-total.png"
+                            alt="CAOS TOTAL"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                        >
+
+                        <span class="site-logo-fallback">
+                            CAOS TOTAL
+                        </span>
+
+
+                        <div
+                            class="fita-bloqueio fita-site"
+                            data-i18n="emBreve"
+                        >
+                            EM BREVE
+                        </div>
+
                     </div>
-
-
-                    <span
-                        class="site-card-status"
-                        data-i18n="siteEmBreve"
-                    >
-                        EM BREVE
-                    </span>
 
 
                     <p data-i18n="siteCaosTexto">
                         Site oficial de CAOS TOTAL.
                     </p>
-
-
-                    <button
-                        class="botao botao-bloqueado site-futuro"
-                        type="button"
-                        data-i18n="siteAcessar"
-                    >
-                        ACESSAR
-                    </button>
 
                 </article>
 
@@ -757,7 +777,7 @@
 
 
         <span id="info-versao-site">
-            Site v0.3.1 • Atualizado em 28/09/2026
+            Site v0.4.0 • Atualizado em 28/09/2026
         </span>
 
     </footer>
@@ -773,20 +793,15 @@
         aria-hidden="true"
     >
 
-        <div
-            id="modal-comunidade"
-            class="modal-base"
-        >
+        <div class="modal-base">
 
             <button
                 id="fechar-comunidade"
                 class="fechar-modal"
                 type="button"
-                aria-label="Fechar"
             >
                 ×
             </button>
-
 
             <span
                 class="modal-etiqueta"
@@ -795,11 +810,9 @@
                 COMUNIDADE
             </span>
 
-
             <h2 data-i18n="comunidadeTitulo">
                 Comunidade
             </h2>
-
 
             <p
                 class="modal-descricao"
@@ -813,18 +826,14 @@
 
                 <button
                     id="comunidade-youtube"
-                    class="opcao-comunidade disponivel"
+                    class="opcao-comunidade"
                     type="button"
                 >
 
-                    <div class="icone-comunidade">
-
-                        <img
-                            src="images/youtube.png"
-                            alt="YouTube"
-                        >
-
-                    </div>
+                    <img
+                        src="images/youtube.png"
+                        alt="YouTube"
+                    >
 
                     <strong>
                         YouTube
@@ -834,44 +843,26 @@
                         Publicações, novidades e sugestões.
                     </span>
 
-                    <small
-                        class="status status-disponivel"
-                        data-i18n="statusDisponivel"
-                    >
-                        DISPONÍVEL
-                    </small>
-
                 </button>
 
 
                 <button
-                    class="opcao-comunidade bloqueado recurso-bloqueado"
+                    class="opcao-comunidade recurso-bloqueado"
                     type="button"
                 >
 
-                    <div class="icone-comunidade">
-
-                        <img
-                            src="images/discord.png"
-                            alt="Discord"
-                        >
-
-                    </div>
+                    <img
+                        src="images/discord.png"
+                        alt="Discord"
+                    >
 
                     <strong>
                         Discord
                     </strong>
 
                     <span data-i18n="discordTexto">
-                        Teorias, fanarts, sugestões e comunidade.
+                        Teorias, fanarts e comunidade.
                     </span>
-
-                    <small
-                        class="status status-bloqueado"
-                        data-i18n="comingSoon"
-                    >
-                        EM BREVE
-                    </small>
 
                 </button>
 
@@ -892,43 +883,35 @@
         aria-hidden="true"
     >
 
-        <div
-            id="modal-devlog"
-            class="modal-base modal-devlog"
-        >
+        <div class="modal-base modal-devlog">
 
             <button
                 id="fechar-devlog"
                 class="fechar-modal"
                 type="button"
-                aria-label="Fechar"
             >
                 ×
             </button>
-
 
             <span class="modal-etiqueta">
                 DEVLOG
             </span>
 
-
             <h2 data-i18n="devlogTitulo">
                 Diário de desenvolvimento
             </h2>
-
 
             <p
                 class="modal-descricao"
                 data-i18n="devlogDescricao"
             >
-                Atualizações sobre o desenvolvimento
-                de mariobnw quest e seu site.
+                Atualizações sobre o desenvolvimento do projeto.
             </p>
 
 
             <div class="devlog-progresso">
 
-                <span data-i18n="devlogDemo">
+                <span>
                     Demo Beta 0.1
                 </span>
 
@@ -947,49 +930,30 @@
                         28/09/2026
                     </span>
 
-                    <h3 data-i18n="devlogPost1Titulo">
+                    <h3>
+                        Site v0.4.0
+                    </h3>
+
+                    <p data-i18n="devlog040">
+                        Arquivo Final, novo sistema visual de fitas,
+                        área de códigos refeita e melhorias nos temas.
+                    </p>
+
+                </article>
+
+
+                <article class="devlog-post">
+
+                    <span class="devlog-data">
+                        28/09/2026
+                    </span>
+
+                    <h3>
                         Site v0.3.1
                     </h3>
 
-                    <p data-i18n="devlogPost1Texto">
-                        Nova página 404, sistema de códigos em preparação,
-                        novos cards de projetos e melhorias visuais.
-                    </p>
-
-                </article>
-
-
-                <article class="devlog-post">
-
-                    <span class="devlog-data">
-                        28/09/2026
-                    </span>
-
-                    <h3 data-i18n="devlogPost2Titulo">
-                        Demo Beta 0.1
-                    </h3>
-
-                    <p data-i18n="devlogPost2Texto">
-                        A primeira build de teste está planejada,
-                        mas seu desenvolvimento ainda não começou.
-                    </p>
-
-                </article>
-
-
-                <article class="devlog-post">
-
-                    <span class="devlog-data">
-                        28/09/2026
-                    </span>
-
-                    <h3 data-i18n="devlogPost3Titulo">
-                        Comunidade
-                    </h3>
-
-                    <p data-i18n="devlogPost3Texto">
-                        A área de comunidade conecta o site
-                        aos canais oficiais.
+                    <p data-i18n="devlog031">
+                        Página 404, novos projetos, Devlog e melhorias gerais.
                     </p>
 
                 </article>
@@ -1011,20 +975,15 @@
         aria-hidden="true"
     >
 
-        <div
-            id="modal-downloads"
-            class="modal-base modal-downloads"
-        >
+        <div class="modal-base modal-downloads">
 
             <button
                 id="fechar-downloads"
                 class="fechar-modal"
                 type="button"
-                aria-label="Fechar"
             >
                 ×
             </button>
-
 
             <span
                 class="modal-etiqueta"
@@ -1033,48 +992,16 @@
                 DOWNLOADS
             </span>
 
-
             <h2 data-i18n="downloadsTitulo">
                 Downloads
             </h2>
 
 
-            <p
-                class="modal-descricao"
-                data-i18n="downloadsDescricao"
-            >
-                Demos públicas e versões experimentais.
-            </p>
-
-
-            <!-- DEMO PÚBLICA -->
-
             <section class="download-bloco">
 
-                <div class="download-bloco-topo">
-
-                    <div>
-
-                        <span class="build-tipo">
-                            PUBLIC DEMO
-                        </span>
-
-                        <h3 data-i18n="demoPublicaTitulo">
-                            Demo pública
-                        </h3>
-
-                    </div>
-
-
-                    <span
-                        class="build-status indisponivel"
-                        data-i18n="statusEmDesenvolvimento"
-                    >
-                        EM DESENVOLVIMENTO
-                    </span>
-
-                </div>
-
+                <h3 data-i18n="demoPublicaTitulo">
+                    Demo pública
+                </h3>
 
                 <p data-i18n="demoPublicaTexto">
                     A demo pública ainda não está disponível.
@@ -1085,41 +1012,30 @@
 
                     <span>
                         PC
-
-                        <small data-i18n="plataformaPlanejada">
+                        <small data-i18n="planejado">
                             PLANEJADO
                         </small>
                     </span>
-
 
                     <span>
                         Android
-
-                        <small data-i18n="plataformaPlanejada">
+                        <small data-i18n="planejado">
                             PLANEJADO
                         </small>
                     </span>
 
-
-                    <span class="plataforma-nao">
-
+                    <span>
                         Linux
-
-                        <small data-i18n="plataformaNaoPlanejada">
+                        <small data-i18n="naoPlanejado">
                             NÃO PLANEJADO AINDA
                         </small>
-
                     </span>
 
-
-                    <span class="plataforma-nao">
-
+                    <span>
                         macOS
-
-                        <small data-i18n="plataformaNaoPlanejada">
+                        <small data-i18n="naoPlanejado">
                             NÃO PLANEJADO AINDA
                         </small>
-
                     </span>
 
                 </div>
@@ -1129,7 +1045,7 @@
                     id="botao-demo-indisponivel"
                     class="botao botao-bloqueado"
                     type="button"
-                    data-i18n="downloadIndisponivel"
+                    data-i18n="indisponivel"
                 >
                     INDISPONÍVEL
                 </button>
@@ -1137,39 +1053,11 @@
             </section>
 
 
-            <!-- BETA 0.1 -->
-
             <section class="download-bloco">
 
-                <div class="download-bloco-topo">
-
-                    <div>
-
-                        <span class="build-tipo">
-                            TEST BUILD
-                        </span>
-
-                        <h3>
-                            Demo Beta 0.1
-                        </h3>
-
-                    </div>
-
-
-                    <span
-                        class="build-status indisponivel"
-                        data-i18n="buildStatus"
-                    >
-                        INDISPONÍVEL
-                    </span>
-
-                </div>
-
-
-                <p data-i18n="buildDescricao">
-                    Primeira build de teste planejada
-                    para mariobnw quest.
-                </p>
+                <h3>
+                    Demo Beta 0.1
+                </h3>
 
 
                 <div class="progresso-demo">
@@ -1177,7 +1065,7 @@
                     <div class="progresso-cabecalho">
 
                         <strong data-i18n="progressoTitulo">
-                            Progresso da Demo Beta 0.1
+                            Progresso
                         </strong>
 
                         <span id="progresso-porcentagem">
@@ -1196,7 +1084,6 @@
 
                     </div>
 
-
                     <span
                         id="progresso-status"
                         class="progresso-status"
@@ -1207,122 +1094,34 @@
                 </div>
 
 
-                <div class="build-aviso-plataforma">
-
-                    <strong data-i18n="buildPlataformasTitulo">
-                        Sobre plataformas das builds de teste
-                    </strong>
-
-
-                    <p data-i18n="buildPlataformasTexto">
-                        As builds beta normais serão disponibilizadas
-                        apenas para PC. Android, Linux e macOS não
-                        receberão essas versões, exceto em builds
-                        específicas anunciadas separadamente.
-                    </p>
-
-                </div>
-
-
-                <div class="build-info">
-
-                    <div>
-
-                        <strong data-i18n="buildObjetivoTitulo">
-                            Objetivo
-                        </strong>
-
-                        <p data-i18n="buildObjetivoTexto">
-                            Testar a base da demo, incluindo movimentação,
-                            interface inicial e sistemas fundamentais.
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong data-i18n="buildChangelogTitulo">
-                            Changelog
-                        </strong>
-
-                        <ul>
-
-                            <li data-i18n="buildChangelog1">
-                                Estrutura inicial da demo.
-                            </li>
-
-                            <li data-i18n="buildChangelog2">
-                                Sistemas básicos.
-                            </li>
-
-                            <li data-i18n="buildChangelog3">
-                                Conteúdo visual provisório.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong data-i18n="buildBugsTitulo">
-                            Bugs conhecidos
-                        </strong>
-
-                        <p data-i18n="buildBugsTexto">
-                            A build ainda não foi criada.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
                 <div class="plataformas">
 
                     <span>
-
                         PC
-
-                        <small data-i18n="statusIndisponivel">
+                        <small data-i18n="indisponivel">
                             INDISPONÍVEL
                         </small>
-
                     </span>
 
-
-                    <span class="plataforma-nao">
-
+                    <span>
                         Android
-
-                        <small data-i18n="betaNaoDisponivel">
+                        <small data-i18n="naoDisponivel">
                             NÃO DISPONÍVEL
                         </small>
-
                     </span>
 
-
-                    <span class="plataforma-nao">
-
+                    <span>
                         Linux
-
-                        <small data-i18n="betaNaoDisponivel">
+                        <small data-i18n="naoDisponivel">
                             NÃO DISPONÍVEL
                         </small>
-
                     </span>
 
-
-                    <span class="plataforma-nao">
-
+                    <span>
                         macOS
-
-                        <small data-i18n="betaNaoDisponivel">
+                        <small data-i18n="naoDisponivel">
                             NÃO DISPONÍVEL
                         </small>
-
                     </span>
 
                 </div>
@@ -1332,7 +1131,7 @@
                     id="botao-build-indisponivel"
                     class="botao botao-bloqueado"
                     type="button"
-                    data-i18n="buildBotao"
+                    data-i18n="indisponivel"
                 >
                     INDISPONÍVEL
                 </button>
@@ -1354,16 +1153,12 @@
         aria-hidden="true"
     >
 
-        <div
-            id="modal-configuracoes"
-            class="modal-base modal-configuracoes"
-        >
+        <div class="modal-base modal-configuracoes">
 
             <button
                 id="fechar-configuracoes"
                 class="fechar-modal"
                 type="button"
-                aria-label="Fechar"
             >
                 ×
             </button>
@@ -1387,17 +1182,14 @@
                 <div class="config-item">
 
                     <div>
-
-                        <strong data-i18n="configSomTitulo">
+                        <strong data-i18n="configSom">
                             Sons
                         </strong>
 
                         <span data-i18n="configSomTexto">
-                            Sons de clique e efeitos sonoros.
+                            Sons de clique e efeitos.
                         </span>
-
                     </div>
-
 
                     <button
                         id="toggle-som"
@@ -1413,17 +1205,14 @@
                 <div class="config-item">
 
                     <div>
-
-                        <strong data-i18n="configEfeitosTitulo">
+                        <strong data-i18n="configEfeitos">
                             Efeitos
                         </strong>
 
                         <span data-i18n="configEfeitosTexto">
-                            Animações, tremores e efeitos visuais.
+                            Animações e efeitos visuais.
                         </span>
-
                     </div>
-
 
                     <button
                         id="toggle-efeitos"
@@ -1442,15 +1231,13 @@
                 >
 
                     <div>
-
-                        <strong data-i18n="configTemaTitulo">
+                        <strong data-i18n="configTema">
                             Tema
                         </strong>
 
                         <span data-i18n="configTemaTexto">
-                            Escolha a identidade visual do site.
+                            Escolha a identidade visual.
                         </span>
-
                     </div>
 
 
@@ -1463,7 +1250,6 @@
                         >
                             mariobnw
                         </button>
-
 
                         <button
                             id="tema-uno"
@@ -1484,12 +1270,228 @@
                 id="rodape-configuracoes"
                 class="rodape-configuracoes"
             >
+                mariobnw quest • Site v0.4.0
+            </div>
 
-                <span id="versao-configuracoes">
-                    mariobnw quest • Site v0.3.1
-                </span>
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         ARQUIVO FINAL — ENTRADA DE CÓDIGO
+    =========================================== -->
+
+    <div
+        id="overlay-arquivo-codigo"
+        class="overlay-modal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-base arquivo-codigo-modal">
+
+            <button
+                id="fechar-arquivo-codigo"
+                class="fechar-modal"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <span class="arquivo-etiqueta">
+                ????
+            </span>
+
+
+            <h2 data-i18n="arquivoCodigoTitulo">
+                Código necessário
+            </h2>
+
+
+            <p
+                class="modal-descricao"
+                data-i18n="arquivoCodigoTexto"
+            >
+                Digite a sequência correta.
+            </p>
+
+
+            <form
+                id="form-arquivo-codigo"
+                class="arquivo-codigo-form"
+            >
+
+                <input
+                    id="input-arquivo-codigo"
+                    type="password"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    maxlength="24"
+                    placeholder="••••••••••••"
+                >
+
+
+                <button
+                    class="botao botao-principal"
+                    type="submit"
+                    data-i18n="arquivoCodigoBotao"
+                >
+                    VERIFICAR
+                </button>
+
+            </form>
+
+
+            <span
+                id="arquivo-codigo-status"
+                class="arquivo-codigo-status"
+            ></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         PÁGINA CORROMPIDA
+    =========================================== -->
+
+    <div
+        id="pagina-corrompida"
+        class="pagina-corrompida"
+        aria-hidden="true"
+    >
+
+        <div class="corrompida-conteudo">
+
+            <button
+                id="fechar-pagina-corrompida"
+                class="fechar-corrompida"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <span class="corrompida-etiqueta">
+                ARQUIVO FINAL
+            </span>
+
+
+            <h1 id="nome-proximo-jogo">
+                ????
+            </h1>
+
+
+            <p data-i18n="corrompidaTexto">
+                Algumas coisas não deveriam estar visíveis ainda.
+            </p>
+
+
+            <!-- CONTEÚDO FUTURO / ENQUETE -->
+
+            <div
+                id="conteudo-secreto-final"
+                class="conteudo-secreto-final"
+            >
+
+                <h2 data-i18n="enqueteTitulo">
+                    Uma última pergunta.
+                </h2>
+
+                <p data-i18n="enqueteTexto">
+                    O conteúdo completo será revelado quando chegar a hora.
+                </p>
 
             </div>
+
+        </div>
+
+
+        <!-- =====================================
+             TINTA — fica SÓ nesta página
+        ====================================== -->
+
+        <div
+            id="camada-tinta"
+            class="camada-tinta"
+        >
+
+            <div class="tinta-mancha tinta-1"></div>
+            <div class="tinta-mancha tinta-2"></div>
+            <div class="tinta-mancha tinta-3"></div>
+            <div class="tinta-mancha tinta-4"></div>
+            <div class="tinta-mancha tinta-5"></div>
+            <div class="tinta-mancha tinta-6"></div>
+
+
+            <!-- Pontos secretos -->
+
+            <button
+                class="ponto-tinta ponto-1"
+                data-tinta="1"
+                type="button"
+                aria-label="?"
+            ></button>
+
+            <button
+                class="ponto-tinta ponto-2"
+                data-tinta="2"
+                type="button"
+                aria-label="?"
+            ></button>
+
+            <button
+                class="ponto-tinta ponto-3"
+                data-tinta="3"
+                type="button"
+                aria-label="?"
+            ></button>
+
+            <button
+                class="ponto-tinta ponto-4"
+                data-tinta="4"
+                type="button"
+                aria-label="?"
+            ></button>
+
+            <button
+                class="ponto-tinta ponto-5"
+                data-tinta="5"
+                type="button"
+                aria-label="?"
+            ></button>
+
+            <button
+                class="ponto-tinta ponto-6"
+                data-tinta="6"
+                type="button"
+                aria-label="?"
+            ></button>
+
+        </div>
+
+
+        <!-- MENSAGEM INICIAL -->
+
+        <div
+            id="mensagem-uno-voltara"
+            class="mensagem-uno-voltara"
+        >
+
+            <button
+                id="fechar-mensagem-uno"
+                class="fechar-mensagem-uno"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <span>
+                mario.uno voltará
+            </span>
 
         </div>
 
@@ -1528,7 +1530,7 @@
     </div>
 
 
-    <script src="script.js?v=0.3.1"></script>
+    <script src="script.js?v=0.4.0"></script>
 
 </body>
 

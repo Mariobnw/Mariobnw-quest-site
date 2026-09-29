@@ -29,7 +29,7 @@ const ultimaAtualizacao =
 */
 
 const endpointArquivoFinal =
-    "";
+    "https://bnw-final-code.victormachadogames0.workers.dev/";
 
 
 /* ==========================================

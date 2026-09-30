@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta id="theme-color" name="theme-color" content="#168de2">
+  <title>404 — mariobnw quest</title>
+  <link id="favicon" rel="icon" type="image/png" href="images/favicon-aberto.png">
+  <style>
+    :root{--tema:#168de2;--tema-rgb:22,141,226;--f1:#050505;--f2:#101521}
+    *{box-sizing:border-box}html,body{min-height:100%;scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
+    html.cursor-personalizado,html.cursor-personalizado *{cursor:none!important}
+    body{min-height:100vh;margin:0;display:flex;align-items:center;justify-content:center;padding:30px;overflow-x:hidden;overflow-y:auto;background:radial-gradient(circle at 50% 25%,rgba(var(--tema-rgb),.16),transparent 38%),linear-gradient(155deg,var(--f2),var(--f1));color:#fff;font-family:Arial,Helvetica,sans-serif;text-align:center}
+    main{width:min(720px,100%);min-height:100vh;padding:70px 0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .logo-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-bottom:40px}.logo-wrap img{max-width:330px;max-height:80px;object-fit:contain}.fita-uno-404{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-5deg);padding:9px 20px;background:#d9c69d;color:#151515;font-weight:900;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+    body.tema-uno .fita-uno-404{display:block}
+    .numero{position:relative;color:var(--tema);font-size:clamp(110px,28vw,235px);font-weight:900;line-height:.8;letter-spacing:-10px;user-select:none;text-shadow:0 0 45px rgba(var(--tema-rgb),.25)}.numero::before,.numero::after{content:attr(data-numero);position:absolute;inset:0;opacity:0;pointer-events:none}
+    h1{margin:45px 0 12px;font-size:clamp(28px,5vw,42px)}#texto{max-width:560px;margin:0;color:#9da2ad;line-height:1.7;white-space:pre-line}#voltar{margin-top:32px;padding:14px 26px;background:var(--tema);color:#fff;border-radius:12px;text-decoration:none;font-weight:bold;transition:transform .12s ease,box-shadow .12s ease}#voltar:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 10px 30px rgba(var(--tema-rgb),.22)}
+    body.tema-uno{--tema:#39bd60;--tema-rgb:57,189,96;--f1:#030905;--f2:#102819}body.tema-bne{--tema:#df2943;--tema-rgb:223,41,67;--f1:#030000;--f2:#26060d}
+    body.tema-bne .numero{animation:gnum 3.1s infinite}body.tema-bne .numero::before{color:#ff1744;animation:gr 3.1s infinite}body.tema-bne .numero::after{color:#00d9ff;animation:gb 3.1s infinite}
+    @keyframes gnum{0%,87%,100%{transform:none}89%{transform:translate(-5px,1px) skewX(-3deg)}92%{transform:translate(6px,-2px)}95%{transform:translate(-3px,2px)}}@keyframes gr{0%,87%,100%{opacity:0}89%{opacity:.65;transform:translate(-7px);clip-path:inset(15% 0 60% 0)}93%{opacity:.5;transform:translate(4px,2px)}}@keyframes gb{0%,88%,100%{opacity:0}90%{opacity:.5;transform:translate(6px,-1px);clip-path:inset(60% 0 8% 0)}}
+    #cursor-mao{position:fixed;left:0;top:0;width:72px;height:72px;pointer-events:none;z-index:99999;transform:translate(-10px,-8px)}#cursor-imagem{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;transition:transform .07s ease}#cursor-imagem.clicando{transform:scale(.82)}body.tema-bne #cursor-mao.glitch{animation:cg .17s steps(2,end)}@keyframes cg{25%{transform:translate(-13px,-7px) scale(1.03);filter:drop-shadow(3px 0 #ff193c) drop-shadow(-2px 0 #00dfff)}55%{transform:translate(-7px,-10px)}80%{transform:translate(-12px,-6px);filter:contrast(1.5)}}
+    @media (hover:none) and (pointer:coarse){html.cursor-personalizado,html.cursor-personalizado *{cursor:auto!important}#cursor-mao{display:none}}@media(max-height:700px),(max-width:600px){body{align-items:flex-start}main{justify-content:flex-start;padding:70px 0 60px}.logo-wrap img{max-width:250px}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo-wrap"><img id="logo" src="images/logo-topo.png" alt="mariobnw quest"><span class="fita-uno-404">mario.uno</span></div>
+    <div id="numero" class="numero" data-numero="404">404</div>
+    <h1 id="titulo">Essa página não existe.</h1>
+    <p id="texto">Talvez você tenha encontrado uma parte do Quest que ainda não foi criada.</p>
+    <a id="voltar" href="./">Voltar ao início</a>
+  </main>
+  <div id="cursor-mao"><img id="cursor-imagem" src="images/mouse-normal.png" alt="" draggable="false"></div>
+  <script>
+  (function(){
+    const partes=location.pathname.split('/').filter(Boolean);
+    const base=location.hostname.endsWith('github.io')&&partes.length?'/'+partes[0]+'/':'/';
+    const tema=localStorage.getItem('bnwTema')||'mariobnw';
+    const idioma=localStorage.getItem('bnwIdioma')||'pt';
+    const numero=document.getElementById('numero'),titulo=document.getElementById('titulo'),texto=document.getElementById('texto'),logo=document.getElementById('logo'),favicon=document.getElementById('favicon'),voltar=document.getElementById('voltar'),cursorMao=document.getElementById('cursor-mao'),cursorImagem=document.getElementById('cursor-imagem'),themeColor=document.getElementById('theme-color');
+    voltar.href=base;
+    if(tema==='mario.uno'){
+      document.body.classList.add('tema-uno');logo.src=base+'images/logo-topo.png';favicon.href=base+'images/mariobnw-verde-aberto.png';themeColor.content='#39bd60';document.title='404 — mario.uno quest';
+      titulo.textContent=idioma==='en'?"You weren't supposed to stop here.":'Você não devia ter parado aqui.';texto.textContent=idioma==='en'?'Better go back before something notices.':'Melhor voltar antes que alguma coisa perceba.';voltar.textContent=idioma==='en'?'Go back':'Voltar';
+    }else if(tema==='mariobne'){
+      document.body.classList.add('tema-bne');numero.textContent='303';numero.dataset.numero='303';logo.src=base+'images/logo-topo-bne.png';favicon.href=base+'images/favicon-bne-aberto.png';themeColor.content='#df2943';document.title='303 — mariobne quest';
+      titulo.textContent=idioma==='en'?'This page was here.':'Essa página estava aqui.';texto.textContent=idioma==='en'?"Now it isn't.\n\nIt wasn't me.\n...probably.":'Agora não está mais.\n\nNão fui eu.\n...provavelmente.';voltar.textContent=idioma==='en'?'Leave':'Sair daqui';
+    }else{
+      logo.src=base+'images/logo-topo.png';favicon.href=base+'images/favicon-aberto.png';if(idioma==='en'){titulo.textContent="This page doesn't exist.";texto.textContent="Maybe you found a part of the Quest that hasn't been created yet.";voltar.textContent='Return home';}
+    }
+    document.documentElement.classList.add('cursor-personalizado');
+    document.addEventListener('mousemove',e=>{cursorMao.style.left=e.clientX+'px';cursorMao.style.top=e.clientY+'px'});
+    voltar.addEventListener('mouseenter',()=>cursorImagem.src=base+'images/mouse-hover.png');voltar.addEventListener('mouseleave',()=>cursorImagem.src=base+'images/mouse-normal.png');
+    document.addEventListener('mousedown',()=>cursorImagem.classList.add('clicando'));document.addEventListener('mouseup',()=>cursorImagem.classList.remove('clicando'));
+    setInterval(()=>{if(tema!=='mariobne'||Math.random()>.45)return;cursorMao.classList.add('glitch');setTimeout(()=>cursorMao.classList.remove('glitch'),180)},2200);
+  })();
+  </script>
+</body>
+</html>

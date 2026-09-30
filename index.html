@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Site oficial de mariobnw quest, um RPG baseado em turnos inspirado na série Mario & Luigi.">
+  <meta id="theme-color" name="theme-color" content="#168de2">
+  <title>mariobnw quest</title>
+  <link id="favicon" rel="icon" type="image/png" href="images/favicon-aberto.png">
+  <link rel="stylesheet" href="style.css?v=0.8.0">
+</head>
+<body>
+  <div id="transicao-secreta" aria-hidden="true"></div>
+  <div id="flash-bne" aria-hidden="true"></div>
+
+  <div id="aviso-erro" class="aviso-erro" aria-live="polite">
+    <div class="aviso-icone">!</div>
+    <div class="aviso-texto">
+      <strong id="aviso-titulo">Recurso indisponível</strong>
+      <span id="aviso-descricao">Este recurso ainda não está disponível.</span>
+    </div>
+  </div>
+
+  <audio id="som-erro" preload="auto" src="Downloads/erro.mp3"></audio>
+  <audio id="som-click" preload="auto" src="Downloads/minecraft-click-menu.mp3"></audio>
+  <audio id="som-dialogo-bnw" preload="auto" src="Downloads/dialogo-bnw.ogg"></audio>
+  <audio id="som-dialogo-bne" preload="auto" src="Downloads/dialogo-bne.ogg"></audio>
+  <audio id="som-bne-exclaim" preload="auto" src="Downloads/bne-exclaim.ogg"></audio>
+  <audio id="som-luz-apagando" preload="auto" src="Downloads/bne-lights-off.mp3"></audio>
+
+  <header class="topo">
+    <a id="logo-link" class="logo-topo" href="#inicio" aria-label="Voltar ao início">
+      <img id="logo-site" src="images/logo-topo.png" alt="mariobnw quest" draggable="false">
+      <span id="fita-logo-uno" class="fita-logo-uno" aria-hidden="true">mario.uno</span>
+</a>
+
+    <nav>
+      <a href="#noticias" data-i18n="menuNoticias">Notícias</a>
+      <a href="#personagens" data-i18n="menuPersonagens">Personagens</a>
+      <a href="#sobre" data-i18n="menuSobre">Sobre</a>
+      <a href="#canais" data-i18n="menuCanais">Canais</a>
+      <button id="abrir-comunidade" class="link-menu" type="button" data-i18n="menuComunidade">Comunidade</button>
+
+      <button id="abrir-devlog" class="botao-hud botao-devlog" type="button" title="Devlog" aria-label="Devlog">
+        📰
+        <span id="devlog-novo" class="devlog-novo" data-i18n="novo">NOVO</span>
+      </button>
+
+      <button id="abrir-configuracoes" class="botao-hud" type="button" title="Configurações" aria-label="Configurações">⚙️</button>
+
+      <div class="idioma-container">
+        <button id="botao-idioma" class="botao-idioma" type="button" title="Idioma" aria-label="Idioma">
+          <img src="images/globo.png" alt="">
+        </button>
+        <div id="menu-idioma" class="menu-idioma">
+          <button class="opcao-idioma" data-lang="pt" type="button"><img src="images/bandeira-brasil.webp" alt="">Português</button>
+          <button class="opcao-idioma" data-lang="en" type="button"><img src="images/bandeira-eua.png" alt="">English</button>
+        </div>
+      </div>
+
+      <button id="abrir-obrigado" class="obrigado-nav oculto" type="button" aria-label="Obrigado por fazer parte dessa história" title="Obrigado por fazer parte dessa história"><span class="obrigado-nav-icone">✦</span><span class="sr-only" data-i18n="obrigadoNav">Obrigado</span></button>
+      <button id="abrir-downloads" class="menu-download" type="button" data-i18n="menuBaixar">Baixar</button>
+    </nav>
+  </header>
+
+  <!-- Aviso de nova beta -->
+  <div id="aviso-nova-beta" class="aviso-nova-beta oculto" aria-live="polite">
+    <div><strong data-i18n="novaBeta">NOVA BETA DISPONÍVEL</strong><span id="nova-beta-versao">Beta 0.1</span></div>
+    <button id="fechar-aviso-beta" type="button" aria-label="Fechar">×</button>
+  </div>
+
+  <main id="conteudo-site">
+    <section class="hero" id="inicio">
+      <div class="hero-conteudo">
+        <p data-i18n="heroTitulo">ARTE PROMOCIONAL</p>
+        <span data-i18n="heroTexto">A apresentação oficial será publicada futuramente.</span>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <span class="mini-etiqueta" data-i18n="desenvolvimento">EM DESENVOLVIMENTO</span>
+      <h2 data-i18n="bemVindo">Conheça mariobnw quest</h2>
+      <p data-i18n="descricaoInicial">Um RPG baseado em turnos inspirado na série Mario & Luigi, com personagens, história e sistemas próprios.</p>
+      <div class="botoes">
+        <button id="botao-ver-downloads" class="botao botao-principal" type="button" data-i18n="verDownloads">Ver downloads</button>
+        <a class="botao" href="#personagens" data-i18n="conhecerPersonagens">Conhecer personagens</a>
+      </div>
+    </section>
+
+    <section class="conteudo" id="noticias">
+      <h2 data-i18n="noticiasTitulo">Últimas notícias</h2>
+      <p class="secao-descricao" data-i18n="noticiasTexto">Atualizações sobre o desenvolvimento do projeto.</p>
+      <div class="cards">
+        <article class="card reveal-on-scroll">
+          <span class="card-data">2026</span>
+          <h3 data-i18n="noticiaSiteTitulo">Site em desenvolvimento</h3>
+          <p data-i18n="noticiaSiteTexto">O site continuará recebendo melhorias, segredos e novas funções durante o desenvolvimento.</p>
+        </article>
+        <article class="card reveal-on-scroll">
+          <span class="card-data" data-i18n="desenvolvimento">EM DESENVOLVIMENTO</span>
+          <h3 data-i18n="noticiaJogoTitulo">O projeto continua crescendo</h3>
+          <p data-i18n="noticiaJogoTexto">Mais informações serão reveladas conforme o desenvolvimento avançar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="conteudo" id="personagens">
+      <h2 data-i18n="personagensTitulo">Personagens</h2>
+      <p data-i18n="personagensTexto">Perfis oficiais serão adicionados conforme os personagens forem apresentados.</p>
+    </section>
+
+    <section class="conteudo" id="sobre">
+      <h2 data-i18n="sobreTitulo">Sobre o jogo</h2>
+      <p data-i18n="sobreTexto">mariobnw quest é um RPG baseado em turnos inspirado na série Mario & Luigi, com personagens, história e sistemas próprios.</p>
+    </section>
+
+    <section class="conteudo" id="canais">
+      <h2 data-i18n="canaisTitulo">Canais oficiais</h2>
+      <p class="secao-descricao" data-i18n="canaisTexto">Acompanhe conteúdos e atualizações oficiais.</p>
+      <div class="cards">
+        <article class="card canal-card reveal-on-scroll">
+          <span class="canal-idioma">PT-BR</span>
+          <h3>mariobnw</h3>
+          <p data-i18n="canalPT">Canal principal em português.</p>
+          <a class="botao" href="https://youtube.com/@mariobnw" target="_blank" rel="noopener noreferrer" data-i18n="acessarCanal">Acessar canal</a>
+        </article>
+        <article class="card canal-card reveal-on-scroll">
+          <span class="canal-idioma">EN</span>
+          <h3>mariobnw quest English</h3>
+          <p data-i18n="canalEN">Canal oficial em inglês dedicado ao projeto.</p>
+          <a class="botao botao-principal" href="https://youtube.com/@bnw_quest_english" target="_blank" rel="noopener noreferrer" data-i18n="acessarCanal">Acessar canal</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="conteudo" id="codigos">
+      <div class="codigos-caixa reveal-on-scroll">
+        <h2 data-i18n="codigosTitulo">Códigos</h2>
+        <p data-i18n="codigosTexto">Códigos encontrados no jogo poderão ser resgatados aqui futuramente.</p>
+        <div class="codigos-form">
+          <input type="text" placeholder="BNW-XXXX-XXXX" disabled>
+          <button id="botao-codigo-bloqueado" class="botao botao-bloqueado" type="button" data-i18n="resgatar">RESGATAR</button>
+        </div>
+        <div class="fita-realista fita-codigos"><span data-i18n="emBreve">EM BREVE</span></div>
+      </div>
+    </section>
+
+    <section class="conteudo" id="arquivo-final">
+      <div class="arquivo-final-card reveal-on-scroll">
+        <div class="arquivo-neblina"></div>
+        <span class="arquivo-etiqueta">????</span>
+        <h2 data-i18n="arquivoTitulo">Arquivo Final</h2>
+        <p data-i18n="arquivoTexto">Algumas portas não precisam estar escondidas. Só precisam de uma chave difícil o bastante.</p>
+        <button id="abrir-arquivo-final" class="botao arquivo-final-botao" type="button" data-i18n="digitarCodigo">DIGITAR CÓDIGO</button>
+      </div>
+    </section>
+
+    <section class="conteudo" id="outros-sites">
+      <h2 data-i18n="outrosSitesTitulo">Outros sites</h2>
+      <p class="secao-descricao" data-i18n="outrosSitesTexto">Outros projetos terão seus próprios espaços futuramente.</p>
+      <div class="outros-sites-grid">
+        <article class="site-projeto reveal-on-scroll">
+          <div class="site-logo-area">
+            <img class="site-logo" src="images/logo-mariobnw.png" alt="">
+            <div class="fita-realista fita-site"><span data-i18n="emBreve">EM BREVE</span></div>
+          </div>
+        </article>
+        <article class="site-projeto reveal-on-scroll">
+          <div class="site-logo-area">
+            <img class="site-logo" src="images/logo-caos-total.png" alt="">
+            <div class="fita-realista fita-site"><span data-i18n="emBreve">EM BREVE</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape-site">
+    <div class="rodape-identidade glitch-bne-alvo">
+      <span class="nome-tematico"><span class="nome-bnw-original">mariobnw</span><span class="fita-uno">mario.uno</span></span> quest
+    </div>
+    <span id="info-versao-site">Site v0.8.0 • Atualizado em 29/09/2026</span>
+  </footer>
+
+  <!-- Comunidade -->
+  <div id="overlay-comunidade" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base">
+      <button id="fechar-comunidade" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <span class="modal-etiqueta" data-i18n="comunidadeTitulo">COMUNIDADE</span>
+      <h2 data-i18n="comunidadeTitulo">Comunidade</h2>
+      <p data-i18n="comunidadeTexto">Acesse os espaços oficiais.</p>
+      <div class="opcoes-comunidade">
+        <button id="comunidade-youtube" class="opcao-comunidade" type="button"><img src="images/youtube.png" alt=""><strong>YouTube</strong></button>
+        <button class="opcao-comunidade recurso-bloqueado" type="button"><img src="images/discord.png" alt=""><strong>Discord</strong><span data-i18n="emBreve">EM BREVE</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Devlog -->
+  <div id="overlay-devlog" class="overlay-modal" aria-hidden="true">
+    <div id="modal-devlog" class="modal-base modal-devlog">
+      <div class="devlog-acoes">
+        <button id="expandir-devlog" class="devlog-expandir" type="button" aria-label="Expandir Devlog" title="Expandir Devlog">⛶</button>
+        <button id="fechar-devlog" class="fechar-modal fechar-devlog-local" type="button" aria-label="Fechar">×</button>
+      </div>
+      <span class="modal-etiqueta">DEVLOG</span>
+      <h2 id="titulo-devlog" data-i18n="devlogTitulo">Diário de desenvolvimento</h2>
+      <p class="devlog-instrucao" data-i18n="devlogExpandirDica">Clique em uma atualização para expandir. Use ⛶ para aumentar a janela.</p>
+
+      <div class="devlog-lista">
+        <article class="devlog-post devlog-atual" tabindex="0">
+          <div class="devlog-resumo">
+            <div class="devlog-linha"><span class="devlog-data">29/09/2026</span><span class="devlog-chip" data-i18n="novo">NOVO</span></div>
+            <h3>Site v0.8.0</h3><span class="devlog-seta">+</span>
+          </div>
+          <div class="devlog-detalhes"><p data-i18n="devlog080">Downloads e Devlog ampliados, diálogos refinados, mobile melhorado, mais personalização por tema e várias melhorias de interface.</p>
+            <div class="devlog-categorias"><section><strong data-i18n="novidades">Novidades</strong><p data-i18n="dev080Novidades">Downloads mais completos, novas reações e melhorias por tema.</p></section><section><strong data-i18n="correcoes">Correções</strong><p data-i18n="dev080Correcoes">Correções de modais, áudio, tradução, carta, cursor e navegação.</p></section><section><strong data-i18n="visual">Visual</strong><p data-i18n="dev080Visual">Polimentos de interface, mobile, Devlog e animações.</p></section><section><strong data-i18n="audio">Áudio</strong><p data-i18n="dev080Audio">Sistema de fala do BNW refinado e ajustes de efeitos sonoros.</p></section></div>
+          </div>
+        </article>
+
+        <button id="mostrar-devlogs-antigos" class="botao botao-devlogs-antigos" type="button" data-i18n="mostrarVersoes">Mostrar versões anteriores</button>
+        <div id="devlogs-antigos" class="devlogs-antigos">
+          <article class="devlog-post" tabindex="0"><div class="devlog-resumo"><span class="devlog-data">29/09/2026</span><h3>Site v0.7.0</h3><span class="devlog-seta">+</span></div><div class="devlog-detalhes"><p data-i18n="devlog070">Correções gerais, melhorias de interface e refinamentos no Arquivo Final sem revelar seu conteúdo.</p></div></article>
+          <article class="devlog-post" tabindex="0"><div class="devlog-resumo"><span class="devlog-data">29/09/2026</span><h3>Site v0.6.0</h3><span class="devlog-seta">+</span></div><div class="devlog-detalhes"><p data-i18n="devlog060">Novos segredos, melhorias no sistema de temas, efeitos visuais adicionais e mudanças no Arquivo Final.</p></div></article>
+          <article class="devlog-post" tabindex="0"><div class="devlog-resumo"><span class="devlog-data">29/09/2026</span><h3>Site v0.5.0</h3><span class="devlog-seta">+</span></div><div class="devlog-detalhes"><p data-i18n="devlog050">Arquivo Final reformulado, introdução melhorada, favicons/temas refinados, histórico restaurado e várias correções.</p></div></article>
+          <article class="devlog-post" tabindex="0"><div class="devlog-resumo"><span class="devlog-data">29/09/2026</span><h3>Site v0.4.0</h3><span class="devlog-seta">+</span></div><div class="devlog-detalhes"><p data-i18n="devlog040">Arquivo Final, novos temas, fitas refeitas, introdução do site e sistema de código via Worker.</p></div></article>
+          <article class="devlog-post" tabindex="0"><div class="devlog-resumo"><span class="devlog-data">28/09/2026</span><h3>Site v0.3.1</h3><span class="devlog-seta">+</span></div><div class="devlog-detalhes"><p data-i18n="devlog031">Página 404, Devlog, área de códigos e melhorias gerais.</p></div></article>
+          <article class="devlog-post" tabindex="0"><div class="devlog-resumo"><span class="devlog-data">28/09/2026</span><h3>Site v0.3.0</h3><span class="devlog-seta">+</span></div><div class="devlog-detalhes"><p data-i18n="devlog030">Mouse personalizado, tema mario.uno, melhorias visuais e correções de interação.</p></div></article>
+          <article class="devlog-post" tabindex="0"><div class="devlog-resumo"><span class="devlog-data">2026</span><h3>Site v0.2.0</h3><span class="devlog-seta">+</span></div><div class="devlog-detalhes"><p data-i18n="devlog020">Estrutura inicial do site, primeiras seções e identidade visual do projeto.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Downloads -->
+  <div id="overlay-downloads" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base modal-downloads">
+      <div class="modal-topo-fixo"><button id="fechar-downloads" class="fechar-modal fechar-downloads" type="button" aria-label="Fechar">×</button></div>
+      <span class="modal-etiqueta" data-i18n="downloadsTitulo">DOWNLOADS</span>
+      <h2 data-i18n="downloadsTitulo">Downloads</h2>
+      <p class="downloads-intro" data-i18n="downloadsIntro">Acompanhe builds, plataformas, testes e mudanças da demo.</p>
+
+      <section class="download-bloco download-versao-atual">
+        <div class="download-titulo-linha"><div><span class="download-kicker" data-i18n="versaoAtual">VERSÃO ATUAL</span><h3 id="download-beta-titulo">Demo Beta 0.1</h3></div><span id="download-status-chip" class="download-status-chip indisponivel" data-i18n="indisponivel">INDISPONÍVEL</span></div>
+        <div class="download-meta-grid">
+          <div><strong data-i18n="status">Status</strong><span data-i18n="emDesenvolvimentoCurto">Em desenvolvimento.</span></div>
+          <div><strong data-i18n="dataBuild">Data</strong><span id="download-data">—</span></div>
+          <div><strong data-i18n="tamanhoBuild">Tamanho</strong><span id="download-tamanho">—</span></div>
+          <div><strong data-i18n="buildLabel">Build</strong><span id="download-build">Ainda não criada</span></div>
+        </div>
+        <div class="progresso-demo"><div class="progresso-cabecalho"><strong data-i18n="progresso">Progresso</strong><span id="progresso-porcentagem">0%</span></div><div class="progresso-barra"><div id="progresso-preenchimento" class="progresso-preenchimento"></div></div></div>
+        <h4 data-i18n="plataformas">Plataformas</h4>
+        <div class="plataformas plataformas-detalhadas"><span>PC <small data-i18n="planejado">planejado</small></span><span>Android <small data-i18n="planejado">planejado</small></span><span>Linux <small data-i18n="naoTestado">não testado</small></span><span>macOS <small data-i18n="naoTestado">não testado</small></span></div>
+        <h4 data-i18n="objetivoBeta">Objetivo desta beta</h4>
+        <ul class="download-lista"><li data-i18n="objMovimento">Testar movimentação e controles.</li><li data-i18n="objInterface">Testar interface e fluxo básico.</li><li data-i18n="objSistemas">Validar os sistemas fundamentais da demo.</li></ul>
+        <h4 data-i18n="changelogCurto">Changelog curto</h4>
+        <ul class="download-lista"><li data-i18n="changelogSemBuild">A primeira build pública ainda não foi criada.</li></ul>
+        <h4 data-i18n="bugsConhecidos">Bugs conhecidos</h4><p data-i18n="nenhumRegistrado">Nenhum registrado ainda.</p>
+        <button id="botao-build-indisponivel" class="botao botao-bloqueado" type="button" data-i18n="indisponivel">INDISPONÍVEL</button>
+        <a id="botao-itchio" class="botao botao-principal oculto" href="#" target="_blank" rel="noopener noreferrer" data-i18n="baixarItch">BAIXAR NO ITCH.IO</a>
+      </section>
+
+      <section class="download-bloco">
+        <h3 data-i18n="dispositivosTestados">Dispositivos testados</h3>
+        <p data-i18n="testesAviso">Esta lista só muda quando um dispositivo é realmente testado.</p>
+        <div id="historico-testes" class="historico-testes">
+          <div class="teste-device"><strong>PC principal</strong><span>i3-10100 + RTX T1000</span><em data-i18n="naoTestado">Não testado</em></div>
+          <div class="teste-device"><strong>Galaxy Tab S10 FE+</strong><span>Android</span><em data-i18n="naoTestado">Não testado</em></div>
+          <div class="teste-device"><strong>Notebook</strong><span data-i18n="hardwareVariavel">Hardware variável</span><em data-i18n="naoTestado">Não testado</em></div>
+        </div>
+      </section>
+
+      <section class="download-bloco">
+        <h3 data-i18n="demoPublica">Demo pública</h3>
+        <p data-i18n="demoIndisponivel">A demo pública ainda não está disponível.</p>
+        <button id="botao-demo-indisponivel" class="botao botao-bloqueado" type="button" data-i18n="indisponivel">INDISPONÍVEL</button>
+      </section>
+    </div>
+  </div>
+
+  <!-- Configurações -->
+  <div id="overlay-configuracoes" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base modal-configuracoes">
+      <button id="fechar-configuracoes" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <span class="modal-etiqueta" data-i18n="configTitulo">CONFIGURAÇÕES</span>
+      <h2 data-i18n="configTitulo">Configurações</h2>
+
+      <div class="lista-configuracoes">
+        <div class="config-item"><div><strong data-i18n="sons">Sons</strong><span data-i18n="sonsTexto">Sons e efeitos sonoros.</span></div><button id="toggle-som" class="toggle-config ativo" type="button">ON</button></div>
+        <div class="config-item"><div><strong data-i18n="efeitos">Efeitos</strong><span data-i18n="efeitosTexto">Animações e efeitos visuais.</span></div><button id="toggle-efeitos" class="toggle-config ativo" type="button">ON</button></div>
+        <div class="config-item"><div><strong data-i18n="reduzirAnimacoes">Reduzir animações</strong><span data-i18n="reduzirAnimacoesTexto">Mantém os efeitos, mas diminui movimentos e glitches.</span></div><button id="toggle-reduzir-animacoes" class="toggle-config" type="button">OFF</button></div>
+
+        <div class="config-item config-temas">
+          <div class="config-temas-cabecalho"><strong data-i18n="temas">Temas</strong><span data-i18n="temasTexto">Escolha a identidade do site.</span></div>
+          <div class="lista-temas">
+            <button id="tema-mariobnw" class="tema-card" data-preview-tema="mariobnw" type="button"><img src="images/favicon-aberto.png" alt=""><span>mariobnw</span><small class="tema-ativo-texto">✓</small></button>
+            <button id="tema-uno" class="tema-card tema-oculto" data-preview-tema="mario.uno" type="button"><img src="images/mariobnw-verde-aberto.png" alt=""><span>mario.uno</span><small class="tema-ativo-texto">✓</small></button>
+            <button id="tema-bne" class="tema-card tema-oculto glitch-bne-alvo" data-preview-tema="mariobne" type="button"><img src="images/favicon-bne-aberto.png" alt=""><span class="tema-bne-nome">mariobne</span><small class="tema-ativo-texto">✓</small></button>
+          </div>
+
+          <div id="descobrir-tema-area" class="descobrir-tema-area">
+            <span data-i18n="querTema">Quer um tema novo?</span>
+            <button id="descobrir-tema" class="botao botao-pequeno" type="button" data-i18n="descobrir">DESCOBRIR</button>
+            <p id="dica-tema" class="dica-tema"></p>
+          </div>
+        </div>
+      </div>
+      <div id="rodape-configuracoes" class="rodape-configuracoes">mariobnw quest • Site v0.8.0</div>
+    </div>
+  </div>
+
+  <!-- Código do Arquivo Final -->
+  <div id="overlay-arquivo-codigo" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base arquivo-codigo-modal">
+      <button id="fechar-arquivo-codigo" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <span class="arquivo-etiqueta">????</span>
+      <h2 data-i18n="codigoNecessario">Código necessário</h2>
+      <p data-i18n="digiteSequencia">Digite a sequência correta.</p>
+      <form id="form-arquivo-codigo" class="arquivo-codigo-form">
+        <input id="input-arquivo-codigo" type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="12" placeholder="••••••••••••" aria-label="Código do Arquivo Final">
+        <button class="botao botao-principal" type="submit" data-i18n="verificar">VERIFICAR</button>
+      </form>
+      <span id="arquivo-codigo-status" class="arquivo-codigo-status"></span>
+    </div>
+  </div>
+
+  <!-- Página corrompida -->
+  <section id="pagina-corrompida" class="pagina-corrompida" aria-hidden="true">
+    <div class="corrompida-neblina"></div>
+
+    <div class="corrompida-conteudo">
+      <button id="fechar-pagina-corrompida" class="fechar-corrompida" type="button" aria-label="Fechar">×</button>
+      <span class="corrompida-etiqueta">ARQUIVO FINAL</span>
+      <h1 id="nome-proximo-jogo">????</h1>
+      <p data-i18n="corrompidaInicial">Tem alguma coisa escondida aqui.</p>
+
+      <div id="arquivo-restaurado" class="arquivo-restaurado carta-papel-wrap">
+        <article id="papel-carta" class="papel-carta carta-uno">
+          <div class="papel-conteudo">
+            <div class="carta-carimbo">mario.uno quest</div>
+            <p>mario.uno...</p>
+            <p>nessa carta eu quero dizer algo muito importante... então não jogue fora igual as outras... e eu sei que você faz isso &gt;:(...</p>
+            <p>mas enfim...</p>
+            <p>Devo admitir... você se esforçou pra chegar até onde você está.</p>
+            <p>Enfim...</p>
+            <p>Eu não vou mais ser jogável.</p>
+            <p>Você vai tomar o meu posto.</p>
+            <p>Espero que não faça nada de errado...</p>
+            <p>...ou quebre o mundo de novo.</p>
+            <p>Hahahaha...</p>
+            <p>Eu, <button class="palavra-corrompida" type="button">mariobnw</button>...</p>
+            <p>Às vezes não queria ser <button class="palavra-corrompida" type="button">mariobnw</button>.</p>
+            <p>Eu queria ser outra pessoa.</p>
+            <p>Alguém com menos coisas pra fazer.</p>
+            <p>Menos problemas pra resolver.</p>
+            <p>Menos gente me chamando toda vez que alguma coisa dá errado.</p>
+            <p>Mas parece que o mundo sempre precisa de um herói.</p>
+            <p>E, por algum motivo, sempre me chamam.</p>
+            <blockquote>“Olha o <button class="palavra-corrompida" type="button">mariobnw</button>!”<br>“Olha se não é o <button class="palavra-corrompida" type="button">mariobnw</button>!”<br>“<button class="palavra-corrompida" type="button">mariobnw</button> é o máximo!”</blockquote>
+            <p>...</p><p>É.</p><p>Cansa um pouco.</p><p>Mas enfim...</p>
+            <p>Se você estiver lendo essa carta, mario.uno...</p>
+            <p>então acho que agora é a sua vez.</p>
+            <p class="assinatura-carta">-<button class="palavra-corrompida palavra-final" type="button">mariobnw</button></p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <canvas id="canvas-tinta" class="canvas-tinta"></canvas>
+
+    <div id="mensagem-uno-voltara" class="mensagem-uno-voltara" aria-live="polite">
+      <button id="fechar-mensagem-uno" type="button" aria-label="Fechar">×</button>
+      <span>mario.uno voltará</span>
+      <small id="dica-raspar" class="dica-raspar">Segure e arraste para limpar a tinta.</small>
+    </div>
+    <div id="dica-descer" class="dica-descer" aria-hidden="true">↓</div>
+
+    <div id="dialogo-bne" class="dialogo-bne" aria-hidden="true">
+      <div class="dialogo-bne-caixa caixa-dialogo-rpg">
+        <img id="retrato-bne" class="retrato-bne" src="images/favicon-bne-aberto.png" alt="">
+        <div class="dialogo-bne-conteudo">
+          <span id="dialogo-bne-texto"></span>
+          <div id="dialogo-bne-opcoes" class="dialogo-bne-opcoes">
+            <button id="bne-sim" type="button">SIM</button>
+            <button id="bne-nao" type="button">NÃO</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img id="logo-final-glitch" class="logo-final-glitch" src="images/logo-topo.png" alt="">
+  </section>
+
+  <!-- Obrigado pós-Arquivo Final -->
+  <div id="overlay-obrigado" class="overlay-modal" aria-hidden="true">
+    <div class="modal-base modal-obrigado">
+      <button id="fechar-obrigado" class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <div class="obrigado-selo"><span>✦</span><strong data-i18n="obrigadoEtiqueta">ARQUIVO CONCLUÍDO</strong></div>
+      <div class="obrigado-hero">
+        <img id="obrigado-favicon" src="images/favicon-aberto.png" alt="">
+        <div><span class="obrigado-mini">mariobnw quest</span><h2 data-i18n="obrigadoTitulo">Obrigado por fazer parte dessa história</h2></div>
+      </div>
+      <div class="obrigado-corpo">
+        <p data-i18n="obrigadoTexto1">Se você chegou até aqui, então viu uma parte do site que não foi feita para ser encontrada por acaso.</p>
+        <p data-i18n="obrigadoTexto2">Obrigado por acompanhar o projeto, testar as coisas estranhas e continuar curioso.</p>
+        <div class="obrigado-marca"><span>ARQUIVO FINAL</span><strong>CONCLUÍDO</strong></div>
+        <p class="obrigado-assinatura">- mariobnw</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BNW Mask -->
+  <div id="bnw-container">
+    <img id="mascara-bnw" src="images/mascara-normal.png" alt="" draggable="false">
+    <div id="bnw-dialogo" class="bnw-dialogo caixa-dialogo-rpg">
+      <span id="bnw-dialogo-texto"></span>
+      <button id="pular-intro" type="button" data-i18n="pular">PULAR</button>
+    </div>
+  </div>
+
+  <div id="cursor-mao"><img id="cursor-imagem" src="images/mouse-normal.png" alt="" draggable="false"></div>
+
+  <script src="script.js?v=0.8.0"></script>
+</body>
+</html>
